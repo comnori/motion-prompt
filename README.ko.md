@@ -2,7 +2,7 @@
 
 [English](README.md) | [日本語](README.ja.md) | **한국어**
 
-> 한국어 용어 목록은 [`packs/`](packs/README.ko.md)에서 볼 수 있습니다. 영어·일본어·스페인어·중국어 간체·중국어 번체 목록도 제공됩니다.
+> 한국어 용어 목록은 [`packs/`](packs/README.md)의 각 팩에 있는 한국어 링크에서 볼 수 있습니다. 영어·일본어·스페인어·중국어 간체·중국어 번체 목록도 제공됩니다.
 > 갤러리와 CLI는 영어·일본어를 지원합니다. 한국어 번역은 이 README와 팩의 이름·뜻·AI 요청 예시에 적용되어 있으며, [한국어 예제 영상 6편과 제작 안내](make-your-own/README.ko.md)도 제공합니다.
 > 다른 언어로 영상을 만들려면 [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md)를 코딩 AI에 전달하세요.
 
@@ -13,7 +13,7 @@ AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 이름 모음�
 | ![모션 그래픽 용어 01–08](assets/preview-motion.gif) | ![카메라 움직임 용어 01–08](assets/preview-camera.gif) |
 
 - 갤러리(모든 움직이는 예제): https://showheyohtaki.github.io/motion-prompt/
-- GitHub에서 바로 읽는 용어 목록: [`packs/`](packs/README.ko.md)
+- GitHub에서 바로 읽는 용어 목록: [`packs/`](packs/README.md)
 - 다른 사람들이 이름과 예제를 공유한 사례(X 게시물 임베드와 링크): https://showheyohtaki.github.io/motion-prompt/found.html
 
 ## 만든 이유
@@ -41,7 +41,7 @@ Shohei Ohtaki
 | 145–168 | `lp2`: 랜딩 페이지와 웹 효과 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
 | 169–192 | `camera2`: 카메라 움직임과 장면 전환 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-각 목록에는 번호, 이름, 뜻, AI 요청 예시가 있습니다. 한국어 목록에는 영어 원어도 함께 표시합니다. [전체 팩 목록](packs/README.ko.md)에서 다른 언어로 이동할 수 있으며, [갤러리](https://showheyohtaki.github.io/motion-prompt/)에서는 같은 이름의 움직이는 예제를 볼 수 있습니다.
+각 목록에는 번호, 이름, 뜻, AI 요청 예시가 있습니다. 한국어 목록에는 영어 원어도 함께 표시합니다. [전체 팩 목록](packs/README.md)에서 다른 언어로 이동할 수 있으며, [갤러리](https://showheyohtaki.github.io/motion-prompt/)에서는 같은 이름의 움직이는 예제를 볼 수 있습니다.
 
 팩마다 시각적 스타일이 다릅니다. `motion`과 `motion2`는 짙은 네이비 바탕에 네 가지 색을, `camera`와 `camera2`는 밝은 회색 바탕에 파란색 하나를 사용합니다. `ui`는 따뜻한 흰색 바탕에 검정과 파랑을 사용하며 커서가 각 요소를 움직입니다. `lp`와 `lp2`는 옅은 회색 책상 위에 흰 브라우저 창을 그리고, 주홍색을 강조색으로, 파란색을 페이지 안의 이미지에 사용합니다. `photo`에는 공통 색상표가 없습니다. 카드마다 장면에 맞는 색을 쓰고, 효과가 나타났다 사라져 전후를 비교할 수 있습니다. 의도한 차이입니다. 팩에서 가장 중요한 것은 통일된 스타일보다 정확한 이름입니다.
 
@@ -87,7 +87,7 @@ motion-prompt #032의 카메라 움직임을 Veo용 영어 프롬프트로 바�
 
 ### 2. 이름을 찾아 AI에게 전달하기
 
-[용어 목록](packs/README.ko.md)이나 갤러리에서 원하는 효과를 찾고, 그 이름을 프롬프트에 쓰세요. 지속 시간, 강도, 움직일 대상을 덧붙이면 원하는 결과에 가까워집니다.
+[용어 목록](packs/README.md)이나 갤러리에서 원하는 효과를 찾고, 그 이름을 프롬프트에 쓰세요. 지속 시간, 강도, 움직일 대상을 덧붙이면 원하는 결과에 가까워집니다.
 
 ```text
 제목을 아래에서 올라오는 마스크 리빌로 등장시켜 줘. 0.6초 동안 움직이고 각 줄에 약간씩 시간차를 줘.
@@ -113,7 +113,7 @@ motion-prompt #032의 카메라 움직임을 Veo용 영어 프롬프트로 바�
 
 ## 자신의 분야 용어 추가하기
 
-잘 아는 분야가 있다면 그 분야의 공통 언어를 자신의 언어로 추가해 주세요. [CONTRIBUTING.md](CONTRIBUTING.md)에 팩이나 번역을 추가하는 방법과 용어의 수록 기준이 있습니다. 위 프롬프트로 코딩 AI가 제작의 상당 부분을 맡을 수 있습니다.
+잘 아는 분야가 있다면 그 분야의 공통 언어를 자신의 언어로 추가해 주세요. [CONTRIBUTING.ko.md](CONTRIBUTING.ko.md)에 팩이나 번역을 추가하는 방법과 용어의 수록 기준이 있습니다. 위 프롬프트로 코딩 AI가 제작의 상당 부분을 맡을 수 있습니다.
 
 ## 원본 게시물
 

@@ -1,6 +1,6 @@
 # Contributing: add the names of your field
 
-**English** | [日本語](CONTRIBUTING.ja.md)
+**English** | [日本語](CONTRIBUTING.ja.md) | [한국어](CONTRIBUTING.ko.md)
 
 This repository is a library of names: the words people in a field use for the things you can ask an AI to make. It started with two of the sets posted on X, motion graphics and camera moves, and UI component names, landing page and web effects, and photo looks have been added since. **Please add the common language of your own field, in your own language.**
 

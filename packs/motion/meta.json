@@ -739,7 +739,7 @@
       "no": "24", "slug": "impact-shake", "category": "transitions-highlights",
       "name": { "ja": "インパクトシェイク", "en": "Impact shake", "zh-Hant": "畫面震動", "es": "Sacudida de impacto (impact shake)", "zh-Hans": "冲击震动", "ko": "카메라 쉐이크(충격 효과)" },
       "meaning": { "ja": "着地の衝撃で画面が揺れる", "en": "The whole frame shakes when something lands", "zh-Hant": "落地的衝擊讓整個畫面震動", "es": "Todo el cuadro tiembla cuando algo cae", "zh-Hans": "物体落下时带动整个画面震动", "ko": "요소가 착지하는 순간 화면 전체가 흔들림" },
-      "ask": { "ja": "見出しがドンと落ちた瞬間に、インパクトシェイクを入れて。0.4秒で収まる程度に。", "en": "Add an impact shake when the headline lands; it should settle within 0.4 s.", "zh-Hant": "標題砰地落下的瞬間，請加上畫面震動，0.4 秒內要平息。", "es": "Agrega una sacudida de impacto cuando cae el titular; que se calme en 0,4 s.", "zh-Hans": "标题落地时添加冲击震动，在 0.4 s 内停稳。", "ko": "헤드라인이 착지할 때 화면에 카메라 쉐이크을 넣어 줘. 0.4초 안에 가라앉게 해 줘." },
+      "ask": { "ja": "見出しがドンと落ちた瞬間に、インパクトシェイクを入れて。0.4秒で収まる程度に。", "en": "Add an impact shake when the headline lands; it should settle within 0.4 s.", "zh-Hant": "標題砰地落下的瞬間，請加上畫面震動，0.4 秒內要平息。", "es": "Agrega una sacudida de impacto cuando cae el titular; que se calme en 0,4 s.", "zh-Hans": "标题落地时添加冲击震动，在 0.4 s 内停稳。", "ko": "헤드라인이 착지할 때 화면에 카메라 쉐이크를 넣어 줘. 0.4초 안에 가라앉게 해 줘." },
       "summary": {
         "ja": "重い見出しの板がドンと落ち、その衝撃で画面ごと揺れる。",
         "en": "A heavy headline slab drops with a thud and the whole frame shakes from the impact."

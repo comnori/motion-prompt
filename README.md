@@ -3,7 +3,7 @@
 **English** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
 > 日本語の説明は [README.ja.md](README.ja.md) にあります。
-> 한국어 설명은 [README.ko.md](README.ko.md), 한국어 용어 목록은 [`packs/`](packs/README.ko.md)에 있습니다.
+> 한국어 설명은 [README.ko.md](README.ko.md), 한국어 용어 목록은 [`packs/`](packs/README.md)에 있습니다.
 > 中文用户：所有名称一览都有简体中文和繁體中文版本，见 [`packs/`](packs/README.md)。
 > En español: todas las listas de nombres están en español en [`packs/`](packs/README.md).
 > The name lists are in English, Japanese, Korean, Spanish, Simplified Chinese and Traditional Chinese (see [`packs/`](packs/README.md)); the gallery is in English and Japanese. For another language, give [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md) to a coding AI.

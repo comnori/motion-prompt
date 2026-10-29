@@ -2,8 +2,6 @@
 
 # Packs
 
-**English** | [한국어](README.ko.md)
-
 A pack is one field's set of names. Each list below is readable here on GitHub; the gallery shows the same names moving.
 
 | Numbers | Pack | Names | Lists |

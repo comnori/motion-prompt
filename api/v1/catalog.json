@@ -1,5 +1,5 @@
 {
- "version": "1.09a33cd61b",
+ "version": "1.e8a05a013a",
  "site": "https://showheyohtaki.github.io/motion-prompt/",
  "repo": "https://github.com/showheyohtaki/motion-prompt",
  "count": 192,
@@ -2057,7 +2057,7 @@
     "zh-Hant": "標題砰地落下的瞬間，請加上畫面震動，0.4 秒內要平息。",
     "es": "Agrega una sacudida de impacto cuando cae el titular; que se calme en 0,4 s.",
     "zh-Hans": "标题落地时添加冲击震动，在 0.4 s 内停稳。",
-    "ko": "헤드라인이 착지할 때 화면에 카메라 쉐이크을 넣어 줘. 0.4초 안에 가라앉게 해 줘."
+    "ko": "헤드라인이 착지할 때 화면에 카메라 쉐이크를 넣어 줘. 0.4초 안에 가라앉게 해 줘."
    },
    "summary": {
     "ja": "重い見出しの板がドンと落ち、その衝撃で画面ごと揺れる。",

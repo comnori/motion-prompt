@@ -45,8 +45,8 @@
 | [#021](https://showheyohtaki.github.io/motion-prompt/#021) | **플립** | Flip | 카드처럼 뒤집혀 반대쪽 면을 보여 줌 | 가격 카드를 0.5초 동안 플립해서 뒷면의 상세 내용을 보여 줘. |
 | [#022](https://showheyohtaki.github.io/motion-prompt/#022) | **라이트 스윕** | Light sweep | 빛의 띠가 표면을 가로질러 지나감 | 로고가 멈춘 뒤 왼쪽 위에서 오른쪽 아래로 은은한 라이트 스윕을 한 번 넣어 줘. |
 | [#023](https://showheyohtaki.github.io/motion-prompt/#023) | **글리치** | Glitch | 오작동하듯 화면이 깨지거나 어긋남 | 제목에 0.3초짜리 짧은 글리치를 넣어 줘. 색 분리는 약하게 하고 번쩍임은 없게 해 줘. |
-| [#024](https://showheyohtaki.github.io/motion-prompt/#024) | **카메라 쉐이크(충격 효과)** | Impact shake | 요소가 착지하는 순간 화면 전체가 흔들림 | 헤드라인이 착지할 때 화면에 카메라 쉐이크을 넣어 줘. 0.4초 안에 가라앉게 해 줘. |
+| [#024](https://showheyohtaki.github.io/motion-prompt/#024) | **카메라 쉐이크(충격 효과)** | Impact shake | 요소가 착지하는 순간 화면 전체가 흔들림 | 헤드라인이 착지할 때 화면에 카메라 쉐이크를 넣어 줘. 0.4초 안에 가라앉게 해 줘. |
 
 번호를 누르면 갤러리의 움직이는 예제가 열립니다. 각 항목의 시간·이징 값·참고 코드는 영어 문서에서 확인할 수 있습니다: `api/v1/en/e/<id>.txt` ([#001](../../api/v1/en/e/001.txt)).
 
-[전체 팩](../README.ko.md)
+[전체 팩](../README.md)
