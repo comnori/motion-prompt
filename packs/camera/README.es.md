@@ -2,7 +2,7 @@
 
 # Movimientos de cámara y transiciones
 
-24 nombres · #025–048 · pack `camera` · Idiomas: [English](README.md) / [日本語](README.ja.md) / [繁體中文](README.zh-Hant.md)
+24 nombres · #025–048 · pack `camera` · Idiomas: [English](README.md) / [日本語](README.ja.md) / [简体中文](README.zh-Hans.md) / [繁體中文](README.zh-Hant.md)
 
 Encuentra el nombre y díselo a tu IA. Si agregas cuánto dura, con qué intensidad y qué se mueve, el resultado se acerca más a lo que imaginabas.
 

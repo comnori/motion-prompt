@@ -432,6 +432,10 @@ const DOC = {
     intro: 'Encuentra el nombre y díselo a tu IA. Si agregas cuánto dura, con qué intensidad y qué se mueve, el resultado se acerca más a lo que imaginabas.',
     no: '#', name: 'Nombre', en: 'Inglés', meaning: 'Qué es', ask: 'Cómo pedírselo a una IA',
     more: 'Cada número abre la muestra en movimiento en la galería. Tiempos, valores de easing y código de referencia de un nombre:', all: 'Todos los packs', preview: 'muestra' },
+  'zh-Hans': { gen: '由 tools/build.mjs 根据 meta.json 生成。请编辑 meta.json，不要直接修改本文件。', names: '个术语', pack: '分类', langs: '语言',
+    intro: '找到名称后直接告诉 AI。补充时长、幅度和运动对象，可以更接近你想要的效果。',
+    no: '编号', name: '名称', en: '英文名', meaning: '含义', ask: '向 AI 提出需求的示例',
+    more: '点击编号可打开动态示例。单个术语的时间、缓动数值与参考代码位于：', all: '全部分类', preview: '示例' },
 };
 const LANG_NAME = { en: 'English', ja: '日本語', zh: '中文', 'zh-Hans': '简体中文', 'zh-Hant': '繁體中文', ko: '한국어', es: 'Español', fr: 'Français', de: 'Deutsch', pt: 'Português', it: 'Italiano', id: 'Bahasa Indonesia', vi: 'Tiếng Việt', th: 'ไทย', hi: 'हिन्दी', ar: 'العربية', ru: 'Русский', tr: 'Türkçe' };
 const readmeName = lang => (lang === BASE_LANG ? 'README.md' : `README.${lang}.md`);
