@@ -12,8 +12,8 @@
 
 | 번호 | 이름 | 영어 원어 | 뜻 | AI 요청 예시 |
 |---|---|---|---|---|
-| [#121](https://showheyohtaki.github.io/motion-prompt/#121) | **앤티시페이션(예비 동작)** | Anticipation | 본동작 전에 잠깐 반대 방향으로 움직임 | 버튼이 오른쪽으로 날아가기 전에 앤티시페이션을 넣어 줘. 0.3초 동안 살짝 뒤로 당기고 눌렀다가 출발하게 해 줘. |
-| [#122](https://showheyohtaki.github.io/motion-prompt/#122) | **팔로 스루(후속 동작)** | Follow-through | 몸체가 멈춘 뒤에도 일부가 계속 흔들림 | 캐릭터가 멈춘 뒤 머리카락과 깃발에 팔로 스루를 넣어 줘. 약 0.5초 더 흔들린 뒤 멈추게 해 줘. |
+| [#121](https://showheyohtaki.github.io/motion-prompt/#121) | **예비 동작** | Anticipation | 본동작 전에 잠깐 반대 방향으로 움직임 | 버튼이 오른쪽으로 날아가기 전에 예비 동작을 넣어 줘. 0.3초 동안 살짝 뒤로 당기고 눌렀다가 출발하게 해 줘. |
+| [#122](https://showheyohtaki.github.io/motion-prompt/#122) | **팔로우 스루(후속 동작)** | Follow-through | 몸체가 멈춘 뒤에도 일부가 계속 흔들림 | 캐릭터가 멈춘 뒤 머리카락과 깃발에 팔로우 스루를 넣어 줘. 약 0.5초 더 흔들린 뒤 멈추게 해 줘. |
 | [#123](https://showheyohtaki.github.io/motion-prompt/#123) | **바운스** | Bounce | 떨어진 뒤 점점 낮게 튀다가 멈춤 | 공이 위에서 떨어져 바운스하게 해 줘. 세 번 튀되 매번 높이가 낮아지게 해 줘. |
 | [#124](https://showheyohtaki.github.io/motion-prompt/#124) | **위글** | Wiggle | 작고 불규칙한 떨림이 이어짐 | 알림 종에 약한 위글을 넣어 줘. 울리는 동안 최대 약 10° 범위에서 흔들리게 해 줘. |
 | [#125](https://showheyohtaki.github.io/motion-prompt/#125) | **펄스** | Pulse | 심장박동처럼 크기가 커졌다 작아짐 | 하트 아이콘에 펄스를 넣어 줘. 1.2초마다 약 10% 커졌다가 돌아오게 해 줘. |
@@ -32,7 +32,7 @@
 | [#133](https://showheyohtaki.github.io/motion-prompt/#133) | **텍스트 마스크** | Text mask | 글자 모양 안으로 사진이나 영상이 보임 | OCEAN이라는 단어를 텍스트 마스크로 써서 안에 바다 영상을 보여 줘. 마지막 1초에는 영상 전체를 드러내 줘. |
 | [#134](https://showheyohtaki.github.io/motion-prompt/#134) | **리피터** | Repeater | 도형을 복제하고 복제본들을 회전시킴 | 리피터로 이 꽃잎을 원형으로 12개 복제해 줘. 4초마다 한 바퀴 회전하게 해 줘. |
 | [#135](https://showheyohtaki.github.io/motion-prompt/#135) | **만화경** | Kaleidoscope | 거울처럼 반사된 무늬가 대칭으로 펼쳐짐 | 로고 뒤에 만화경 효과를 넣어 줘. 8방향 거울 대칭으로 천천히 회전하며 퍼지게 해 줘. |
-| [#136](https://showheyohtaki.github.io/motion-prompt/#136) | **Line boil** | Line boil | 손으로 그린 선이 프레임마다 조금씩 흔들림 | 손그림 일러스트에 Line boil을 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘. |
+| [#136](https://showheyohtaki.github.io/motion-prompt/#136) | **라인 보일(손그림 선 떨림)** | Line boil | 손으로 그린 선이 프레임마다 조금씩 흔들림 | 손그림 일러스트에 라인 보일을 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘. |
 
 ## 전환과 강조
 

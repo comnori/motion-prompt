@@ -725,7 +725,7 @@
         "zh-Hant": "Segmented Control",
         "es": "Control segmentado",
         "zh-Hans": "分段控制器",
-        "ko": "세그먼트 컨트롤"
+        "ko": "세그먼티드 컨트롤"
       },
       "meaning": {
         "ja": "並んだボタンで表示を切り替える",
@@ -741,7 +741,7 @@
         "zh-Hant": "在圖表上方放「日／週／月」的 Segmented Control。點擊時選取背景在 0.25 秒內滑動，圖表同步改變。",
         "es": "Pon un control segmentado Día / Semana / Mes sobre el gráfico: el fondo seleccionado se desliza en 0,25 s y el gráfico cambia con él.",
         "zh-Hans": "图表上方加日、周、月分段控制器，选中背景用 0.25 s 滑动，图表同步变化。",
-        "ko": "차트 위에 일 / 주 / 월 세그먼트 컨트롤을 넣어 줘. 선택 배경이 0.25초 동안 이동하고 차트도 함께 바뀌게 해 줘."
+        "ko": "차트 위에 일 / 주 / 월 세그먼티드 컨트롤을 넣어 줘. 선택 배경이 0.25초 동안 이동하고 차트도 함께 바뀌게 해 줘."
       },
       "summary": {
         "ja": "「日・週・月」を押すと青い選択部分が滑って移り、下の棒グラフの高さが変わる。",

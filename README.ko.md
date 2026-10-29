@@ -6,15 +6,15 @@
 > 갤러리와 CLI는 영어·일본어를 지원합니다. 한국어 번역은 이 README와 팩의 이름·뜻·AI 요청 예시에 적용되어 있으며, [한국어 예제 영상 6편과 제작 안내](make-your-own/README.ko.md)도 제공합니다.
 > 다른 언어로 영상을 만들려면 [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md)를 코딩 AI에 전달하세요.
 
-AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 **이름 모음집**입니다. 각 이름에는 움직이는 예제, 한 줄 설명, 요청 예시가 있습니다. 현재 8개 팩에 24개씩, 총 192개 용어를 담았습니다. 모션 그래픽 움직임(`motion`), 카메라 움직임(`camera`), UI 컴포넌트 이름(`ui`), 랜딩 페이지와 웹 효과(`lp`), 사진 표현·조명·스타일(`photo`), 모션 그래픽 움직임 2(`motion2`), 랜딩 페이지와 웹 효과 2(`lp2`), 카메라 움직임과 장면 전환 2(`camera2`)입니다. 자신의 분야와 언어로 같은 형태의 모음집을 만들 수 있는 프롬프트도 제공합니다.
+AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 이름 모음집입니다. 각 이름에는 움직이는 예제, 한 줄 설명, 요청 예시가 있습니다. 현재 8개 팩에 24개씩, 총 192개 용어를 담았습니다. 모션 그래픽 움직임(`motion`), 카메라 움직임(`camera`), UI 컴포넌트 이름(`ui`), 랜딩 페이지와 웹 효과(`lp`), 사진 표현·조명·스타일(`photo`), 모션 그래픽 움직임 2(`motion2`), 랜딩 페이지와 웹 효과 2(`lp2`), 카메라 움직임과 장면 전환 2(`camera2`)입니다. 자신의 분야와 언어로 같은 형태의 모음집을 만들 수 있는 프롬프트도 제공합니다.
 
 | 모션 그래픽 | 카메라 움직임 |
 |---|---|
 | ![모션 그래픽 용어 01–08](assets/preview-motion.gif) | ![카메라 움직임 용어 01–08](assets/preview-camera.gif) |
 
-- [갤러리: 모든 움직이는 예제](https://showheyohtaki.github.io/motion-prompt/)
-- [GitHub에서 읽는 한국어 용어 목록](packs/README.ko.md)
-- [다른 사람들이 공유한 이름과 예제: X 게시물 임베드와 링크](https://showheyohtaki.github.io/motion-prompt/found.html)
+- 갤러리(모든 움직이는 예제): https://showheyohtaki.github.io/motion-prompt/
+- GitHub에서 바로 읽는 용어 목록: [`packs/`](packs/README.ko.md)
+- 다른 사람들이 이름과 예제를 공유한 사례(X 게시물 임베드와 링크): https://showheyohtaki.github.io/motion-prompt/found.html
 
 ## 만든 이유
 
@@ -30,16 +30,16 @@ Shohei Ohtaki
 
 ## 현재 수록된 용어
 
-| 번호 | 팩 | 용어 수 | 한국어 목록 |
+| 번호 | 팩 | 용어 수 | 목록 |
 |---|---|---|---|
-| 001–024 | `motion`: 모션 그래픽 움직임 | 24 | [한국어](packs/motion/README.ko.md) |
-| 025–048 | `camera`: 카메라 움직임과 장면 전환 | 24 | [한국어](packs/camera/README.ko.md) |
-| 049–072 | `ui`: UI 컴포넌트 이름 | 24 | [한국어](packs/ui/README.ko.md) |
-| 073–096 | `lp`: 랜딩 페이지와 웹 효과 | 24 | [한국어](packs/lp/README.ko.md) |
-| 097–120 | `photo`: 사진 표현·조명·스타일 | 24 | [한국어](packs/photo/README.ko.md) |
-| 121–144 | `motion2`: 모션 그래픽 움직임 2 | 24 | [한국어](packs/motion2/README.ko.md) |
-| 145–168 | `lp2`: 랜딩 페이지와 웹 효과 2 | 24 | [한국어](packs/lp2/README.ko.md) |
-| 169–192 | `camera2`: 카메라 움직임과 장면 전환 2 | 24 | [한국어](packs/camera2/README.ko.md) |
+| 001–024 | `motion`: 모션 그래픽 움직임 | 24 | [English](packs/motion/README.md) · [日本語](packs/motion/README.ja.md) · [Español](packs/motion/README.es.md) · [简体中文](packs/motion/README.zh-Hans.md) · [繁體中文](packs/motion/README.zh-Hant.md) · [한국어](packs/motion/README.ko.md) |
+| 025–048 | `camera`: 카메라 움직임과 장면 전환 | 24 | [English](packs/camera/README.md) · [日本語](packs/camera/README.ja.md) · [Español](packs/camera/README.es.md) · [简体中文](packs/camera/README.zh-Hans.md) · [繁體中文](packs/camera/README.zh-Hant.md) · [한국어](packs/camera/README.ko.md) |
+| 049–072 | `ui`: UI 컴포넌트 이름 | 24 | [English](packs/ui/README.md) · [日本語](packs/ui/README.ja.md) · [Español](packs/ui/README.es.md) · [简体中文](packs/ui/README.zh-Hans.md) · [繁體中文](packs/ui/README.zh-Hant.md) · [한국어](packs/ui/README.ko.md) |
+| 073–096 | `lp`: 랜딩 페이지와 웹 효과 | 24 | [English](packs/lp/README.md) · [日本語](packs/lp/README.ja.md) · [Español](packs/lp/README.es.md) · [简体中文](packs/lp/README.zh-Hans.md) · [繁體中文](packs/lp/README.zh-Hant.md) · [한국어](packs/lp/README.ko.md) |
+| 097–120 | `photo`: 사진 표현·조명·스타일 | 24 | [English](packs/photo/README.md) · [日本語](packs/photo/README.ja.md) · [Español](packs/photo/README.es.md) · [简体中文](packs/photo/README.zh-Hans.md) · [繁體中文](packs/photo/README.zh-Hant.md) · [한국어](packs/photo/README.ko.md) |
+| 121–144 | `motion2`: 모션 그래픽 움직임 2 | 24 | [English](packs/motion2/README.md) · [日本語](packs/motion2/README.ja.md) · [Español](packs/motion2/README.es.md) · [简体中文](packs/motion2/README.zh-Hans.md) · [繁體中文](packs/motion2/README.zh-Hant.md) · [한국어](packs/motion2/README.ko.md) |
+| 145–168 | `lp2`: 랜딩 페이지와 웹 효과 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
+| 169–192 | `camera2`: 카메라 움직임과 장면 전환 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
 각 목록에는 번호, 이름, 뜻, AI 요청 예시가 있습니다. 한국어 목록에는 영어 원어도 함께 표시합니다. [전체 팩 목록](packs/README.ko.md)에서 다른 언어로 이동할 수 있으며, [갤러리](https://showheyohtaki.github.io/motion-prompt/)에서는 같은 이름의 움직이는 예제를 볼 수 있습니다.
 
@@ -55,29 +55,19 @@ Claude Code나 Codex에 `motion-prompt` 스킬을 설치했다면 말로 요청�
 npx skills add showheyohtaki/motion-prompt
 ```
 
-```mermaid
-flowchart LR
-    A[AI에게 모음집 열기 요청] --> B[갤러리에서 Pick으로 선택]
-    B --> C[메모 입력 후 Send to AI]
-    C --> D[AI에게 원하는 작업 설명]
-    D --> E[선택한 예제를 프로젝트에 적용]
-```
-
-AI에게 다음과 같이 요청합니다.
-
-```text
-motion-prompt 모음집을 열어 줘.
-```
-
-브라우저에서 원하는 예제의 **Pick**을 누르세요. 여러 개를 선택할 수 있습니다. 화면 아래 메모란에 '오프닝 제목에 사용'처럼 짧은 설명을 적고 **Send to AI**를 누르면 선택한 항목이 AI에게 전달됩니다. AI로 돌아가 원하는 작업을 설명하세요.
-
-```text
-이 영상의 도입부를 이렇게 편집해 줘.
-```
+1. AI에게 요청합니다.
+   ```text
+   motion-prompt 모음집을 열어 줘.
+   ```
+2. 브라우저에서 갤러리가 열립니다. 원하는 예제의 "Pick"을 누르세요. 여러 개를 선택할 수 있습니다. 화면 아래 메모란에는 "오프닝 제목에 사용"처럼 짧은 설명을 적습니다.
+3. "Send to AI"를 누르면 선택한 항목이 AI에게 전달됩니다. AI로 돌아가 원하는 작업을 설명하세요.
+   ```text
+   이 영상의 도입부를 이렇게 편집해 줘.
+   ```
 
 에이전트는 선택한 항목의 사양과 참고 코드를 가져와 프로젝트의 제작 방식에 맞게 영상이나 사이트에 적용합니다. '카메라 움직임을 보여 줘'처럼 분야를 지정하면 해당 팩만 표시합니다. 2편이 있는 분야는 1편과 2편을 함께 보여 줍니다.
 
-스킬이 없는 AI에서는 갤러리에서 항목을 선택하고 화면 아래의 **Copy picks**를 눌러 채팅에 붙여 넣으세요. 예제와 사양 URL도 포함됩니다.
+스킬이 없는 AI에서는 갤러리에서 항목을 선택하고 화면 아래의 "Copy picks"를 눌러 채팅에 붙여 넣으세요. 예제와 사양 URL도 포함됩니다.
 
 **번호를 안다면** 갤러리를 거치지 않고 바로 요청할 수 있습니다.
 
@@ -104,7 +94,7 @@ motion-prompt #032의 카메라 움직임을 Veo용 영어 프롬프트로 바�
 ```
 
 ```text
-그녀의 얼굴을 향해 천천히 달리 인해 줘. 줌을 쓰지 말고 카메라를 이동해 줘.
+그녀의 얼굴을 향해 천천히 돌리 인으로 촬영해 줘. 줌을 쓰지 말고 카메라를 이동해 줘.
 ```
 
 이 방법에는 설치가 필요 없습니다. 코딩 AI, 영상 생성 모델, 사람에게 전달하는 작업 설명에도 같은 이름을 쓸 수 있습니다.
@@ -129,9 +119,9 @@ motion-prompt #032의 카메라 움직임을 Veo용 영어 프롬프트로 바�
 
 이 프로젝트의 출발점이 된 영상입니다. X에 일본어로 게시되었습니다.
 
-- [첫 번째 게시물](https://x.com/showheyohtaki/status/2108065874511077598)
-- [두 번째 게시물](https://x.com/showheyohtaki/status/2109112248832503895)
-- [세 번째 게시물](https://x.com/showheyohtaki/status/2109840044554891464)
+- https://x.com/showheyohtaki/status/2108065874511077598
+- https://x.com/showheyohtaki/status/2109112248832503895
+- https://x.com/showheyohtaki/status/2109840044554891464
 
 첫 번째 게시물의 웹사이트·랜딩 페이지 애니메이션 용어 세트는 아직 이 저장소에 들어 있지 않습니다. `lp`는 별도로 만든 세트입니다. 패럴랙스, 스크롤 스냅 등 일부 이름은 겹치지만 선정과 예제는 이 저장소를 위해 새로 만들었습니다. `ui`는 10월 10일 X에 게시한 'UIパーツ名24'(UI 요소 이름 24개)를 바탕으로 했고, `photo`도 이 저장소를 위해 새로 만들었습니다.
 
@@ -173,16 +163,6 @@ npx skills add showheyohtaki/motion-prompt
 
 이 절은 위 '프롬프트로 설치' 요청을 받은 AI 에이전트를 위한 안내입니다.
 
-```mermaid
-flowchart TD
-    A[Node.js 18 이상 확인] --> B[skills 설치 명령 실행]
-    B --> C{설치 가능 여부}
-    C -->|성공| E[info 명령으로 확인]
-    C -->|실행 불가| D[저장소 복제 후 스킬 폴더 복사]
-    D --> E
-    E --> F[SKILL.md를 읽고 사용법 안내]
-```
-
 1. `node --version`으로 Node.js 18 이상인지 확인합니다.
 2. 사용자의 프로젝트 폴더에서 다음 명령을 실행합니다. 설치할 에이전트를 물으면 현재 사용 중인 에이전트를 선택합니다.
 
@@ -206,13 +186,16 @@ flowchart TD
 
    종료 코드 3은 데이터 출처에 접속할 수 없다는 뜻입니다. 네트워크 접근 권한을 받은 뒤 다시 실행합니다.
 
-5. `<skill-dir>/SKILL.md`를 읽고 사용법을 세 줄로 안내합니다. 예를 들어 '모음집을 열고 Pick으로 고른 뒤 Send to AI를 누르세요', '이어 선택한 항목으로 할 작업을 설명하세요', '번호를 알면 #012와 #045처럼 바로 요청할 수도 있습니다'라고 안내할 수 있습니다.
+5. `<skill-dir>/SKILL.md`를 읽고 사용법을 세 줄로 안내합니다. 예를 들면 다음과 같습니다.
+   - "motion-prompt 모음집을 열어 줘"라고 요청하세요. 갤러리가 열리면 원하는 항목의 "Pick"을 누른 뒤 "Send to AI"를 누르세요.
+   - 이어서 "이 영상의 도입부를 이렇게 편집해 줘"처럼 원하는 작업을 설명하세요.
+   - 번호를 안다면 "#012와 #045를 사용해 줘"처럼 바로 요청할 수도 있습니다.
 
 기존 설정 파일이나 다른 스킬은 변경하지 마세요.
 
 ### 에이전트가 하는 일
 
-- 모음집을 요청하면 브라우저에서 갤러리를 열고, 사용자가 항목을 골라 **Send to AI**를 누를 때까지 최대 15분 기다립니다.
+- 모음집을 요청하면 브라우저에서 갤러리를 열고, 사용자가 항목을 골라 "Send to AI"를 누를 때까지 최대 15분 기다립니다.
 - Canvas, Remotion, CSS, After Effects, 영상 생성 모델용 프롬프트 등 프로젝트의 영상 제작 방식을 확인합니다.
 - 사용자가 선택한 항목이나 지정한 번호를 사용합니다. 선택하지 않았다면 갤러리를 열도록 제안합니다. AI에게 골라 달라고 요청하면 장면에 맞는 항목을 카탈로그에서 검색합니다.
 - 선택한 움직임을 프로젝트에 맞게 구현합니다. 공개된 시간·이징·움직임의 크기는 유지하고, 글자·색·이미지는 사용자의 작업에 맞춥니다.
@@ -220,19 +203,10 @@ flowchart TD
 
 ### 동작 원리
 
-```mermaid
-flowchart LR
-    A["packs의 meta.json과 pack.js"] --> B["tools/build.mjs"]
-    B --> C[언어별 용어 목록]
-    B --> D["api/v1 정적 데이터"]
-    B --> E["assets/catalog.js"]
-    D --> F[스킬 CLI]
-    E --> G[갤러리]
-```
-
-각 요소는 `cells[i](ctx, w, h, u)` 함수 하나입니다. `ctx`는 Canvas 2D 컨텍스트, `w`와 `h`는 카드 크기, `u`는 한 주기 안에서의 시간(초)입니다. 그림은 `u`만으로 결정됩니다. 그릴 때 시계를 읽거나 난수를 만들지 않으므로 실시간 재생과 프레임별 렌더링 결과가 같습니다.
-
-색상·크기·주기·공통 보조 함수는 팩마다 'kit'으로 묶여 있습니다. 각 요소에는 해당 팩의 kit이 필요하며 외부 라이브러리는 사용하지 않습니다.
+- 각 요소는 `cells[i](ctx, w, h, u)` 함수 하나입니다. `ctx`는 Canvas 2D 컨텍스트, `w`와 `h`는 카드 크기, `u`는 한 주기 안에서의 시간(초)입니다.
+- 그림은 `u`만으로 결정됩니다. 그릴 때 시계를 읽거나 난수를 만들지 않으므로 실시간 재생과 프레임별 렌더링 결과가 같습니다.
+- 색상·크기·주기·공통 보조 함수는 팩마다 "kit"으로 묶여 있습니다. 각 요소에는 해당 팩의 kit이 필요합니다.
+- 외부 라이브러리는 사용하지 않습니다.
 
 스킬은 세 파일로 구성됩니다. 사용 지침인 `SKILL.md`, 영상 제작 방식별 적용 안내인 `references/porting.md`, 표준 라이브러리만 사용하는 조회 스크립트 `scripts/motion-prompt.mjs`입니다.
 
@@ -246,7 +220,10 @@ flowchart LR
 | `prompt 12` | 항목의 복사·붙여넣기용 프롬프트를 출력합니다. |
 | `info` | 데이터 출처, 항목 수, 캐시 위치를 보여 줍니다. |
 
-스크립트는 아래 출처의 텍스트 파일을 GET 요청으로 가져옵니다. 프로젝트의 내용을 업로드하지 않습니다. `pick`은 로컬 컴퓨터의 `127.0.0.1`에 임시 수신기를 열어 갤러리에서 **Send to AI**로 보낸 번호와 메모만 받습니다. 먼저 [GitHub Pages API](https://showheyohtaki.github.io/motion-prompt/api/v1/)에 접근하고, 연결되지 않으면 [GitHub 원본 파일](https://raw.githubusercontent.com/showheyohtaki/motion-prompt/main/api/v1/)을 사용합니다.
+스크립트는 아래 출처의 텍스트 파일을 GET 요청으로 가져옵니다. 프로젝트의 내용을 업로드하지 않습니다. `pick`은 로컬 컴퓨터의 `127.0.0.1`에 임시 수신기를 열어 갤러리에서 "Send to AI"로 보낸 번호와 메모만 받습니다.
+
+1. `https://showheyohtaki.github.io/motion-prompt/api/v1/`
+2. 위 출처에 연결되지 않으면: `https://raw.githubusercontent.com/showheyohtaki/motion-prompt/main/api/v1/`
 
 | 파일 | 내용 |
 |---|---|
@@ -274,7 +251,7 @@ cd motion-prompt
 python -m http.server 8000
 ```
 
-[로컬 갤러리](http://localhost:8000/)에서 `index.html`을 볼 수 있습니다. 복제한 저장소에서 `node skills/motion-prompt/scripts/motion-prompt.mjs pick --local`을 실행하면 로컬 갤러리에서 항목을 고를 수 있습니다. 파일 형식은 [FORMAT.md](FORMAT.md)에 설명되어 있습니다.
+`http://localhost:8000/`을 열면 갤러리(`index.html`)를 볼 수 있습니다. 복제한 저장소에서 `node skills/motion-prompt/scripts/motion-prompt.mjs pick --local`을 실행하면 로컬 갤러리에서 항목을 고를 수 있습니다. 파일 형식은 [FORMAT.md](FORMAT.md)에 설명되어 있습니다.
 
 ## 라이선스
 

@@ -611,9 +611,9 @@
     },
     {
       "no": "20", "slug": "zoom-through", "category": "transitions-highlights",
-      "name": { "ja": "ズームスルー", "en": "Zoom through", "zh-Hant": "Zoom Through 穿越轉場", "es": "Zoom through (zoom a través)", "zh-Hans": "穿越缩放", "ko": "Zoom through" },
+      "name": { "ja": "ズームスルー", "en": "Zoom through", "zh-Hant": "Zoom Through 穿越轉場", "es": "Zoom through (zoom a través)", "zh-Hans": "穿越缩放", "ko": "줌 스루(통과형 줌 전환)" },
       "meaning": { "ja": "物の中へ突き抜けて次へ", "en": "Zooms into an object and passes through it into the next scene", "zh-Hant": "鑽進物體裡穿過去，進入下一個場景", "es": "Hace zoom hacia un objeto y lo atraviesa hasta la escena siguiente", "zh-Hans": "放大并穿过物体进入下一场景", "ko": "물체를 향해 확대하다가 그 안을 통과해 다음 장면으로 넘어감" },
-      "ask": { "ja": "ロゴの「O」の穴へズームスルーして、次の場面へ。0.6秒で、加速しながら。", "en": "Zoom through the hole of the \"O\" in the logo into the next scene, 0.6 s, accelerating.", "zh-Hant": "請用 Zoom Through 穿越轉場鑽進 Logo「O」的洞，進入下一個場景，0.6 秒，逐漸加速。", "es": "Haz un zoom through por el hueco de la \"O\" del logo hacia la siguiente escena, en 0,6 s, acelerando.", "zh-Hans": "用穿越缩放加速穿过标志中字母 O 的孔洞，进入下一场景，时长 0.6 s。", "ko": "Zoom through로 로고의 O 안쪽 구멍을 통과해 다음 장면으로 넘어가 줘. 0.6초 동안 점점 빨라지게 해 줘." },
+      "ask": { "ja": "ロゴの「O」の穴へズームスルーして、次の場面へ。0.6秒で、加速しながら。", "en": "Zoom through the hole of the \"O\" in the logo into the next scene, 0.6 s, accelerating.", "zh-Hant": "請用 Zoom Through 穿越轉場鑽進 Logo「O」的洞，進入下一個場景，0.6 秒，逐漸加速。", "es": "Haz un zoom through por el hueco de la \"O\" del logo hacia la siguiente escena, en 0,6 s, acelerando.", "zh-Hans": "用穿越缩放加速穿过标志中字母 O 的孔洞，进入下一场景，时长 0.6 s。", "ko": "줌 스루로 로고의 O 안쪽 구멍을 통과해 다음 장면으로 넘어가 줘. 0.6초 동안 점점 빨라지게 해 줘." },
       "summary": {
         "ja": "文字の「O」の穴へ突っ込んで、その先の画面へ抜ける。",
         "en": "The camera pushes into the hole of a letter O and comes out in the next scene."
@@ -737,9 +737,9 @@
     },
     {
       "no": "24", "slug": "impact-shake", "category": "transitions-highlights",
-      "name": { "ja": "インパクトシェイク", "en": "Impact shake", "zh-Hant": "畫面震動", "es": "Sacudida de impacto (impact shake)", "zh-Hans": "冲击震动", "ko": "충격 흔들림" },
+      "name": { "ja": "インパクトシェイク", "en": "Impact shake", "zh-Hant": "畫面震動", "es": "Sacudida de impacto (impact shake)", "zh-Hans": "冲击震动", "ko": "카메라 쉐이크(충격 효과)" },
       "meaning": { "ja": "着地の衝撃で画面が揺れる", "en": "The whole frame shakes when something lands", "zh-Hant": "落地的衝擊讓整個畫面震動", "es": "Todo el cuadro tiembla cuando algo cae", "zh-Hans": "物体落下时带动整个画面震动", "ko": "요소가 착지하는 순간 화면 전체가 흔들림" },
-      "ask": { "ja": "見出しがドンと落ちた瞬間に、インパクトシェイクを入れて。0.4秒で収まる程度に。", "en": "Add an impact shake when the headline lands; it should settle within 0.4 s.", "zh-Hant": "標題砰地落下的瞬間，請加上畫面震動，0.4 秒內要平息。", "es": "Agrega una sacudida de impacto cuando cae el titular; que se calme en 0,4 s.", "zh-Hans": "标题落地时添加冲击震动，在 0.4 s 内停稳。", "ko": "헤드라인이 착지할 때 화면에 충격 흔들림을 넣어 줘. 0.4초 안에 가라앉게 해 줘." },
+      "ask": { "ja": "見出しがドンと落ちた瞬間に、インパクトシェイクを入れて。0.4秒で収まる程度に。", "en": "Add an impact shake when the headline lands; it should settle within 0.4 s.", "zh-Hant": "標題砰地落下的瞬間，請加上畫面震動，0.4 秒內要平息。", "es": "Agrega una sacudida de impacto cuando cae el titular; que se calme en 0,4 s.", "zh-Hans": "标题落地时添加冲击震动，在 0.4 s 内停稳。", "ko": "헤드라인이 착지할 때 화면에 카메라 쉐이크을 넣어 줘. 0.4초 안에 가라앉게 해 줘." },
       "summary": {
         "ja": "重い見出しの板がドンと落ち、その衝撃で画面ごと揺れる。",
         "en": "A heavy headline slab drops with a thud and the whole frame shakes from the impact."

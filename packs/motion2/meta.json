@@ -10,9 +10,9 @@
   "elements": [
     {
       "no": "01", "slug": "anticipation", "category": "techniques",
-      "name": { "ja": "アンティシペーション", "en": "Anticipation", "es": "Anticipación (anticipation)", "zh-Hans": "预备动作", "zh-Hant": "預備動作", "ko": "앤티시페이션(예비 동작)" },
+      "name": { "ja": "アンティシペーション", "en": "Anticipation", "es": "Anticipación (anticipation)", "zh-Hans": "预备动作", "zh-Hant": "預備動作", "ko": "예비 동작" },
       "meaning": { "ja": "動く前に逆へ少し溜める", "en": "Pulls back briefly before moving forward", "es": "Se echa un poco hacia atrás antes de avanzar", "zh-Hans": "运动前先向反方向稍稍蓄力", "zh-Hant": "移動前先往反方向稍微蓄力", "ko": "본동작 전에 잠깐 반대 방향으로 움직임" },
-      "ask": { "ja": "ボタンが右へ飛び出す前にアンティシペーションを入れて。0.3秒かけて逆へ少し引き、つぶれてから出す。", "en": "Add anticipation before the button shoots off to the right: pull back slightly for 0.3 s, squash, then go.", "es": "Agrega anticipación antes de que el botón salga disparado a la derecha: que retroceda un poco durante 0,3 s, se aplaste y luego arranque.", "zh-Hans": "按钮向右飞出前加上预备动作：先用 0.3 s 向反方向稍稍后拉并压扁，再飞出去。", "zh-Hant": "按鈕往右飛出去之前，請加上預備動作：花 0.3 秒往反方向稍微拉回、壓扁，再衝出去。", "ko": "버튼이 오른쪽으로 날아가기 전에 앤티시페이션을 넣어 줘. 0.3초 동안 살짝 뒤로 당기고 눌렀다가 출발하게 해 줘." },
+      "ask": { "ja": "ボタンが右へ飛び出す前にアンティシペーションを入れて。0.3秒かけて逆へ少し引き、つぶれてから出す。", "en": "Add anticipation before the button shoots off to the right: pull back slightly for 0.3 s, squash, then go.", "es": "Agrega anticipación antes de que el botón salga disparado a la derecha: que retroceda un poco durante 0,3 s, se aplaste y luego arranque.", "zh-Hans": "按钮向右飞出前加上预备动作：先用 0.3 s 向反方向稍稍后拉并压扁，再飞出去。", "zh-Hant": "按鈕往右飛出去之前，請加上預備動作：花 0.3 秒往反方向稍微拉回、壓扁，再衝出去。", "ko": "버튼이 오른쪽으로 날아가기 전에 예비 동작을 넣어 줘. 0.3초 동안 살짝 뒤로 당기고 눌렀다가 출발하게 해 줘." },
       "summary": {
         "ja": "四角いキャラクターが進む向きと逆へ少し引き、つぶれて溜めてから勢いよく飛び出す。",
         "en": "A square character pulls back against its direction of travel, squashes to wind up, then shoots forward."
@@ -41,9 +41,9 @@
     },
     {
       "no": "02", "slug": "follow-through", "category": "techniques",
-      "name": { "ja": "フォロースルー", "en": "Follow-through", "es": "Follow-through (acción continuada)", "zh-Hans": "跟随动作", "zh-Hant": "跟隨動作", "ko": "팔로 스루(후속 동작)" },
+      "name": { "ja": "フォロースルー", "en": "Follow-through", "es": "Follow-through (acción continuada)", "zh-Hans": "跟随动作", "zh-Hant": "跟隨動作", "ko": "팔로우 스루(후속 동작)" },
       "meaning": { "ja": "止まった後も一部が遅れて揺れる", "en": "Parts keep swinging after the body stops", "es": "Algunas partes siguen balanceándose cuando el cuerpo ya se detuvo", "zh-Hans": "主体停下后，局部仍延迟摆动", "zh-Hant": "主體停下後，部分仍慢一拍擺動", "ko": "몸체가 멈춘 뒤에도 일부가 계속 흔들림" },
-      "ask": { "ja": "キャラが止まったあと、髪と旗にフォロースルーを入れて。0.5秒くらい遅れて揺れて収まるように。", "en": "Give the hair and the flag follow-through after the character stops: they keep swinging for about 0.5 s, then settle.", "es": "Ponle follow-through al pelo y a la bandera cuando el personaje se detiene: que sigan balanceándose unos 0,5 s y luego se acomoden.", "zh-Hans": "角色停下后，给头发和旗子加上跟随动作：延迟约 0.5 s 继续摆动，然后停稳。", "zh-Hant": "角色停下來之後，請讓頭髮和旗子加上跟隨動作，晚約 0.5 秒擺動，然後慢慢靜止。", "ko": "캐릭터가 멈춘 뒤 머리카락과 깃발에 팔로 스루를 넣어 줘. 약 0.5초 더 흔들린 뒤 멈추게 해 줘." },
+      "ask": { "ja": "キャラが止まったあと、髪と旗にフォロースルーを入れて。0.5秒くらい遅れて揺れて収まるように。", "en": "Give the hair and the flag follow-through after the character stops: they keep swinging for about 0.5 s, then settle.", "es": "Ponle follow-through al pelo y a la bandera cuando el personaje se detiene: que sigan balanceándose unos 0,5 s y luego se acomoden.", "zh-Hans": "角色停下后，给头发和旗子加上跟随动作：延迟约 0.5 s 继续摆动，然后停稳。", "zh-Hant": "角色停下來之後，請讓頭髮和旗子加上跟隨動作，晚約 0.5 秒擺動，然後慢慢靜止。", "ko": "캐릭터가 멈춘 뒤 머리카락과 깃발에 팔로우 스루를 넣어 줘. 약 0.5초 더 흔들린 뒤 멈추게 해 줘." },
       "summary": {
         "ja": "滑ってきた丸いキャラクターが急に止まり、頭の旗としっぽだけが遅れて揺れて収まる。",
         "en": "A round character slides in and stops suddenly; only the flag on its head and its tail keep swinging, then settle."
@@ -459,9 +459,9 @@
     },
     {
       "no": "16", "slug": "line-boil", "category": "text-shapes",
-      "name": { "ja": "ラインボイル", "en": "Line boil", "es": "Line boil (línea temblorosa)", "zh-Hans": "线条抖动", "zh-Hant": "Line Boil 線條抖動", "ko": "Line boil" },
+      "name": { "ja": "ラインボイル", "en": "Line boil", "es": "Line boil (línea temblorosa)", "zh-Hans": "线条抖动", "zh-Hant": "Line Boil 線條抖動", "ko": "라인 보일(손그림 선 떨림)" },
       "meaning": { "ja": "手描きの線が小刻みに揺らぐ", "en": "Hand-drawn lines wobble frame to frame", "es": "Las líneas dibujadas a mano tiemblan de un cuadro a otro", "zh-Hans": "手绘线条逐帧轻微抖动", "zh-Hant": "手繪線條每幾格就微微晃動", "ko": "손으로 그린 선이 프레임마다 조금씩 흔들림" },
-      "ask": { "ja": "手描きのイラストにラインボイルを付けて。1秒10コマで、線を2〜3pxだけ揺らして。", "en": "Add line boil to the hand-drawn illustration: 10 frames per second, with the lines shifting only 2–3 px.", "es": "Agrega line boil a la ilustración dibujada a mano: 10 cuadros por segundo, con las líneas moviéndose solo 2–3 px.", "zh-Hans": "给手绘插画加上线条抖动：每秒 10 帧，线条只偏移 2–3 px。", "zh-Hant": "請幫手繪插畫加上 Line Boil 線條抖動：每秒 10 格，線條只晃動 2–3 px。", "ko": "손그림 일러스트에 Line boil을 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘." },
+      "ask": { "ja": "手描きのイラストにラインボイルを付けて。1秒10コマで、線を2〜3pxだけ揺らして。", "en": "Add line boil to the hand-drawn illustration: 10 frames per second, with the lines shifting only 2–3 px.", "es": "Agrega line boil a la ilustración dibujada a mano: 10 cuadros por segundo, con las líneas moviéndose solo 2–3 px.", "zh-Hans": "给手绘插画加上线条抖动：每秒 10 帧，线条只偏移 2–3 px。", "zh-Hant": "請幫手繪插畫加上 Line Boil 線條抖動：每秒 10 格，線條只晃動 2–3 px。", "ko": "손그림 일러스트에 라인 보일을 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘." },
       "summary": {
         "ja": "手描き風の線の絵が、数コマごとに小刻みに揺らぐ。絵そのものは動かない。",
         "en": "A hand-drawn line picture wobbles every few frames while the picture itself stays still."

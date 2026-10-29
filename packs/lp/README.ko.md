@@ -23,10 +23,10 @@
 
 | 번호 | 이름 | 영어 원어 | 뜻 | AI 요청 예시 |
 |---|---|---|---|---|
-| [#081](https://showheyohtaki.github.io/motion-prompt/#081) | **호버 리프트** | Hover lift | 포인터를 올리면 요소가 올라오고 그림자가 짙어짐 | 카드에 호버 리프트를 넣어 줘. 0.3초 동안 8px 올라오면서 그림자가 짙어지게 해 줘. |
+| [#081](https://showheyohtaki.github.io/motion-prompt/#081) | **호버 시 떠오르기** | Hover lift | 포인터를 올리면 요소가 올라오고 그림자가 짙어짐 | 카드에 호버 시 떠오르기 효과를 넣어 줘. 0.3초 동안 8px 올라오면서 그림자가 짙어지게 해 줘. |
 | [#082](https://showheyohtaki.github.io/motion-prompt/#082) | **호버 이미지 확대** | Image zoom on hover | 고정된 틀 안에서 사진만 커짐 | 작업물 사진에 호버 이미지 확대를 넣어 줘. 틀은 고정하고 사진만 0.5초 동안 1.1배로 키워 줘. |
 | [#083](https://showheyohtaki.github.io/motion-prompt/#083) | **커서 팔로워** | Cursor follower | 도형이 약간 늦게 마우스 포인터를 따라감 | 사이트 전체에 커서 팔로워를 넣어 줘. 30px짜리 주황색 원이 포인터를 살짝 늦게 따라가게 해 줘. |
-| [#084](https://showheyohtaki.github.io/motion-prompt/#084) | **마그네틱 버튼** | Magnetic button | 가까이 온 커서 쪽으로 버튼이 끌려감 | 문의 버튼을 마그네틱 버튼으로 만들어 줘. 커서 쪽으로 거리의 0.3배만큼 움직이고, 벗어나면 탄력 있게 돌아오게 해 줘. |
+| [#084](https://showheyohtaki.github.io/motion-prompt/#084) | **마그네틱 버튼(자석 효과)** | Magnetic button | 가까이 온 커서 쪽으로 버튼이 끌려감 | 문의 버튼을 마그네틱 버튼으로 만들어 줘. 커서 쪽으로 거리의 0.3배만큼 움직이고, 벗어나면 탄력 있게 돌아오게 해 줘. |
 | [#085](https://showheyohtaki.github.io/motion-prompt/#085) | **리플 효과** | Ripple effect | 누른 지점에서 물결이 퍼짐 | 제출 버튼에 리플 효과를 넣어 줘. 클릭 지점에서 흰 원이 퍼지며 0.6초 동안 사라지게 해 줘. |
 | [#086](https://showheyohtaki.github.io/motion-prompt/#086) | **밑줄 애니메이션** | Underline animation | 포인터를 올리면 링크 밑줄이 왼쪽부터 길어짐 | 메뉴 링크에 밑줄 애니메이션을 넣어 줘. 포인터를 올리면 왼쪽부터 0.3초 동안 나타나고, 벗어나면 오른쪽으로 사라지게 해 줘. |
 | [#087](https://showheyohtaki.github.io/motion-prompt/#087) | **전후 비교 슬라이더** | Before/after slider | 구분선을 끌어 변경 전과 후를 비교함 | 작업 사진을 전후 비교 슬라이더로 보여 줘. 가운데 선을 끌어 왼쪽의 변경 전과 오른쪽의 변경 후를 비교하게 해 줘. |

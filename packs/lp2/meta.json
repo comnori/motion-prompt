@@ -279,9 +279,9 @@
     },
     {
       "no": "10", "slug": "spotlight-hover", "category": "mouse-input",
-      "name": { "ja": "スポットライトホバー", "en": "Spotlight hover", "es": "Spotlight hover (foco al pasar el cursor)", "zh-Hans": "聚光灯悬停", "zh-Hant": "Hover 聚光燈效果", "ko": "스포트라이트 호버" },
+      "name": { "ja": "スポットライトホバー", "en": "Spotlight hover", "es": "Spotlight hover (foco al pasar el cursor)", "zh-Hans": "聚光灯悬停", "zh-Hant": "Hover 聚光燈效果", "ko": "커서 스포트라이트" },
       "meaning": { "ja": "カーソルの周りだけ明るくなる", "en": "Only the area around the cursor lights up", "es": "Solo se ilumina la zona alrededor del cursor", "zh-Hans": "只有光标周围变亮", "zh-Hant": "只有游標周圍會變亮", "ko": "커서 주변만 조명을 비춘 듯 밝아짐" },
-      "ask": { "ja": "特長のカードにスポットライトホバーを付けて。暗いカードの上で、カーソルの周り半径120pxくらいだけ明るくして、縁も光らせて。", "en": "Add a spotlight hover to the feature cards: on the dark cards, light up only a circle of about 120 px around the cursor and make the borders glow too.", "es": "Agrega un spotlight hover a las tarjetas de características: sobre las tarjetas oscuras, ilumina solo un círculo de unos 120 px de radio alrededor del cursor y haz que los bordes también brillen.", "zh-Hans": "给特色卡片加上聚光灯悬停：在深色卡片上只照亮光标周围半径约 120 px 的范围，边框也一起发光。", "zh-Hant": "特色卡片加上 Hover 聚光燈效果：在深色卡片上，只照亮游標周圍半徑約 120 px 的範圍，卡片邊框也要發光。", "ko": "기능 카드에 스포트라이트 호버를 넣어 줘. 어두운 카드에서 커서 주변 약 120px의 원형 영역만 밝히고 테두리도 빛나게 해 줘." },
+      "ask": { "ja": "特長のカードにスポットライトホバーを付けて。暗いカードの上で、カーソルの周り半径120pxくらいだけ明るくして、縁も光らせて。", "en": "Add a spotlight hover to the feature cards: on the dark cards, light up only a circle of about 120 px around the cursor and make the borders glow too.", "es": "Agrega un spotlight hover a las tarjetas de características: sobre las tarjetas oscuras, ilumina solo un círculo de unos 120 px de radio alrededor del cursor y haz que los bordes también brillen.", "zh-Hans": "给特色卡片加上聚光灯悬停：在深色卡片上只照亮光标周围半径约 120 px 的范围，边框也一起发光。", "zh-Hant": "特色卡片加上 Hover 聚光燈效果：在深色卡片上，只照亮游標周圍半徑約 120 px 的範圍，卡片邊框也要發光。", "ko": "기능 카드에 커서 스포트라이트를 넣어 줘. 어두운 카드에서 커서 주변 약 120px의 원형 영역만 밝히고 테두리도 빛나게 해 줘." },
       "summary": {
         "ja": "暗いカードの上をカーソルが動くと、カーソルの周りだけが丸く明るく照らされ、近くのカードの縁も光る。",
         "en": "As the cursor moves over the dark cards, only a circle around it is lit, and the edges of nearby cards glow."
@@ -339,9 +339,9 @@
     },
     {
       "no": "12", "slug": "text-roll-on-hover", "category": "mouse-input",
-      "name": { "ja": "テキストロール", "en": "Text roll on hover", "es": "Text roll (texto que rueda)", "zh-Hans": "悬停文字翻滚", "zh-Hant": "Hover 文字翻滾", "ko": "호버 텍스트 롤" },
+      "name": { "ja": "テキストロール", "en": "Text roll on hover", "es": "Text roll (texto que rueda)", "zh-Hans": "悬停文字翻滚", "zh-Hant": "Hover 文字翻滾", "ko": "호버 텍스트 롤링" },
       "meaning": { "ja": "文字が上に回って入れ替わる", "en": "Letters roll up and swap on hover", "es": "Las letras ruedan hacia arriba y se reemplazan al pasar el cursor", "zh-Hans": "文字向上翻转并替换", "zh-Hant": "滑鼠移上去時，文字往上翻滾替換", "ko": "포인터를 올리면 글자가 위로 말려 올라가며 바뀜" },
-      "ask": { "ja": "グローバルメニューにテキストロールを付けて。カーソルを乗せたら文字が1文字ずつ0.035秒ずらして上へ回り、朱色の同じ文字が下から出るように。", "en": "Give the main menu a text roll on hover: the letters roll up one by one, 0.035 s apart, revealing the same word in orange from below.", "es": "Ponle un text roll al pasar el cursor al menú principal: que las letras rueden hacia arriba una por una, con 0,035 s de diferencia, y aparezca desde abajo la misma palabra en naranja.", "zh-Hans": "给主导航加上悬停文字翻滚：光标悬停时文字逐字向上翻出，每字间隔 0.035 s，同样的朱红色文字从下方翻入。", "zh-Hant": "主選單加上 Hover 文字翻滾：游標移上去時，文字一個字一個字往上翻出，每個字錯開 0.035 秒，同時橘紅色的同一組字從下方翻上來。", "ko": "주 메뉴에 호버 텍스트 롤을 넣어 줘. 글자를 0.035초 간격으로 하나씩 올리고, 아래에서 같은 단어가 주황색으로 나타나게 해 줘." },
+      "ask": { "ja": "グローバルメニューにテキストロールを付けて。カーソルを乗せたら文字が1文字ずつ0.035秒ずらして上へ回り、朱色の同じ文字が下から出るように。", "en": "Give the main menu a text roll on hover: the letters roll up one by one, 0.035 s apart, revealing the same word in orange from below.", "es": "Ponle un text roll al pasar el cursor al menú principal: que las letras rueden hacia arriba una por una, con 0,035 s de diferencia, y aparezca desde abajo la misma palabra en naranja.", "zh-Hans": "给主导航加上悬停文字翻滚：光标悬停时文字逐字向上翻出，每字间隔 0.035 s，同样的朱红色文字从下方翻入。", "zh-Hant": "主選單加上 Hover 文字翻滾：游標移上去時，文字一個字一個字往上翻出，每個字錯開 0.035 秒，同時橘紅色的同一組字從下方翻上來。", "ko": "주 메뉴에 호버 텍스트 롤링을 넣어 줘. 글자를 0.035초 간격으로 하나씩 올리고, 아래에서 같은 단어가 주황색으로 나타나게 해 줘." },
       "summary": {
         "ja": "メニューの文字にカーソルを乗せると、文字が1文字ずつ上へ回って消え、同じ文字が朱色で下から出てくる。離れると元に戻る。",
         "en": "With the cursor on a menu word, its letters roll up and out one by one while the same word rolls in from below in orange; it rolls back when the cursor leaves."
@@ -368,9 +368,9 @@
     },
     {
       "no": "13", "slug": "hover-image-reveal", "category": "mouse-input",
-      "name": { "ja": "ホバーで画像プレビュー", "en": "Hover image reveal", "es": "Hover image reveal (imagen que aparece al pasar el cursor)", "zh-Hans": "悬停图片预览", "zh-Hant": "Hover 圖片預覽", "ko": "호버 이미지 리빌" },
+      "name": { "ja": "ホバーで画像プレビュー", "en": "Hover image reveal", "es": "Hover image reveal (imagen que aparece al pasar el cursor)", "zh-Hans": "悬停图片预览", "zh-Hant": "Hover 圖片預覽", "ko": "호버 이미지 표시" },
       "meaning": { "ja": "リストに乗せると写真が出る", "en": "Hovering a list item shows its photo", "es": "Al pasar el cursor por un elemento de la lista aparece su foto", "zh-Hans": "悬停列表项时显示对应照片", "zh-Hant": "滑鼠移到列表項目上就顯示照片", "ko": "목록 항목에 포인터를 올리면 사진이 나타남" },
-      "ask": { "ja": "施設一覧をホバーで画像プレビューにして。行にカーソルを乗せたら、その写真をカーソルの横に0.25秒で出して、カーソルについて動かして。", "en": "Turn the property list into a hover image reveal: when the cursor is on a row, show its photo beside the cursor over 0.25 s and let it follow the cursor.", "es": "Convierte la lista de propiedades en un hover image reveal: cuando el cursor esté sobre una fila, muestra su foto junto al cursor en 0,25 s y que lo siga.", "zh-Hans": "把设施列表做成悬停图片预览：光标停在某行时，用 0.25 s 在光标旁显示该行照片，并跟随光标移动。", "zh-Hant": "設施列表做成 Hover 圖片預覽：游標移到某一列時，在 0.25 秒內於游標旁邊顯示那一列的照片，並跟著游標移動。", "ko": "매물 목록에 호버 이미지 리빌을 넣어 줘. 행에 포인터를 올리면 사진이 커서 옆에 0.25초 동안 나타나고 커서를 따라가게 해 줘." },
+      "ask": { "ja": "施設一覧をホバーで画像プレビューにして。行にカーソルを乗せたら、その写真をカーソルの横に0.25秒で出して、カーソルについて動かして。", "en": "Turn the property list into a hover image reveal: when the cursor is on a row, show its photo beside the cursor over 0.25 s and let it follow the cursor.", "es": "Convierte la lista de propiedades en un hover image reveal: cuando el cursor esté sobre una fila, muestra su foto junto al cursor en 0,25 s y que lo siga.", "zh-Hans": "把设施列表做成悬停图片预览：光标停在某行时，用 0.25 s 在光标旁显示该行照片，并跟随光标移动。", "zh-Hant": "設施列表做成 Hover 圖片預覽：游標移到某一列時，在 0.25 秒內於游標旁邊顯示那一列的照片，並跟著游標移動。", "ko": "매물 목록에 호버 이미지 표시 효과를 넣어 줘. 행에 포인터를 올리면 사진이 커서 옆에 0.25초 동안 나타나고 커서를 따라가게 해 줘." },
       "summary": {
         "ja": "文字だけのリストの行にカーソルを乗せると、その行の写真がカーソルの横にふわっと出て、カーソルについて動く。",
         "en": "With the cursor on a row of a text-only list, that row's photo fades in beside the cursor and follows it."
@@ -606,9 +606,9 @@
     },
     {
       "no": "21", "slug": "animated-shape-divider", "category": "showcase",
-      "name": { "ja": "シェイプディバイダー", "en": "Animated shape divider", "es": "Divisor de forma animado (shape divider)", "zh-Hans": "动态形状分隔线", "zh-Hant": "形狀分隔線", "ko": "움직이는 도형 구분선" },
+      "name": { "ja": "シェイプディバイダー", "en": "Animated shape divider", "es": "Divisor de forma animado (shape divider)", "zh-Hans": "动态形状分隔线", "zh-Hant": "形狀分隔線", "ko": "애니메이션 섹션 구분선" },
       "meaning": { "ja": "区切りの波形がゆれ続ける", "en": "A wavy section divider that keeps moving", "es": "Un divisor ondulado entre secciones que no deja de moverse", "zh-Hans": "持续摆动的波浪形区块分隔线", "zh-Hant": "區塊交界的波浪不斷擺動", "ko": "물결 모양의 섹션 경계가 계속 움직임" },
-      "ask": { "ja": "ファーストビューと次のセクションの境目にシェイプディバイダーを入れて。白い波を2枚重ねて、ゆっくり逆向きに揺らし続けて。", "en": "Add an animated shape divider between the hero and the next section: two white wave layers drifting slowly in opposite directions.", "es": "Agrega un divisor de forma animado entre el hero y la sección siguiente: dos capas de olas blancas que se desplazan despacio en direcciones opuestas.", "zh-Hans": "在首屏与下一节之间加入动态形状分隔线：叠放两层白色波浪，缓慢地反向持续摆动。", "zh-Hant": "Hero 區塊和下一個區塊的交界加上形狀分隔線：疊兩層白色波浪，持續朝相反方向慢慢擺動。", "ko": "히어로와 다음 섹션 사이에 움직이는 도형 구분선을 넣어 줘. 흰 물결 레이어 두 개가 서로 반대 방향으로 천천히 흐르게 해 줘." },
+      "ask": { "ja": "ファーストビューと次のセクションの境目にシェイプディバイダーを入れて。白い波を2枚重ねて、ゆっくり逆向きに揺らし続けて。", "en": "Add an animated shape divider between the hero and the next section: two white wave layers drifting slowly in opposite directions.", "es": "Agrega un divisor de forma animado entre el hero y la sección siguiente: dos capas de olas blancas que se desplazan despacio en direcciones opuestas.", "zh-Hans": "在首屏与下一节之间加入动态形状分隔线：叠放两层白色波浪，缓慢地反向持续摆动。", "zh-Hant": "Hero 區塊和下一個區塊的交界加上形狀分隔線：疊兩層白色波浪，持續朝相反方向慢慢擺動。", "ko": "히어로와 다음 섹션 사이에 애니메이션 섹션 구분선을 넣어 줘. 흰 물결 레이어 두 개가 서로 반대 방향으로 천천히 흐르게 해 줘." },
       "summary": {
         "ja": "青いセクションと白いセクションの境目にある波の形が、2枚重なってゆっくりゆれ続ける。",
         "en": "Where a blue section meets a white one, two layered wave shapes keep swaying slowly."

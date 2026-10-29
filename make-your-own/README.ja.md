@@ -9,12 +9,14 @@
 | | カメラワーク（`examples/camera-moves/`） | モーショングラフィックス（`examples/motion-graphics/`） |
 |---|---|---|
 | 見た目 | 薄いグレーに青1色、ピクトグラム風 | 濃紺のカードに4色 |
-| 言語 | 英語、日本語 | 日本語 |
+| 言語 | 英語、日本語、韓国語 | 日本語、韓国語 |
 | | ![カメラワーク 01–08](../assets/preview-camera.gif) | ![モーショングラフィックス 01–08](../assets/preview-motion.gif) |
 
 同梱の動画と早見表は投稿した物なので、表記は投稿時のままです（例: 10 手持ち風）。[`packs/`](../packs/README.md) の名前の一覧では「手持ち」にしています。
 
 2つの見本は、わざと見た目を変えてあります。1つのスタイルを配るためのひな形ではありません。共通しているのは「名前が主役で、カードはその名前の意味を見せる」という決まりだけです。
+
+韓国語版の動画6本、編集できるHTML、確認用のフレーム一覧は [`examples/camera-moves/ko/`](examples/camera-moves/ko/) と [`examples/motion-graphics/ko/`](examples/motion-graphics/ko/) にあります。動画へのリンクは [韓国語のガイド](README.ko.md) にまとめています。
 
 ## 入っているもの
 
@@ -24,8 +26,10 @@ render.mjs                  HTML → mp4（Playwright + ffmpeg）
 examples/camera-moves/
   en/  index.html  video-1of3.mp4  video-2of3.mp4  video-3of3.mp4  cheatsheet.png
   ja/  index.html  video-1of3.mp4  video-2of3.mp4  video-3of3.mp4  cheatsheet.png
+  ko/  index.html  video-{1,2,3}of3.mp4  video-{1,2,3}of3-sheet.png  preview.png
 examples/motion-graphics/
   ja/  index.html  video-1of3.mp4  video-2of3.mp4  video-3of3.mp4  cheatsheet.png  cheatsheet-prompt.md
+  ko/  index.html  video-{1,2,3}of3.mp4  video-{1,2,3}of3-sheet.png  preview.png
 ```
 
 | | |

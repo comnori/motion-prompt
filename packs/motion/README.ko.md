@@ -41,11 +41,11 @@
 | [#017](https://showheyohtaki.github.io/motion-prompt/#017) | **마스크 전환** | Mask transition | 커지는 도형 안으로 다음 장면이 나타남 | 마스크 전환으로 다음 장면을 보여 줘. 중앙에서 원이 0.7초 동안 커지게 해 줘. |
 | [#018](https://showheyohtaki.github.io/motion-prompt/#018) | **도형 전환** | Shape transition | 도형이 화면을 덮었다가 걷히며 다음 장면을 드러냄 | 도형 전환으로 장면을 바꿔 줘. 대각선 색 띠 네 개가 왼쪽에서 쓸고 들어오게 해 줘. |
 | [#019](https://showheyohtaki.github.io/motion-prompt/#019) | **리퀴드 전환** | Liquid transition | 액체가 흘러들며 장면을 바꿈 | 여기에 리퀴드 전환을 넣어 줘. 파란 잉크가 위에서 흘러내려 화면을 채우게 해 줘. |
-| [#020](https://showheyohtaki.github.io/motion-prompt/#020) | **Zoom through** | Zoom through | 물체를 향해 확대하다가 그 안을 통과해 다음 장면으로 넘어감 | Zoom through로 로고의 O 안쪽 구멍을 통과해 다음 장면으로 넘어가 줘. 0.6초 동안 점점 빨라지게 해 줘. |
+| [#020](https://showheyohtaki.github.io/motion-prompt/#020) | **줌 스루(통과형 줌 전환)** | Zoom through | 물체를 향해 확대하다가 그 안을 통과해 다음 장면으로 넘어감 | 줌 스루로 로고의 O 안쪽 구멍을 통과해 다음 장면으로 넘어가 줘. 0.6초 동안 점점 빨라지게 해 줘. |
 | [#021](https://showheyohtaki.github.io/motion-prompt/#021) | **플립** | Flip | 카드처럼 뒤집혀 반대쪽 면을 보여 줌 | 가격 카드를 0.5초 동안 플립해서 뒷면의 상세 내용을 보여 줘. |
 | [#022](https://showheyohtaki.github.io/motion-prompt/#022) | **라이트 스윕** | Light sweep | 빛의 띠가 표면을 가로질러 지나감 | 로고가 멈춘 뒤 왼쪽 위에서 오른쪽 아래로 은은한 라이트 스윕을 한 번 넣어 줘. |
 | [#023](https://showheyohtaki.github.io/motion-prompt/#023) | **글리치** | Glitch | 오작동하듯 화면이 깨지거나 어긋남 | 제목에 0.3초짜리 짧은 글리치를 넣어 줘. 색 분리는 약하게 하고 번쩍임은 없게 해 줘. |
-| [#024](https://showheyohtaki.github.io/motion-prompt/#024) | **충격 흔들림** | Impact shake | 요소가 착지하는 순간 화면 전체가 흔들림 | 헤드라인이 착지할 때 화면에 충격 흔들림을 넣어 줘. 0.4초 안에 가라앉게 해 줘. |
+| [#024](https://showheyohtaki.github.io/motion-prompt/#024) | **카메라 쉐이크(충격 효과)** | Impact shake | 요소가 착지하는 순간 화면 전체가 흔들림 | 헤드라인이 착지할 때 화면에 카메라 쉐이크을 넣어 줘. 0.4초 안에 가라앉게 해 줘. |
 
 번호를 누르면 갤러리의 움직이는 예제가 열립니다. 각 항목의 시간·이징 값·참고 코드는 영어 문서에서 확인할 수 있습니다: `api/v1/en/e/<id>.txt` ([#001](../../api/v1/en/e/001.txt)).
 

@@ -26,7 +26,7 @@
 | [#057](https://showheyohtaki.github.io/motion-prompt/#057) | **탭** | Tabs | 레이블을 누르면 표시하는 패널이 바뀜 | 가격 안내 페이지 위에 탭 세 개를 넣어 줘. 클릭하면 밑줄은 0.25초 동안 이동하고 내용은 0.2초 동안 크로스페이드되게 해 줘. |
 | [#058](https://showheyohtaki.github.io/motion-prompt/#058) | **캐러셀** | Carousel | 옆으로 넘기며 항목을 하나씩 보여 줌 | 상단 이미지를 캐러셀로 만들어 줘. 오른쪽 화살표를 누르면 0.4초 동안 한 장씩 이동하고, 아래에 위치 표시 점을 넣어 줘. |
 | [#059](https://showheyohtaki.github.io/motion-prompt/#059) | **토글 스위치** | Toggle switch | 설정을 켜거나 끔 | 각 알림 설정에 토글 스위치를 넣어 줘. 손잡이는 0.2초 동안 이동하고, 켜지면 트랙이 파란색이 되게 해 줘. |
-| [#060](https://showheyohtaki.github.io/motion-prompt/#060) | **세그먼트 컨트롤** | Segmented control | 이어 붙인 버튼들로 보기를 전환함 | 차트 위에 일 / 주 / 월 세그먼트 컨트롤을 넣어 줘. 선택 배경이 0.25초 동안 이동하고 차트도 함께 바뀌게 해 줘. |
+| [#060](https://showheyohtaki.github.io/motion-prompt/#060) | **세그먼티드 컨트롤** | Segmented control | 이어 붙인 버튼들로 보기를 전환함 | 차트 위에 일 / 주 / 월 세그먼티드 컨트롤을 넣어 줘. 선택 배경이 0.25초 동안 이동하고 차트도 함께 바뀌게 해 줘. |
 | [#061](https://showheyohtaki.github.io/motion-prompt/#061) | **필터 칩** | Filter chips | 작은 알약 모양 버튼으로 필터를 켜거나 끔 | 목록 위에 필터 칩을 넣어 줘. 클릭한 칩은 체크 표시와 함께 파란색이 되고, 0.15초 안에 목록을 필터링해 줘. |
 | [#062](https://showheyohtaki.github.io/motion-prompt/#062) | **범위 슬라이더** | Range slider | 하나의 트랙에서 두 손잡이로 최솟값과 최댓값을 선택함 | 가격 필터를 손잡이 두 개가 있는 범위 슬라이더로 만들어 줘. 끄는 동안 각 값을 말풍선으로 보여 줘. |
 | [#063](https://showheyohtaki.github.io/motion-prompt/#063) | **스테퍼(+/−)** | Stepper (+/−) | 더하기와 빼기 버튼으로 숫자를 하나씩 조절함 | 수량 입력란을 스테퍼로 만들어 줘. +와 −로 하나씩 바꾸고, 누를 때마다 숫자가 0.25초 동안 살짝 튀게 해 줘. |

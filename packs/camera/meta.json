@@ -32,9 +32,9 @@
       "tags": ["tilt", "tilt up", "pitch", "vertical", "look up", "camera move"] },
 
     { "no": "03", "slug": "dolly-in", "category": "camera-movement",
-      "name": { "ja": "ドリーイン", "en": "Dolly in", "zh-Hant": "Dolly in", "es": "Dolly in", "zh-Hans": "推镜头", "ko": "달리 인" },
+      "name": { "ja": "ドリーイン", "en": "Dolly in", "zh-Hant": "Dolly in", "es": "Dolly in", "zh-Hans": "推镜头", "ko": "돌리 인" },
       "meaning": { "ja": "カメラごと被写体に近づく", "en": "Move the camera toward the subject", "zh-Hant": "攝影機本身朝被攝體前進", "es": "Acercar la cámara al sujeto", "zh-Hans": "相机整体向主体靠近", "ko": "카메라가 피사체 쪽으로 이동함" },
-      "ask": { "ja": "人物の顔へゆっくりドリーイン。ズームではなく、カメラごと近づく。", "en": "Slow dolly in toward her face; move the camera, do not zoom.", "zh-Hant": "用 Dolly in 讓攝影機慢慢朝她的臉前進。要實際移動攝影機，不要用變焦。", "es": "Dolly in lento hacia su cara; que se mueva la cámara, sin zoom.", "zh-Hans": "缓慢推镜头靠近她的脸，移动相机，不要变焦。", "ko": "그녀의 얼굴을 향해 천천히 달리 인해 줘. 줌을 쓰지 말고 카메라를 이동해 줘." },
+      "ask": { "ja": "人物の顔へゆっくりドリーイン。ズームではなく、カメラごと近づく。", "en": "Slow dolly in toward her face; move the camera, do not zoom.", "zh-Hant": "用 Dolly in 讓攝影機慢慢朝她的臉前進。要實際移動攝影機，不要用變焦。", "es": "Dolly in lento hacia su cara; que se mueva la cámara, sin zoom.", "zh-Hans": "缓慢推镜头靠近她的脸，移动相机，不要变焦。", "ko": "그녀의 얼굴을 향해 천천히 돌리 인으로 촬영해 줘. 줌을 쓰지 말고 카메라를 이동해 줘." },
       "summary": { "ja": "カメラそのものが被写体へ前進する。手前の物ほど大きく速く流れ、奥の山はほとんど変わらない。", "en": "The camera itself moves toward the subject; near objects grow and pass quickly while the distant mountains barely change." },
       "spec": {
         "ja": ["カメラ: 前（奥行き方向）へ 0m → 5.8m 進む。高さ1.5m、向きと焦点距離（330px＝24mm表示）は固定", "時間: 0.5秒から3.4秒まで2.9秒。3次のイーズインアウト（cubic-bezier(0.65,0,0.35,1) 相当）", "被写体: 人物は8m先で動かない。距離が8m → 2.2mになり、画面上の大きさは約3.6倍", "視差あり: 手前の杭（左1.5m・奥3.6m）と岩（右1.6m・奥4.8m）は途中で画面外へ抜ける。120m以上先の山はほぼ同じ大きさ", "戻り: 3.4〜4.2秒は止め、最後の0.5秒で開始状態へクロスフェード（1周4.7秒）", "右上の表示は 24mm のまま変わらない（04 ズームインとの違い）"],
@@ -68,9 +68,9 @@
       "tags": ["tracking", "tracking shot", "follow", "truck", "lateral", "sideways", "parallax", "walk"] },
 
     { "no": "06", "slug": "orbit-arc-shot", "category": "camera-movement",
-      "name": { "ja": "オービット", "en": "Orbit (Arc shot)", "zh-Hant": "環繞運鏡", "es": "Órbita (plano en arco)", "zh-Hans": "环绕镜头", "ko": "오비트 샷(아크 샷)" },
+      "name": { "ja": "オービット", "en": "Orbit (Arc shot)", "zh-Hant": "環繞運鏡", "es": "Órbita (plano en arco)", "zh-Hans": "环绕镜头", "ko": "오빗 샷(아크 샷)" },
       "meaning": { "ja": "被写体の周りを回り込む", "en": "Circle around the subject", "zh-Hant": "攝影機繞著被攝體轉", "es": "Rodear al sujeto", "zh-Hans": "相机绕主体移动", "ko": "피사체 주위를 원호를 그리며 돎" },
-      "ask": { "ja": "立っている人物の周りを半周オービット。人物は画面の中央のまま。", "en": "Half orbit around the standing person, keeping them in the center of the frame.", "zh-Hant": "用環繞運鏡讓攝影機繞著站立的人物走半圈，人物始終保持在畫面中央。", "es": "Media órbita alrededor de la persona de pie, manteniéndola en el centro del cuadro.", "zh-Hans": "用环绕镜头绕静立的人物拍摄半圈，始终保持人物居中。", "ko": "서 있는 인물을 화면 중앙에 유지하면서 반 바퀴 도는 오비트 샷으로 촬영해 줘." },
+      "ask": { "ja": "立っている人物の周りを半周オービット。人物は画面の中央のまま。", "en": "Half orbit around the standing person, keeping them in the center of the frame.", "zh-Hant": "用環繞運鏡讓攝影機繞著站立的人物走半圈，人物始終保持在畫面中央。", "es": "Media órbita alrededor de la persona de pie, manteniéndola en el centro del cuadro.", "zh-Hans": "用环绕镜头绕静立的人物拍摄半圈，始终保持人物居中。", "ko": "서 있는 인물을 화면 중앙에 유지하면서 반 바퀴 도는 오빗 샷으로 촬영해 줘." },
       "summary": { "ja": "被写体を中心に、カメラが円を描いて回り込む。人物は中央のまま、背景の木と建物が横に大きく流れる。", "en": "The camera travels on a circle around the subject; the person stays centred while the trees and buildings behind sweep sideways." },
       "spec": {
         "ja": ["カメラ: 人物（正面9m先）を中心とする半径6mの円周上を -0.95rad → +0.95rad（-54° → +54°、計約109°）移動", "向き: 常に中心を向く（ヨー = -角度）。高さ1.7m、ピッチ -0.07rad（約4°下向き）で固定", "時間: 0.5秒から3.6秒まで3.1秒。3次のイーズインアウト（cubic-bezier(0.65,0,0.35,1) 相当）", "被写体: 人物は動かない。顔の白い点が角度に応じて横へずれ、回り込みが分かる。足元に半径1.3mの点線の円", "背景: 半径10mに12本の木を等間隔で並べ、回り込むと人物の後ろを横切る", "戻り: 3.6〜4.2秒は止め、最後の0.5秒で開始状態へクロスフェード。右上に角度（-54° → +54°）"],
@@ -92,9 +92,9 @@
       "tags": ["crane", "crane up", "jib", "boom up", "rise", "high angle", "camera move"] },
 
     { "no": "08", "slug": "dolly-zoom-vertigo", "category": "camera-movement",
-      "name": { "ja": "ドリーズーム", "en": "Dolly zoom (Vertigo)", "zh-Hant": "希區考克變焦", "es": "Dolly zoom (efecto vértigo)", "zh-Hans": "滑动变焦", "ko": "달리 줌(버티고 효과)" },
+      "name": { "ja": "ドリーズーム", "en": "Dolly zoom (Vertigo)", "zh-Hant": "希區考克變焦", "es": "Dolly zoom (efecto vértigo)", "zh-Hans": "滑动变焦", "ko": "돌리 줌(버티고 효과)" },
       "meaning": { "ja": "人物はそのまま背景だけ伸び縮み", "en": "Subject stays, background warps", "zh-Hant": "主體大小不變，背景被拉扯變形", "es": "El sujeto se queda igual y el fondo se deforma", "zh-Hans": "主体大小不变，背景发生透视变化", "ko": "피사체 크기는 그대로인 채 배경의 원근감이 변함" },
-      "ask": { "ja": "気づいた瞬間の顔にドリーズーム。人物の大きさは変えず、背景だけが遠ざかる。", "en": "Dolly zoom on his face at the moment he realizes: he stays the same size while the background stretches away.", "zh-Hant": "在他意識到的瞬間，對他的臉用希區考克變焦：人物大小維持不變，只有背景往後拉遠。", "es": "Dolly zoom sobre su cara en el momento en que se da cuenta: él queda del mismo tamaño y el fondo se estira.", "zh-Hans": "在人物顿悟时做滑动变焦：保持脸的大小，让背景拉远。", "ko": "그가 무언가를 깨닫는 순간 얼굴에 달리 줌을 써 줘. 인물 크기는 유지하고 배경만 뒤로 늘어나게 해 줘." },
+      "ask": { "ja": "気づいた瞬間の顔にドリーズーム。人物の大きさは変えず、背景だけが遠ざかる。", "en": "Dolly zoom on his face at the moment he realizes: he stays the same size while the background stretches away.", "zh-Hant": "在他意識到的瞬間，對他的臉用希區考克變焦：人物大小維持不變，只有背景往後拉遠。", "es": "Dolly zoom sobre su cara en el momento en que se da cuenta: él queda del mismo tamaño y el fondo se estira.", "zh-Hans": "在人物顿悟时做滑动变焦：保持脸的大小，让背景拉远。", "ko": "그가 무언가를 깨닫는 순간 얼굴에 돌리 줌을 써 줘. 인물 크기는 유지하고 배경만 뒤로 늘어나게 해 줘." },
       "summary": { "ja": "カメラを引きながら同じ比率でズームする。人物の大きさは変わらず、背景だけが迫ってくる。", "en": "The camera pulls back while zooming in by the same ratio; the person keeps the same size and only the background closes in." },
       "spec": {
         "ja": ["カメラ: 人物（8m先）との距離 d を 3.2m → 8m に広げる（4.8m後退）。高さ1.3m", "焦点距離: f = 330 × d/8 px。132px → 330px（10mm → 24mm表示）。距離と焦点距離の比を一定に保つ", "時間: 0.5秒から3.4秒まで2.9秒。3次のイーズインアウト（cubic-bezier(0.65,0,0.35,1) 相当）", "被写体: 人物は動かず、画面上の高さも一定。頭（1.8m）と足元に幅160pxの青い点線を引き、大きさが変わらないことを示す", "背景: 建物（48m先）は約2.2倍、山は約2.4倍に拡大して人物の後ろに迫る。人物より手前の地面は逆に縮む", "戻り: 3.4〜4.2秒は止め、最後の0.5秒で開始状態へクロスフェード（1周4.7秒）"],

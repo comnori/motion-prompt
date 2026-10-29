@@ -10,9 +10,9 @@
   "elements": [
     {
       "no": "01", "slug": "pedestal", "category": "camera-movement",
-      "name": { "ja": "ペデスタル", "en": "Pedestal", "es": "Pedestal", "zh-Hans": "垂直升降镜头", "zh-Hant": "Pedestal 垂直升降", "ko": "페데스털" },
+      "name": { "ja": "ペデスタル", "en": "Pedestal", "es": "Pedestal", "zh-Hans": "垂直升降镜头", "zh-Hant": "Pedestal 垂直升降", "ko": "페데스탈(카메라 수직 이동)" },
       "meaning": { "ja": "カメラごと真上・真下へ平行移動", "en": "Move the whole camera straight up or down", "es": "Subir o bajar toda la cámara en línea recta", "zh-Hans": "相机整体垂直上下平移", "zh-Hant": "攝影機整台垂直上下平移", "ko": "카메라 전체를 수직으로 올리거나 내림" },
-      "ask": { "ja": "カメラの向きは変えずに、目の高さから3mまでペデスタルで真上に上げて。", "en": "Pedestal up from eye level to about 3 meters, keeping the camera pointed straight ahead.", "es": "Pedestal hacia arriba desde la altura de los ojos hasta unos 3 metros, con la cámara apuntando siempre al frente.", "zh-Hans": "保持镜头朝向不变，用垂直升降镜头从眼睛高度直线上升到约 3 m。", "zh-Hant": "攝影機方向不變，用 Pedestal 垂直升降從視線高度往正上方升到約 3 公尺。", "ko": "카메라가 정면을 향한 채 눈높이에서 약 3m 높이까지 페데스털 업해 줘." },
+      "ask": { "ja": "カメラの向きは変えずに、目の高さから3mまでペデスタルで真上に上げて。", "en": "Pedestal up from eye level to about 3 meters, keeping the camera pointed straight ahead.", "es": "Pedestal hacia arriba desde la altura de los ojos hasta unos 3 metros, con la cámara apuntando siempre al frente.", "zh-Hans": "保持镜头朝向不变，用垂直升降镜头从眼睛高度直线上升到约 3 m。", "zh-Hant": "攝影機方向不變，用 Pedestal 垂直升降從視線高度往正上方升到約 3 公尺。", "ko": "카메라가 정면을 향한 채 눈높이에서 약 3m 높이까지 페데스탈로 수직 이동해 줘." },
       "summary": {
         "ja": "カメラが向きを変えずに真上へ平行移動する。地平線は画面の中央のまま、人物と建物が下へ流れる。",
         "en": "The camera moves straight up without changing its direction; the horizon stays centred while the person and buildings slide down."
@@ -390,9 +390,9 @@
     },
     {
       "no": "13", "slug": "birds-eye-view", "category": "angles-framing",
-      "name": { "ja": "バーズアイ", "en": "Bird's-eye view", "es": "Plano cenital (bird's-eye view)", "zh-Hans": "鸟瞰镜头", "zh-Hant": "鳥瞰鏡頭", "ko": "버드아이 뷰" },
+      "name": { "ja": "バーズアイ", "en": "Bird's-eye view", "es": "Plano cenital (bird's-eye view)", "zh-Hans": "鸟瞰镜头", "zh-Hant": "鳥瞰鏡頭", "ko": "버즈 아이 뷰" },
       "meaning": { "ja": "真上から真下を見下ろす", "en": "Straight down from directly overhead", "es": "Directo hacia abajo, desde justo encima", "zh-Hans": "从正上方垂直向下拍", "zh-Hant": "從正上方垂直往下拍", "ko": "바로 위에서 수직으로 내려다봄" },
-      "ask": { "ja": "交差点を真上からのバーズアイで。人と車が上から見た形で動くように。", "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top.", "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.", "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。", "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。", "ko": "교차로를 바로 위에서 내려다보는 버드아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘." },
+      "ask": { "ja": "交差点を真上からのバーズアイで。人と車が上から見た形で動くように。", "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top.", "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.", "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。", "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。", "ko": "교차로를 바로 위에서 내려다보는 버즈 아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘." },
       "summary": {
         "ja": "真上から真下を見下ろす。道・人・車・木がすべて上から見た形になり、上がるほど広い範囲が見える。",
         "en": "Looking straight down from overhead: road, people, cars and trees appear as top-down shapes, and more comes into view as the camera rises."

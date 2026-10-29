@@ -540,7 +540,7 @@
         "zh-Hant": "Hover 浮起效果",
         "es": "Hover lift (elevación al pasar el cursor)",
         "zh-Hans": "悬停抬升",
-        "ko": "호버 리프트"
+        "ko": "호버 시 떠오르기"
       },
       "meaning": {
         "ja": "カーソルを乗せると影を付けて浮く",
@@ -556,7 +556,7 @@
         "zh-Hant": "卡片加上 Hover 浮起效果：滑鼠移上去時往上浮 8 px，陰影加深，時間 0.3 秒。",
         "es": "Ponle hover lift a las tarjetas: que suban 8 px con una sombra más profunda, en 0,3 s.",
         "zh-Hans": "给卡片加上悬停抬升：光标悬停时用 0.3 s 抬高 8 px，同时加深阴影。",
-        "ko": "카드에 호버 리프트를 넣어 줘. 0.3초 동안 8px 올라오면서 그림자가 짙어지게 해 줘."
+        "ko": "카드에 호버 시 떠오르기 효과를 넣어 줘. 0.3초 동안 8px 올라오면서 그림자가 짙어지게 해 줘."
       },
       "summary": {
         "ja": "カーソルが乗ったカードだけが少し上に持ち上がり、下の影が広がる。カーソルが離れると元に戻る。",
@@ -718,7 +718,7 @@
         "zh-Hant": "磁吸按鈕",
         "es": "Botón magnético",
         "zh-Hans": "磁吸按钮",
-        "ko": "마그네틱 버튼"
+        "ko": "마그네틱 버튼(자석 효과)"
       },
       "meaning": {
         "ja": "近づいたカーソルにボタンが吸い寄せられる",

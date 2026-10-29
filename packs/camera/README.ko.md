@@ -14,12 +14,12 @@
 |---|---|---|---|---|
 | [#025](https://showheyohtaki.github.io/motion-prompt/#025) | **팬** | Pan | 제자리에서 카메라를 좌우로 돌림 | 카메라 위치를 고정하고 스카이라인을 따라 왼쪽에서 오른쪽으로 5초 동안 천천히 팬해 줘. |
 | [#026](https://showheyohtaki.github.io/motion-prompt/#026) | **틸트** | Tilt | 제자리에서 카메라를 위아래로 돌림 | 인물의 발에서 탑 꼭대기까지 천천히 틸트 업해 줘. |
-| [#027](https://showheyohtaki.github.io/motion-prompt/#027) | **달리 인** | Dolly in | 카메라가 피사체 쪽으로 이동함 | 그녀의 얼굴을 향해 천천히 달리 인해 줘. 줌을 쓰지 말고 카메라를 이동해 줘. |
+| [#027](https://showheyohtaki.github.io/motion-prompt/#027) | **돌리 인** | Dolly in | 카메라가 피사체 쪽으로 이동함 | 그녀의 얼굴을 향해 천천히 돌리 인으로 촬영해 줘. 줌을 쓰지 말고 카메라를 이동해 줘. |
 | [#028](https://showheyohtaki.github.io/motion-prompt/#028) | **줌 인** | Zoom in | 카메라는 고정한 채 렌즈로 확대함 | 카메라는 고정하고 창가의 인물을 향해 3초 동안 줌 인해 줘. |
 | [#029](https://showheyohtaki.github.io/motion-prompt/#029) | **트래킹 샷** | Tracking shot | 피사체의 움직임에 맞춰 카메라도 이동함 | 걷는 인물의 옆에서 같은 속도로 이동하는 트래킹 샷으로 촬영해 줘. |
-| [#030](https://showheyohtaki.github.io/motion-prompt/#030) | **오비트 샷(아크 샷)** | Orbit (Arc shot) | 피사체 주위를 원호를 그리며 돎 | 서 있는 인물을 화면 중앙에 유지하면서 반 바퀴 도는 오비트 샷으로 촬영해 줘. |
+| [#030](https://showheyohtaki.github.io/motion-prompt/#030) | **오빗 샷(아크 샷)** | Orbit (Arc shot) | 피사체 주위를 원호를 그리며 돎 | 서 있는 인물을 화면 중앙에 유지하면서 반 바퀴 도는 오빗 샷으로 촬영해 줘. |
 | [#031](https://showheyohtaki.github.io/motion-prompt/#031) | **크레인 업** | Crane up | 카메라를 위로 들어 올림 | 눈높이에서 시작해 마을 전체가 보일 때까지 크레인 업해 줘. |
-| [#032](https://showheyohtaki.github.io/motion-prompt/#032) | **달리 줌(버티고 효과)** | Dolly zoom (Vertigo) | 피사체 크기는 그대로인 채 배경의 원근감이 변함 | 그가 무언가를 깨닫는 순간 얼굴에 달리 줌을 써 줘. 인물 크기는 유지하고 배경만 뒤로 늘어나게 해 줘. |
+| [#032](https://showheyohtaki.github.io/motion-prompt/#032) | **돌리 줌(버티고 효과)** | Dolly zoom (Vertigo) | 피사체 크기는 그대로인 채 배경의 원근감이 변함 | 그가 무언가를 깨닫는 순간 얼굴에 돌리 줌을 써 줘. 인물 크기는 유지하고 배경만 뒤로 늘어나게 해 줘. |
 
 ## 촬영 방식과 시간 연출
 
