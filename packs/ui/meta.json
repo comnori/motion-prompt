@@ -6,7 +6,8 @@
     "en": "UI component names",
     "zh-Hant": "UI 元件名稱",
     "es": "Nombres de componentes de interfaz",
-    "zh-Hans": "UI 组件"
+    "zh-Hans": "UI 组件",
+    "ko": "UI 컴포넌트 이름"
   },
   "categories": [
     {
@@ -15,7 +16,8 @@
       "en": "Opening & overlays",
       "zh-Hant": "展開與彈出式元件",
       "es": "Abrir y superponer",
-      "zh-Hans": "浮层与展开"
+      "zh-Hans": "浮层与展开",
+      "ko": "펼치기와 오버레이"
     },
     {
       "slug": "select-switch",
@@ -23,7 +25,8 @@
       "en": "Choosing & switching",
       "zh-Hant": "選擇與切換元件",
       "es": "Elegir y cambiar",
-      "zh-Hans": "切换与输入"
+      "zh-Hans": "切换与输入",
+      "ko": "선택과 전환"
     },
     {
       "slug": "navigate-status",
@@ -31,7 +34,8 @@
       "en": "Navigation & status",
       "zh-Hant": "導覽與狀態元件",
       "es": "Navegación y estado",
-      "zh-Hans": "导航与状态反馈"
+      "zh-Hans": "导航与状态反馈",
+      "ko": "탐색과 상태 표시"
     }
   ],
   "elements": [
@@ -44,21 +48,24 @@
         "en": "Modal dialog",
         "zh-Hant": "Modal",
         "es": "Ventana modal",
-        "zh-Hans": "模态对话框"
+        "zh-Hans": "模态对话框",
+        "ko": "모달 대화상자"
       },
       "meaning": {
         "ja": "画面を暗くして中央に窓が出る",
         "en": "A window opens in the middle while the page behind dims",
         "zh-Hant": "畫面變暗，中央跳出一個視窗",
         "es": "Una ventana se abre al centro y la página de atrás se oscurece",
-        "zh-Hans": "打开浮窗并暂时阻止操作背景"
+        "zh-Hans": "打开浮窗并暂时阻止操作背景",
+        "ko": "배경이 어두워지며 화면 중앙에 창이 열림"
       },
       "ask": {
         "ja": "削除ボタンを押したらモーダルで確認を出して。背景は4割ほど暗くし、0.3秒で少し拡大しながらフェードイン。",
         "en": "When the delete button is pressed, show a confirmation in a modal dialog. Dim the page about 40% and fade it in over 0.3 s with a slight scale-up.",
         "zh-Hant": "按下刪除按鈕時，用 Modal 跳出確認。背景變暗約 40%，並在 0.3 秒內一邊微放大一邊淡入。",
         "es": "Al tocar el botón de borrar, muestra una confirmación en una ventana modal. Oscurece la página un 40 % y haz que aparezca en 0,3 s, creciendo un poco.",
-        "zh-Hans": "点击删除按钮后显示模态确认对话框，页面变暗约 40%，用 0.3 s 淡入并略微放大。"
+        "zh-Hans": "点击删除按钮后显示模态确认对话框，页面变暗约 40%，用 0.3 s 淡入并略微放大。",
+        "ko": "삭제 버튼을 누르면 모달 대화상자로 확인 메시지를 보여 줘. 배경을 약 40% 어둡게 하고, 0.3초 동안 살짝 커지며 페이드 인하게 해 줘."
       },
       "summary": {
         "ja": "「開く」ボタンを押すと画面全体が暗くなり、中央に小窓が少し拡大しながら出る。×を押すと閉じる。",
@@ -104,21 +111,24 @@
         "en": "Drawer (Off-canvas)",
         "zh-Hant": "Drawer",
         "es": "Drawer (menú lateral)",
-        "zh-Hans": "抽屉面板"
+        "zh-Hans": "抽屉面板",
+        "ko": "드로어(오프캔버스)"
       },
       "meaning": {
         "ja": "横からメニューが引き出される",
         "en": "A menu panel slides in from the side of the screen",
         "zh-Hant": "從側邊滑出選單面板",
         "es": "Un panel de menú entra desde un costado de la pantalla",
-        "zh-Hans": "从屏幕侧边滑出的面板"
+        "zh-Hans": "从屏幕侧边滑出的面板",
+        "ko": "화면 옆에서 메뉴 패널이 밀려 들어옴"
       },
       "ask": {
         "ja": "メニューボタンを押したら左からドロワーを出して。幅は画面の4割、0.4秒で引き出し、背景は少し暗く。",
         "en": "Open a drawer from the left when the menu button is pressed: 40% of the screen wide, sliding in over 0.4 s, with the page slightly dimmed.",
         "zh-Hant": "按下選單按鈕時，從左側滑出 Drawer。寬度為螢幕的 40%，0.4 秒滑出，背景稍微變暗。",
         "es": "Abre un drawer desde la izquierda al tocar el botón de menú: 40 % del ancho, entrando en 0,4 s, con la página un poco oscurecida.",
-        "zh-Hans": "点击菜单按钮后从左侧打开抽屉，宽度占屏幕 40%，用 0.4 s 滑入，页面略微变暗。"
+        "zh-Hans": "点击菜单按钮后从左侧打开抽屉，宽度占屏幕 40%，用 0.4 s 滑入，页面略微变暗。",
+        "ko": "메뉴 버튼을 누르면 왼쪽에서 드로어를 열어 줘. 너비는 화면의 40%로 하고, 0.4초 동안 들어오면서 배경을 살짝 어둡게 해 줘."
       },
       "summary": {
         "ja": "「メニュー」を押すと左から縦長のパネルが引き出され、外側を押すと戻る。",
@@ -164,21 +174,24 @@
         "en": "Bottom sheet",
         "zh-Hant": "Bottom Sheet",
         "es": "Bottom sheet (panel inferior)",
-        "zh-Hans": "底部面板"
+        "zh-Hans": "底部面板",
+        "ko": "바텀 시트"
       },
       "meaning": {
         "ja": "下からパネルがせり上がる",
         "en": "A panel slides up from the bottom of the screen",
         "zh-Hant": "面板從畫面底部往上滑出",
         "es": "Un panel sube desde abajo de la pantalla",
-        "zh-Hans": "从屏幕底部升起的面板"
+        "zh-Hans": "从屏幕底部升起的面板",
+        "ko": "화면 아래에서 패널이 올라옴"
       },
       "ask": {
         "ja": "「詳細を見る」を押したらボトムシートで詳細を出して。高さは画面の4割、0.4秒でせり上げ、下へ引くと閉じる。",
         "en": "Show the details in a bottom sheet when \"View details\" is tapped: 40% of the screen tall, rising over 0.4 s, closing when dragged down.",
         "zh-Hant": "點「查看詳情」時，用 Bottom Sheet 顯示詳細內容。高度為螢幕的 40%，0.4 秒升起，往下拖曳就關閉。",
         "es": "Muestra los detalles en un bottom sheet al tocar \"Ver detalles\": 40 % del alto, subiendo en 0,4 s, y que se cierre al arrastrarlo hacia abajo.",
-        "zh-Hans": "点击查看详情后弹出高度占屏幕 40% 的底部面板，0.4 s 升起，向下拖动关闭。"
+        "zh-Hans": "点击查看详情后弹出高度占屏幕 40% 的底部面板，0.4 s 升起，向下拖动关闭。",
+        "ko": "'자세히 보기'를 누르면 화면 높이의 40%인 바텀 시트를 0.4초 동안 올려 줘. 아래로 끌면 닫히게 해 줘."
       },
       "summary": {
         "ja": "指で「詳細を見る」を押すと下からパネルがせり上がり、上端のつまみを下へ引くと閉じる。",
@@ -223,21 +236,24 @@
         "en": "Accordion",
         "zh-Hant": "手風琴",
         "es": "Acordeón",
-        "zh-Hans": "折叠面板"
+        "zh-Hans": "折叠面板",
+        "ko": "아코디언"
       },
       "meaning": {
         "ja": "押すと中身が開閉する",
         "en": "Click a heading to show or hide its content",
         "zh-Hant": "點擊標題展開或收合內容",
         "es": "Al tocar un título se muestra u oculta su contenido",
-        "zh-Hans": "点击标题展开或收起内容"
+        "zh-Hans": "点击标题展开或收起内容",
+        "ko": "제목을 누르면 내용이 펼쳐지거나 접힘"
       },
       "ask": {
         "ja": "よくある質問をアコーディオンにして。押した項目だけ0.35秒で開き、矢印を180度回して。",
         "en": "Make the FAQ an accordion: the clicked item opens over 0.35 s and its arrow turns 180°.",
         "zh-Hant": "把常見問題做成手風琴。只有點到的項目在 0.35 秒內展開，箭頭旋轉 180 度。",
         "es": "Haz las preguntas frecuentes en acordeón: el elemento tocado se abre en 0,35 s y su flecha gira 180°.",
-        "zh-Hans": "把常见问题做成折叠面板，点击后在 0.35 s 内展开，箭头旋转 180°。"
+        "zh-Hans": "把常见问题做成折叠面板，点击后在 0.35 s 内展开，箭头旋转 180°。",
+        "ko": "FAQ를 아코디언으로 만들어 줘. 누른 항목이 0.35초 동안 펼쳐지고 화살표는 180° 회전하게 해 줘."
       },
       "summary": {
         "ja": "3段の見出しのうち1段目を押すと下に本文が開き、下の段が押し下げられる。もう一度押すと閉じる。",
@@ -282,21 +298,24 @@
         "en": "Dropdown (select)",
         "zh-Hant": "下拉選單",
         "es": "Desplegable (select)",
-        "zh-Hans": "下拉选择框"
+        "zh-Hans": "下拉选择框",
+        "ko": "드롭다운(선택 목록)"
       },
       "meaning": {
         "ja": "押すと選択肢が下に広がる",
         "en": "Click a field to drop a list of options below it",
         "zh-Hant": "點擊欄位，選項往下展開",
         "es": "Al tocar un campo se despliega una lista de opciones debajo",
-        "zh-Hans": "点击字段展开选项列表"
+        "zh-Hans": "点击字段展开选项列表",
+        "ko": "입력란을 누르면 아래로 선택 목록이 펼쳐짐"
       },
       "ask": {
         "ja": "都道府県の入力欄をドロップダウンにして。押したら0.25秒で選択肢を下に開き、選んだら閉じて値を入れて。",
         "en": "Make the prefecture field a dropdown: open the options below it in 0.25 s and close it with the value filled in once one is picked.",
         "zh-Hant": "把縣市欄位做成下拉選單。點擊後 0.25 秒內往下展開選項，選好後收起並填入所選的值。",
         "es": "Haz el campo de provincia un desplegable: abre las opciones debajo en 0,25 s y ciérralo con el valor puesto al elegir.",
-        "zh-Hans": "把地区字段做成下拉选择框，0.25 s 展开下方选项，选中后回填并收起。"
+        "zh-Hans": "把地区字段做成下拉选择框，0.25 s 展开下方选项，选中后回填并收起。",
+        "ko": "시·도 선택란을 드롭다운으로 만들어 줘. 0.25초 동안 아래로 목록을 열고, 선택하면 값을 채운 뒤 닫아 줘."
       },
       "summary": {
         "ja": "入力欄を押すと下に4つの選択肢が開き、「名古屋」を選ぶと閉じて欄に入る。",
@@ -341,21 +360,24 @@
         "en": "Tooltip",
         "zh-Hant": "Tooltip",
         "es": "Tooltip",
-        "zh-Hans": "文字提示"
+        "zh-Hans": "文字提示",
+        "ko": "툴팁"
       },
       "meaning": {
         "ja": "乗せると小さな説明が出る",
         "en": "Hover over something to show a short label",
         "zh-Hant": "游標移上去顯示簡短說明",
         "es": "Al pasar el cursor aparece una etiqueta corta",
-        "zh-Hans": "悬停时显示简短说明"
+        "zh-Hans": "悬停时显示简短说明",
+        "ko": "포인터를 올리면 짧은 설명이 나타남"
       },
       "ask": {
         "ja": "「?」アイコンにツールチップを付けて。カーソルを乗せて0.2秒で上に説明を出し、離れたら消して。",
         "en": "Add a tooltip to the \"?\" icon: show the note above it 0.2 s after hover, and hide it when the cursor leaves.",
         "zh-Hant": "幫「?」圖示加上 Tooltip。游標移上去 0.2 秒後在上方顯示說明，移開就消失。",
         "es": "Agrega un tooltip al ícono \"?\": muestra la nota arriba 0,2 s después del hover y ocúltala cuando el cursor se va.",
-        "zh-Hans": "给问号图标加文字提示，悬停 0.2 s 后在上方显示，移开即隐藏。"
+        "zh-Hans": "给问号图标加文字提示，悬停 0.2 s 后在上方显示，移开即隐藏。",
+        "ko": "물음표 아이콘에 툴팁을 달아 줘. 포인터를 올린 뒤 0.2초 후에 위쪽에 설명을 보여 주고, 벗어나면 숨겨 줘."
       },
       "summary": {
         "ja": "カーソルを「?」に乗せると、上に黒い吹き出しで短い説明が出る。離れると消える。",
@@ -399,21 +421,24 @@
         "en": "Popover",
         "zh-Hant": "Popover",
         "es": "Popover",
-        "zh-Hans": "气泡卡片"
+        "zh-Hans": "气泡卡片",
+        "ko": "팝오버"
       },
       "meaning": {
         "ja": "押すと吹き出しの小窓が出る",
         "en": "Click a button to open a small panel pointing at it",
         "zh-Hant": "點擊後跳出帶箭頭的小面板",
         "es": "Al tocar un botón se abre un panel pequeño que lo señala",
-        "zh-Hans": "点击后显示指向触发按钮的小面板"
+        "zh-Hans": "点击后显示指向触发按钮的小面板",
+        "ko": "버튼을 누르면 그 버튼을 가리키는 작은 패널이 열림"
       },
       "ask": {
         "ja": "「詳細」ボタンにポップオーバーを付けて。押したら右に吹き出しの小窓を0.3秒で出し、OKで閉じて。",
         "en": "Attach a popover to the \"Details\" button: clicking opens a small panel to its right over 0.3 s, and OK closes it.",
         "zh-Hant": "幫「詳情」按鈕加上 Popover。點擊後 0.3 秒內在右側跳出帶箭頭的小面板，按「確定」就關閉。",
         "es": "Agrega un popover al botón \"Detalles\": al tocarlo abre un panel pequeño a su derecha en 0,3 s, y \"Aceptar\" lo cierra.",
-        "zh-Hans": "给详情按钮加右侧气泡卡片，0.3 s 展开，点击确定关闭。"
+        "zh-Hans": "给详情按钮加右侧气泡卡片，0.3 s 展开，点击确定关闭。",
+        "ko": "'상세 정보' 버튼에 팝오버를 붙여 줘. 클릭하면 오른쪽에 작은 패널이 0.3초 동안 열리고, 확인을 누르면 닫히게 해 줘."
       },
       "summary": {
         "ja": "「詳細」を押すと右に、三角でボタンを指す白い小窓が出る。小窓のOKを押すと閉じる。",
@@ -457,21 +482,24 @@
         "en": "Toast notification",
         "zh-Hant": "Toast",
         "es": "Notificación toast",
-        "zh-Hans": "轻提示"
+        "zh-Hans": "轻提示",
+        "ko": "토스트 알림"
       },
       "meaning": {
         "ja": "隅に通知が出て自動で消える",
         "en": "A short message appears in a corner and goes away on its own",
         "zh-Hant": "角落跳出通知並自動消失",
         "es": "Un mensaje corto aparece en una esquina y se va solo",
-        "zh-Hans": "短消息出现后自动消失"
+        "zh-Hans": "短消息出现后自动消失",
+        "ko": "화면 구석에 짧은 메시지가 나타났다가 자동으로 사라짐"
       },
       "ask": {
         "ja": "保存したら右下にトーストで「保存しました」と出して。0.35秒で右から出し、2秒後に自動で消して。",
         "en": "After saving, show \"Saved\" as a toast at the bottom right: slide it in from the right in 0.35 s and dismiss it automatically after 2 s.",
         "zh-Hant": "儲存後在右下角用 Toast 顯示「已儲存」。0.35 秒內從右側滑入，2 秒後自動消失。",
         "es": "Después de guardar, muestra \"Guardado\" como toast abajo a la derecha: que entre desde la derecha en 0,35 s y se cierre solo a los 2 s.",
-        "zh-Hans": "保存后在右下显示已保存轻提示，0.35 s 从右侧滑入，2 s 后自动消失。"
+        "zh-Hans": "保存后在右下显示已保存轻提示，0.35 s 从右侧滑入，2 s 后自动消失。",
+        "ko": "저장 후 오른쪽 아래에 '저장됨' 토스트 알림을 보여 줘. 오른쪽에서 0.35초 동안 들어오고 2초 뒤 자동으로 사라지게 해 줘."
       },
       "summary": {
         "ja": "「保存」を押すと右下に黒い通知が右から滑り込み、残り時間の線が縮みきると右へ消える。",
@@ -515,21 +543,24 @@
         "en": "Tabs",
         "zh-Hant": "頁籤",
         "es": "Pestañas (tabs)",
-        "zh-Hans": "标签页"
+        "zh-Hans": "标签页",
+        "ko": "탭"
       },
       "meaning": {
         "ja": "見出しを押して中身を切り替える",
         "en": "Click a label to switch which panel is shown",
         "zh-Hant": "點擊頁籤標題切換內容",
         "es": "Al tocar una etiqueta cambia el panel que se muestra",
-        "zh-Hans": "点击标签切换内容面板"
+        "zh-Hans": "点击标签切换内容面板",
+        "ko": "레이블을 누르면 표시하는 패널이 바뀜"
       },
       "ask": {
         "ja": "料金ページの上にタブを3つ置いて。押したら下線を0.25秒で滑らせ、中身を0.2秒のクロスフェードで切り替えて。",
         "en": "Put three tabs at the top of the pricing page. On click, slide the underline over 0.25 s and cross-fade the content in 0.2 s.",
         "zh-Hant": "在價格頁面上方放三個頁籤。點擊時底線在 0.25 秒內滑動過去，內容以 0.2 秒的交叉淡入淡出切換。",
         "es": "Pon tres pestañas arriba de la página de precios. Al tocar, desliza el subrayado en 0,25 s y funde el contenido en 0,2 s.",
-        "zh-Hans": "价格页顶部放三个标签页，下划线用 0.25 s 滑动，内容用 0.2 s 叠化。"
+        "zh-Hans": "价格页顶部放三个标签页，下划线用 0.25 s 滑动，内容用 0.2 s 叠化。",
+        "ko": "가격 안내 페이지 위에 탭 세 개를 넣어 줘. 클릭하면 밑줄은 0.25초 동안 이동하고 내용은 0.2초 동안 크로스페이드되게 해 줘."
       },
       "summary": {
         "ja": "「概要・料金・レビュー」のタブを順に押すと、青い下線が滑って移り、下の中身が入れ替わる。",
@@ -573,21 +604,24 @@
         "en": "Carousel",
         "zh-Hant": "輪播",
         "es": "Carrusel",
-        "zh-Hans": "轮播图"
+        "zh-Hans": "轮播图",
+        "ko": "캐러셀"
       },
       "meaning": {
         "ja": "横に送って順番に見せる",
         "en": "Slides that move sideways to show one item at a time",
         "zh-Hant": "橫向切換，依序展示內容",
         "es": "Diapositivas que se mueven de lado para mostrar un elemento a la vez",
-        "zh-Hans": "横向滑动切换展示项"
+        "zh-Hans": "横向滑动切换展示项",
+        "ko": "옆으로 넘기며 항목을 하나씩 보여 줌"
       },
       "ask": {
         "ja": "トップの画像をカルーセルにして。右矢印で1枚ずつ0.4秒で送り、下に今の位置の点を出して。",
         "en": "Turn the top images into a carousel: the right arrow moves one slide in 0.4 s, with position dots below.",
         "zh-Hant": "把首頁頂部的圖片做成輪播。按右箭頭每次用 0.4 秒換一張，下方顯示目前位置的圓點。",
         "es": "Convierte las imágenes de arriba en un carrusel: la flecha derecha avanza una diapositiva en 0,4 s, con puntos de posición abajo.",
-        "zh-Hans": "把顶部图片做成轮播图，右箭头每次用 0.4 s 切一张，下方显示位置圆点。"
+        "zh-Hans": "把顶部图片做成轮播图，右箭头每次用 0.4 s 切一张，下方显示位置圆点。",
+        "ko": "상단 이미지를 캐러셀로 만들어 줘. 오른쪽 화살표를 누르면 0.4초 동안 한 장씩 이동하고, 아래에 위치 표시 점을 넣어 줘."
       },
       "summary": {
         "ja": "右の矢印を押すたびに、横に並んだ3種類の絵が1枚ずつ左へ送られ、下の点が移る。",
@@ -631,21 +665,24 @@
         "en": "Toggle switch",
         "zh-Hant": "Toggle",
         "es": "Interruptor (toggle)",
-        "zh-Hans": "开关"
+        "zh-Hans": "开关",
+        "ko": "토글 스위치"
       },
       "meaning": {
         "ja": "オン・オフを切り替える",
         "en": "Flip a setting on or off",
         "zh-Hant": "切換開啟或關閉",
         "es": "Activa o desactiva una opción",
-        "zh-Hans": "切换设置的开启与关闭状态"
+        "zh-Hans": "切换设置的开启与关闭状态",
+        "ko": "설정을 켜거나 끔"
       },
       "ask": {
         "ja": "通知設定の各行にトグルスイッチを置いて。押したら0.2秒でつまみを滑らせ、オンは青にして。",
         "en": "Put a toggle switch on each notification setting: the knob slides in 0.2 s and the track turns blue when on.",
         "zh-Hant": "在通知設定的每一列放上 Toggle。點擊時圓鈕在 0.2 秒內滑動，開啟時軌道變成藍色。",
         "es": "Pon un interruptor en cada ajuste de notificaciones: la perilla se desliza en 0,2 s y la pista se pone azul al activarse.",
-        "zh-Hans": "通知设置使用开关，滑块用 0.2 s 移动，开启时轨道变蓝。"
+        "zh-Hans": "通知设置使用开关，滑块用 0.2 s 移动，开启时轨道变蓝。",
+        "ko": "각 알림 설정에 토글 스위치를 넣어 줘. 손잡이는 0.2초 동안 이동하고, 켜지면 트랙이 파란색이 되게 해 줘."
       },
       "summary": {
         "ja": "設定の3行のうち上の2つのスイッチを順にオンにし、その後オフに戻す。",
@@ -687,21 +724,24 @@
         "en": "Segmented control",
         "zh-Hant": "Segmented Control",
         "es": "Control segmentado",
-        "zh-Hans": "分段控制器"
+        "zh-Hans": "分段控制器",
+        "ko": "세그먼트 컨트롤"
       },
       "meaning": {
         "ja": "並んだボタンで表示を切り替える",
         "en": "A row of joined buttons that switches the view",
         "zh-Hant": "用並排按鈕切換檢視",
         "es": "Una fila de botones unidos que cambia la vista",
-        "zh-Hans": "一排相连按钮用于切换视图"
+        "zh-Hans": "一排相连按钮用于切换视图",
+        "ko": "이어 붙인 버튼들로 보기를 전환함"
       },
       "ask": {
         "ja": "グラフの上に「日・週・月」のセグメントコントロールを置いて。押したら選択の背景を0.25秒で滑らせ、グラフも同時に変えて。",
         "en": "Put a Day / Week / Month segmented control above the chart: the selected background slides over 0.25 s and the chart changes with it.",
         "zh-Hant": "在圖表上方放「日／週／月」的 Segmented Control。點擊時選取背景在 0.25 秒內滑動，圖表同步改變。",
         "es": "Pon un control segmentado Día / Semana / Mes sobre el gráfico: el fondo seleccionado se desliza en 0,25 s y el gráfico cambia con él.",
-        "zh-Hans": "图表上方加日、周、月分段控制器，选中背景用 0.25 s 滑动，图表同步变化。"
+        "zh-Hans": "图表上方加日、周、月分段控制器，选中背景用 0.25 s 滑动，图表同步变化。",
+        "ko": "차트 위에 일 / 주 / 월 세그먼트 컨트롤을 넣어 줘. 선택 배경이 0.25초 동안 이동하고 차트도 함께 바뀌게 해 줘."
       },
       "summary": {
         "ja": "「日・週・月」を押すと青い選択部分が滑って移り、下の棒グラフの高さが変わる。",
@@ -743,21 +783,24 @@
         "en": "Filter chips",
         "zh-Hant": "Filter Chip",
         "es": "Chips de filtro",
-        "zh-Hans": "筛选标签"
+        "zh-Hans": "筛选标签",
+        "ko": "필터 칩"
       },
       "meaning": {
         "ja": "押して絞り込み条件を付け外し",
         "en": "Small pills you click to add or remove a filter",
         "zh-Hant": "點擊以加上或移除篩選條件",
         "es": "Pastillas pequeñas que se tocan para poner o quitar un filtro",
-        "zh-Hans": "点击小标签组合筛选条件"
+        "zh-Hans": "点击小标签组合筛选条件",
+        "ko": "작은 알약 모양 버튼으로 필터를 켜거나 끔"
       },
       "ask": {
         "ja": "一覧の上に絞り込みのチップを並べて。押したらチェックを付けて青くし、0.15秒で一覧を絞り込んで。",
         "en": "Add filter chips above the list: a clicked chip gets a check mark and turns blue, and the list filters within 0.15 s.",
         "zh-Hant": "在列表上方放 Filter Chip。點擊後出現勾號並變成藍色，0.15 秒內篩選列表。",
         "es": "Agrega chips de filtro sobre la lista: el chip tocado muestra un check y se pone azul, y la lista se filtra en 0,15 s.",
-        "zh-Hans": "列表上方加入筛选标签，选中后打勾并变蓝，0.15 s 内更新列表。"
+        "zh-Hans": "列表上方加入筛选标签，选中后打勾并变蓝，0.15 s 内更新列表。",
+        "ko": "목록 위에 필터 칩을 넣어 줘. 클릭한 칩은 체크 표시와 함께 파란색이 되고, 0.15초 안에 목록을 필터링해 줘."
       },
       "summary": {
         "ja": "「新着」「無料」のチップを押すとチェックが付いて青くなり、条件に合わないカードが薄くなる。",
@@ -799,21 +842,24 @@
         "en": "Range slider",
         "zh-Hant": "範圍滑桿",
         "es": "Slider de rango",
-        "zh-Hans": "范围滑块"
+        "zh-Hans": "范围滑块",
+        "ko": "범위 슬라이더"
       },
       "meaning": {
         "ja": "つまみ2つで範囲を選ぶ",
         "en": "Two handles on one track pick a minimum and a maximum",
         "zh-Hant": "用兩個滑鈕選出範圍",
         "es": "Dos manijas en una misma pista eligen un mínimo y un máximo",
-        "zh-Hans": "双滑块选择最小值与最大值"
+        "zh-Hans": "双滑块选择最小值与最大值",
+        "ko": "하나의 트랙에서 두 손잡이로 최솟값과 최댓값을 선택함"
       },
       "ask": {
         "ja": "価格の絞り込みをレンジスライダーにして。つまみは2つ、動かしている間は値を吹き出しで出して。",
         "en": "Make the price filter a range slider with two handles, showing each value in a bubble while it is dragged.",
         "zh-Hant": "把價格篩選做成範圍滑桿。要有兩個滑鈕，拖曳時用氣泡顯示數值。",
         "es": "Haz el filtro de precio un slider de rango con dos manijas, mostrando cada valor en una burbuja mientras se arrastra.",
-        "zh-Hans": "价格筛选改用范围滑块：两个滑块，拖动时在气泡中显示各自数值。"
+        "zh-Hans": "价格筛选改用范围滑块：两个滑块，拖动时在气泡中显示各自数值。",
+        "ko": "가격 필터를 손잡이 두 개가 있는 범위 슬라이더로 만들어 줘. 끄는 동안 각 값을 말풍선으로 보여 줘."
       },
       "summary": {
         "ja": "価格のスライダーで、左のつまみを右へ、右のつまみを左へ動かして範囲を狭め、元に戻す。",
@@ -857,21 +903,24 @@
         "en": "Stepper (+/−)",
         "zh-Hant": "數量加減器",
         "es": "Stepper (+/−)",
-        "zh-Hans": "步进器"
+        "zh-Hans": "步进器",
+        "ko": "스테퍼(+/−)"
       },
       "meaning": {
         "ja": "＋/−ボタンで数を増減する",
         "en": "Plus and minus buttons that change a number by one",
         "zh-Hant": "用 ＋/－ 按鈕增減數字",
         "es": "Botones de más y menos que cambian un número de uno en uno",
-        "zh-Hans": "通过加减按钮逐次修改数值"
+        "zh-Hans": "通过加减按钮逐次修改数值",
+        "ko": "더하기와 빼기 버튼으로 숫자를 하나씩 조절함"
       },
       "ask": {
         "ja": "数量の欄をステッパーにして。＋と−で1ずつ増減し、押すたびに数字を0.25秒で少し弾ませて。",
         "en": "Make the quantity field a stepper: + and − change it by one, and the number pops slightly for 0.25 s on each press.",
         "zh-Hant": "把數量欄位做成＋／－數量加減器。每按一次增減 1，數字輕輕彈一下，持續 0.25 秒。",
         "es": "Haz el campo de cantidad un stepper: + y − lo cambian de uno en uno, y el número rebota un poco 0,25 s en cada toque.",
-        "zh-Hans": "数量字段使用步进器，加减每次变化 1，数字每次用 0.25 s 轻弹一下。"
+        "zh-Hans": "数量字段使用步进器，加减每次变化 1，数字每次用 0.25 s 轻弹一下。",
+        "ko": "수량 입력란을 스테퍼로 만들어 줘. +와 −로 하나씩 바꾸고, 누를 때마다 숫자가 0.25초 동안 살짝 튀게 해 줘."
       },
       "summary": {
         "ja": "＋を3回押して数が1から4に増え、−を3回押して1に戻る。押すたびに数字が少し弾む。",
@@ -914,21 +963,24 @@
         "en": "Pagination",
         "zh-Hant": "分頁（Pagination）",
         "es": "Paginación",
-        "zh-Hans": "分页"
+        "zh-Hans": "分页",
+        "ko": "페이지네이션"
       },
       "meaning": {
         "ja": "番号でページを送る",
         "en": "Numbered buttons that move between pages",
         "zh-Hant": "用頁碼切換頁面",
         "es": "Botones numerados para moverse entre páginas",
-        "zh-Hans": "通过页码切换列表页面"
+        "zh-Hans": "通过页码切换列表页面",
+        "ko": "번호 버튼으로 페이지를 이동함"
       },
       "ask": {
         "ja": "検索結果の下にページネーションを付けて。今のページは青い丸にし、押したら0.2秒で丸を移して一覧を入れ替えて。",
         "en": "Add pagination under the search results: the current page is a blue circle that moves in 0.2 s on click, and the list is replaced.",
         "zh-Hant": "在搜尋結果下方加上分頁頁碼。目前頁碼用藍色圓形標示，點擊後圓形在 0.2 秒內移動，並換成對應的列表。",
         "es": "Agrega paginación debajo de los resultados: la página actual es un círculo azul que se mueve en 0,2 s al tocar, y la lista se reemplaza.",
-        "zh-Hans": "搜索结果下方加分页，当前页蓝色圆圈用 0.2 s 移动，并替换列表内容。"
+        "zh-Hans": "搜索结果下方加分页，当前页蓝色圆圈用 0.2 s 移动，并替换列表内容。",
+        "ko": "검색 결과 아래에 페이지네이션을 넣어 줘. 현재 페이지는 파란 원으로 표시하고, 클릭하면 0.2초 동안 원이 이동하며 목록이 바뀌게 해 줘."
       },
       "summary": {
         "ja": "下の番号で2、3と押すと青い丸が移り、上の一覧が切り替わる。最後に1へ戻る。",
@@ -970,21 +1022,24 @@
         "en": "Hamburger menu",
         "zh-Hant": "漢堡選單",
         "es": "Menú hamburguesa",
-        "zh-Hans": "汉堡菜单"
+        "zh-Hans": "汉堡菜单",
+        "ko": "햄버거 메뉴"
       },
       "meaning": {
         "ja": "三本線を押すとメニューが開く",
         "en": "A three-line icon that opens the menu",
         "zh-Hant": "點擊三條線圖示打開選單",
         "es": "Un ícono de tres líneas que abre el menú",
-        "zh-Hans": "三横线图标点击后展开菜单"
+        "zh-Hans": "三横线图标点击后展开菜单",
+        "ko": "가로줄 세 개로 된 아이콘을 누르면 메뉴가 열림"
       },
       "ask": {
         "ja": "スマホのヘッダー右にハンバーガーメニューを置いて。押したら三本線を0.3秒で×に変え、メニューを上から下ろして。",
         "en": "Put a hamburger menu at the right of the mobile header: on tap, morph the three lines into × in 0.3 s and drop the menu down from the top.",
         "zh-Hant": "在手機版頁首右側放漢堡選單。點擊時三條線在 0.3 秒內變成 ×，選單從上方往下展開。",
         "es": "Pon un menú hamburguesa a la derecha del encabezado móvil: al tocarlo, las tres líneas se vuelven × en 0,3 s y el menú baja desde arriba.",
-        "zh-Hans": "移动端页头右侧放汉堡菜单，点击后用 0.3 s 变成 ×，菜单从顶部展开。"
+        "zh-Hans": "移动端页头右侧放汉堡菜单，点击后用 0.3 s 变成 ×，菜单从顶部展开。",
+        "ko": "모바일 헤더 오른쪽에 햄버거 메뉴를 넣어 줘. 누르면 세 줄이 0.3초 동안 ×로 변하고 메뉴가 위에서 내려오게 해 줘."
       },
       "summary": {
         "ja": "ヘッダー右の三本線を押すと×に変わり、ヘッダーの下からメニューが下りてくる。もう一度押すと閉じる。",
@@ -1026,21 +1081,24 @@
         "en": "Breadcrumbs",
         "zh-Hant": "麵包屑",
         "es": "Migas de pan (breadcrumbs)",
-        "zh-Hans": "面包屑导航"
+        "zh-Hans": "面包屑导航",
+        "ko": "브레드크럼"
       },
       "meaning": {
         "ja": "今いる場所を階層で示す",
         "en": "A trail of links showing where the page sits in the site",
         "zh-Hant": "以階層顯示目前所在位置",
         "es": "Un rastro de enlaces que muestra dónde está la página dentro del sitio",
-        "zh-Hans": "显示页面层级位置的链接路径"
+        "zh-Hans": "显示页面层级位置的链接路径",
+        "ko": "사이트 안에서 현재 페이지의 위치를 링크 경로로 표시함"
       },
       "ask": {
         "ja": "記事ページの上にパンくずリストを付けて。「ホーム › 講座 › Web制作」の形で、今のページは太字でリンクなし。",
         "en": "Add breadcrumbs above the article: \"Home › Courses › Web design\", with the current page in bold and not linked.",
         "zh-Hant": "在文章頁上方加上麵包屑。格式為「首頁 › 課程 › 網頁設計」，目前頁面用粗體且不加連結。",
         "es": "Agrega migas de pan sobre el artículo: \"Inicio › Cursos › Diseño web\", con la página actual en negrita y sin enlace.",
-        "zh-Hans": "文章上方加首页 › 课程 › 网页设计面包屑，当前页加粗且不作为链接。"
+        "zh-Hans": "文章上方加首页 › 课程 › 网页设计面包屑，当前页加粗且不作为链接。",
+        "ko": "글 위에 '홈 › 강좌 › 웹 디자인' 브레드크럼을 넣어 줘. 현재 페이지는 굵게 표시하고 링크는 빼 줘."
       },
       "summary": {
         "ja": "パンくずの「講座」を押すと一つ上の一覧ページに戻り、一覧のカードを押すと元の詳細ページへ進む。",
@@ -1084,21 +1142,24 @@
         "en": "Mega menu",
         "zh-Hant": "Mega Menu",
         "es": "Megamenú",
-        "zh-Hans": "巨型菜单"
+        "zh-Hans": "巨型菜单",
+        "ko": "메가 메뉴"
       },
       "meaning": {
         "ja": "大きな一覧メニューが広がる",
         "en": "A wide panel of grouped links that opens from the main menu",
         "zh-Hant": "展開大型的分組連結面板",
         "es": "Un panel ancho de enlaces agrupados que se abre desde el menú principal",
-        "zh-Hans": "主导航展开的宽幅分组链接面板"
+        "zh-Hans": "主导航展开的宽幅分组链接面板",
+        "ko": "주 메뉴에서 여러 링크를 묶은 넓은 패널이 펼쳐짐"
       },
       "ask": {
         "ja": "ヘッダーの「製品」にメガメニューを付けて。乗せたら0.25秒で全幅のパネルを下ろし、3列のリンクと画像を並べて。",
         "en": "Give \"Products\" in the header a mega menu: on hover, drop a full-width panel in 0.25 s with three columns of links and an image.",
         "zh-Hant": "幫頁首的「產品」加上 Mega Menu。游標移上去時 0.25 秒內往下展開滿版面板，排列三欄連結和一張圖片。",
         "es": "Ponle un megamenú a \"Productos\" en el encabezado: al pasar el cursor baja un panel de ancho completo en 0,25 s, con tres columnas de enlaces y una imagen.",
-        "zh-Hans": "给页头的“产品”加上巨型菜单：悬停后用 0.25 s 展开全宽面板，包含三列链接和一张图。"
+        "zh-Hans": "给页头的“产品”加上巨型菜单：悬停后用 0.25 s 展开全宽面板，包含三列链接和一张图。",
+        "ko": "헤더의 '제품'에 메가 메뉴를 넣어 줘. 포인터를 올리면 전체 너비의 패널이 0.25초 동안 내려오고, 링크 세 열과 이미지를 보여 줘."
       },
       "summary": {
         "ja": "ヘッダーの「製品」にカーソルを乗せると、全幅のパネルが下りて3列のリンクと画像が並ぶ。離れると閉じる。",
@@ -1142,21 +1203,24 @@
         "en": "Step indicator",
         "zh-Hant": "步驟指示器",
         "es": "Indicador de pasos",
-        "zh-Hans": "步骤指示器"
+        "zh-Hans": "步骤指示器",
+        "ko": "단계 표시기"
       },
       "meaning": {
         "ja": "手続きの何番目かを示す",
         "en": "Shows which step of a process you are on",
         "zh-Hant": "顯示目前進行到第幾步",
         "es": "Muestra en qué paso de un proceso estás",
-        "zh-Hans": "显示流程的当前步骤与进度"
+        "zh-Hans": "显示流程的当前步骤与进度",
+        "ko": "여러 단계 중 현재 위치를 보여 줌"
       },
       "ask": {
         "ja": "申し込みフォームの上にステップインジケーターを付けて。入力・確認・支払い・完了の4段階で、済んだ段階はチェックにして。",
         "en": "Add a step indicator above the sign-up form with four steps: Details, Review, Payment, Done; completed steps show a check.",
         "zh-Hant": "在申請表單上方加上步驟指示器。分為填寫、確認、付款、完成四個步驟，已完成的步驟顯示勾號。",
         "es": "Agrega un indicador de pasos sobre el formulario de registro con cuatro pasos: Datos, Revisión, Pago, Listo; los completados llevan un check.",
-        "zh-Hans": "注册表单顶部放信息、确认、支付、完成四步指示器，已完成步骤显示勾。"
+        "zh-Hans": "注册表单顶部放信息、确认、支付、完成四步指示器，已完成步骤显示勾。",
+        "ko": "가입 양식 위에 정보 입력, 검토, 결제, 완료의 네 단계 표시기를 넣어 줘. 완료한 단계에는 체크를 표시해 줘."
       },
       "summary": {
         "ja": "「次へ」を押すたびに、4段階の丸が順にチェックに変わり、青い線が次の段階へ伸びる。",
@@ -1201,21 +1265,24 @@
         "en": "Skeleton screen",
         "zh-Hant": "Skeleton",
         "es": "Skeleton screen (pantalla esqueleto)",
-        "zh-Hans": "骨架屏"
+        "zh-Hans": "骨架屏",
+        "ko": "스켈레톤 화면"
       },
       "meaning": {
         "ja": "読み込み中に灰色の枠を出す",
         "en": "Grey shapes stand in for content while it loads",
         "zh-Hant": "載入時以灰色方塊佔位",
         "es": "Formas grises ocupan el lugar del contenido mientras carga",
-        "zh-Hans": "加载时以灰色块预示内容布局"
+        "zh-Hans": "加载时以灰色块预示内容布局",
+        "ko": "콘텐츠를 불러오는 동안 회색 도형으로 자리를 표시함"
       },
       "ask": {
         "ja": "一覧の読み込み中はスケルトンを出して。中身と同じ形の灰色の枠にして、光が左から右へ0.9秒で流れるように。",
         "en": "While the list loads, show a skeleton screen: grey blocks in the shape of the content, with a shine sweeping left to right every 0.9 s.",
         "zh-Hant": "列表載入時顯示 Skeleton。做成和內容形狀相同的灰色方塊，並讓光澤每 0.9 秒由左向右掃過。",
         "es": "Mientras carga la lista, muestra una pantalla esqueleto: bloques grises con la forma del contenido y un brillo que pasa de izquierda a derecha cada 0,9 s.",
-        "zh-Hans": "列表加载时显示骨架屏，灰块形状对应内容，每 0.9 s 从左向右扫一道光。"
+        "zh-Hans": "列表加载时显示骨架屏，灰块形状对应内容，每 0.9 s 从左向右扫一道光。",
+        "ko": "목록을 불러오는 동안 스켈레톤 화면을 보여 줘. 콘텐츠 모양의 회색 블록 위로 0.9초마다 빛이 왼쪽에서 오른쪽으로 지나가게 해 줘."
       },
       "summary": {
         "ja": "再読み込みを押すと、一覧の中身が同じ形の灰色の枠に変わり、光が横に流れる。読み込みが済むと中身に戻る。",
@@ -1257,21 +1324,24 @@
         "en": "Spinner",
         "zh-Hant": "Spinner",
         "es": "Spinner (indicador de carga)",
-        "zh-Hans": "加载转圈"
+        "zh-Hans": "加载转圈",
+        "ko": "스피너"
       },
       "meaning": {
         "ja": "くるくる回って待ちを示す",
         "en": "A spinning circle that means \"please wait\"",
         "zh-Hant": "旋轉的圓圈表示請稍候",
         "es": "Un círculo que gira y significa \"espera\"",
-        "zh-Hans": "旋转圆环表示等待"
+        "zh-Hans": "旋转圆环表示等待",
+        "ko": "기다리는 중임을 회전하는 원으로 표시함"
       },
       "ask": {
         "ja": "送信中はボタンの上にスピナーを出して。1秒に1回転強で回し、終わったら青い丸のチェックに替えて。",
         "en": "While sending, show a spinner over the form, turning a little over once per second, then replace it with a blue check when done.",
         "zh-Hant": "送出中在按鈕上顯示 Spinner。大約每秒轉一圈多一點，完成後換成藍色圓形的勾號。",
         "es": "Mientras se envía, muestra un spinner sobre el formulario, girando un poco más de una vuelta por segundo, y cámbialo por un check azul al terminar.",
-        "zh-Hans": "发送时在表单上方显示每秒转一圈多的加载圆环，完成后换成蓝色勾。"
+        "zh-Hans": "发送时在表单上方显示每秒转一圈多的加载圆环，完成后换成蓝色勾。",
+        "ko": "전송 중에는 양식 위에 스피너를 보여 줘. 초당 한 바퀴보다 조금 빠르게 회전하고, 완료되면 파란 체크로 바꿔 줘."
       },
       "summary": {
         "ja": "「送信」を押すと画面が白くかすみ、中央で青い弧が回る。済むとチェックに変わって消える。",
@@ -1315,21 +1385,24 @@
         "en": "Badge",
         "zh-Hant": "Badge",
         "es": "Badge (contador)",
-        "zh-Hans": "徽标"
+        "zh-Hans": "徽标",
+        "ko": "배지"
       },
       "meaning": {
         "ja": "件数を小さな丸で示す",
         "en": "A small dot with a number showing a count",
         "zh-Hant": "以小圓點顯示數量",
         "es": "Un punto pequeño con un número que muestra una cantidad",
-        "zh-Hans": "用小圆点或数字显示数量"
+        "zh-Hans": "用小圆点或数字显示数量",
+        "ko": "작은 원 안에 개수를 표시함"
       },
       "ask": {
         "ja": "ヘッダーのベルにバッジを付けて未読数を出して。増えるたびに0.3秒で少し弾ませ、開いたら消して。",
         "en": "Add a badge to the bell in the header to show the unread count: it pops for 0.3 s each time the count goes up and disappears when opened.",
         "zh-Hant": "在頁首的鈴鐺加上 Badge 顯示未讀數。每次數字增加就在 0.3 秒內微微彈跳，點開後消失。",
         "es": "Agrega un badge a la campana del encabezado con los no leídos: que rebote 0,3 s cada vez que sube el número y desaparezca al abrirla.",
-        "zh-Hans": "页头铃铛上显示未读数徽标，数量增加时弹跳 0.3 s，打开后消失。"
+        "zh-Hans": "页头铃铛上显示未读数徽标，数量增加时弹跳 0.3 s，打开后消失。",
+        "ko": "헤더의 종 아이콘에 읽지 않은 개수 배지를 붙여 줘. 개수가 늘 때마다 0.3초 동안 튀고, 알림을 열면 사라지게 해 줘."
       },
       "summary": {
         "ja": "ヘッダーのベルに通知が届くたび、右上の青い丸の数が1・2・3と増える。ベルを押すと消える。",
@@ -1373,21 +1446,24 @@
         "en": "Empty state",
         "zh-Hant": "Empty State",
         "es": "Estado vacío",
-        "zh-Hans": "空状态"
+        "zh-Hans": "空状态",
+        "ko": "빈 상태"
       },
       "meaning": {
         "ja": "中身がないときの案内画面",
         "en": "The screen shown when there is nothing to list yet",
         "zh-Hant": "沒有內容時顯示的引導畫面",
         "es": "La pantalla que se ve cuando todavía no hay nada que listar",
-        "zh-Hans": "列表没有内容时显示的界面"
+        "zh-Hans": "列表没有内容时显示的界面",
+        "ko": "목록에 표시할 내용이 없을 때 보여 주는 화면"
       },
       "ask": {
         "ja": "リストが空になったらエンプティステートを出して。線画のアイコン、「まだ何もありません」、追加するボタンを0.35秒で出して。",
         "en": "When the list is empty, show an empty state: a line icon, \"Nothing here yet\" and an add button, fading in over 0.35 s.",
         "zh-Hant": "列表清空時顯示 Empty State。用 0.35 秒淡入線條圖示、「目前還沒有任何內容」和新增按鈕。",
         "es": "Cuando la lista esté vacía, muestra un estado vacío: un ícono de línea, \"Todavía no hay nada aquí\" y un botón para agregar, apareciendo en 0,35 s.",
-        "zh-Hans": "列表为空时显示空状态：线描图标、“暂无内容”和添加按钮，用 0.35 s 淡入。"
+        "zh-Hans": "列表为空时显示空状态：线描图标、“暂无内容”和添加按钮，用 0.35 s 淡入。",
+        "ko": "목록이 비면 선으로 그린 아이콘, '아직 내용이 없어요', 추가 버튼으로 빈 상태를 보여 줘. 0.35초 동안 페이드 인하게 해 줘."
       },
       "summary": {
         "ja": "一覧の2行をごみ箱で順に消すと、空の箱の線画と「まだ何もありません」「追加する」ボタンが出る。",

@@ -1,11 +1,12 @@
 # Motion Prompt
 
-**English** | [日本語](README.ja.md)
+**English** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
 > 日本語の説明は [README.ja.md](README.ja.md) にあります。
+> 한국어 설명은 [README.ko.md](README.ko.md), 한국어 용어 목록은 [`packs/`](packs/README.ko.md)에 있습니다.
 > 中文用户：所有名称一览都有简体中文和繁體中文版本，见 [`packs/`](packs/README.md)。
 > En español: todas las listas de nombres están en español en [`packs/`](packs/README.md).
-> The name lists are in English, Japanese, Spanish, Simplified Chinese and Traditional Chinese (see [`packs/`](packs/README.md)); the gallery is in English and Japanese. For another language, give [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md) to a coding AI.
+> The name lists are in English, Japanese, Korean, Spanish, Simplified Chinese and Traditional Chinese (see [`packs/`](packs/README.md)); the gallery is in English and Japanese. For another language, give [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md) to a coding AI.
 
 A library of names for the things you ask an AI to make. Each name comes with a moving sample, a one-line meaning and an example of how to ask for it. Eight sets are in it now, 24 names each and 192 in all: motion-graphics moves (`motion`), camera moves (`camera`), UI component names (`ui`), landing page and web effects (`lp`), photo looks, lighting and styles (`photo`), motion-graphics moves, part 2 (`motion2`), landing page and web effects, part 2 (`lp2`), and camera moves and transitions, part 2 (`camera2`). It also comes with the prompts to make the same kind of library for your own field, in your own language.
 
@@ -33,16 +34,16 @@ Shohei Ohtaki
 
 | Numbers | Pack | Names | Lists |
 |---|---|---|---|
-| 001–024 | `motion`: motion graphics moves | 24 | [English](packs/motion/README.md) · [日本語](packs/motion/README.ja.md) · [Español](packs/motion/README.es.md) · [简体中文](packs/motion/README.zh-Hans.md) · [繁體中文](packs/motion/README.zh-Hant.md) |
-| 025–048 | `camera`: camera moves and transitions | 24 | [English](packs/camera/README.md) · [日本語](packs/camera/README.ja.md) · [Español](packs/camera/README.es.md) · [简体中文](packs/camera/README.zh-Hans.md) · [繁體中文](packs/camera/README.zh-Hant.md) |
-| 049–072 | `ui`: UI component names | 24 | [English](packs/ui/README.md) · [日本語](packs/ui/README.ja.md) · [Español](packs/ui/README.es.md) · [简体中文](packs/ui/README.zh-Hans.md) · [繁體中文](packs/ui/README.zh-Hant.md) |
-| 073–096 | `lp`: landing page and web effects | 24 | [English](packs/lp/README.md) · [日本語](packs/lp/README.ja.md) · [Español](packs/lp/README.es.md) · [简体中文](packs/lp/README.zh-Hans.md) · [繁體中文](packs/lp/README.zh-Hant.md) |
-| 097–120 | `photo`: photo looks, lighting and styles | 24 | [English](packs/photo/README.md) · [日本語](packs/photo/README.ja.md) · [Español](packs/photo/README.es.md) · [简体中文](packs/photo/README.zh-Hans.md) · [繁體中文](packs/photo/README.zh-Hant.md) |
-| 121–144 | `motion2`: motion graphics moves, part 2 | 24 | [English](packs/motion2/README.md) · [日本語](packs/motion2/README.ja.md) · [Español](packs/motion2/README.es.md) · [简体中文](packs/motion2/README.zh-Hans.md) · [繁體中文](packs/motion2/README.zh-Hant.md) |
-| 145–168 | `lp2`: landing page and web effects, part 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) |
-| 169–192 | `camera2`: camera moves and transitions, part 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) |
+| 001–024 | `motion`: motion graphics moves | 24 | [English](packs/motion/README.md) · [日本語](packs/motion/README.ja.md) · [Español](packs/motion/README.es.md) · [简体中文](packs/motion/README.zh-Hans.md) · [繁體中文](packs/motion/README.zh-Hant.md) · [한국어](packs/motion/README.ko.md) |
+| 025–048 | `camera`: camera moves and transitions | 24 | [English](packs/camera/README.md) · [日本語](packs/camera/README.ja.md) · [Español](packs/camera/README.es.md) · [简体中文](packs/camera/README.zh-Hans.md) · [繁體中文](packs/camera/README.zh-Hant.md) · [한국어](packs/camera/README.ko.md) |
+| 049–072 | `ui`: UI component names | 24 | [English](packs/ui/README.md) · [日本語](packs/ui/README.ja.md) · [Español](packs/ui/README.es.md) · [简体中文](packs/ui/README.zh-Hans.md) · [繁體中文](packs/ui/README.zh-Hant.md) · [한국어](packs/ui/README.ko.md) |
+| 073–096 | `lp`: landing page and web effects | 24 | [English](packs/lp/README.md) · [日本語](packs/lp/README.ja.md) · [Español](packs/lp/README.es.md) · [简体中文](packs/lp/README.zh-Hans.md) · [繁體中文](packs/lp/README.zh-Hant.md) · [한국어](packs/lp/README.ko.md) |
+| 097–120 | `photo`: photo looks, lighting and styles | 24 | [English](packs/photo/README.md) · [日本語](packs/photo/README.ja.md) · [Español](packs/photo/README.es.md) · [简体中文](packs/photo/README.zh-Hans.md) · [繁體中文](packs/photo/README.zh-Hant.md) · [한국어](packs/photo/README.ko.md) |
+| 121–144 | `motion2`: motion graphics moves, part 2 | 24 | [English](packs/motion2/README.md) · [日本語](packs/motion2/README.ja.md) · [Español](packs/motion2/README.es.md) · [简体中文](packs/motion2/README.zh-Hans.md) · [繁體中文](packs/motion2/README.zh-Hant.md) · [한국어](packs/motion2/README.ko.md) |
+| 145–168 | `lp2`: landing page and web effects, part 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
+| 169–192 | `camera2`: camera moves and transitions, part 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-Each list gives the number, the name, what it means and an example of how to ask an AI for it, in English, Japanese, Spanish, Simplified Chinese and Traditional Chinese. The same names move in the [gallery](https://showheyohtaki.github.io/motion-prompt/).
+Each list gives the number, the name, what it means and an example of how to ask an AI for it, in English, Japanese, Korean, Spanish, Simplified Chinese and Traditional Chinese. The same names move in the [gallery](https://showheyohtaki.github.io/motion-prompt/).
 
 Each pack has its own look. The motion and motion2 packs are dark navy with four colors. The camera and camera2 packs are light gray with one blue. The ui pack is warm off-white with black and one blue, and a cursor sets each part moving. The lp and lp2 packs draw a white browser window on a pale gray desk, with a vermilion accent and blue for the pictures on the page. The photo pack has no shared palette: each card is painted in the colors of its own scene, and the effect fades in and back out so you can compare. That is on purpose. What a pack has to get right is the names, not a house style.
 

@@ -1,6 +1,6 @@
 # Make your own
 
-**English** | [日本語](README.ja.md)
+**English** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
 Prompts, a render script and two finished examples for making a "names" set of your own: 3 looping videos of 8 cards each, where every card is a small animation that shows what one name means, plus a one-page cheat-sheet image.
 
@@ -9,12 +9,14 @@ You can make it for your own field, in your own language, with your own look.
 | | Camera moves (`examples/camera-moves/`) | Motion graphics (`examples/motion-graphics/`) |
 |---|---|---|
 | Look | light gray, one blue, pictogram style | dark navy cards, four colors |
-| Languages | English, Japanese | Japanese |
+| Languages | English, Japanese, Korean | Japanese, Korean |
 | | ![Camera moves 01–08](../assets/preview-camera.gif) | ![Motion graphics 01–08](../assets/preview-motion.gif) |
 
 The bundled videos and cheat sheets are the ones that were posted, so they keep the wording used at the time (for example, the Japanese name of 10 is 手持ち風). The name lists in [`packs/`](../packs/README.md) now say 手持ち.
 
 The two examples look different on purpose. This is not a template for one style. What they share is one rule: the name is the subject, and each card shows what that name means.
+
+Korean versions include six rendered videos, editable HTML and contact sheets in [`examples/camera-moves/ko/`](examples/camera-moves/ko/) and [`examples/motion-graphics/ko/`](examples/motion-graphics/ko/). See the [Korean guide](README.ko.md) for the videos and the [translation report](TRANSLATION.ko.md) for terminology, fonts and validation.
 
 ## What is in here
 
@@ -24,8 +26,10 @@ render.mjs                  HTML -> mp4 (Playwright + ffmpeg)
 examples/camera-moves/
   en/  index.html  video-1of3.mp4  video-2of3.mp4  video-3of3.mp4  cheatsheet.png
   ja/  index.html  video-1of3.mp4  video-2of3.mp4  video-3of3.mp4  cheatsheet.png
+  ko/  index.html  video-{1,2,3}of3.mp4  video-{1,2,3}of3-sheet.png  preview.png
 examples/motion-graphics/
   ja/  index.html  video-1of3.mp4  video-2of3.mp4  video-3of3.mp4  cheatsheet.png  cheatsheet-prompt.md
+  ko/  index.html  video-{1,2,3}of3.mp4  video-{1,2,3}of3-sheet.png  preview.png
 ```
 
 | | |
@@ -96,9 +100,11 @@ The HTML does not use a real-time clock. Every frame is drawn from its frame num
 
 ## Fonts
 
-The examples load nothing from the network: no web fonts, no CDN, no images. They use fonts that come with macOS (Helvetica Neue, Avenir Next, Hiragino Sans, SF Mono), and no font files are included in this repository.
+The examples load nothing from the network: no web fonts, no CDN, no images. The original English and Japanese examples use fonts that come with macOS (Helvetica Neue, Avenir Next, Hiragino Sans, SF Mono), and no font files are included in this repository.
 
-The bundled mp4 files were rendered on macOS. On Windows or Linux the browser falls back to other fonts, so the text will look a little different, and the Japanese versions need a Japanese font installed (for example Noto Sans JP). To use another font, change the font constants near the top of `index.html`.
+The original English and Japanese mp4 files were rendered on macOS. On Windows or Linux the browser falls back to other fonts, so the text will look a little different, and the Japanese versions need a Japanese font installed (for example Noto Sans JP). To use another font, change the font constants near the top of `index.html`.
+
+The Korean versions were rendered on Windows with Malgun Gothic for Korean, Consolas for camera HUD text and Arial for motion-graphics English subtitles. Install a Korean font and update the font constants before re-rendering on a machine without those fonts. Contact sheets (`*-sheet.png`) are video review images, separate from the AI-generated `cheatsheet.png` images in the original examples.
 
 ## Notes
 
