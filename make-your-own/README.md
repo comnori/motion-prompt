@@ -16,7 +16,7 @@ The bundled videos and cheat sheets are the ones that were posted, so they keep 
 
 The two examples look different on purpose. This is not a template for one style. What they share is one rule: the name is the subject, and each card shows what that name means.
 
-Korean versions include six rendered videos, editable HTML and contact sheets in [`examples/camera-moves/ko/`](examples/camera-moves/ko/) and [`examples/motion-graphics/ko/`](examples/motion-graphics/ko/). See the [Korean guide](README.ko.md) for the videos and the [translation report](TRANSLATION.ko.md) for terminology, fonts and validation.
+Korean versions include six rendered videos, editable HTML and contact sheets in [`examples/camera-moves/ko/`](examples/camera-moves/ko/) and [`examples/motion-graphics/ko/`](examples/motion-graphics/ko/). See the [Korean guide](README.ko.md) for the videos.
 
 ## What is in here
 

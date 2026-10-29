@@ -4,7 +4,7 @@
 
 > 한국어 용어 목록은 [`packs/`](packs/README.ko.md)에서 볼 수 있습니다. 영어·일본어·스페인어·중국어 간체·중국어 번체 목록도 제공됩니다.
 > 갤러리와 CLI는 영어·일본어를 지원합니다. 한국어 번역은 이 README와 팩의 이름·뜻·AI 요청 예시에 적용되어 있으며, [한국어 예제 영상 6편과 제작 안내](make-your-own/README.ko.md)도 제공합니다.
-> 다른 언어로 영상을 만들려면 [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md)를 코딩 AI에 전달하세요. 한국어 번역의 범위와 참고 자료는 [번역 안내](packs/TRANSLATION.ko.md)에 정리했습니다.
+> 다른 언어로 영상을 만들려면 [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md)를 코딩 AI에 전달하세요.
 
 AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 **이름 모음집**입니다. 각 이름에는 움직이는 예제, 한 줄 설명, 요청 예시가 있습니다. 현재 8개 팩에 24개씩, 총 192개 용어를 담았습니다. 모션 그래픽 움직임(`motion`), 카메라 움직임(`camera`), UI 컴포넌트 이름(`ui`), 랜딩 페이지와 웹 효과(`lp`), 사진 표현·조명·스타일(`photo`), 모션 그래픽 움직임 2(`motion2`), 랜딩 페이지와 웹 효과 2(`lp2`), 카메라 움직임과 장면 전환 2(`camera2`)입니다. 자신의 분야와 언어로 같은 형태의 모음집을 만들 수 있는 프롬프트도 제공합니다.
 

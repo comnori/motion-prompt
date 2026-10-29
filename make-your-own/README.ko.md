@@ -29,7 +29,7 @@
 | 카메라 움직임 프레임 모음 | [PNG](examples/camera-moves/ko/video-1of3-sheet.png) | [PNG](examples/camera-moves/ko/video-2of3-sheet.png) | [PNG](examples/camera-moves/ko/video-3of3-sheet.png) |
 | 모션 그래픽 프레임 모음 | [PNG](examples/motion-graphics/ko/video-1of3-sheet.png) | [PNG](examples/motion-graphics/ko/video-2of3-sheet.png) | [PNG](examples/motion-graphics/ko/video-3of3-sheet.png) |
 
-수정 가능한 HTML: [카메라 움직임](examples/camera-moves/ko/index.html), [모션 그래픽](examples/motion-graphics/ko/index.html). GitHub에서는 소스가 표시되므로, 내려받아 브라우저로 열면 재생됩니다. 용어 48개의 영어 대응표, 확인이 필요한 표기, 사용 글꼴과 검수 결과는 [한국어 제작 기록](TRANSLATION.ko.md)에 있습니다.
+수정 가능한 HTML: [카메라 움직임](examples/camera-moves/ko/index.html), [모션 그래픽](examples/motion-graphics/ko/index.html). GitHub에서는 소스가 표시되므로, 내려받아 브라우저로 열면 재생됩니다.
 
 ## 구성
 
@@ -168,7 +168,7 @@ HTML은 실제 시계 대신 프레임 번호로 장면을 그립니다. 따라�
 
 - 일본어 HTML은 처음에 세 페이지를 순서대로 보여 주는 30초짜리 영상으로 작성되었습니다. 현재 예제는 영어판처럼 페이지별로 렌더링합니다. 원본 게시물의 일본어 MP4와 새 렌더링은 하드 컷에서 한 프레임 정도 차이가 날 수 있습니다.
 - 예제 HTML의 코드 주석은 대부분 일본어입니다.
-- Canvas의 `roundRect`, `letterSpacing`을 사용하므로 최근 Chromium이 필요합니다. 일반 설치 절차에서는 Playwright가 설치한 Chromium을 사용합니다. 이번 한국어 영상의 실제 제작 환경은 [제작 기록](TRANSLATION.ko.md)에 별도로 적었습니다.
+- Canvas의 `roundRect`, `letterSpacing`을 사용하므로 최근 Chromium이 필요합니다. 일반 설치 절차에서는 Playwright가 설치한 Chromium을 사용합니다.
 - 두 예제의 카드는 갤러리의 `camera`, `motion` 팩에도 들어 있습니다. [한국어 팩 목록](../packs/README.ko.md)을 참고하세요. 새 세트를 갤러리에 추가하는 절차는 [CONTRIBUTING.md](../CONTRIBUTING.md)에 있습니다.
 
 ## 라이선스
