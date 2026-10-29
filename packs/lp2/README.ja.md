@@ -2,7 +2,7 @@
 
 # LP・Webサイトの演出 第2弾
 
-24 個の名前 · #145–168 · パック `lp2` · 言語: [English](README.md)
+24 個の名前 · #145–168 · パック `lp2` · 言語: [English](README.md) / [Español](README.es.md) / [简体中文](README.zh-Hans.md) / [繁體中文](README.zh-Hant.md)
 
 名前を見つけたら、そのままAIに伝えてください。「何秒で」「どのくらい強く」「何が動くか」を添えると、思った通りに近づきます。
 

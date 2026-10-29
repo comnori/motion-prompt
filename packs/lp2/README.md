@@ -2,7 +2,7 @@
 
 # Landing page & web effects, part 2
 
-24 names · #145–168 · pack `lp2` · Languages: [日本語](README.ja.md)
+24 names · #145–168 · pack `lp2` · Languages: [Español](README.es.md) / [日本語](README.ja.md) / [简体中文](README.zh-Hans.md) / [繁體中文](README.zh-Hant.md)
 
 Find the name, then say it to your AI. Add how long, how strong and what moves, and the result gets closer to what you had in mind.
 

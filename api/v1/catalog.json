@@ -1,5 +1,5 @@
 {
- "version": "1.c761b005d5",
+ "version": "1.6950972783",
  "site": "https://showheyohtaki.github.io/motion-prompt/",
  "repo": "https://github.com/showheyohtaki/motion-prompt",
  "count": 192,
@@ -269,27 +269,42 @@
    "order": 6,
    "title": {
     "ja": "モーショングラフィックスの演出 第2弾",
-    "en": "Motion graphics moves, part 2"
+    "en": "Motion graphics moves, part 2",
+    "es": "Movimientos de motion graphics, parte 2",
+    "zh-Hans": "动态图形（第 2 弹）",
+    "zh-Hant": "Motion Graphics 動態手法 第 2 彈"
    },
    "langs": [
     "en",
-    "ja"
+    "es",
+    "ja",
+    "zh-Hans",
+    "zh-Hant"
    ],
    "categories": [
     {
      "slug": "techniques",
      "ja": "動きのテクニック",
-     "en": "Motion techniques"
+     "en": "Motion techniques",
+     "es": "Técnicas de movimiento",
+     "zh-Hans": "动效技巧",
+     "zh-Hant": "動態技巧"
     },
     {
      "slug": "text-shapes",
      "ja": "文字・図形の演出",
-     "en": "Text & shapes"
+     "en": "Text & shapes",
+     "es": "Texto y formas",
+     "zh-Hans": "文字与图形",
+     "zh-Hant": "文字與圖形動態"
     },
     {
      "slug": "transitions-highlights",
      "ja": "切り替え・見せ場",
-     "en": "Transitions & highlights"
+     "en": "Transitions & highlights",
+     "es": "Transiciones y realces",
+     "zh-Hans": "转场与强调",
+     "zh-Hant": "轉場與吸睛效果"
     }
    ],
    "count": 24,
@@ -306,27 +321,42 @@
    "order": 7,
    "title": {
     "ja": "LP・Webサイトの演出 第2弾",
-    "en": "Landing page & web effects, part 2"
+    "en": "Landing page & web effects, part 2",
+    "es": "Efectos de landing pages y sitios web, parte 2",
+    "zh-Hans": "落地页与网页效果（第 2 弹）",
+    "zh-Hant": "Landing Page 與網站效果 第 2 彈"
    },
    "langs": [
     "en",
-    "ja"
+    "es",
+    "ja",
+    "zh-Hans",
+    "zh-Hant"
    ],
    "categories": [
     {
      "slug": "scroll",
      "ja": "スクロールで起きる演出",
-     "en": "Scroll effects"
+     "en": "Scroll effects",
+     "es": "Efectos al hacer scroll",
+     "zh-Hans": "滚动效果",
+     "zh-Hant": "捲動時的效果"
     },
     {
      "slug": "mouse-input",
      "ja": "マウス・入力への反応",
-     "en": "Mouse & input interactions"
+     "en": "Mouse & input interactions",
+     "es": "Interacciones con el mouse y los formularios",
+     "zh-Hans": "鼠标与输入交互",
+     "zh-Hant": "滑鼠與輸入的互動"
     },
     {
      "slug": "showcase",
      "ja": "見せ場の演出",
-     "en": "Showcase effects"
+     "en": "Showcase effects",
+     "es": "Efectos para destacar",
+     "zh-Hans": "亮点展示",
+     "zh-Hant": "吸睛展示效果"
     }
    ],
    "count": 24,
@@ -343,27 +373,42 @@
    "order": 8,
    "title": {
     "ja": "カメラワークと切り替え 第2弾",
-    "en": "Camera moves & transitions, part 2"
+    "en": "Camera moves & transitions, part 2",
+    "es": "Movimientos de cámara y transiciones, parte 2",
+    "zh-Hans": "镜头运动与转场（第 2 弹）",
+    "zh-Hant": "運鏡與轉場 第 2 彈"
    },
    "langs": [
     "en",
-    "ja"
+    "es",
+    "ja",
+    "zh-Hans",
+    "zh-Hant"
    ],
    "categories": [
     {
      "slug": "camera-movement",
      "ja": "カメラの動き",
-     "en": "Camera Movement"
+     "en": "Camera Movement",
+     "es": "Movimientos de cámara",
+     "zh-Hans": "镜头运动",
+     "zh-Hant": "鏡頭運動"
     },
     {
      "slug": "angles-framing",
      "ja": "アングル・画づくり",
-     "en": "Angles & Framing"
+     "en": "Angles & Framing",
+     "es": "Ángulos y encuadre",
+     "zh-Hans": "角度与构图",
+     "zh-Hant": "角度與構圖"
     },
     {
      "slug": "transitions-editing",
      "ja": "切り替え・編集",
-     "en": "Transitions & Editing"
+     "en": "Transitions & Editing",
+     "es": "Transiciones y edición",
+     "zh-Hans": "转场与剪辑",
+     "zh-Hant": "轉場與剪接"
     }
    ],
    "count": 24,
@@ -8064,15 +8109,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "アンティシペーション",
-    "en": "Anticipation"
+    "en": "Anticipation",
+    "es": "Anticipación (anticipation)",
+    "zh-Hans": "预备动作",
+    "zh-Hant": "預備動作"
    },
    "meaning": {
     "ja": "動く前に逆へ少し溜める",
-    "en": "Pulls back briefly before moving forward"
+    "en": "Pulls back briefly before moving forward",
+    "es": "Se echa un poco hacia atrás antes de avanzar",
+    "zh-Hans": "运动前先向反方向稍稍蓄力",
+    "zh-Hant": "移動前先往反方向稍微蓄力"
    },
    "ask": {
     "ja": "ボタンが右へ飛び出す前にアンティシペーションを入れて。0.3秒かけて逆へ少し引き、つぶれてから出す。",
-    "en": "Add anticipation before the button shoots off to the right: pull back slightly for 0.3 s, squash, then go."
+    "en": "Add anticipation before the button shoots off to the right: pull back slightly for 0.3 s, squash, then go.",
+    "es": "Agrega anticipación antes de que el botón salga disparado a la derecha: que retroceda un poco durante 0,3 s, se aplaste y luego arranque.",
+    "zh-Hans": "按钮向右飞出前加上预备动作：先用 0.3 s 向反方向稍稍后拉并压扁，再飞出去。",
+    "zh-Hant": "按鈕往右飛出去之前，請加上預備動作：花 0.3 秒往反方向稍微拉回、壓扁，再衝出去。"
    },
    "summary": {
     "ja": "四角いキャラクターが進む向きと逆へ少し引き、つぶれて溜めてから勢いよく飛び出す。",
@@ -8119,15 +8173,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "フォロースルー",
-    "en": "Follow-through"
+    "en": "Follow-through",
+    "es": "Follow-through (acción continuada)",
+    "zh-Hans": "跟随动作",
+    "zh-Hant": "跟隨動作"
    },
    "meaning": {
     "ja": "止まった後も一部が遅れて揺れる",
-    "en": "Parts keep swinging after the body stops"
+    "en": "Parts keep swinging after the body stops",
+    "es": "Algunas partes siguen balanceándose cuando el cuerpo ya se detuvo",
+    "zh-Hans": "主体停下后，局部仍延迟摆动",
+    "zh-Hant": "主體停下後，部分仍慢一拍擺動"
    },
    "ask": {
     "ja": "キャラが止まったあと、髪と旗にフォロースルーを入れて。0.5秒くらい遅れて揺れて収まるように。",
-    "en": "Give the hair and the flag follow-through after the character stops: they keep swinging for about 0.5 s, then settle."
+    "en": "Give the hair and the flag follow-through after the character stops: they keep swinging for about 0.5 s, then settle.",
+    "es": "Ponle follow-through al pelo y a la bandera cuando el personaje se detiene: que sigan balanceándose unos 0,5 s y luego se acomoden.",
+    "zh-Hans": "角色停下后，给头发和旗子加上跟随动作：延迟约 0.5 s 继续摆动，然后停稳。",
+    "zh-Hant": "角色停下來之後，請讓頭髮和旗子加上跟隨動作，晚約 0.5 秒擺動，然後慢慢靜止。"
    },
    "summary": {
     "ja": "滑ってきた丸いキャラクターが急に止まり、頭の旗としっぽだけが遅れて揺れて収まる。",
@@ -8174,15 +8237,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "バウンス",
-    "en": "Bounce"
+    "en": "Bounce",
+    "es": "Rebote (bounce)",
+    "zh-Hans": "弹跳",
+    "zh-Hant": "彈跳效果"
    },
    "meaning": {
     "ja": "落ちて弾みながら止まる",
-    "en": "Falls and bounces lower until it stops"
+    "en": "Falls and bounces lower until it stops",
+    "es": "Cae y rebota cada vez más bajo hasta detenerse",
+    "zh-Hans": "落下后越弹越低直至停下",
+    "zh-Hant": "落下後一路彈跳到停住"
    },
    "ask": {
     "ja": "ボールを上から落としてバウンスさせて。3回弾んで、だんだん低く。",
-    "en": "Drop the ball from the top with a bounce: three bounces, each lower than the last."
+    "en": "Drop the ball from the top with a bounce: three bounces, each lower than the last.",
+    "es": "Deja caer la pelota desde arriba con un rebote: tres botes, cada uno más bajo que el anterior.",
+    "zh-Hans": "让球从上方落下并弹跳：弹 3 次，一次比一次低。",
+    "zh-Hant": "請讓球從上方落下並加上彈跳效果：彈 3 次，一次比一次低。"
    },
    "summary": {
     "ja": "ボールが落ちて、だんだん低く弾みながら止まる。",
@@ -8229,15 +8301,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ウィグル",
-    "en": "Wiggle"
+    "en": "Wiggle",
+    "es": "Wiggle",
+    "zh-Hans": "随机抖动",
+    "zh-Hant": "Wiggle"
    },
    "meaning": {
     "ja": "小刻みにランダムに揺れる",
-    "en": "Shakes in small, random, continuous jitters"
+    "en": "Shakes in small, random, continuous jitters",
+    "es": "Tiembla con sacudidas pequeñas, aleatorias y continuas",
+    "zh-Hans": "小幅、随机地持续晃动",
+    "zh-Hant": "細微、隨機地持續抖動"
    },
    "ask": {
     "ja": "通知のベルに弱めのウィグルを付けて。角度は最大10°くらいで、鳴っている間ずっと。",
-    "en": "Add a subtle wiggle to the notification bell, up to about 10°, for as long as it rings."
+    "en": "Add a subtle wiggle to the notification bell, up to about 10°, for as long as it rings.",
+    "es": "Agrega un wiggle sutil a la campana de notificaciones, de hasta unos 10°, mientras suene.",
+    "zh-Hans": "给通知铃铛加上轻微的随机抖动，角度最大约 10°，响铃期间一直持续。",
+    "zh-Hant": "請幫通知鈴鐺加上輕微的 Wiggle，角度最多約 10 度，鈴響期間持續抖動。"
    },
    "summary": {
     "ja": "ベルが小刻みに不規則に揺れ続ける。1回の衝撃ではなく、ずっと続く細かい揺れ。",
@@ -8284,15 +8365,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "パルス",
-    "en": "Pulse"
+    "en": "Pulse",
+    "es": "Pulso (pulse)",
+    "zh-Hans": "脉冲动画",
+    "zh-Hant": "脈動效果"
    },
    "meaning": {
     "ja": "鼓動のように大きさが脈打つ",
-    "en": "Its size throbs like a heartbeat"
+    "en": "Its size throbs like a heartbeat",
+    "es": "Su tamaño late como un corazón",
+    "zh-Hans": "像心跳一样有节奏地缩放",
+    "zh-Hant": "大小像心跳一樣一縮一放"
    },
    "ask": {
     "ja": "ハートのアイコンをパルスさせて。1.2秒ごとに、10%ほど大きくなって戻る。",
-    "en": "Make the heart icon pulse: about 10% larger and back, every 1.2 s."
+    "en": "Make the heart icon pulse: about 10% larger and back, every 1.2 s.",
+    "es": "Ponle un pulso al ícono del corazón: que crezca alrededor de un 10 % y vuelva, cada 1,2 s.",
+    "zh-Hans": "给爱心图标加上脉冲动画：每 1.2 s 放大约 10% 再恢复原样。",
+    "zh-Hant": "請幫愛心圖示加上脈動效果：每 1.2 秒放大約 10% 再恢復。"
    },
    "summary": {
     "ja": "ハートが鼓動のように、ドクン・ドクンと大きさを脈打たせ、輪が広がる。",
@@ -8337,15 +8427,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "モーションパス",
-    "en": "Motion path"
+    "en": "Motion path",
+    "es": "Motion path (trayectoria)",
+    "zh-Hans": "运动路径",
+    "zh-Hant": "動態路徑"
    },
    "meaning": {
     "ja": "決めた曲線に沿って動く",
-    "en": "Moves along a curve that you define"
+    "en": "Moves along a curve that you define",
+    "es": "Se mueve siguiendo una curva que tú defines",
+    "zh-Hans": "沿设定的曲线移动",
+    "zh-Hant": "沿著指定的曲線移動"
    },
    "ask": {
     "ja": "紙飛行機を、この曲線のモーションパスに沿って4秒で飛ばして。向きは進む方向に合わせて。",
-    "en": "Fly the paper plane along this curve as a motion path in 4 s, turning it to face the direction of travel."
+    "en": "Fly the paper plane along this curve as a motion path in 4 s, turning it to face the direction of travel.",
+    "es": "Haz volar el avión de papel por esta curva como motion path en 4 s, girándolo para que mire hacia donde avanza.",
+    "zh-Hans": "让纸飞机沿这条曲线的运动路径在 4 s 内飞完，机头始终朝向前进方向。",
+    "zh-Hant": "請讓紙飛機沿著這條曲線的動態路徑飛行，花 4 秒，機頭跟著前進方向轉。"
    },
    "summary": {
     "ja": "点線の道に沿って、紙飛行機が向きを変えながら進み、途中で宙返りする。",
@@ -8390,15 +8489,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ピンポンループ",
-    "en": "Ping-pong loop"
+    "en": "Ping-pong loop",
+    "es": "Bucle ping-pong (ping-pong loop)",
+    "zh-Hans": "往返循环",
+    "zh-Hant": "Ping-pong 循環"
    },
    "meaning": {
     "ja": "行って戻るを繰り返す",
-    "en": "Plays forward, then backward, over and over"
+    "en": "Plays forward, then backward, over and over",
+    "es": "Se reproduce hacia adelante y luego hacia atrás, una y otra vez",
+    "zh-Hans": "正放后倒放，反复来回",
+    "zh-Hant": "正著播完再倒著播，不斷來回"
    },
    "ask": {
     "ja": "ローディングの点をピンポンループで左右に往復させて。片道1秒で。",
-    "en": "Move the loading dot back and forth as a ping-pong loop, 1 s each way."
+    "en": "Move the loading dot back and forth as a ping-pong loop, 1 s each way.",
+    "es": "Mueve el punto de carga de un lado a otro en bucle ping-pong, 1 s en cada sentido.",
+    "zh-Hans": "让加载圆点以往返循环左右来回移动，单程 1 s。",
+    "zh-Hant": "請讓載入中的圓點以 Ping-pong 循環左右來回移動，單程 1 秒。"
    },
    "summary": {
     "ja": "四角が端まで行ったら、同じ道を逆再生のように戻ってくる。往復をくり返す。",
@@ -8445,15 +8553,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ストップモーション風",
-    "en": "Stop-motion style"
+    "en": "Stop-motion style",
+    "es": "Estilo stop-motion",
+    "zh-Hans": "定格动画风格",
+    "zh-Hant": "定格動畫風"
    },
    "meaning": {
     "ja": "コマを落としてカクカク動かす",
-    "en": "Moves in choppy steps, with frames dropped"
+    "en": "Moves in choppy steps, with frames dropped",
+    "es": "Se mueve a saltos, como si le faltaran cuadros",
+    "zh-Hans": "抽帧后动作一顿一顿",
+    "zh-Hant": "抽掉影格，動得一頓一頓的"
    },
    "ask": {
     "ja": "この動きをストップモーション風にして。1秒8コマで、コマごとに少しだけ位置をぶらして。",
-    "en": "Make this move stop-motion style: 8 frames per second, with a slight jitter on every frame."
+    "en": "Make this move stop-motion style: 8 frames per second, with a slight jitter on every frame.",
+    "es": "Dale a este movimiento estilo stop-motion: 8 cuadros por segundo, con un leve temblor en cada cuadro.",
+    "zh-Hans": "把这段动作做成定格动画风格：每秒 8 帧，每帧位置都轻微错开。",
+    "zh-Hant": "請把這段動作做成定格動畫風：每秒 8 格，每一格的位置都稍微偏移一點。"
    },
    "summary": {
     "ja": "星が1秒8コマほどのカクカクした動きで跳ねて進み、コマごとに位置が少しずつぶれる。",
@@ -8500,15 +8617,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "テキストスクランブル",
-    "en": "Text scramble"
+    "en": "Text scramble",
+    "es": "Text scramble (texto revuelto)",
+    "zh-Hans": "文字乱码效果",
+    "zh-Hant": "文字亂碼效果"
    },
    "meaning": {
     "ja": "文字がランダムに入れ替わってから決まる",
-    "en": "Letters shuffle at random, then settle"
+    "en": "Letters shuffle at random, then settle",
+    "es": "Las letras cambian al azar y luego se fijan",
+    "zh-Hans": "字符随机变换后定格为正确文字",
+    "zh-Hant": "文字隨機跳動後才變成正確的字"
    },
    "ask": {
     "ja": "見出しをテキストスクランブルで出して。ランダムな文字が1秒ほど入れ替わって、左から順に決まる。",
-    "en": "Bring the headline in with a text scramble: random characters for about 1 s, settling from left to right."
+    "en": "Bring the headline in with a text scramble: random characters for about 1 s, settling from left to right.",
+    "es": "Haz entrar el titular con un text scramble: caracteres al azar durante cerca de 1 s, que se fijan de izquierda a derecha.",
+    "zh-Hans": "让标题以文字乱码效果出现：随机字符变换约 1 s，再从左到右依次定格。",
+    "zh-Hant": "標題請用文字亂碼效果出現：隨機字元跳動約 1 秒，再由左至右依序變成正確的字。"
    },
    "summary": {
     "ja": "ランダムな文字が入れ替わり続け、左から順に正しい単語に決まる。",
@@ -8555,15 +8681,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ウェーブテキスト",
-    "en": "Wave text"
+    "en": "Wave text",
+    "es": "Texto en ola (wave text)",
+    "zh-Hans": "波浪文字",
+    "zh-Hant": "波浪文字"
    },
    "meaning": {
     "ja": "文字が波のように順に上下する",
-    "en": "Letters rise and fall in turn, like a wave"
+    "en": "Letters rise and fall in turn, like a wave",
+    "es": "Las letras suben y bajan por turnos, como una ola",
+    "zh-Hans": "文字像波浪一样依次上下起伏",
+    "zh-Hant": "文字像波浪一樣依序上下起伏"
    },
    "ask": {
     "ja": "ロゴの文字をウェーブテキストで動かして。1文字ずつずらして、上下20pxくらい。",
-    "en": "Animate the logo letters as wave text, each letter slightly behind the last, about 20 px up and down."
+    "en": "Animate the logo letters as wave text, each letter slightly behind the last, about 20 px up and down.",
+    "es": "Anima las letras del logo como texto en ola, cada letra un poco después de la anterior, unos 20 px arriba y abajo.",
+    "zh-Hans": "让标志的文字做波浪文字动画：每个字依次错开，上下起伏约 20 px。",
+    "zh-Hant": "Logo 的文字請做成波浪文字，每個字稍微錯開，上下起伏約 20 px。"
    },
    "summary": {
     "ja": "「WAVE TEXT」の文字が1文字ずつ、波のように順に上下する。",
@@ -8608,15 +8743,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "テキストオンパス",
-    "en": "Text on a path"
+    "en": "Text on a path",
+    "es": "Texto en trazado (text on a path)",
+    "zh-Hans": "路径文字",
+    "zh-Hant": "路徑文字"
    },
    "meaning": {
     "ja": "文字が線に沿って流れる",
-    "en": "Text flows along a line or curve"
+    "en": "Text flows along a line or curve",
+    "es": "El texto corre a lo largo de una línea o una curva",
+    "zh-Hans": "文字沿线条或曲线流动",
+    "zh-Hant": "文字沿著線條或曲線流動"
    },
    "ask": {
     "ja": "キャッチコピーをテキストオンパスで、波線に沿って左から右へ流して。1周5秒で。",
-    "en": "Run the tagline as text on a path along a wavy line, scrolling left to right, one full pass every 5 s."
+    "en": "Run the tagline as text on a path along a wavy line, scrolling left to right, one full pass every 5 s.",
+    "es": "Pasa el eslogan como texto en trazado por una línea ondulada, de izquierda a derecha, con una pasada completa cada 5 s.",
+    "zh-Hans": "把宣传语做成路径文字，沿波浪线从左向右流动，每 5 s 走完一轮。",
+    "zh-Hant": "標語請做成路徑文字，沿著波浪線由左往右流動，5 秒跑完一輪。"
    },
    "summary": {
     "ja": "文字列が、波打つ線に沿って向きを変えながら流れていく。",
@@ -8661,15 +8805,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "可変フォントアニメーション",
-    "en": "Variable font animation"
+    "en": "Variable font animation",
+    "es": "Animación de fuente variable",
+    "zh-Hans": "可变字体动画",
+    "zh-Hant": "可變字型動畫"
    },
    "meaning": {
     "ja": "文字の太さがなめらかに変わる",
-    "en": "The weight of the letters changes smoothly"
+    "en": "The weight of the letters changes smoothly",
+    "es": "El peso de las letras cambia suavemente",
+    "zh-Hans": "文字粗细平滑变化",
+    "zh-Hant": "文字的粗細平順地變化"
    },
    "ask": {
     "ja": "タイトルを可変フォントアニメーションで、細字から極太へ1秒で変えて。",
-    "en": "Use a variable font animation on the title: from Thin to Black (weight 100 to 900) in 1 s."
+    "en": "Use a variable font animation on the title: from Thin to Black (weight 100 to 900) in 1 s.",
+    "es": "Usa una animación de fuente variable en el título: de Thin a Black (peso 100 a 900) en 1 s.",
+    "zh-Hans": "给标题加上可变字体动画：1 s 内从 Thin 变到 Black（字重 100 到 900）。",
+    "zh-Hant": "標題請用可變字型動畫，在 1 秒內從 Thin 變成 Black（字重 100 到 900）。"
    },
    "summary": {
     "ja": "同じ単語の太さが、細→極太→細となめらかに変わり、下のつまみが太さを示す。",
@@ -8711,15 +8864,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "テキストマスク",
-    "en": "Text mask"
+    "en": "Text mask",
+    "es": "Máscara de texto (text mask)",
+    "zh-Hans": "文字遮罩",
+    "zh-Hant": "文字遮罩"
    },
    "meaning": {
     "ja": "文字の形にくり抜いて中の柄を見せる",
-    "en": "Letters cut out to show a picture inside"
+    "en": "Letters cut out to show a picture inside",
+    "es": "Letras recortadas que dejan ver una imagen adentro",
+    "zh-Hans": "镂空成文字形状，透出内部画面",
+    "zh-Hant": "把文字形狀挖空，露出裡面的畫面"
    },
    "ask": {
     "ja": "「OCEAN」の文字をテキストマスクにして、中に波の映像を見せて。最後の1秒で外側も見せる。",
-    "en": "Use the word OCEAN as a text mask with ocean footage inside, and reveal the whole footage in the last second."
+    "en": "Use the word OCEAN as a text mask with ocean footage inside, and reveal the whole footage in the last second.",
+    "es": "Usa la palabra OCEAN como máscara de texto con un video del mar adentro, y muestra el video completo en el último segundo.",
+    "zh-Hans": "把“OCEAN”做成文字遮罩，里面透出海浪视频，最后 1 s 显示完整画面。",
+    "zh-Hant": "請把「OCEAN」做成文字遮罩，字裡面顯示海浪影片，最後 1 秒連文字外面的畫面也全部顯示。"
    },
    "summary": {
     "ja": "太い文字の形にくり抜いて、その中だけに動く海の景色が見える。周期の終わりに外側も見せる。",
@@ -8764,15 +8926,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "リピーター",
-    "en": "Repeater"
+    "en": "Repeater",
+    "es": "Repetidor (repeater)",
+    "zh-Hans": "中继器",
+    "zh-Hant": "Repeater"
    },
    "meaning": {
     "ja": "図形を複製して並べて回す",
-    "en": "Duplicates a shape and turns the copies"
+    "en": "Duplicates a shape and turns the copies",
+    "es": "Duplica una forma y hace girar las copias",
+    "zh-Hans": "复制图形并排列旋转",
+    "zh-Hant": "複製圖形、排列並旋轉"
    },
    "ask": {
     "ja": "この花びらの形をリピーターで12枚、円に並べて、4秒で1回転させて。",
-    "en": "Use a repeater to make 12 copies of this petal in a circle, turning once every 4 s."
+    "en": "Use a repeater to make 12 copies of this petal in a circle, turning once every 4 s.",
+    "es": "Usa un repetidor para hacer 12 copias de este pétalo en círculo, dando una vuelta cada 4 s.",
+    "zh-Hans": "用中继器把这片花瓣复制成 12 片排成圆形，每 4 s 旋转一圈。",
+    "zh-Hant": "請用 Repeater 把這片花瓣複製成 12 片排成一圈，4 秒轉一圈。"
    },
    "summary": {
     "ja": "1つの図形が複製されて円に並び、少しずつずれながら回る。",
@@ -8817,15 +8988,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "カレイドスコープ",
-    "en": "Kaleidoscope"
+    "en": "Kaleidoscope",
+    "es": "Caleidoscopio",
+    "zh-Hans": "万花筒",
+    "zh-Hant": "萬花筒效果"
    },
    "meaning": {
     "ja": "万華鏡のように対称に広がる",
-    "en": "Mirrored patterns spread out symmetrically"
+    "en": "Mirrored patterns spread out symmetrically",
+    "es": "Patrones en espejo que se abren de forma simétrica",
+    "zh-Hans": "像万花筒一样对称展开",
+    "zh-Hant": "像萬花筒一樣對稱地擴散"
    },
    "ask": {
     "ja": "ロゴの背景にカレイドスコープを入れて。8分割の対称で、ゆっくり回しながら広げて。",
-    "en": "Put a kaleidoscope behind the logo: 8-way mirror symmetry, turning slowly as it spreads out."
+    "en": "Put a kaleidoscope behind the logo: 8-way mirror symmetry, turning slowly as it spreads out.",
+    "es": "Pon un caleidoscopio detrás del logo: simetría de espejo en 8 partes, girando despacio mientras se expande.",
+    "zh-Hans": "在标志背后加入万花筒效果：8 等分镜像对称，一边缓慢旋转一边向外展开。",
+    "zh-Hant": "Logo 的背景請加上萬花筒效果：8 等分對稱，一邊慢慢旋轉一邊擴散。"
    },
    "summary": {
     "ja": "万華鏡のように、8分割の対称な模様が回りながら中心から広がる。",
@@ -8872,15 +9052,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ラインボイル",
-    "en": "Line boil"
+    "en": "Line boil",
+    "es": "Line boil (línea temblorosa)",
+    "zh-Hans": "线条抖动",
+    "zh-Hant": "Line Boil 線條抖動"
    },
    "meaning": {
     "ja": "手描きの線が小刻みに揺らぐ",
-    "en": "Hand-drawn lines wobble frame to frame"
+    "en": "Hand-drawn lines wobble frame to frame",
+    "es": "Las líneas dibujadas a mano tiemblan de un cuadro a otro",
+    "zh-Hans": "手绘线条逐帧轻微抖动",
+    "zh-Hant": "手繪線條每幾格就微微晃動"
    },
    "ask": {
     "ja": "手描きのイラストにラインボイルを付けて。1秒10コマで、線を2〜3pxだけ揺らして。",
-    "en": "Add line boil to the hand-drawn illustration: 10 frames per second, with the lines shifting only 2–3 px."
+    "en": "Add line boil to the hand-drawn illustration: 10 frames per second, with the lines shifting only 2–3 px.",
+    "es": "Agrega line boil a la ilustración dibujada a mano: 10 cuadros por segundo, con las líneas moviéndose solo 2–3 px.",
+    "zh-Hans": "给手绘插画加上线条抖动：每秒 10 帧，线条只偏移 2–3 px。",
+    "zh-Hant": "請幫手繪插畫加上 Line Boil 線條抖動：每秒 10 格，線條只晃動 2–3 px。"
    },
    "summary": {
     "ja": "手描き風の線の絵が、数コマごとに小刻みに揺らぐ。絵そのものは動かない。",
@@ -8925,15 +9114,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "プッシュ",
-    "en": "Push transition"
+    "en": "Push transition",
+    "es": "Transición de empuje (push)",
+    "zh-Hans": "推入转场",
+    "zh-Hant": "推移轉場"
    },
    "meaning": {
     "ja": "次の画面が前の画面を押し出す",
-    "en": "The next scene pushes the current one out"
+    "en": "The next scene pushes the current one out",
+    "es": "La escena siguiente empuja fuera a la actual",
+    "zh-Hans": "下一画面把当前画面推出",
+    "zh-Hant": "下一個畫面把目前的畫面推出去"
    },
    "ask": {
     "ja": "次のスライドへはプッシュで。右から0.8秒で押し出すように。",
-    "en": "Go to the next slide with a push transition from the right, 0.8 s."
+    "en": "Go to the next slide with a push transition from the right, 0.8 s.",
+    "es": "Pasa a la siguiente diapositiva con una transición de empuje desde la derecha, en 0,8 s.",
+    "zh-Hans": "用推入转场切到下一张幻灯片，从右侧在 0.8 s 内推入。",
+    "zh-Hant": "切到下一張投影片請用推移轉場，從右邊推進來，0.8 秒。"
    },
    "summary": {
     "ja": "次の画面が横から入ってきて、前の画面を一緒に押し出す。",
@@ -8977,15 +9175,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ブラインド",
-    "en": "Blinds transition"
+    "en": "Blinds transition",
+    "es": "Transición de persianas (blinds)",
+    "zh-Hans": "百叶窗转场",
+    "zh-Hant": "百葉窗轉場"
    },
    "meaning": {
     "ja": "細い帯の隙間から次の画面が開く",
-    "en": "The next scene opens through thin strips"
+    "en": "The next scene opens through thin strips",
+    "es": "La escena siguiente se abre entre franjas delgadas",
+    "zh-Hans": "从细条缝隙中打开下一画面",
+    "zh-Hant": "下一個畫面從細長橫條的縫隙中打開"
    },
    "ask": {
     "ja": "場面の切り替えをブラインドで。横の帯7本で、1秒かけて開くように。",
-    "en": "Change scenes with a blinds transition: seven horizontal strips that open over 1 s."
+    "en": "Change scenes with a blinds transition: seven horizontal strips that open over 1 s.",
+    "es": "Cambia de escena con una transición de persianas: siete franjas horizontales que se abren en 1 s.",
+    "zh-Hans": "用百叶窗转场切换场景：7 条横向条带，在 1 s 内打开。",
+    "zh-Hant": "場景切換請用百葉窗轉場：7 條橫條，花 1 秒打開。"
    },
    "summary": {
     "ja": "細い帯ごとのすき間がだんだん広がって、次の画面が開く。",
@@ -9027,15 +9234,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "キューブ",
-    "en": "Cube transition"
+    "en": "Cube transition",
+    "es": "Transición de cubo (cube)",
+    "zh-Hans": "立方体转场",
+    "zh-Hant": "立方體轉場"
    },
    "meaning": {
     "ja": "立方体が回るように面が替わる",
-    "en": "Changes scenes like a turning cube"
+    "en": "Changes scenes like a turning cube",
+    "es": "Cambia de escena como un cubo que gira",
+    "zh-Hans": "像立方体旋转一样切换画面",
+    "zh-Hant": "像轉動立方體一樣換到下一面"
    },
    "ask": {
     "ja": "商品写真の切り替えをキューブで。左へ90°回して、0.8秒で。",
-    "en": "Switch the product shots with a cube transition, turning 90° to the left in 0.8 s."
+    "en": "Switch the product shots with a cube transition, turning 90° to the left in 0.8 s.",
+    "es": "Cambia las fotos del producto con una transición de cubo, girando 90° a la izquierda en 0,8 s.",
+    "zh-Hans": "商品照片用立方体转场切换，向左转 90°，时长 0.8 s。",
+    "zh-Hant": "商品照片的切換請用立方體轉場，往左轉 90 度，0.8 秒。"
    },
    "summary": {
     "ja": "立方体が回るように、前の面が奥へ倒れて次の面が現れる。",
@@ -9079,15 +9295,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ページめくり",
-    "en": "Page curl"
+    "en": "Page curl",
+    "es": "Vuelta de página (page curl)",
+    "zh-Hans": "翻页转场",
+    "zh-Hant": "翻頁轉場"
    },
    "meaning": {
     "ja": "紙のようにめくれて次へ",
-    "en": "Peels back like paper to show the next page"
+    "en": "Peels back like paper to show the next page",
+    "es": "Se levanta como papel y deja ver la página siguiente",
+    "zh-Hans": "像纸张一样卷起，翻到下一页",
+    "zh-Hant": "像紙張一樣翻起，露出下一頁"
    },
    "ask": {
     "ja": "次の章へはページめくりで。右下の角から1.2秒でめくって。",
-    "en": "Go to the next chapter with a page curl from the bottom-right corner, 1.2 s."
+    "en": "Go to the next chapter with a page curl from the bottom-right corner, 1.2 s.",
+    "es": "Pasa al siguiente capítulo con una vuelta de página desde la esquina inferior derecha, en 1,2 s.",
+    "zh-Hans": "用翻页转场进入下一章，从右下角在 1.2 s 内翻起。",
+    "zh-Hant": "進入下一章請用翻頁轉場，從右下角翻起，1.2 秒。"
    },
    "summary": {
     "ja": "角から紙がめくれて裏返り、下から次のページが現れる。",
@@ -9131,15 +9356,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ピクセレート",
-    "en": "Pixelate"
+    "en": "Pixelate",
+    "es": "Pixelado (pixelate)",
+    "zh-Hans": "像素化转场",
+    "zh-Hant": "像素化轉場"
    },
    "meaning": {
     "ja": "モザイクが粗くなって切り替わる",
-    "en": "Turns into coarse blocks, then switches"
+    "en": "Turns into coarse blocks, then switches",
+    "es": "Se vuelve bloques gruesos y luego cambia",
+    "zh-Hans": "马赛克逐渐变粗后切换画面",
+    "zh-Hant": "馬賽克越變越粗，再切換畫面"
    },
    "ask": {
     "ja": "ピクセレートで切り替えて。0.6秒でモザイクが粗くなり、いちばん粗いところで次の画面へ。",
-    "en": "Use a pixelate transition: the mosaic gets coarser over 0.6 s and the scene changes at the coarsest point."
+    "en": "Use a pixelate transition: the mosaic gets coarser over 0.6 s and the scene changes at the coarsest point.",
+    "es": "Usa una transición de pixelado: el mosaico se vuelve más grueso durante 0,6 s y la escena cambia en el punto más grueso.",
+    "zh-Hans": "用像素化转场切换：0.6 s 内马赛克逐渐变粗，在最粗时切到下一画面。",
+    "zh-Hant": "請用像素化轉場：0.6 秒內馬賽克越來越粗，在最粗的時候切換到下一個畫面。"
    },
    "summary": {
     "ja": "画面がだんだん粗いモザイクになり、いちばん粗いところで切り替わって細かく戻る。",
@@ -9182,15 +9416,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "ガラス割れ",
-    "en": "Shatter"
+    "en": "Shatter",
+    "es": "Vidrio roto (shatter)",
+    "zh-Hans": "玻璃碎裂",
+    "zh-Hant": "玻璃碎裂"
    },
    "meaning": {
     "ja": "ガラスのように割れて破片が飛ぶ",
-    "en": "Breaks like glass and the shards fly off"
+    "en": "Breaks like glass and the shards fly off",
+    "es": "Se rompe como vidrio y los fragmentos salen volando",
+    "zh-Hans": "像玻璃一样碎裂，碎片飞散",
+    "zh-Hant": "像玻璃一樣碎裂，碎片四散"
    },
    "ask": {
     "ja": "タイトルの登場前に、前の画面をガラス割れで砕いて。ひびが入ってから破片が1秒で落ちるように。",
-    "en": "Before the title appears, break the previous scene with a shatter: cracks first, then the shards fall away in about 1 s."
+    "en": "Before the title appears, break the previous scene with a shatter: cracks first, then the shards fall away in about 1 s.",
+    "es": "Antes de que aparezca el título, rompe la escena anterior con un efecto de vidrio roto: primero las grietas y luego los fragmentos caen en aproximadamente 1 s.",
+    "zh-Hans": "标题出现前，用玻璃碎裂打碎前一画面：先出现裂纹，碎片再在约 1 s 内落下。",
+    "zh-Hant": "標題出現之前，請用玻璃碎裂把前一個畫面打碎：先出現裂痕，再讓碎片在約 1 秒內落下。"
    },
    "summary": {
     "ja": "画面がガラスのようにひび割れ、破片が飛び散って次の画面が現れる。",
@@ -9237,15 +9480,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "分解図",
-    "en": "Exploded view"
+    "en": "Exploded view",
+    "es": "Vista explosionada (exploded view)",
+    "zh-Hans": "爆炸图",
+    "zh-Hant": "分解圖"
    },
    "meaning": {
     "ja": "部品がばらけて中の構造を見せる",
-    "en": "Parts separate to show the structure inside"
+    "en": "Parts separate to show the structure inside",
+    "es": "Las piezas se separan y muestran la estructura interna",
+    "zh-Hans": "零件分离，展示内部结构",
+    "zh-Hant": "零件散開，露出內部構造"
    },
    "ask": {
     "ja": "製品の分解図を見せて。4つの部品が1秒でばらけて、名前のラベルを付けて。",
-    "en": "Show an exploded view of the product: four parts spread apart in 1 s, each with a name label."
+    "en": "Show an exploded view of the product: four parts spread apart in 1 s, each with a name label.",
+    "es": "Muestra una vista explosionada del producto: cuatro piezas que se separan en 1 s, cada una con una etiqueta con su nombre.",
+    "zh-Hans": "展示产品的爆炸图：4 个零件在 1 s 内分开，并分别标上名称。",
+    "zh-Hant": "請呈現產品的分解圖：4 個零件在 1 秒內散開，每個都加上名稱標籤。"
    },
    "summary": {
     "ja": "スマホの部品が層ごとにばらけて中の構造を見せ、また組み上がる。",
@@ -9290,15 +9542,24 @@
    "cycle": 4.7,
    "name": {
     "ja": "スプリットスクリーン",
-    "en": "Split screen"
+    "en": "Split screen",
+    "es": "Pantalla dividida (split screen)",
+    "zh-Hans": "分屏",
+    "zh-Hant": "分割畫面"
    },
    "meaning": {
     "ja": "画面を分けて同時に見せる",
-    "en": "Divides the frame to show scenes side by side"
+    "en": "Divides the frame to show scenes side by side",
+    "es": "Divide el cuadro para mostrar escenas lado a lado",
+    "zh-Hans": "分割画面，同时展示多个场景",
+    "zh-Hant": "把畫面分成幾格同時呈現"
    },
    "ask": {
     "ja": "スプリットスクリーンで3つの場面を同時に見せて。1画面から2分割、3分割へ0.5秒ずつで。",
-    "en": "Show three scenes at once with a split screen: from one panel to two, then three, 0.5 s each."
+    "en": "Show three scenes at once with a split screen: from one panel to two, then three, 0.5 s each.",
+    "es": "Muestra tres escenas a la vez con pantalla dividida: de un panel a dos y luego a tres, 0,5 s cada paso.",
+    "zh-Hans": "用分屏同时展示三个场景：从一个画面分成两个，再分成三个，每步 0.5 s。",
+    "zh-Hant": "請用分割畫面同時呈現 3 個場景：從 1 個畫面分成 2 格、再分成 3 格，每次 0.5 秒。"
    },
    "summary": {
     "ja": "1枚の画面が2つ、3つに分かれて、別々の場面が同時に動く。",
@@ -9340,15 +9601,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "タイムラインアニメーション",
-    "en": "Timeline on scroll"
+    "en": "Timeline on scroll",
+    "es": "Línea de tiempo al hacer scroll",
+    "zh-Hans": "滚动时间轴",
+    "zh-Hant": "時間軸動畫"
    },
    "meaning": {
     "ja": "スクロールで年表の線が伸びる",
-    "en": "A timeline line grows as you scroll"
+    "en": "A timeline line grows as you scroll",
+    "es": "Una línea de tiempo crece a medida que haces scroll",
+    "zh-Hans": "滚动时时间轴的线条随之延伸",
+    "zh-Hant": "捲動時，年表的線條跟著延伸"
    },
    "ask": {
     "ja": "会社のあゆみをタイムラインアニメーションにして。スクロールに合わせて縦線を伸ばし、線が届いた年から順に出して。",
-    "en": "Turn the company history into a timeline on scroll: grow the vertical line with the scroll and reveal each year as the line reaches it."
+    "en": "Turn the company history into a timeline on scroll: grow the vertical line with the scroll and reveal each year as the line reaches it.",
+    "es": "Convierte la historia de la empresa en una línea de tiempo al hacer scroll: que la línea vertical crezca con el scroll y muestre cada año cuando la línea llega a él.",
+    "zh-Hans": "把公司沿革做成滚动时间轴：竖线随滚动延伸，线到达哪一年就依次显示该年内容。",
+    "zh-Hant": "公司沿革請做成時間軸動畫：縱線隨著捲動延伸，線延伸到哪一年，就依序顯示那一年。"
    },
    "summary": {
     "ja": "ページを下へスクロールすると、年表の縦線が朱色で上から伸び、線の先が届いた年の点が塗られて、年と出来事が右から現れる。上へ戻すと逆にたどる。",
@@ -9394,15 +9664,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "スクロールテキストリビール",
-    "en": "Scroll text reveal"
+    "en": "Scroll text reveal",
+    "es": "Revelado de texto al hacer scroll",
+    "zh-Hans": "滚动文字显现",
+    "zh-Hant": "捲動文字浮現"
    },
    "meaning": {
     "ja": "読み進めると文字が順に濃くなる",
-    "en": "Text darkens letter by letter as you scroll"
+    "en": "Text darkens letter by letter as you scroll",
+    "es": "El texto se oscurece letra por letra mientras haces scroll",
+    "zh-Hans": "随着阅读，文字逐字变深",
+    "zh-Hant": "往下捲動時，文字依序變深"
    },
    "ask": {
     "ja": "コンセプト文にスクロールテキストリビールを付けて。最初は薄いグレーで、スクロールに合わせて1文字ずつ濃くして。",
-    "en": "Add a scroll text reveal to the concept statement: start in light gray and darken it one character at a time as the page scrolls."
+    "en": "Add a scroll text reveal to the concept statement: start in light gray and darken it one character at a time as the page scrolls.",
+    "es": "Agrega un revelado de texto al hacer scroll a la frase de concepto: que empiece en gris claro y se oscurezca un carácter a la vez mientras se desplaza la página.",
+    "zh-Hans": "给理念文案加上滚动文字显现：初始为浅灰色，随滚动逐字加深。",
+    "zh-Hant": "理念文案加上捲動文字浮現：一開始是淺灰色，隨著捲動一個字一個字變深。"
    },
    "summary": {
     "ja": "薄いグレーの見出しの文字が、スクロールに合わせて左上から1文字ずつ濃くなり、戻すと後ろから薄くなる。",
@@ -9446,15 +9725,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "スタッキングカード",
-    "en": "Stacking cards"
+    "en": "Stacking cards",
+    "es": "Tarjetas apiladas (stacking cards)",
+    "zh-Hans": "堆叠卡片",
+    "zh-Hant": "堆疊卡片"
    },
    "meaning": {
     "ja": "スクロールでカードが積み重なる",
-    "en": "Cards stack on top of each other on scroll"
+    "en": "Cards stack on top of each other on scroll",
+    "es": "Las tarjetas se apilan una sobre otra al hacer scroll",
+    "zh-Hans": "滚动时卡片层层叠起",
+    "zh-Hant": "捲動時，卡片一張張疊上來"
    },
    "ask": {
     "ja": "サービスの3ステップをスタッキングカードにして。スクロールで次のカードが下から来て、12pxずつずらして重なるように。",
-    "en": "Show the three service steps as stacking cards: on scroll, each card slides up and stacks 12 px below the top of the one before."
+    "en": "Show the three service steps as stacking cards: on scroll, each card slides up and stacks 12 px below the top of the one before.",
+    "es": "Muestra los tres pasos del servicio como tarjetas apiladas: al hacer scroll, cada tarjeta sube y se apila 12 px por debajo del borde superior de la anterior.",
+    "zh-Hans": "把服务的三个步骤做成堆叠卡片：滚动时下一张从下方升起，每张比前一张错开 12 px 叠上去。",
+    "zh-Hant": "服務的三個步驟做成堆疊卡片：捲動時下一張卡片從下方上來，每張錯開 12 px 疊上去。"
    },
    "summary": {
     "ja": "スクロールすると、次のカードが下から上がってきて、前のカードに少しずらして重なる。下になったカードは少し縮んで暗くなる。",
@@ -9500,15 +9788,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "背景色の切り替え",
-    "en": "Background color change on scroll"
+    "en": "Background color change on scroll",
+    "es": "Cambio de color de fondo al hacer scroll",
+    "zh-Hans": "滚动切换背景色",
+    "zh-Hant": "捲動切換背景色"
    },
    "meaning": {
     "ja": "セクションごとに背景の色が変わる",
-    "en": "The page background changes color by section"
+    "en": "The page background changes color by section",
+    "es": "El fondo de la página cambia de color en cada sección",
+    "zh-Hans": "按区块切换页面背景色",
+    "zh-Hant": "背景顏色隨區塊切換"
    },
    "ask": {
     "ja": "セクションごとに背景色の切り替えを入れて。スクロールで朝はクリーム、夜は濃紺、休日は水色へなめらかに変えて。",
-    "en": "Add a background color change on scroll: blend smoothly from cream for the morning section to navy for night and light blue for the holiday section."
+    "en": "Add a background color change on scroll: blend smoothly from cream for the morning section to navy for night and light blue for the holiday section.",
+    "es": "Agrega un cambio de color de fondo al hacer scroll: que pase suavemente de crema en la sección de la mañana a azul marino en la de la noche y a celeste en la de los días libres.",
+    "zh-Hans": "给各区块加上滚动切换背景色：滚动时从早晨区块的奶油色平滑过渡到夜晚的藏蓝色，再到假日的浅蓝色。",
+    "zh-Hant": "每個區塊加上捲動切換背景色：隨著捲動，從早晨的奶油色、夜晚的深藍色到假日的淺藍色，平順地漸變。"
    },
    "summary": {
     "ja": "スクロールしてセクションが変わるたびに、ページ全体の背景がクリーム→濃紺→水色となめらかに変わる。暗い背景では文字が白になる。",
@@ -9554,15 +9851,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "隠れるヘッダー",
-    "en": "Hide-on-scroll header"
+    "en": "Hide-on-scroll header",
+    "es": "Encabezado que se oculta al hacer scroll",
+    "zh-Hans": "滚动隐藏页头",
+    "zh-Hant": "自動隱藏 Header"
    },
    "meaning": {
     "ja": "下へで隠れて上へで出てくる",
-    "en": "Hides on scroll down, returns on scroll up"
+    "en": "Hides on scroll down, returns on scroll up",
+    "es": "Se oculta al bajar y vuelve al subir",
+    "zh-Hans": "向下滚动时隐藏，向上滚动时出现",
+    "zh-Hant": "往下捲時隱藏，往上捲時出現"
    },
    "ask": {
     "ja": "ヘッダーを隠れるヘッダーにして。下へスクロールしたら0.3秒で上へ隠し、少しでも上へ戻したら出して。",
-    "en": "Make the header hide on scroll: slide it up out of view over 0.3 s when scrolling down, and bring it back as soon as the user scrolls up."
+    "en": "Make the header hide on scroll: slide it up out of view over 0.3 s when scrolling down, and bring it back as soon as the user scrolls up.",
+    "es": "Haz un encabezado que se oculta al hacer scroll: que suba fuera de la vista en 0,3 s al bajar y vuelva apenas se haga scroll hacia arriba.",
+    "zh-Hans": "把页头做成滚动隐藏页头：向下滚动时用 0.3 s 向上隐藏，只要稍微向上滚动就重新出现。",
+    "zh-Hant": "把 Header 做成自動隱藏 Header：往下捲動時在 0.3 秒內往上收起，只要稍微往上捲就重新出現。"
    },
    "summary": {
     "ja": "下へスクロールするとヘッダーが上へ引っ込んで読む場所が広くなり、少し上へ戻すとすぐに出てくる。",
@@ -9606,15 +9912,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "スクロールスパイ",
-    "en": "Scrollspy"
+    "en": "Scrollspy",
+    "es": "Scrollspy",
+    "zh-Hans": "滚动监听",
+    "zh-Hant": "Scrollspy"
    },
    "meaning": {
     "ja": "読んでいる見出しが目次で光る",
-    "en": "Highlights the current section in the menu"
+    "en": "Highlights the current section in the menu",
+    "es": "Resalta en el menú la sección que estás leyendo",
+    "zh-Hans": "目录高亮当前阅读的章节",
+    "zh-Hant": "在目錄中標示正在閱讀的段落"
    },
    "ask": {
     "ja": "記事の目次にスクロールスパイを付けて。今読んでいる見出しの項目を朱色にして、切り替えは0.25秒で。",
-    "en": "Add scrollspy to the article's table of contents: highlight the item for the section being read in orange, switching over 0.25 s."
+    "en": "Add scrollspy to the article's table of contents: highlight the item for the section being read in orange, switching over 0.25 s.",
+    "es": "Agrega scrollspy al índice del artículo: resalta en naranja el elemento de la sección que se está leyendo, con un cambio de 0,25 s.",
+    "zh-Hans": "给文章目录加上滚动监听：当前阅读章节的条目显示为朱红色，切换用时 0.25 s。",
+    "zh-Hant": "文章目錄加上 Scrollspy：正在閱讀的段落所對應的項目變成橘紅色，切換時間 0.25 秒。"
    },
    "summary": {
     "ja": "本文をスクロールすると、左の目次のうち、いま読んでいる見出しの項目に色が付き、次の見出しに入ると印が移る。",
@@ -9658,15 +9973,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "トップへ戻るボタン",
-    "en": "Back-to-top button"
+    "en": "Back-to-top button",
+    "es": "Botón de volver arriba",
+    "zh-Hans": "回到顶部按钮",
+    "zh-Hant": "回到頂端按鈕"
    },
    "meaning": {
     "ja": "下まで読むと現れて押すと先頭へ",
-    "en": "Appears lower down and returns you to the top"
+    "en": "Appears lower down and returns you to the top",
+    "es": "Aparece más abajo y te regresa al inicio",
+    "zh-Hans": "往下滚动后出现，点击回到顶部",
+    "zh-Hant": "往下捲後出現，點擊就回到最上方"
    },
    "ask": {
     "ja": "記事ページにトップへ戻るボタンを付けて。少しスクロールしたら右下に出して、押したら0.6秒で先頭まで戻して。",
-    "en": "Add a back-to-top button to the article page: show it at the bottom right once the reader has scrolled a little, and scroll to the top in 0.6 s when clicked."
+    "en": "Add a back-to-top button to the article page: show it at the bottom right once the reader has scrolled a little, and scroll to the top in 0.6 s when clicked.",
+    "es": "Agrega un botón de volver arriba a la página del artículo: que aparezca abajo a la derecha cuando el lector haya bajado un poco, y que suba hasta arriba en 0,6 s al hacer clic.",
+    "zh-Hans": "给文章页加上回到顶部按钮：稍微滚动后显示在右下角，点击后用 0.6 s 滚回顶部。",
+    "zh-Hant": "文章頁加上回到頂端按鈕：稍微往下捲之後出現在右下角，點擊後在 0.6 秒內回到頁面最上方。"
    },
    "summary": {
     "ja": "下までスクロールすると右下に丸い矢印のボタンが現れ、押すとページが一気に先頭まで戻る。",
@@ -9710,15 +10034,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "スクロールで拡大",
-    "en": "Zoom on scroll"
+    "en": "Zoom on scroll",
+    "es": "Zoom al hacer scroll",
+    "zh-Hans": "滚动放大",
+    "zh-Hant": "捲動放大"
    },
    "meaning": {
     "ja": "画像が画面いっぱいまで広がる",
-    "en": "An image grows to fill the screen as you scroll"
+    "en": "An image grows to fill the screen as you scroll",
+    "es": "Una imagen crece hasta llenar la pantalla al hacer scroll",
+    "zh-Hans": "图片随滚动放大至铺满屏幕",
+    "zh-Hant": "捲動時，圖片放大到填滿畫面"
    },
    "ask": {
     "ja": "ファーストビューの写真をスクロールで拡大にして。中央の小さな写真をスクロールに合わせて画面いっぱいまで広げ、広がりきったら見出しを重ねて。",
-    "en": "Use zoom on scroll for the hero image: grow the small centered photo to fill the viewport as the user scrolls, then fade a headline in over it."
+    "en": "Use zoom on scroll for the hero image: grow the small centered photo to fill the viewport as the user scrolls, then fade a headline in over it.",
+    "es": "Usa zoom al hacer scroll en la imagen del hero: que la foto pequeña del centro crezca hasta llenar la pantalla mientras se hace scroll, y luego funde un titular encima.",
+    "zh-Hans": "首屏照片做成滚动放大：中央的小照片随滚动放大到铺满视口，完全展开后叠上标题。",
+    "zh-Hant": "Hero 區塊的照片做成捲動放大：中央的小照片隨著捲動放大到填滿畫面，完全放大後再疊上標題。"
    },
    "summary": {
     "ja": "スクロールに合わせて、ページ中央の小さな写真が窓いっぱいまで広がり、周りの文字が消えて、写真の上に見出しが出る。",
@@ -9763,15 +10096,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "3Dチルト",
-    "en": "3D tilt on hover"
+    "en": "3D tilt on hover",
+    "es": "Tilt 3D (inclinación 3D)",
+    "zh-Hans": "3D 倾斜",
+    "zh-Hant": "3D 傾斜效果"
    },
    "meaning": {
     "ja": "カーソルの向きにカードが傾く",
-    "en": "The card tilts in 3D following the cursor"
+    "en": "The card tilts in 3D following the cursor",
+    "es": "La tarjeta se inclina en 3D siguiendo el cursor",
+    "zh-Hans": "卡片随光标方向立体倾斜",
+    "zh-Hant": "卡片跟著游標方向立體傾斜"
    },
    "ask": {
     "ja": "会員カードに3Dチルトを付けて。カーソルの位置に合わせて最大18°傾けて、光の反射も動かして。",
-    "en": "Add a 3D tilt on hover to the member card: tilt it up to 18° following the cursor, with a moving glare."
+    "en": "Add a 3D tilt on hover to the member card: tilt it up to 18° following the cursor, with a moving glare.",
+    "es": "Agrega un tilt 3D al pasar el cursor a la tarjeta de miembro: que se incline hasta 18° siguiendo el cursor, con un reflejo de luz que se mueve.",
+    "zh-Hans": "给会员卡加上 3D 倾斜：随光标位置最大倾斜 18°，反光也跟着移动。",
+    "zh-Hant": "會員卡加上 3D 傾斜效果：跟著游標位置最多傾斜 18 度，表面的反光也跟著移動。"
    },
    "summary": {
     "ja": "カーソルがカードの上を動くと、カードがカーソルの位置に合わせて奥行きをもって傾き、表面の光の反射も一緒に動く。離れると平らに戻る。",
@@ -9818,15 +10160,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "スポットライトホバー",
-    "en": "Spotlight hover"
+    "en": "Spotlight hover",
+    "es": "Spotlight hover (foco al pasar el cursor)",
+    "zh-Hans": "聚光灯悬停",
+    "zh-Hant": "Hover 聚光燈效果"
    },
    "meaning": {
     "ja": "カーソルの周りだけ明るくなる",
-    "en": "Only the area around the cursor lights up"
+    "en": "Only the area around the cursor lights up",
+    "es": "Solo se ilumina la zona alrededor del cursor",
+    "zh-Hans": "只有光标周围变亮",
+    "zh-Hant": "只有游標周圍會變亮"
    },
    "ask": {
     "ja": "特長のカードにスポットライトホバーを付けて。暗いカードの上で、カーソルの周り半径120pxくらいだけ明るくして、縁も光らせて。",
-    "en": "Add a spotlight hover to the feature cards: on the dark cards, light up only a circle of about 120 px around the cursor and make the borders glow too."
+    "en": "Add a spotlight hover to the feature cards: on the dark cards, light up only a circle of about 120 px around the cursor and make the borders glow too.",
+    "es": "Agrega un spotlight hover a las tarjetas de características: sobre las tarjetas oscuras, ilumina solo un círculo de unos 120 px de radio alrededor del cursor y haz que los bordes también brillen.",
+    "zh-Hans": "给特色卡片加上聚光灯悬停：在深色卡片上只照亮光标周围半径约 120 px 的范围，边框也一起发光。",
+    "zh-Hant": "特色卡片加上 Hover 聚光燈效果：在深色卡片上，只照亮游標周圍半徑約 120 px 的範圍，卡片邊框也要發光。"
    },
    "summary": {
     "ja": "暗いカードの上をカーソルが動くと、カーソルの周りだけが丸く明るく照らされ、近くのカードの縁も光る。",
@@ -9873,15 +10224,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ホバーで画像切り替え",
-    "en": "Image swap on hover"
+    "en": "Image swap on hover",
+    "es": "Cambio de imagen al pasar el cursor",
+    "zh-Hans": "悬停切换图片",
+    "zh-Hant": "Hover 切換圖片"
    },
    "meaning": {
     "ja": "乗せると別の写真に切り替わる",
-    "en": "Hovering swaps the photo for another shot"
+    "en": "Hovering swaps the photo for another shot",
+    "es": "Al pasar el cursor, la foto cambia por otra toma",
+    "zh-Hans": "悬停时换成另一张照片",
+    "zh-Hant": "滑鼠移上去時換成另一張照片"
    },
    "ask": {
     "ja": "商品一覧にホバーで画像切り替えを付けて。カーソルを乗せたら0.3秒で後ろ姿の写真にクロスフェードして。",
-    "en": "Add an image swap on hover to the product grid: cross-fade to the back view over 0.3 s when the cursor is on a card."
+    "en": "Add an image swap on hover to the product grid: cross-fade to the back view over 0.3 s when the cursor is on a card.",
+    "es": "Agrega un cambio de imagen al pasar el cursor a la cuadrícula de productos: un fundido cruzado a la vista de espalda en 0,3 s cuando el cursor esté sobre una tarjeta.",
+    "zh-Hans": "给商品列表加上悬停切换图片：光标停在卡片上时，用 0.3 s 叠化为背面照片。",
+    "zh-Hant": "商品列表加上 Hover 切換圖片：游標移到卡片上時，用 0.3 秒交叉溶解成背面照片。"
    },
    "summary": {
     "ja": "商品カードにカーソルを乗せると、Tシャツの正面の写真が後ろ姿の写真にふわっと切り替わり、離れると正面に戻る。",
@@ -9925,15 +10285,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "テキストロール",
-    "en": "Text roll on hover"
+    "en": "Text roll on hover",
+    "es": "Text roll (texto que rueda)",
+    "zh-Hans": "悬停文字翻滚",
+    "zh-Hant": "Hover 文字翻滾"
    },
    "meaning": {
     "ja": "文字が上に回って入れ替わる",
-    "en": "Letters roll up and swap on hover"
+    "en": "Letters roll up and swap on hover",
+    "es": "Las letras ruedan hacia arriba y se reemplazan al pasar el cursor",
+    "zh-Hans": "文字向上翻转并替换",
+    "zh-Hant": "滑鼠移上去時，文字往上翻滾替換"
    },
    "ask": {
     "ja": "グローバルメニューにテキストロールを付けて。カーソルを乗せたら文字が1文字ずつ0.035秒ずらして上へ回り、朱色の同じ文字が下から出るように。",
-    "en": "Give the main menu a text roll on hover: the letters roll up one by one, 0.035 s apart, revealing the same word in orange from below."
+    "en": "Give the main menu a text roll on hover: the letters roll up one by one, 0.035 s apart, revealing the same word in orange from below.",
+    "es": "Ponle un text roll al pasar el cursor al menú principal: que las letras rueden hacia arriba una por una, con 0,035 s de diferencia, y aparezca desde abajo la misma palabra en naranja.",
+    "zh-Hans": "给主导航加上悬停文字翻滚：光标悬停时文字逐字向上翻出，每字间隔 0.035 s，同样的朱红色文字从下方翻入。",
+    "zh-Hant": "主選單加上 Hover 文字翻滾：游標移上去時，文字一個字一個字往上翻出，每個字錯開 0.035 秒，同時橘紅色的同一組字從下方翻上來。"
    },
    "summary": {
     "ja": "メニューの文字にカーソルを乗せると、文字が1文字ずつ上へ回って消え、同じ文字が朱色で下から出てくる。離れると元に戻る。",
@@ -9977,15 +10346,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ホバーで画像プレビュー",
-    "en": "Hover image reveal"
+    "en": "Hover image reveal",
+    "es": "Hover image reveal (imagen que aparece al pasar el cursor)",
+    "zh-Hans": "悬停图片预览",
+    "zh-Hant": "Hover 圖片預覽"
    },
    "meaning": {
     "ja": "リストに乗せると写真が出る",
-    "en": "Hovering a list item shows its photo"
+    "en": "Hovering a list item shows its photo",
+    "es": "Al pasar el cursor por un elemento de la lista aparece su foto",
+    "zh-Hans": "悬停列表项时显示对应照片",
+    "zh-Hant": "滑鼠移到列表項目上就顯示照片"
    },
    "ask": {
     "ja": "施設一覧をホバーで画像プレビューにして。行にカーソルを乗せたら、その写真をカーソルの横に0.25秒で出して、カーソルについて動かして。",
-    "en": "Turn the property list into a hover image reveal: when the cursor is on a row, show its photo beside the cursor over 0.25 s and let it follow the cursor."
+    "en": "Turn the property list into a hover image reveal: when the cursor is on a row, show its photo beside the cursor over 0.25 s and let it follow the cursor.",
+    "es": "Convierte la lista de propiedades en un hover image reveal: cuando el cursor esté sobre una fila, muestra su foto junto al cursor en 0,25 s y que lo siga.",
+    "zh-Hans": "把设施列表做成悬停图片预览：光标停在某行时，用 0.25 s 在光标旁显示该行照片，并跟随光标移动。",
+    "zh-Hant": "設施列表做成 Hover 圖片預覽：游標移到某一列時，在 0.25 秒內於游標旁邊顯示那一列的照片，並跟著游標移動。"
    },
    "summary": {
     "ja": "文字だけのリストの行にカーソルを乗せると、その行の写真がカーソルの横にふわっと出て、カーソルについて動く。",
@@ -10029,15 +10407,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "フローティングラベル",
-    "en": "Floating label"
+    "en": "Floating label",
+    "es": "Etiqueta flotante (floating label)",
+    "zh-Hans": "浮动标签",
+    "zh-Hant": "浮動標籤"
    },
    "meaning": {
     "ja": "入力するとラベルが上へ移る",
-    "en": "The label floats up when you start typing"
+    "en": "The label floats up when you start typing",
+    "es": "La etiqueta sube cuando empiezas a escribir",
+    "zh-Hans": "开始输入时标签上移",
+    "zh-Hant": "開始輸入時，標籤移到上方"
    },
    "ask": {
     "ja": "フォームの入力欄をフローティングラベルにして。フォーカスしたらラベルを0.24秒で小さくして枠の上の線へ移して。",
-    "en": "Use floating labels in the form: on focus, shrink each label and move it onto the top border over 0.24 s."
+    "en": "Use floating labels in the form: on focus, shrink each label and move it onto the top border over 0.24 s.",
+    "es": "Ponle etiqueta flotante a cada campo del formulario: al enfocarlo, que la etiqueta se achique y pase al borde superior en 0,24 s.",
+    "zh-Hans": "表单输入框使用浮动标签：获得焦点时，标签用 0.24 s 缩小并移到边框顶线上。",
+    "zh-Hant": "表單的輸入欄位改成浮動標籤：聚焦時，標籤在 0.24 秒內縮小並移到外框的上緣線上。"
    },
    "summary": {
     "ja": "入力欄をクリックするとラベルが小さくなって欄の上の線へ移り、空いた欄に文字を打てる。空にして外すとラベルが中に戻る。",
@@ -10083,15 +10470,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "インラインバリデーション",
-    "en": "Inline validation"
+    "en": "Inline validation",
+    "es": "Validación en línea (inline validation)",
+    "zh-Hans": "实时校验",
+    "zh-Hant": "即時驗證"
    },
    "meaning": {
     "ja": "入力中に正誤をその場で表示",
-    "en": "Shows right or wrong while you type"
+    "en": "Shows right or wrong while you type",
+    "es": "Muestra si está bien o mal mientras escribes",
+    "zh-Hans": "输入时即时显示对错",
+    "zh-Hant": "輸入的同時當場顯示是否正確"
    },
    "ask": {
     "ja": "お問い合わせフォームにインラインバリデーションを入れて。メールアドレスを打っている間は赤で「形式が正しくありません」、正しくなったら緑のチェックを出して。",
-    "en": "Add inline validation to the contact form: while the email address is incomplete show a red \"invalid format\" message, and switch to a green check once it is valid."
+    "en": "Add inline validation to the contact form: while the email address is incomplete show a red \"invalid format\" message, and switch to a green check once it is valid.",
+    "es": "Agrega validación en línea al formulario de contacto: mientras el correo esté incompleto, muestra en rojo \"Formato inválido\", y cambia a un check verde en cuanto sea válido.",
+    "zh-Hans": "给联系表单加上实时校验：邮箱地址未输完整时显示红色“格式不正确”，正确后显示绿色对勾。",
+    "zh-Hant": "聯絡表單加上即時驗證：電子郵件地址還沒輸入完整時，顯示紅色的「格式不正確」，格式正確後改成綠色勾勾。"
    },
    "summary": {
     "ja": "メールアドレスを打っている途中は欄が赤くなって「形式が正しくありません」と出て、正しく打ち終わった瞬間に緑のチェックとOKに変わる。",
@@ -10135,15 +10531,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ローディングボタン",
-    "en": "Loading button"
+    "en": "Loading button",
+    "es": "Botón de carga (loading button)",
+    "zh-Hans": "加载按钮",
+    "zh-Hant": "Loading 按鈕"
    },
    "meaning": {
     "ja": "押すと読み込み中から完了に変わる",
-    "en": "Shows loading, then done, inside the button"
+    "en": "Shows loading, then done, inside the button",
+    "es": "Muestra que está cargando y luego que terminó, dentro del botón",
+    "zh-Hans": "点击后在按钮内显示加载中到完成",
+    "zh-Hant": "按鈕內顯示處理中，再變成完成"
    },
    "ask": {
     "ja": "送信ボタンをローディングボタンにして。押したら0.3秒で丸く縮めて回る表示にし、終わったら緑のチェックと「完了」に変えて。",
-    "en": "Make the submit button a loading button: on click, shrink it to a circle with a spinner over 0.3 s, then turn it green with a check and \"Done\"."
+    "en": "Make the submit button a loading button: on click, shrink it to a circle with a spinner over 0.3 s, then turn it green with a check and \"Done\".",
+    "es": "Haz del botón de enviar un botón de carga: al hacer clic, que se encoja a un círculo con un spinner en 0,3 s y luego se ponga verde con un check y \"Listo\".",
+    "zh-Hans": "把提交按钮做成加载按钮：点击后用 0.3 s 收缩成圆形并显示加载圆环，完成后变成绿色对勾和“完成”。",
+    "zh-Hant": "送出按鈕做成 Loading 按鈕：點擊後 0.3 秒內縮成圓形並顯示轉圈的載入圖示，完成後變成綠色，顯示勾勾和「完成」。"
    },
    "summary": {
     "ja": "送信ボタンを押すと、ボタンが丸く縮んで中で読み込み表示が回り、終わると緑色のチェック付き「完了」に広がる。",
@@ -10189,15 +10594,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ビュートランジション",
-    "en": "View transition (shared element)"
+    "en": "View transition (shared element)",
+    "es": "View transition (elemento compartido)",
+    "zh-Hans": "视图过渡",
+    "zh-Hant": "View Transition"
    },
    "meaning": {
     "ja": "一覧の写真がそのまま詳細へ広がる",
-    "en": "A list photo expands into the detail page"
+    "en": "A list photo expands into the detail page",
+    "es": "La foto de la lista se expande hasta la página de detalle",
+    "zh-Hans": "列表中的照片直接展开为详情页",
+    "zh-Hant": "列表中的照片直接放大成詳細頁"
    },
    "ask": {
     "ja": "実績一覧から詳細ページへの移動をビュートランジションにして。押した写真がそのまま0.6秒で詳細の上部まで広がるように。",
-    "en": "Use a view transition from the works list to the detail page: the clicked photo should grow into the top of the detail page over 0.6 s."
+    "en": "Use a view transition from the works list to the detail page: the clicked photo should grow into the top of the detail page over 0.6 s.",
+    "es": "Usa una view transition de la lista de trabajos a la página de detalle: la foto en la que se hace clic debe crecer hasta la parte superior del detalle en 0,6 s.",
+    "zh-Hans": "从作品列表进入详情页时使用视图过渡：被点击的照片用 0.6 s 直接放大到详情页顶部。",
+    "zh-Hant": "從作品列表到詳細頁的換頁做成 View Transition：點擊的照片直接在 0.6 秒內放大成詳細頁最上方的圖片。"
    },
    "summary": {
     "ja": "一覧の写真を押すと、その写真が1枚のまま大きくなって詳細ページの上部の写真になり、周りが詳細ページに入れ替わる。戻ると元の位置へ縮む。",
@@ -10243,15 +10657,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ライトボックス",
-    "en": "Lightbox"
+    "en": "Lightbox",
+    "es": "Lightbox",
+    "zh-Hans": "灯箱",
+    "zh-Hant": "Lightbox 燈箱"
    },
    "meaning": {
     "ja": "画像を押すと暗い背景の上で拡大",
-    "en": "Opens an image large over a dimmed page"
+    "en": "Opens an image large over a dimmed page",
+    "es": "Abre una imagen en grande sobre la página oscurecida",
+    "zh-Hans": "点击图片后在变暗的背景上放大",
+    "zh-Hant": "點擊圖片後在變暗的頁面上放大"
    },
    "ask": {
     "ja": "施工事例の写真をライトボックスで見られるようにして。押したら背景を暗くして写真を中央に拡大し、左右の矢印で前後に送れるように。",
-    "en": "Let visitors view the case-study photos in a lightbox: on click, dim the page and enlarge the photo in the center, with arrows to go to the previous or next photo."
+    "en": "Let visitors view the case-study photos in a lightbox: on click, dim the page and enlarge the photo in the center, with arrows to go to the previous or next photo.",
+    "es": "Muestra las fotos de los proyectos realizados en un lightbox: al hacer clic, oscurece la página y agranda la foto en el centro, con flechas para ir a la anterior o a la siguiente.",
+    "zh-Hans": "让施工案例照片可以在灯箱中查看：点击后背景变暗、照片在中央放大，用左右箭头切换上一张和下一张。",
+    "zh-Hant": "施工案例的照片改成用 Lightbox 燈箱觀看：點擊後背景變暗，照片在中央放大，可用左右箭頭切換上一張、下一張。"
    },
    "summary": {
     "ja": "ギャラリーのサムネを押すと周りが暗くなり、その写真が画面の中央で大きく表示される。×を押すと元のサムネへ縮んで戻る。",
@@ -10295,15 +10718,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ホットスポット",
-    "en": "Hotspots"
+    "en": "Hotspots",
+    "es": "Hotspots (puntos interactivos)",
+    "zh-Hans": "图片热点",
+    "zh-Hant": "Hotspot 熱點"
    },
    "meaning": {
     "ja": "画像の点を押すと説明が出る",
-    "en": "Dots on an image open notes when clicked"
+    "en": "Dots on an image open notes when clicked",
+    "es": "Puntos sobre una imagen que abren notas al hacer clic",
+    "zh-Hans": "点击图片上的圆点显示说明",
+    "zh-Hant": "點擊圖片上的圓點就顯示說明"
    },
    "ask": {
     "ja": "商品写真にホットスポットを付けて。特長の場所に脈打つ点を置き、押したら説明の吹き出しを0.25秒で出して。",
-    "en": "Add hotspots to the product photo: put pulsing dots on the key features and open a tooltip over 0.25 s when one is clicked."
+    "en": "Add hotspots to the product photo: put pulsing dots on the key features and open a tooltip over 0.25 s when one is clicked.",
+    "es": "Agrega hotspots a la foto del producto: pon puntos que laten sobre las características clave y abre un tooltip en 0,25 s al hacer clic en uno.",
+    "zh-Hans": "给商品照片加上图片热点：在特色部位放置脉动的圆点，点击后用 0.25 s 弹出说明气泡。",
+    "zh-Hant": "商品照片加上 Hotspot 熱點：在特色的位置放上會脈動的圓點，點擊後在 0.25 秒內跳出說明的 Tooltip。"
    },
    "summary": {
     "ja": "製品の絵の上で白い点が脈打ち、点を押すとその部分の説明が吹き出しで出る。別の点を押すと吹き出しが入れ替わる。",
@@ -10347,15 +10779,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "カウントダウンタイマー",
-    "en": "Countdown timer"
+    "en": "Countdown timer",
+    "es": "Cuenta regresiva (countdown timer)",
+    "zh-Hans": "倒计时",
+    "zh-Hant": "倒數計時器"
    },
    "meaning": {
     "ja": "締切までの残り時間が減っていく",
-    "en": "Counts down the time left to a deadline"
+    "en": "Counts down the time left to a deadline",
+    "es": "Cuenta el tiempo que falta para una fecha límite",
+    "zh-Hans": "显示距截止时间的剩余时间并递减",
+    "zh-Hant": "顯示距離截止還剩多少時間"
    },
    "ask": {
     "ja": "キャンペーンの締切にカウントダウンタイマーを付けて。時:分:秒で、数字が変わるたびに0.3秒で下から入れ替わるように。",
-    "en": "Add a countdown timer for the campaign deadline: hours, minutes and seconds, with each changing digit rolling in from below over 0.3 s."
+    "en": "Add a countdown timer for the campaign deadline: hours, minutes and seconds, with each changing digit rolling in from below over 0.3 s.",
+    "es": "Agrega una cuenta regresiva para el cierre de la campaña: horas, minutos y segundos, y que cada dígito que cambia aparezca rodando desde abajo en 0,3 s.",
+    "zh-Hans": "给活动截止时间加上倒计时：以时:分:秒显示，每次数字变化时新数字用 0.3 s 从下方滚入。",
+    "zh-Hant": "活動截止時間加上倒數計時器：以時:分:秒顯示，數字每次變動時，用 0.3 秒從下方換上新的數字。"
    },
    "summary": {
     "ja": "「キャンペーン終了まで」の 時:分:秒 が1秒ごとに減り、変わった数字だけが上へ抜けて新しい数字が下から入る。",
@@ -10399,15 +10840,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "シェイプディバイダー",
-    "en": "Animated shape divider"
+    "en": "Animated shape divider",
+    "es": "Divisor de forma animado (shape divider)",
+    "zh-Hans": "动态形状分隔线",
+    "zh-Hant": "形狀分隔線"
    },
    "meaning": {
     "ja": "区切りの波形がゆれ続ける",
-    "en": "A wavy section divider that keeps moving"
+    "en": "A wavy section divider that keeps moving",
+    "es": "Un divisor ondulado entre secciones que no deja de moverse",
+    "zh-Hans": "持续摆动的波浪形区块分隔线",
+    "zh-Hant": "區塊交界的波浪不斷擺動"
    },
    "ask": {
     "ja": "ファーストビューと次のセクションの境目にシェイプディバイダーを入れて。白い波を2枚重ねて、ゆっくり逆向きに揺らし続けて。",
-    "en": "Add an animated shape divider between the hero and the next section: two white wave layers drifting slowly in opposite directions."
+    "en": "Add an animated shape divider between the hero and the next section: two white wave layers drifting slowly in opposite directions.",
+    "es": "Agrega un divisor de forma animado entre el hero y la sección siguiente: dos capas de olas blancas que se desplazan despacio en direcciones opuestas.",
+    "zh-Hans": "在首屏与下一节之间加入动态形状分隔线：叠放两层白色波浪，缓慢地反向持续摆动。",
+    "zh-Hant": "Hero 區塊和下一個區塊的交界加上形狀分隔線：疊兩層白色波浪，持續朝相反方向慢慢擺動。"
    },
    "summary": {
     "ja": "青いセクションと白いセクションの境目にある波の形が、2枚重なってゆっくりゆれ続ける。",
@@ -10451,15 +10901,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "いいねアニメーション",
-    "en": "Like button animation"
+    "en": "Like button animation",
+    "es": "Animación de like (botón de me gusta)",
+    "zh-Hans": "点赞动画",
+    "zh-Hant": "按讚動畫"
    },
    "meaning": {
     "ja": "押すとハートが弾ける",
-    "en": "The heart pops with a burst when liked"
+    "en": "The heart pops with a burst when liked",
+    "es": "El corazón estalla con un rebote al dar like",
+    "zh-Hans": "点击后爱心迸发弹出",
+    "zh-Hant": "按下後愛心彈跳並迸出粒子"
    },
    "ask": {
     "ja": "投稿のいいねボタンにいいねアニメーションを付けて。押したらハートを赤く塗って1.45倍まで弾ませ、周りに小さな粒を散らして、数字も1増やして。",
-    "en": "Add a like button animation to posts: fill the heart red, bounce it up to 1.45×, scatter a few small particles and count up by one."
+    "en": "Add a like button animation to posts: fill the heart red, bounce it up to 1.45×, scatter a few small particles and count up by one.",
+    "es": "Agrega una animación de like a las publicaciones: que el corazón se llene de rojo, rebote hasta 1,45×, suelte unas cuantas partículas pequeñas y el contador suba en uno.",
+    "zh-Hans": "给帖子的点赞按钮加上点赞动画：点击后爱心填充红色并弹到 1.45×，周围散开小颗粒，数字加 1。",
+    "zh-Hant": "貼文的讚按鈕加上按讚動畫：點擊後愛心變成紅色、彈到 1.45 倍，周圍散出小顆粒，數字也加 1。"
    },
    "summary": {
     "ja": "ハートを押すと赤く塗られてポンと弾み、周りに小さな粒が散って、横の数字が1つ増える。もう一度押すと元に戻る。",
@@ -10505,15 +10964,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "スクロールダウンの合図",
-    "en": "Scroll-down cue"
+    "en": "Scroll-down cue",
+    "es": "Indicador de scroll (scroll-down cue)",
+    "zh-Hans": "向下滚动提示",
+    "zh-Hant": "向下捲動提示"
    },
    "meaning": {
     "ja": "下へ促す矢印が動き続ける",
-    "en": "A looping cue that invites you to scroll down"
+    "en": "A looping cue that invites you to scroll down",
+    "es": "Una señal en bucle que invita a bajar",
+    "zh-Hans": "持续循环、引导向下滚动的动画",
+    "zh-Hant": "不斷重複、引導往下捲的提示"
    },
    "ask": {
     "ja": "ファーストビューの下にスクロールダウンの合図を入れて。マウスの形の中の点が約1.5秒ごとに下へ動いて消えるのをくり返して。",
-    "en": "Add a scroll-down cue below the hero: a dot inside a mouse outline slides down and fades about every 1.5 s, on repeat."
+    "en": "Add a scroll-down cue below the hero: a dot inside a mouse outline slides down and fades about every 1.5 s, on repeat.",
+    "es": "Agrega un indicador de scroll debajo del hero: un punto dentro del contorno de un mouse que baja y se desvanece más o menos cada 1,5 s, en bucle.",
+    "zh-Hans": "在首屏下方加入向下滚动提示：鼠标轮廓内的小圆点约每 1.5 s 向下移动并消失，循环播放。",
+    "zh-Hant": "Hero 區塊下方加上向下捲動提示：滑鼠外框裡的小圓點約每 1.5 秒往下移動並消失，不斷重複。"
    },
    "summary": {
     "ja": "ファーストビューの下で、「SCROLL」の文字とマウスの形の中の点、両わきの矢印が、下へ促す動きをくり返す。",
@@ -10555,15 +11023,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "背景動画",
-    "en": "Background video"
+    "en": "Background video",
+    "es": "Video de fondo",
+    "zh-Hans": "背景视频",
+    "zh-Hant": "背景影片"
    },
    "meaning": {
     "ja": "ファーストビューの背景で映像が流れる",
-    "en": "A video plays behind the hero section"
+    "en": "A video plays behind the hero section",
+    "es": "Un video se reproduce detrás de la sección hero",
+    "zh-Hans": "首屏背景中播放视频",
+    "zh-Hant": "Hero 區塊的背景播放影片"
    },
    "ask": {
     "ja": "ファーストビューを背景動画にして。音なしでくり返し流し、文字が読めるように左側に暗いグラデーションを重ねて。",
-    "en": "Give the hero a background video: muted and looping, with a dark gradient on the left so the headline stays readable."
+    "en": "Give the hero a background video: muted and looping, with a dark gradient on the left so the headline stays readable.",
+    "es": "Ponle al hero un video de fondo: sin sonido y en bucle, con un degradado oscuro a la izquierda para que el titular se lea bien.",
+    "zh-Hans": "首屏使用背景视频：静音循环播放，左侧叠加深色渐变，保证标题清晰可读。",
+    "zh-Hant": "Hero 區塊做成背景影片：靜音循環播放，左側疊上深色漸層，讓標題看得清楚。"
    },
    "summary": {
     "ja": "ファーストビューの背景で雲と波が流れ続け、その上に見出しとボタンが動かずに乗っている。",
@@ -10609,15 +11086,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ペデスタル",
-    "en": "Pedestal"
+    "en": "Pedestal",
+    "es": "Pedestal",
+    "zh-Hans": "垂直升降镜头",
+    "zh-Hant": "Pedestal 垂直升降"
    },
    "meaning": {
     "ja": "カメラごと真上・真下へ平行移動",
-    "en": "Move the whole camera straight up or down"
+    "en": "Move the whole camera straight up or down",
+    "es": "Subir o bajar toda la cámara en línea recta",
+    "zh-Hans": "相机整体垂直上下平移",
+    "zh-Hant": "攝影機整台垂直上下平移"
    },
    "ask": {
     "ja": "カメラの向きは変えずに、目の高さから3mまでペデスタルで真上に上げて。",
-    "en": "Pedestal up from eye level to about 3 meters, keeping the camera pointed straight ahead."
+    "en": "Pedestal up from eye level to about 3 meters, keeping the camera pointed straight ahead.",
+    "es": "Pedestal hacia arriba desde la altura de los ojos hasta unos 3 metros, con la cámara apuntando siempre al frente.",
+    "zh-Hans": "保持镜头朝向不变，用垂直升降镜头从眼睛高度直线上升到约 3 m。",
+    "zh-Hant": "攝影機方向不變，用 Pedestal 垂直升降從視線高度往正上方升到約 3 公尺。"
    },
    "summary": {
     "ja": "カメラが向きを変えずに真上へ平行移動する。地平線は画面の中央のまま、人物と建物が下へ流れる。",
@@ -10666,15 +11152,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "バレルロール",
-    "en": "Barrel roll"
+    "en": "Barrel roll",
+    "es": "Barrel roll (giro sobre el eje)",
+    "zh-Hans": "横滚镜头",
+    "zh-Hant": "Barrel roll"
    },
    "meaning": {
     "ja": "レンズの軸でカメラを1回転",
-    "en": "Roll the camera a full turn on its axis"
+    "en": "Roll the camera a full turn on its axis",
+    "es": "Girar la cámara una vuelta completa sobre su eje",
+    "zh-Hans": "相机绕镜头光轴旋转一整圈",
+    "zh-Hant": "攝影機沿鏡頭軸向翻轉一整圈"
    },
    "ask": {
     "ja": "ドローンの映像をバレルロールで1回転させて。3秒かけて。",
-    "en": "Barrel roll the drone shot through one full rotation over 3 seconds."
+    "en": "Barrel roll the drone shot through one full rotation over 3 seconds.",
+    "es": "Barrel roll de la toma de dron: una vuelta completa en 3 segundos.",
+    "zh-Hans": "让无人机画面用横滚镜头旋转一整圈，用时 3 s。",
+    "zh-Hant": "空拍畫面請用 Barrel roll 翻轉一整圈，花 3 秒。"
    },
    "summary": {
     "ja": "カメラがレンズの軸でぐるりと1回転し、地平線が一周して元に戻る。",
@@ -10721,15 +11216,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ハイパーラプス",
-    "en": "Hyperlapse"
+    "en": "Hyperlapse",
+    "es": "Hyperlapse",
+    "zh-Hans": "移动延时",
+    "zh-Hant": "移動縮時"
    },
    "meaning": {
     "ja": "移動しながら撮るタイムラプス",
-    "en": "A time-lapse shot while the camera travels"
+    "en": "A time-lapse shot while the camera travels",
+    "es": "Un time-lapse grabado mientras la cámara avanza",
+    "zh-Hans": "相机边移动边拍的延时摄影",
+    "zh-Hant": "攝影機邊移動邊拍的縮時攝影"
    },
    "ask": {
     "ja": "駅から公園まで歩きながらのハイパーラプス。雲が流れて、人が早送りで動くように。",
-    "en": "Hyperlapse walking from the station to the park, clouds streaming and people in fast forward."
+    "en": "Hyperlapse walking from the station to the park, clouds streaming and people in fast forward.",
+    "es": "Hyperlapse caminando de la estación al parque, con las nubes pasando rápido y la gente en cámara rápida.",
+    "zh-Hans": "拍一段从车站走到公园的移动延时：云朵流动，行人像快进一样移动。",
+    "zh-Hant": "用移動縮時拍從車站走到公園的過程，雲快速飄過，路人像快轉一樣移動。"
    },
    "summary": {
     "ja": "街路を前へ進みながら、太陽・雲・人影が早送りで動く。タイムラプスとカメラの移動を同時に行う。",
@@ -10778,15 +11282,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "長回し",
-    "en": "Long take"
+    "en": "Long take",
+    "es": "Plano secuencia (long take)",
+    "zh-Hans": "长镜头",
+    "zh-Hant": "一鏡到底"
    },
    "meaning": {
     "ja": "カットを割らず1ショットで撮り続ける",
-    "en": "One continuous shot with no cuts"
+    "en": "One continuous shot with no cuts",
+    "es": "Una sola toma continua, sin cortes",
+    "zh-Hans": "不切换，一个镜头连续拍到底",
+    "zh-Hant": "不剪接，一個鏡頭拍到底"
    },
    "ask": {
     "ja": "準備から出発までを長回しで。カットを割らずに人物についていって。",
-    "en": "Shoot from the preparation to the departure as one long take, following the person without a cut."
+    "en": "Shoot from the preparation to the departure as one long take, following the person without a cut.",
+    "es": "Graba desde la preparación hasta la salida en un plano secuencia, siguiendo a la persona sin cortar.",
+    "zh-Hans": "从准备到出发用一个长镜头拍完，跟着人物，中间不切镜头。",
+    "zh-Hant": "從準備到出發用一鏡到底拍完，中間不剪接，一路跟著人物。"
    },
    "summary": {
     "ja": "歩く人物をカットなしで追い続ける1ショット。画面下の帯は切れ目のない1本のまま。",
@@ -10835,15 +11348,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ステディカム",
-    "en": "Steadicam"
+    "en": "Steadicam",
+    "es": "Steadicam",
+    "zh-Hans": "斯坦尼康",
+    "zh-Hant": "Steadicam"
    },
    "meaning": {
     "ja": "揺れを抑えてなめらかに移動",
-    "en": "Smooth, floating movement with no shake"
+    "en": "Smooth, floating movement with no shake",
+    "es": "Un movimiento suave y flotante, sin temblor",
+    "zh-Hans": "消除抖动，平稳流畅地移动",
+    "zh-Hant": "不晃動、平順地移動"
    },
    "ask": {
     "ja": "廊下を歩く人物の後ろをステディカムで。揺れなしでなめらかに。",
-    "en": "Follow the person down the corridor with a Steadicam: smooth, no shake."
+    "en": "Follow the person down the corridor with a Steadicam: smooth, no shake.",
+    "es": "Sigue con Steadicam a la persona por el pasillo: suave, sin temblor.",
+    "zh-Hans": "用斯坦尼康跟拍走廊里人物的背后，平稳无晃动。",
+    "zh-Hant": "用 Steadicam 跟在走過走廊的人物後方，不晃動、平順地移動。"
    },
    "summary": {
     "ja": "細かい揺れのない、ゆっくり大きなうねりだけで前へ進み、歩く人物を追う。手持ちとの違いが分かる。",
@@ -10890,15 +11412,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "フォローショット",
-    "en": "Follow shot"
+    "en": "Follow shot",
+    "es": "Follow shot (seguimiento por detrás)",
+    "zh-Hans": "背后跟拍",
+    "zh-Hant": "背後跟拍"
    },
    "meaning": {
     "ja": "被写体の後ろについていく",
-    "en": "Follow behind the subject as they move"
+    "en": "Follow behind the subject as they move",
+    "es": "Ir detrás del sujeto mientras se mueve",
+    "zh-Hans": "跟在主体身后移动",
+    "zh-Hant": "跟在移動的被攝體後方"
    },
    "ask": {
     "ja": "森の中を歩く人物の背中をフォローショットで。少し遅れてついていって。",
-    "en": "Follow shot behind the person walking through the woods, trailing a little behind."
+    "en": "Follow shot behind the person walking through the woods, trailing a little behind.",
+    "es": "Follow shot por detrás de la persona que camina por el bosque, siguiéndola un poco atrás.",
+    "zh-Hans": "用背后跟拍拍摄在林中行走的人物背影，稍微落后一点跟着。",
+    "zh-Hant": "用背後跟拍拍攝在森林裡走路的人物，稍微落後一點跟著走。"
    },
    "summary": {
     "ja": "蛇行して歩く人物の後ろを、同じ道筋で少し遅れてついていく。人物は中央付近に留まり、背中が見える。",
@@ -10945,15 +11476,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ロックオフ",
-    "en": "Locked-off shot"
+    "en": "Locked-off shot",
+    "es": "Plano fijo (locked-off shot)",
+    "zh-Hans": "固定镜头",
+    "zh-Hant": "固定鏡頭"
    },
    "meaning": {
     "ja": "カメラは固定で被写体だけ動く",
-    "en": "Camera fixed; only the subject moves"
+    "en": "Camera fixed; only the subject moves",
+    "es": "La cámara queda fija; solo se mueve el sujeto",
+    "zh-Hans": "相机固定不动，只有主体移动",
+    "zh-Hant": "攝影機固定，只有被攝體在動"
    },
    "ask": {
     "ja": "交差点をロックオフで。カメラは三脚で固定して、人や車だけが通り過ぎるように。",
-    "en": "Locked-off shot of the crossing: camera fixed on a tripod, only the people and cars pass through."
+    "en": "Locked-off shot of the crossing: camera fixed on a tripod, only the people and cars pass through.",
+    "es": "Plano fijo de la intersección: la cámara fija en un trípode, y que solo pasen las personas y los carros.",
+    "zh-Hans": "用固定镜头拍十字路口：相机固定在三脚架上，只有行人和车辆经过。",
+    "zh-Hant": "十字路口用固定鏡頭拍：攝影機架在三腳架上固定不動，只有行人和車輛經過。"
    },
    "summary": {
     "ja": "三脚で固定したカメラの前を人物が横切り、奥を車が通る。カメラは1pxも動かない。",
@@ -11000,15 +11540,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "フライスルー",
-    "en": "Fly-through"
+    "en": "Fly-through",
+    "es": "Fly-through (vuelo a través)",
+    "zh-Hans": "穿越镜头",
+    "zh-Hant": "Fly-through 穿越鏡頭"
    },
    "meaning": {
     "ja": "窓や扉を通り抜けて進む",
-    "en": "Fly through an opening into the next space"
+    "en": "Fly through an opening into the next space",
+    "es": "Atravesar una abertura volando hacia el espacio siguiente",
+    "zh-Hans": "穿过窗户或门进入下一个空间",
+    "zh-Hant": "穿過窗戶或門，進入下一個空間"
    },
    "ask": {
     "ja": "窓からフライスルーで部屋の中へ入って、テーブルの上まで寄って。",
-    "en": "Fly-through from the window into the room and over to the table."
+    "en": "Fly-through from the window into the room and over to the table.",
+    "es": "Fly-through desde la ventana hacia adentro del cuarto y hasta la mesa.",
+    "zh-Hans": "用穿越镜头从窗户进入房间，一直推到桌子上方。",
+    "zh-Hant": "用 Fly-through 穿越鏡頭從窗戶飛進房間，一路靠近到桌子上方。"
    },
    "summary": {
     "ja": "窓のあいた壁へ向かって進み、窓を通り抜けて向こう側の場所へ出る。",
@@ -11057,15 +11606,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ローアングル",
-    "en": "Low angle"
+    "en": "Low angle",
+    "es": "Contrapicado (low angle)",
+    "zh-Hans": "低角度镜头",
+    "zh-Hant": "仰角鏡頭"
    },
    "meaning": {
     "ja": "低い位置から見上げて撮る",
-    "en": "Shoot from low down, looking up"
+    "en": "Shoot from low down, looking up",
+    "es": "Grabar desde abajo, mirando hacia arriba",
+    "zh-Hans": "从低处向上拍",
+    "zh-Hant": "從低處往上拍"
    },
    "ask": {
     "ja": "ヒーローの登場はローアングルで。地面近くから見上げて。",
-    "en": "Shoot the hero's entrance from a low angle, looking up from near the ground."
+    "en": "Shoot the hero's entrance from a low angle, looking up from near the ground.",
+    "es": "Graba la entrada del héroe en contrapicado, mirando hacia arriba desde cerca del suelo.",
+    "zh-Hans": "英雄登场用低角度镜头，从贴近地面处向上拍。",
+    "zh-Hant": "英雄登場用仰角鏡頭，從靠近地面的位置往上拍。"
    },
    "summary": {
     "ja": "カメラを地面近くまで下げて見上げる。人物が大きく、建物が高くそびえて見える。",
@@ -11112,15 +11670,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ハイアングル",
-    "en": "High angle"
+    "en": "High angle",
+    "es": "Picado (high angle)",
+    "zh-Hans": "高角度镜头",
+    "zh-Hant": "俯角鏡頭"
    },
    "meaning": {
     "ja": "高い位置から見下ろして撮る",
-    "en": "Shoot from above, looking down"
+    "en": "Shoot from above, looking down",
+    "es": "Grabar desde arriba, mirando hacia abajo",
+    "zh-Hans": "从高处向下拍",
+    "zh-Hant": "從高處往下拍"
    },
    "ask": {
     "ja": "迷子の場面はハイアングルで。少し上から見下ろして小さく見せて。",
-    "en": "Use a high angle for the lost-child scene, looking down from above so they look small."
+    "en": "Use a high angle for the lost-child scene, looking down from above so they look small.",
+    "es": "Usa un picado para la escena del niño perdido, mirando desde arriba para que se vea pequeño.",
+    "zh-Hans": "迷路孩子的场景用高角度镜头，从稍高处向下拍，让孩子显得很小。",
+    "zh-Hant": "迷路小孩的場景用俯角鏡頭，從稍高的地方往下拍，讓他看起來很渺小。"
    },
    "summary": {
     "ja": "カメラを高い位置へ上げて見下ろす。人物が小さく、地面が画面の大半を占める。",
@@ -11166,15 +11733,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "POVショット",
-    "en": "POV shot"
+    "en": "POV shot",
+    "es": "Plano subjetivo (POV)",
+    "zh-Hans": "POV 镜头",
+    "zh-Hant": "POV 主觀鏡頭"
    },
    "meaning": {
     "ja": "登場人物の目線で見る",
-    "en": "See through a character's eyes"
+    "en": "See through a character's eyes",
+    "es": "Ver a través de los ojos de un personaje",
+    "zh-Hans": "以角色的视线观看",
+    "zh-Hant": "透過角色的眼睛看"
    },
    "ask": {
     "ja": "ドアを開けて部屋に入る瞬間はPOVショットで。本人の目線で。",
-    "en": "The moment of opening the door and entering the room as a POV shot, through their eyes."
+    "en": "The moment of opening the door and entering the room as a POV shot, through their eyes.",
+    "es": "El momento de abrir la puerta y entrar al cuarto en plano subjetivo, a través de sus ojos.",
+    "zh-Hans": "开门走进房间的那一刻用 POV 镜头，以角色本人的视线拍摄。",
+    "zh-Hant": "打開門走進房間的那一刻用 POV 主觀鏡頭，以本人的視線拍攝。"
    },
    "summary": {
     "ja": "登場人物の目で見た画。歩く揺れと画面下の両手で一人称だと分かり、前の人物がこちらに手を振る。",
@@ -11221,15 +11797,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "オーバーザショルダー",
-    "en": "Over-the-shoulder"
+    "en": "Over-the-shoulder",
+    "es": "Plano sobre el hombro (over-the-shoulder)",
+    "zh-Hans": "过肩镜头",
+    "zh-Hant": "過肩鏡頭"
    },
    "meaning": {
     "ja": "肩越しに相手を撮る",
-    "en": "Frame one person over another's shoulder"
+    "en": "Frame one person over another's shoulder",
+    "es": "Encuadrar a una persona por encima del hombro de otra",
+    "zh-Hans": "越过一人的肩膀拍另一人",
+    "zh-Hant": "越過一個人的肩膀拍另一個人"
    },
    "ask": {
     "ja": "会話は肩越しのオーバーザショルダーで。手前の肩は少しぼかして。",
-    "en": "Shoot the conversation over the shoulder, with the foreground shoulder slightly out of focus."
+    "en": "Shoot the conversation over the shoulder, with the foreground shoulder slightly out of focus.",
+    "es": "Graba la conversación en plano sobre el hombro, con el hombro en primer plano un poco desenfocado.",
+    "zh-Hans": "对话用过肩镜头拍摄，前景的肩膀稍微虚化。",
+    "zh-Hant": "對話用過肩鏡頭拍，前景的肩膀稍微模糊。"
    },
    "summary": {
     "ja": "手前の人物の後頭部と肩を画面の端に入れ、その肩越しに相手を撮る。手前はぼけ、相手にピント。",
@@ -11276,15 +11861,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "バーズアイ",
-    "en": "Bird's-eye view"
+    "en": "Bird's-eye view",
+    "es": "Plano cenital (bird's-eye view)",
+    "zh-Hans": "鸟瞰镜头",
+    "zh-Hant": "鳥瞰鏡頭"
    },
    "meaning": {
     "ja": "真上から真下を見下ろす",
-    "en": "Straight down from directly overhead"
+    "en": "Straight down from directly overhead",
+    "es": "Directo hacia abajo, desde justo encima",
+    "zh-Hans": "从正上方垂直向下拍",
+    "zh-Hant": "從正上方垂直往下拍"
    },
    "ask": {
     "ja": "交差点を真上からのバーズアイで。人と車が上から見た形で動くように。",
-    "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top."
+    "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top.",
+    "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.",
+    "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。",
+    "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。"
    },
    "summary": {
     "ja": "真上から真下を見下ろす。道・人・車・木がすべて上から見た形になり、上がるほど広い範囲が見える。",
@@ -11333,15 +11927,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "ディープフォーカス",
-    "en": "Deep focus"
+    "en": "Deep focus",
+    "es": "Foco profundo (deep focus)",
+    "zh-Hans": "深焦镜头",
+    "zh-Hant": "深焦"
    },
    "meaning": {
     "ja": "手前から奥まで全部にピント",
-    "en": "Near and far all in sharp focus"
+    "en": "Near and far all in sharp focus",
+    "es": "Todo nítido, de lo cercano a lo lejano",
+    "zh-Hans": "从近处到远处全部清晰",
+    "zh-Hant": "從前景到背景全部清楚對焦"
    },
    "ask": {
     "ja": "手前のカップも奥の人物もはっきり見せたいので、ディープフォーカスで。",
-    "en": "Deep focus, so the cup in front and the person behind are both sharp."
+    "en": "Deep focus, so the cup in front and the person behind are both sharp.",
+    "es": "Foco profundo, para que la taza de adelante y la persona de atrás se vean nítidas.",
+    "zh-Hans": "前景的杯子和后方的人物都要清晰，所以用深焦镜头。",
+    "zh-Hant": "前景的杯子和後方的人物都要拍清楚，請用深焦。"
    },
    "summary": {
     "ja": "手前の花から奥の人物・建物まで、同時に全部にピントが合っていく。",
@@ -11388,15 +11991,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "エスタブリッシングショット",
-    "en": "Establishing shot"
+    "en": "Establishing shot",
+    "es": "Plano de establecimiento (establishing shot)",
+    "zh-Hans": "定场镜头",
+    "zh-Hant": "定場鏡頭"
    },
    "meaning": {
     "ja": "場面の最初に場所を見せる引きの画",
-    "en": "A wide opening shot that shows the place"
+    "en": "A wide opening shot that shows the place",
+    "es": "Un plano abierto al inicio que muestra el lugar",
+    "zh-Hans": "开场交代地点的远景",
+    "zh-Hant": "場景一開始交代地點的遠景"
    },
    "ask": {
     "ja": "冒頭は街全体が見えるエスタブリッシングショットから。場所の名前も出して。",
-    "en": "Open with an establishing shot of the whole town, with the location name on screen."
+    "en": "Open with an establishing shot of the whole town, with the location name on screen.",
+    "es": "Abre con un plano de establecimiento de todo el pueblo, con el nombre del lugar en pantalla.",
+    "zh-Hans": "开头先用能看到整个城镇的定场镜头，同时显示地名。",
+    "zh-Hant": "開場先用看得到整座城鎮的定場鏡頭，並打上地點名稱。"
    },
    "summary": {
     "ja": "広角・高い位置から街全体を見せる引きの画。ゆっくり寄りながら、場所の表示が左下に出る。",
@@ -11443,15 +12055,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "エクストリームクローズアップ",
-    "en": "Extreme close-up"
+    "en": "Extreme close-up",
+    "es": "Primerísimo primer plano (extreme close-up)",
+    "zh-Hans": "大特写",
+    "zh-Hant": "大特寫"
    },
    "meaning": {
     "ja": "目や指先など一部だけを大写し",
-    "en": "Fill the frame with one small detail"
+    "en": "Fill the frame with one small detail",
+    "es": "Llenar el cuadro con un detalle pequeño",
+    "zh-Hans": "只放大眼睛或指尖等局部",
+    "zh-Hant": "只把眼睛、指尖等局部拍滿畫面"
    },
    "ask": {
     "ja": "涙がこぼれる瞬間は、目だけのエクストリームクローズアップで。",
-    "en": "Extreme close-up on just the eye at the moment the tear falls."
+    "en": "Extreme close-up on just the eye at the moment the tear falls.",
+    "es": "Primerísimo primer plano solo del ojo en el momento en que cae la lágrima.",
+    "zh-Hans": "眼泪落下的瞬间，用只拍眼睛的大特写。",
+    "zh-Hant": "眼淚滑落的瞬間，用只拍眼睛的大特寫。"
    },
    "summary": {
     "ja": "顔のクローズアップから、目だけが画面を埋めるまで寄る。",
@@ -11498,15 +12119,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "インサートショット",
-    "en": "Insert shot"
+    "en": "Insert shot",
+    "es": "Inserto (insert shot)",
+    "zh-Hans": "插入镜头",
+    "zh-Hant": "插入鏡頭"
    },
    "meaning": {
     "ja": "同じ場面の細部を差し込む",
-    "en": "Cut in to a detail of the same scene"
+    "en": "Cut in to a detail of the same scene",
+    "es": "Cortar a un detalle de la misma escena",
+    "zh-Hans": "插入同一场景中的细节",
+    "zh-Hant": "插入同一場景的細節畫面"
    },
    "ask": {
     "ja": "鍵を回すところはインサートショットで手元に寄って、すぐ戻して。",
-    "en": "Insert shot of the hand turning the key, then straight back to the scene."
+    "en": "Insert shot of the hand turning the key, then straight back to the scene.",
+    "es": "Inserto de la mano girando la llave, y de vuelta a la escena enseguida.",
+    "zh-Hans": "转动钥匙时用插入镜头拍手部特写，然后马上切回。",
+    "zh-Hant": "轉鑰匙的地方用插入鏡頭拍手部特寫，接著馬上回到原本的畫面。"
    },
    "summary": {
     "ja": "人物の場面に、同じ場面の手元の時計の大写しを1.3秒だけ差し込み、元の画へ戻る。",
@@ -11553,15 +12183,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "モーフカット",
-    "en": "Morph cut"
+    "en": "Morph cut",
+    "es": "Morph cut",
+    "zh-Hans": "变形剪切",
+    "zh-Hant": "Morph Cut"
    },
    "meaning": {
     "ja": "同じ画の間をなめらかにつなぐ",
-    "en": "Blend two takes so the join disappears"
+    "en": "Blend two takes so the join disappears",
+    "es": "Une dos tomas para que el corte desaparezca",
+    "zh-Hans": "平滑衔接相同构图的两段画面",
+    "zh-Hant": "把相同構圖的兩段平順接起來"
    },
    "ask": {
     "ja": "インタビューの言い直しをモーフカットで消して、つなぎ目が見えないように。",
-    "en": "Remove the repeated sentence in the interview with a morph cut, so the join is invisible."
+    "en": "Remove the repeated sentence in the interview with a morph cut, so the join is invisible.",
+    "es": "Quita la frase repetida de la entrevista con un morph cut, para que no se note la unión.",
+    "zh-Hans": "用变形剪切去掉采访中说错重来的部分，让接缝看不出来。",
+    "zh-Hant": "請用 Morph Cut 剪掉訪談中重講的句子，讓接點看不出來。"
    },
    "summary": {
     "ja": "同じ人物の2つのテイクを、位置と姿勢をなめらかに補間してつなぐ。ジャンプカットのように飛ばない。",
@@ -11608,15 +12247,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "フェードアウト",
-    "en": "Fade to black"
+    "en": "Fade to black",
+    "es": "Fundido a negro (fade to black)",
+    "zh-Hans": "淡出到黑场",
+    "zh-Hant": "淡出至黑"
    },
    "meaning": {
     "ja": "画面が暗くなって終わる",
-    "en": "The picture darkens to black"
+    "en": "The picture darkens to black",
+    "es": "La imagen se oscurece hasta quedar en negro",
+    "zh-Hans": "画面逐渐变暗直至全黑",
+    "zh-Hant": "畫面逐漸暗成全黑"
    },
    "ask": {
     "ja": "場面の終わりは1秒のフェードアウトで黒へ。次の場面は黒から明けて。",
-    "en": "End the scene with a 1-second fade to black, then fade in from black."
+    "en": "End the scene with a 1-second fade to black, then fade in from black.",
+    "es": "Cierra la escena con un fundido a negro de 1 segundo, y luego abre la siguiente desde negro.",
+    "zh-Hans": "场景结尾用 1 s 淡出到黑场，下一场景再从黑场中淡入。",
+    "zh-Hant": "場景結尾用 1 秒的淡出至黑，下一個場景再從黑畫面淡入。"
    },
    "summary": {
     "ja": "画面全体が黒へ沈んで終わり、黒から次の場面が明けてくる。",
@@ -11662,15 +12310,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "アイリスアウト",
-    "en": "Iris out"
+    "en": "Iris out",
+    "es": "Iris out (cierre en iris)",
+    "zh-Hans": "圈出",
+    "zh-Hant": "Iris out 圓形收合"
    },
    "meaning": {
     "ja": "丸い窓が閉じて暗くなる",
-    "en": "A circle closes down to black"
+    "en": "A circle closes down to black",
+    "es": "Un círculo se cierra hasta dejar todo en negro",
+    "zh-Hans": "圆形窗口收拢，画面变黑",
+    "zh-Hant": "圓形視窗縮小，畫面變黑"
    },
    "ask": {
     "ja": "昔の映画風に、主人公を中心にアイリスアウトで閉じて終わって。",
-    "en": "Old-film style: iris out, closing on the hero to end the scene."
+    "en": "Old-film style: iris out, closing on the hero to end the scene.",
+    "es": "Al estilo del cine antiguo: iris out, cerrando sobre el protagonista para terminar la escena.",
+    "zh-Hans": "以老电影的风格，用圈出收拢到主角身上，结束这个场景。",
+    "zh-Hant": "做成老電影的風格，以主角為中心用 Iris out 圓形收合，收成全黑後結束。"
    },
    "summary": {
     "ja": "人物を中心に丸い窓が閉じて黒になり、次の場面は丸い窓が開いて現れる。",
@@ -11719,15 +12376,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "カットアウェイ",
-    "en": "Cutaway"
+    "en": "Cutaway",
+    "es": "Plano de recurso (cutaway)",
+    "zh-Hans": "切出镜头",
+    "zh-Hant": "Cutaway 切出鏡頭"
    },
    "meaning": {
     "ja": "別の対象へ切り替えて戻る",
-    "en": "Cut to something else, then back"
+    "en": "Cut to something else, then back",
+    "es": "Cortar a otra cosa y volver",
+    "zh-Hans": "切到其他对象后再切回",
+    "zh-Hant": "切到其他對象，再切回來"
    },
    "ask": {
     "ja": "話している途中で客席の反応にカットアウェイして、また戻して。",
-    "en": "Cut away to the audience reaction in the middle of the talk, then back."
+    "en": "Cut away to the audience reaction in the middle of the talk, then back.",
+    "es": "A mitad de la charla, corta a un plano de recurso de la reacción del público y vuelve.",
+    "zh-Hans": "讲话途中用切出镜头切到观众的反应，再切回来。",
+    "zh-Hant": "講話講到一半，用 Cutaway 切出鏡頭切到觀眾的反應，再切回來。"
    },
    "summary": {
     "ja": "話す人物の場面から、聞いている客席へ切り替えて戻る。差し込むのは別の対象。",
@@ -11773,15 +12439,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "クロスカッティング",
-    "en": "Cross-cutting"
+    "en": "Cross-cutting",
+    "es": "Montaje paralelo (cross-cutting)",
+    "zh-Hans": "交叉剪辑",
+    "zh-Hant": "交叉剪接"
    },
    "meaning": {
     "ja": "同時に進む2つの場面を交互に",
-    "en": "Alternate between two simultaneous scenes"
+    "en": "Alternate between two simultaneous scenes",
+    "es": "Alternar entre dos escenas que pasan al mismo tiempo",
+    "zh-Hans": "交替呈现同时发生的两个场景",
+    "zh-Hant": "交替呈現同時發生的兩個場景"
    },
    "ask": {
     "ja": "逃げる人と追う車をクロスカッティングで交互に。だんだん短く切って。",
-    "en": "Cross-cut between the runner and the chasing car, with the cuts getting shorter."
+    "en": "Cross-cut between the runner and the chasing car, with the cuts getting shorter.",
+    "es": "Montaje paralelo entre la persona que corre y el carro que la persigue, con cortes cada vez más cortos.",
+    "zh-Hans": "用交叉剪辑交替展示逃跑的人和追赶的车，镜头逐渐变短。",
+    "zh-Hant": "逃跑的人和追趕的車用交叉剪接交替呈現，每個鏡頭越剪越短。"
    },
    "summary": {
     "ja": "同時に進む2つの場面（走る人物と走る車）を、だんだん短く交互に見せる。",
@@ -11829,15 +12504,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "バレットタイム",
-    "en": "Bullet time"
+    "en": "Bullet time",
+    "es": "Bullet time",
+    "zh-Hans": "子弹时间",
+    "zh-Hant": "子彈時間"
    },
    "meaning": {
     "ja": "止まった時間の中をカメラが回る",
-    "en": "Time stands still while the camera circles"
+    "en": "Time stands still while the camera circles",
+    "es": "El tiempo se detiene mientras la cámara gira alrededor",
+    "zh-Hans": "时间静止，相机绕主体旋转",
+    "zh-Hant": "時間停住，只有攝影機繞著轉"
    },
    "ask": {
     "ja": "跳んだ頂点でバレットタイム。時間を止めてカメラだけ回り込んで。",
-    "en": "Bullet time at the top of the jump: freeze the moment and circle the camera around."
+    "en": "Bullet time at the top of the jump: freeze the moment and circle the camera around.",
+    "es": "Bullet time en lo más alto del salto: congela el momento y haz que la cámara gire alrededor.",
+    "zh-Hans": "在跳跃最高点用子弹时间：让时间停住，只有相机绕着人物转。",
+    "zh-Hant": "跳到最高點時用子彈時間：時間停住，只有攝影機繞著人物轉。"
    },
    "summary": {
     "ja": "跳躍の頂点で時間がほぼ止まり、その間にカメラが人物の周りを回り込む。",
@@ -11884,15 +12568,24 @@
    "cycle": 9.4,
    "name": {
     "ja": "モンタージュ",
-    "en": "Montage"
+    "en": "Montage",
+    "es": "Secuencia de montaje (montage)",
+    "zh-Hans": "蒙太奇",
+    "zh-Hant": "蒙太奇"
    },
    "meaning": {
     "ja": "短いカットを重ねて時間を縮める",
-    "en": "A run of short shots condensing time"
+    "en": "A run of short shots condensing time",
+    "es": "Una serie de tomas cortas que comprime el tiempo",
+    "zh-Hans": "用一连串短镜头压缩时间",
+    "zh-Hant": "接連幾個短鏡頭來壓縮時間"
    },
    "ask": {
     "ja": "練習の1か月をモンタージュで。短いカットを7つくらい並べて。",
-    "en": "A one-month training montage: about seven short shots in a row."
+    "en": "A one-month training montage: about seven short shots in a row.",
+    "es": "Una secuencia de montaje de un mes de entrenamiento: unas siete tomas cortas seguidas.",
+    "zh-Hans": "用蒙太奇表现一个月的练习，连续排列约 7 个短镜头。",
+    "zh-Hant": "一個月的練習用蒙太奇呈現，接約 7 個短鏡頭。"
    },
    "summary": {
     "ja": "7つの短いカットで30日分の練習を見せる。つなぎは直結で、右上の日付が飛ぶ。",
