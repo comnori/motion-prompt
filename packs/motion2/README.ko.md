@@ -32,7 +32,7 @@
 | [#133](https://showheyohtaki.github.io/motion-prompt/#133) | **텍스트 마스크** | Text mask | 글자 모양 안으로 사진이나 영상이 보임 | OCEAN이라는 단어를 텍스트 마스크로 써서 안에 바다 영상을 보여 줘. 마지막 1초에는 영상 전체를 드러내 줘. |
 | [#134](https://showheyohtaki.github.io/motion-prompt/#134) | **리피터** | Repeater | 도형을 복제하고 복제본들을 회전시킴 | 리피터로 이 꽃잎을 원형으로 12개 복제해 줘. 4초마다 한 바퀴 회전하게 해 줘. |
 | [#135](https://showheyohtaki.github.io/motion-prompt/#135) | **만화경** | Kaleidoscope | 거울처럼 반사된 무늬가 대칭으로 펼쳐짐 | 로고 뒤에 만화경 효과를 넣어 줘. 8방향 거울 대칭으로 천천히 회전하며 퍼지게 해 줘. |
-| [#136](https://showheyohtaki.github.io/motion-prompt/#136) | **라인 보일(손그림 선 떨림)** | Line boil | 손으로 그린 선이 프레임마다 조금씩 흔들림 | 손그림 일러스트에 라인 보일을 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘. |
+| [#136](https://showheyohtaki.github.io/motion-prompt/#136) | **Line boil** | Line boil | 손으로 그린 선이 프레임마다 조금씩 흔들림 | 손그림 일러스트에 Line boil 효과를 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘. |
 
 ## 전환과 강조
 

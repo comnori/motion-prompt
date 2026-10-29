@@ -1,5 +1,5 @@
 {
- "version": "1.e8a05a013a",
+ "version": "1.e3fc1050ad",
  "site": "https://showheyohtaki.github.io/motion-prompt/",
  "repo": "https://github.com/showheyohtaki/motion-prompt",
  "count": 192,
@@ -1770,7 +1770,7 @@
     "zh-Hant": "Zoom Through 穿越轉場",
     "es": "Zoom through (zoom a través)",
     "zh-Hans": "穿越缩放",
-    "ko": "줌 스루(통과형 줌 전환)"
+    "ko": "Zoom through"
    },
    "meaning": {
     "ja": "物の中へ突き抜けて次へ",
@@ -1786,7 +1786,7 @@
     "zh-Hant": "請用 Zoom Through 穿越轉場鑽進 Logo「O」的洞，進入下一個場景，0.6 秒，逐漸加速。",
     "es": "Haz un zoom through por el hueco de la \"O\" del logo hacia la siguiente escena, en 0,6 s, acelerando.",
     "zh-Hans": "用穿越缩放加速穿过标志中字母 O 的孔洞，进入下一场景，时长 0.6 s。",
-    "ko": "줌 스루로 로고의 O 안쪽 구멍을 통과해 다음 장면으로 넘어가 줘. 0.6초 동안 점점 빨라지게 해 줘."
+    "ko": "Zoom through로 로고의 O 안쪽 구멍을 통과해 다음 장면으로 넘어가 줘. 0.6초 동안 점점 빨라지게 해 줘."
    },
    "summary": {
     "ja": "文字の「O」の穴へ突っ込んで、その先の画面へ抜ける。",
@@ -2041,7 +2041,7 @@
     "zh-Hant": "畫面震動",
     "es": "Sacudida de impacto (impact shake)",
     "zh-Hans": "冲击震动",
-    "ko": "카메라 쉐이크(충격 효과)"
+    "ko": "Impact shake"
    },
    "meaning": {
     "ja": "着地の衝撃で画面が揺れる",
@@ -2057,7 +2057,7 @@
     "zh-Hant": "標題砰地落下的瞬間，請加上畫面震動，0.4 秒內要平息。",
     "es": "Agrega una sacudida de impacto cuando cae el titular; que se calme en 0,4 s.",
     "zh-Hans": "标题落地时添加冲击震动，在 0.4 s 内停稳。",
-    "ko": "헤드라인이 착지할 때 화면에 카메라 쉐이크를 넣어 줘. 0.4초 안에 가라앉게 해 줘."
+    "ko": "헤드라인이 착지할 때 Impact shake 효과를 넣어 줘. 0.4초 안에 가라앉게 해 줘."
    },
    "summary": {
     "ja": "重い見出しの板がドンと落ち、その衝撃で画面ごと揺れる。",
@@ -5869,7 +5869,7 @@
     "zh-Hant": "Hover 浮起效果",
     "es": "Hover lift (elevación al pasar el cursor)",
     "zh-Hans": "悬停抬升",
-    "ko": "호버 시 떠오르기"
+    "ko": "Hover lift"
    },
    "meaning": {
     "ja": "カーソルを乗せると影を付けて浮く",
@@ -5885,7 +5885,7 @@
     "zh-Hant": "卡片加上 Hover 浮起效果：滑鼠移上去時往上浮 8 px，陰影加深，時間 0.3 秒。",
     "es": "Ponle hover lift a las tarjetas: que suban 8 px con una sombra más profunda, en 0,3 s.",
     "zh-Hans": "给卡片加上悬停抬升：光标悬停时用 0.3 s 抬高 8 px，同时加深阴影。",
-    "ko": "카드에 호버 시 떠오르기 효과를 넣어 줘. 0.3초 동안 8px 올라오면서 그림자가 짙어지게 해 줘."
+    "ko": "카드에 Hover lift 효과를 넣어 줘. 0.3초 동안 8px 올라오면서 그림자가 짙어지게 해 줘."
    },
    "summary": {
     "ja": "カーソルが乗ったカードだけが少し上に持ち上がり、下の影が広がる。カーソルが離れると元に戻る。",
@@ -6062,7 +6062,7 @@
     "zh-Hant": "磁吸按鈕",
     "es": "Botón magnético",
     "zh-Hans": "磁吸按钮",
-    "ko": "마그네틱 버튼(자석 효과)"
+    "ko": "Magnetic button"
    },
    "meaning": {
     "ja": "近づいたカーソルにボタンが吸い寄せられる",
@@ -6078,7 +6078,7 @@
     "zh-Hant": "把聯絡我們按鈕做成磁吸按鈕，往游標方向移動兩者距離的 0.3 倍，游標離開後要彈性地回到原位。",
     "es": "Haz el botón de contacto magnético: que se mueva 0,3× hacia el cursor y vuelva con rebote cuando se va.",
     "zh-Hans": "把联系按钮做成磁吸按钮：向光标方向移动两者距离的 0.3×，移开后弹回原位。",
-    "ko": "문의 버튼을 마그네틱 버튼으로 만들어 줘. 커서 쪽으로 거리의 0.3배만큼 움직이고, 벗어나면 탄력 있게 돌아오게 해 줘."
+    "ko": "문의 버튼을 Magnetic button으로 만들어 줘. 커서 쪽으로 거리의 0.3배만큼 움직이고, 벗어나면 탄력 있게 돌아오게 해 줘."
    },
    "summary": {
     "ja": "カーソルが近づくとボタンがカーソルの方へ引き寄せられてついていき、離れるとぷるんと揺れて元の位置に戻る。",
@@ -9501,7 +9501,7 @@
     "es": "Line boil (línea temblorosa)",
     "zh-Hans": "线条抖动",
     "zh-Hant": "Line Boil 線條抖動",
-    "ko": "라인 보일(손그림 선 떨림)"
+    "ko": "Line boil"
    },
    "meaning": {
     "ja": "手描きの線が小刻みに揺らぐ",
@@ -9517,7 +9517,7 @@
     "es": "Agrega line boil a la ilustración dibujada a mano: 10 cuadros por segundo, con las líneas moviéndose solo 2–3 px.",
     "zh-Hans": "给手绘插画加上线条抖动：每秒 10 帧，线条只偏移 2–3 px。",
     "zh-Hant": "請幫手繪插畫加上 Line Boil 線條抖動：每秒 10 格，線條只晃動 2–3 px。",
-    "ko": "손그림 일러스트에 라인 보일을 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘."
+    "ko": "손그림 일러스트에 Line boil 효과를 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘."
    },
    "summary": {
     "ja": "手描き風の線の絵が、数コマごとに小刻みに揺らぐ。絵そのものは動かない。",
@@ -10663,7 +10663,7 @@
     "es": "Spotlight hover (foco al pasar el cursor)",
     "zh-Hans": "聚光灯悬停",
     "zh-Hant": "Hover 聚光燈效果",
-    "ko": "커서 스포트라이트"
+    "ko": "Spotlight hover"
    },
    "meaning": {
     "ja": "カーソルの周りだけ明るくなる",
@@ -10679,7 +10679,7 @@
     "es": "Agrega un spotlight hover a las tarjetas de características: sobre las tarjetas oscuras, ilumina solo un círculo de unos 120 px de radio alrededor del cursor y haz que los bordes también brillen.",
     "zh-Hans": "给特色卡片加上聚光灯悬停：在深色卡片上只照亮光标周围半径约 120 px 的范围，边框也一起发光。",
     "zh-Hant": "特色卡片加上 Hover 聚光燈效果：在深色卡片上，只照亮游標周圍半徑約 120 px 的範圍，卡片邊框也要發光。",
-    "ko": "기능 카드에 커서 스포트라이트를 넣어 줘. 어두운 카드에서 커서 주변 약 120px의 원형 영역만 밝히고 테두리도 빛나게 해 줘."
+    "ko": "기능 카드에 Spotlight hover 효과를 넣어 줘. 어두운 카드에서 커서 주변 약 120px의 원형 영역만 밝히고 테두리도 빛나게 해 줘."
    },
    "summary": {
     "ja": "暗いカードの上をカーソルが動くと、カーソルの周りだけが丸く明るく照らされ、近くのカードの縁も光る。",
@@ -10794,7 +10794,7 @@
     "es": "Text roll (texto que rueda)",
     "zh-Hans": "悬停文字翻滚",
     "zh-Hant": "Hover 文字翻滾",
-    "ko": "호버 텍스트 롤링"
+    "ko": "Text roll on hover"
    },
    "meaning": {
     "ja": "文字が上に回って入れ替わる",
@@ -10810,7 +10810,7 @@
     "es": "Ponle un text roll al pasar el cursor al menú principal: que las letras rueden hacia arriba una por una, con 0,035 s de diferencia, y aparezca desde abajo la misma palabra en naranja.",
     "zh-Hans": "给主导航加上悬停文字翻滚：光标悬停时文字逐字向上翻出，每字间隔 0.035 s，同样的朱红色文字从下方翻入。",
     "zh-Hant": "主選單加上 Hover 文字翻滾：游標移上去時，文字一個字一個字往上翻出，每個字錯開 0.035 秒，同時橘紅色的同一組字從下方翻上來。",
-    "ko": "주 메뉴에 호버 텍스트 롤링을 넣어 줘. 글자를 0.035초 간격으로 하나씩 올리고, 아래에서 같은 단어가 주황색으로 나타나게 해 줘."
+    "ko": "주 메뉴에 Text roll on hover 효과를 넣어 줘. 글자를 0.035초 간격으로 하나씩 올리고, 아래에서 같은 단어가 주황색으로 나타나게 해 줘."
    },
    "summary": {
     "ja": "メニューの文字にカーソルを乗せると、文字が1文字ずつ上へ回って消え、同じ文字が朱色で下から出てくる。離れると元に戻る。",
@@ -10858,7 +10858,7 @@
     "es": "Hover image reveal (imagen que aparece al pasar el cursor)",
     "zh-Hans": "悬停图片预览",
     "zh-Hant": "Hover 圖片預覽",
-    "ko": "호버 이미지 표시"
+    "ko": "Hover image reveal"
    },
    "meaning": {
     "ja": "リストに乗せると写真が出る",
@@ -10874,7 +10874,7 @@
     "es": "Convierte la lista de propiedades en un hover image reveal: cuando el cursor esté sobre una fila, muestra su foto junto al cursor en 0,25 s y que lo siga.",
     "zh-Hans": "把设施列表做成悬停图片预览：光标停在某行时，用 0.25 s 在光标旁显示该行照片，并跟随光标移动。",
     "zh-Hant": "設施列表做成 Hover 圖片預覽：游標移到某一列時，在 0.25 秒內於游標旁邊顯示那一列的照片，並跟著游標移動。",
-    "ko": "매물 목록에 호버 이미지 표시 효과를 넣어 줘. 행에 포인터를 올리면 사진이 커서 옆에 0.25초 동안 나타나고 커서를 따라가게 해 줘."
+    "ko": "매물 목록에 Hover image reveal 효과를 넣어 줘. 행에 포인터를 올리면 사진이 커서 옆에 0.25초 동안 나타나고 커서를 따라가게 해 줘."
    },
    "summary": {
     "ja": "文字だけのリストの行にカーソルを乗せると、その行の写真がカーソルの横にふわっと出て、カーソルについて動く。",
@@ -11376,7 +11376,7 @@
     "es": "Divisor de forma animado (shape divider)",
     "zh-Hans": "动态形状分隔线",
     "zh-Hant": "形狀分隔線",
-    "ko": "애니메이션 섹션 구분선"
+    "ko": "Animated shape divider"
    },
    "meaning": {
     "ja": "区切りの波形がゆれ続ける",
@@ -11392,7 +11392,7 @@
     "es": "Agrega un divisor de forma animado entre el hero y la sección siguiente: dos capas de olas blancas que se desplazan despacio en direcciones opuestas.",
     "zh-Hans": "在首屏与下一节之间加入动态形状分隔线：叠放两层白色波浪，缓慢地反向持续摆动。",
     "zh-Hant": "Hero 區塊和下一個區塊的交界加上形狀分隔線：疊兩層白色波浪，持續朝相反方向慢慢擺動。",
-    "ko": "히어로와 다음 섹션 사이에 애니메이션 섹션 구분선을 넣어 줘. 흰 물결 레이어 두 개가 서로 반대 방향으로 천천히 흐르게 해 줘."
+    "ko": "히어로와 다음 섹션 사이에 Animated shape divider를 넣어 줘. 흰 물결 레이어 두 개가 서로 반대 방향으로 천천히 흐르게 해 줘."
    },
    "summary": {
     "ja": "青いセクションと白いセクションの境目にある波の形が、2枚重なってゆっくりゆれ続ける。",

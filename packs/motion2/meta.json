@@ -459,9 +459,9 @@
     },
     {
       "no": "16", "slug": "line-boil", "category": "text-shapes",
-      "name": { "ja": "ラインボイル", "en": "Line boil", "es": "Line boil (línea temblorosa)", "zh-Hans": "线条抖动", "zh-Hant": "Line Boil 線條抖動", "ko": "라인 보일(손그림 선 떨림)" },
+      "name": { "ja": "ラインボイル", "en": "Line boil", "es": "Line boil (línea temblorosa)", "zh-Hans": "线条抖动", "zh-Hant": "Line Boil 線條抖動", "ko": "Line boil" },
       "meaning": { "ja": "手描きの線が小刻みに揺らぐ", "en": "Hand-drawn lines wobble frame to frame", "es": "Las líneas dibujadas a mano tiemblan de un cuadro a otro", "zh-Hans": "手绘线条逐帧轻微抖动", "zh-Hant": "手繪線條每幾格就微微晃動", "ko": "손으로 그린 선이 프레임마다 조금씩 흔들림" },
-      "ask": { "ja": "手描きのイラストにラインボイルを付けて。1秒10コマで、線を2〜3pxだけ揺らして。", "en": "Add line boil to the hand-drawn illustration: 10 frames per second, with the lines shifting only 2–3 px.", "es": "Agrega line boil a la ilustración dibujada a mano: 10 cuadros por segundo, con las líneas moviéndose solo 2–3 px.", "zh-Hans": "给手绘插画加上线条抖动：每秒 10 帧，线条只偏移 2–3 px。", "zh-Hant": "請幫手繪插畫加上 Line Boil 線條抖動：每秒 10 格，線條只晃動 2–3 px。", "ko": "손그림 일러스트에 라인 보일을 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘." },
+      "ask": { "ja": "手描きのイラストにラインボイルを付けて。1秒10コマで、線を2〜3pxだけ揺らして。", "en": "Add line boil to the hand-drawn illustration: 10 frames per second, with the lines shifting only 2–3 px.", "es": "Agrega line boil a la ilustración dibujada a mano: 10 cuadros por segundo, con las líneas moviéndose solo 2–3 px.", "zh-Hans": "给手绘插画加上线条抖动：每秒 10 帧，线条只偏移 2–3 px。", "zh-Hant": "請幫手繪插畫加上 Line Boil 線條抖動：每秒 10 格，線條只晃動 2–3 px。", "ko": "손그림 일러스트에 Line boil 효과를 넣어 줘. 초당 10프레임으로 하고 선은 2~3px만 움직이게 해 줘." },
       "summary": {
         "ja": "手描き風の線の絵が、数コマごとに小刻みに揺らぐ。絵そのものは動かない。",
         "en": "A hand-drawn line picture wobbles every few frames while the picture itself stays still."

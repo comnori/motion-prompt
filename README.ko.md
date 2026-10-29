@@ -41,7 +41,7 @@ Shohei Ohtaki
 | 145–168 | `lp2`: 랜딩 페이지와 웹 효과 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
 | 169–192 | `camera2`: 카메라 움직임과 장면 전환 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-각 목록에는 번호, 이름, 뜻, AI 요청 예시가 있습니다. 한국어 목록에는 영어 원어도 함께 표시합니다. [전체 팩 목록](packs/README.md)에서 다른 언어로 이동할 수 있으며, [갤러리](https://showheyohtaki.github.io/motion-prompt/)에서는 같은 이름의 움직이는 예제를 볼 수 있습니다.
+각 목록에는 번호, 이름, 뜻, AI 요청 예시가 있습니다. 한국어 목록에는 영어 원어도 함께 표시합니다. 한국어 명칭의 실제 사용 근거를 확인하지 못한 일부 항목은 영어 원어를 이름으로 유지하고, 뜻과 AI 요청 예시는 한국어로 제공합니다. [전체 팩 목록](packs/README.md)에서 다른 언어로 이동할 수 있으며, [갤러리](https://showheyohtaki.github.io/motion-prompt/)에서는 같은 이름의 움직이는 예제를 볼 수 있습니다.
 
 팩마다 시각적 스타일이 다릅니다. `motion`과 `motion2`는 짙은 네이비 바탕에 네 가지 색을, `camera`와 `camera2`는 밝은 회색 바탕에 파란색 하나를 사용합니다. `ui`는 따뜻한 흰색 바탕에 검정과 파랑을 사용하며 커서가 각 요소를 움직입니다. `lp`와 `lp2`는 옅은 회색 책상 위에 흰 브라우저 창을 그리고, 주홍색을 강조색으로, 파란색을 페이지 안의 이미지에 사용합니다. `photo`에는 공통 색상표가 없습니다. 카드마다 장면에 맞는 색을 쓰고, 효과가 나타났다 사라져 전후를 비교할 수 있습니다. 의도한 차이입니다. 팩에서 가장 중요한 것은 통일된 스타일보다 정확한 이름입니다.
 
