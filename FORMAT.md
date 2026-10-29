@@ -37,6 +37,7 @@ Packs and their order (global IDs are assigned in this order, 3 digits; new pack
 | 5 | `photo` | 24 | 097–120 | Photo looks, lighting & styles / 写真の表現・光と画風 |
 | 6 | `motion2` | 24 | 121–144 | Motion graphics moves, part 2 / モーショングラフィックスの演出 第2弾 |
 | 7 | `lp2` | 24 | 145–168 | Landing page & web effects, part 2 / LP・Webサイトの演出 第2弾 |
+| 8 | `camera2` | 24 | 169–192 | Camera moves & transitions, part 2 / カメラワークと切り替え 第2弾 |
 
 **Once the repository is public, numbers are never renumbered and published names are not renamed.**
 A new pack takes the next `order` and the next free IDs. An element is added at the end of its pack

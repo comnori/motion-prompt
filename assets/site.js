@@ -315,7 +315,7 @@
       el.tags.join(' '), p.title.ja, p.title.en, c.ja || '', c.en || ''].join(' ').toLowerCase();
   }
   function matches(el) {
-    if (state.pack !== 'all' && el.pack !== state.pack) return false;
+    if (state.pack !== 'all' && state.pack.split(',').indexOf(el.pack) < 0) return false; // one pack, or several joined by commas (camera,camera2)
     if (state.cat !== 'all' && el.category !== state.cat) return false;
     if (!state.q) return true;
     if (!el._hay) el._hay = haystack(el);
@@ -352,7 +352,7 @@
     packs.textContent = ''; cats.textContent = '';
     packs.appendChild(chip(t('all'), state.pack === 'all', String(CAT.count), function () { setFilter('all', 'all'); }));
     CAT.packs.forEach(function (p) {
-      packs.appendChild(chip(p.title[state.lang], state.pack === p.pack, String(p.count), function () { setFilter(p.pack, 'all'); }));
+      packs.appendChild(chip(p.title[state.lang], state.pack.split(',').indexOf(p.pack) >= 0, String(p.count), function () { setFilter(p.pack, 'all'); }));
     });
     var p = packBy[state.pack];
     cats.hidden = !p;
@@ -586,8 +586,9 @@
   function readParams() {
     var q = new URLSearchParams(location.search);
     state.cb = validCb(q.get('cb'));
-    var pk = q.get('pack');
-    if (pk && packBy[pk]) state.pack = pk;
+    // ?pack=camera shows one pack; ?pack=camera,camera2 shows a field's packs together (part 1 and part 2)
+    var pk = String(q.get('pack') || '').split(',').filter(function (x) { return packBy[x]; });
+    if (pk.length) state.pack = pk.join(',');
     // A waiting agent keeps its own selection, so last week's picks never slip into a new request.
     var saved = loadSaved(state.cb ? PICK_CB_KEY : PICK_KEY);
     if (state.cb && saved && saved.cb !== state.cb) saved = null;
