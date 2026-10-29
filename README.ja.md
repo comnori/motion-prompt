@@ -28,16 +28,16 @@ AIに何かを作ってもらうときに使う「名前」のライブラリで
 
 | 番号 | パック | 個数 | 一覧 |
 |---|---|---|---|
-| 001–024 | `motion`: モーショングラフィックスの動き | 24 | [日本語](packs/motion/README.ja.md) · [English](packs/motion/README.md) |
-| 025–048 | `camera`: カメラワークと切り替え | 24 | [日本語](packs/camera/README.ja.md) · [English](packs/camera/README.md) |
-| 049–072 | `ui`: UIパーツの名前 | 24 | [日本語](packs/ui/README.ja.md) · [English](packs/ui/README.md) |
-| 073–096 | `lp`: LP・Webサイトの演出 | 24 | [日本語](packs/lp/README.ja.md) · [English](packs/lp/README.md) |
-| 097–120 | `photo`: 写真の表現・光と画風 | 24 | [日本語](packs/photo/README.ja.md) · [English](packs/photo/README.md) |
-| 121–144 | `motion2`: モーショングラフィックスの演出 第2弾 | 24 | [日本語](packs/motion2/README.ja.md) · [English](packs/motion2/README.md) |
-| 145–168 | `lp2`: LP・Webサイトの演出 第2弾 | 24 | [日本語](packs/lp2/README.ja.md) · [English](packs/lp2/README.md) |
-| 169–192 | `camera2`: カメラワークと切り替え 第2弾 | 24 | [日本語](packs/camera2/README.ja.md) · [English](packs/camera2/README.md) |
+| 001–024 | `motion`: モーショングラフィックスの動き | 24 | [日本語](packs/motion/README.ja.md) · [English](packs/motion/README.md) · [Español](packs/motion/README.es.md) · [简体中文](packs/motion/README.zh-Hans.md) · [繁體中文](packs/motion/README.zh-Hant.md) |
+| 025–048 | `camera`: カメラワークと切り替え | 24 | [日本語](packs/camera/README.ja.md) · [English](packs/camera/README.md) · [Español](packs/camera/README.es.md) · [简体中文](packs/camera/README.zh-Hans.md) · [繁體中文](packs/camera/README.zh-Hant.md) |
+| 049–072 | `ui`: UIパーツの名前 | 24 | [日本語](packs/ui/README.ja.md) · [English](packs/ui/README.md) · [Español](packs/ui/README.es.md) · [简体中文](packs/ui/README.zh-Hans.md) · [繁體中文](packs/ui/README.zh-Hant.md) |
+| 073–096 | `lp`: LP・Webサイトの演出 | 24 | [日本語](packs/lp/README.ja.md) · [English](packs/lp/README.md) · [Español](packs/lp/README.es.md) · [简体中文](packs/lp/README.zh-Hans.md) · [繁體中文](packs/lp/README.zh-Hant.md) |
+| 097–120 | `photo`: 写真の表現・光と画風 | 24 | [日本語](packs/photo/README.ja.md) · [English](packs/photo/README.md) · [Español](packs/photo/README.es.md) · [简体中文](packs/photo/README.zh-Hans.md) · [繁體中文](packs/photo/README.zh-Hant.md) |
+| 121–144 | `motion2`: モーショングラフィックスの演出 第2弾 | 24 | [日本語](packs/motion2/README.ja.md) · [English](packs/motion2/README.md) · [Español](packs/motion2/README.es.md) · [简体中文](packs/motion2/README.zh-Hans.md) · [繁體中文](packs/motion2/README.zh-Hant.md) |
+| 145–168 | `lp2`: LP・Webサイトの演出 第2弾 | 24 | [日本語](packs/lp2/README.ja.md) · [English](packs/lp2/README.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) |
+| 169–192 | `camera2`: カメラワークと切り替え 第2弾 | 24 | [日本語](packs/camera2/README.ja.md) · [English](packs/camera2/README.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) |
 
-一覧には、番号・名前・英語名・一言の意味・AIへの頼み方の例が並んでいます。同じ名前が[ギャラリー](https://showheyohtaki.github.io/motion-prompt/)で動きます。
+一覧には、番号・名前・英語名・一言の意味・AIへの頼み方の例が並んでいます。一覧は日本語・英語・スペイン語・中国語（簡体字・繁体字）で読めます（ギャラリーの画面は日本語と英語）。同じ名前が[ギャラリー](https://showheyohtaki.github.io/motion-prompt/)で動きます。
 
 パックごとに見た目が違います。モーショングラフィックス（第1弾・第2弾）は濃紺に4色、カメラワーク（第1弾・第2弾）は薄いグレーに青1色です。UIパーツは温かみのある白に黒と青1色で、カーソルが触れると部品が動きます。LP・Webサイトの演出（第1弾・第2弾）は、薄いグレーの机の上に白いブラウザの窓を描き、差し色は朱、ページの中の写真には青を使います。写真の表現には共通の色がなく、カードごとにその場面の色で描き、効果がかかっては戻るので前後を見比べられます。わざとそうしています。パックがそろえるべきなのは名前であって、決まった見た目ではありません。
 
@@ -254,6 +254,8 @@ python3 -m http.server 8000
 ## 謝辞
 
 動く UI のギャラリーとエージェントスキルを組み合わせた [Lucian UX/UI Prompt](https://lucianlabs.dev/uxui-prompt/) から着想を得ました。CLI のコマンド構成と静的ファイルの置き方も同プロジェクトに倣っています（[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)）。
+
+ほかの言語の一覧は、[@daddydanielt](https://github.com/daddydanielt) さん（繁体字中国語）、[@herberthcr](https://github.com/herberthcr) さん（スペイン語）、[@xhonye](https://github.com/xhonye) さん（簡体字中国語）の翻訳から始まりました。ありがとうございます。
 
 ## 作者
 
