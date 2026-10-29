@@ -1,0 +1,28 @@
+// Motion Prompt #187 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#187
+//
+// 페이드 투 블랙 / Fade to black
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 19 · 분류: 전환과 편집
+// 동작 요약: 화면이 검게 사라진 뒤 다음 장면이 서서히 나타납니다.
+// 동작 사양:
+//   - 1.4–2.6 s(1.2 s)에 검정 rgb(20,20,24)의 불투명도를 0 → 100%로 높입니다. quadratic ease-in-out, 약 cubic-bezier(0.45,0,0.55,1).
+//   - 2.6–3.1 s에는 완전히 검은 화면을 유지합니다. 2.9 s에 보이지 않는 스트레이트 컷으로 장면을 바꿉니다.
+//   - 3.1–4.3 s(1.2 s)에 같은 이징으로 검정 불투명도를 100 → 0%로 줄입니다.
+//   - 장면 A의 카메라는 높이 1.4 m, B는 높이 1.6 m와 피치 +0.1 rad로 고정합니다. 피사체는 움직이지 않습니다.
+//   - 4.7 s마다 장면을 번갈아 보여 주며 왕복은 9.4 s입니다. 상단에는 ‘FADE OUT / IN’을 표시하고 뷰파인더는 검은 화면 위에 남습니다.
+// 활용 상황: 챕터 구분, 시간 경과, 장면의 끝을 표현할 때 사용합니다.
+// 태그: fade to black, fade out, fade in, black, ending, transition
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#187
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 19
+// 19 フェードアウト: 画面全体が黒へ沈んで終わり、黒から次の場面が明けてくる
+CELLS[18] = shot(abCell((k, w, h, u, A, B) => {
+  const out = eIOs(P(u, 1.4, 2.6)), inn = eIOs(P(u, 3.1, 4.3));
+  if (u < 2.9) A(k, w, h); else B(k, w, h);
+  const a = u < 2.9 ? out : 1 - inn;
+  if (a > 0) { k.fillStyle = `rgba(20,20,24,${a.toFixed(3)})`; k.fillRect(0, 0, w, h); }
+}, u => u < 2.9 ? 'FADE OUT' : 'FADE IN'));

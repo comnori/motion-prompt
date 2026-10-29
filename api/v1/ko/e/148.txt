@@ -1,0 +1,52 @@
+// Motion Prompt #148 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#148
+//
+// 스크롤 배경색 전환 / Background color change on scroll
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 04 · 분류: 스크롤 효과
+// 동작 요약: 새 섹션에 들어갈 때 페이지 전체 배경이 크림·네이비·연파랑으로 섞여 바뀌고 어두운 배경에서는 글자가 흰색이 됩니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트. 섹션 세 개는 각각 168 px(한 화면)입니다. 스크롤: 0.3–1.2 s에 0→168 px, 1.8–2.7 s에 168→336, 3.3–4.4 s에 336→0(cubic ease-in-out). 한 번은 4.7 s(팩의 9.4 s 주기마다 두 번)입니다.
+//   - 배경색: 아침 #FFEBD9 → 밤 #1E2A4A → 휴일 #DDE6FF. 페이지 전체 뒤에 한 색으로 칠하고 섹션 경계를 지날 때 섞습니다.
+//   - 혼합: 다음 섹션까지 스크롤의 5%–95%에서 0→1(quadratic ease-in-out). 시간이 아닌 스크롤 위치로 결정합니다.
+//   - 밤으로 바뀔 때 제목은 네이비→흰색, 본문 막대는 베이지→청회색입니다. 섹션 라벨(01 MORNING …)은 주황색을 유지합니다.
+//   - 각 섹션 그림(해·달과 별·산 사진)은 페이지와 함께 움직이고 스크롤바 손잡이도 따라갑니다.
+// 활용 상황: 장마다 분위기가 다른 이야기형 페이지나 낮·밤·계절을 대비할 때 사용합니다.
+// 태그: background-color, scroll, section, color-transition, scroll-driven, storytelling
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#148
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 04
+// 04 背景色の切り替え（スクロールでセクションが変わるたび、ページ全体の背景色がなめらかに変わる）
+CELLS[3] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const y = steps([[0.3, 0], [1.2, VH], [1.8, VH], [2.7, 2 * VH], [3.3, 2 * VH], [4.4, 0]], u), s = y / VH;
+  const BG = ['#FFEBD9', '#1E2A4A', '#DDE6FF'], DK = [0, 1, 0];
+  const i0 = Math.min(1, Math.floor(s)), t = eIOs(clamp((s - i0 - 0.05) / 0.9));
+  const bg = mix(BG[i0], BG[i0 + 1], t), dk = lerp(DK[i0], DK[i0 + 1], t);
+  const fg = mix(C.ink, '#FFFFFF', dk), bc = mix('#E3C9B4', '#45507A', dk);
+  view(k, () => {
+    k.fillStyle = bg; k.fillRect(0, 0, VW, VH);
+    k.save(); k.translate(0, -y);
+    const S = [['01  MORNING', '朝のひととき'], ['02  NIGHT', '夜のくつろぎ'], ['03  HOLIDAY', '休日のおでかけ']];
+    S.forEach(([no, ttl], i) => {
+      const y0 = i * VH;
+      txt(k, no, 40, y0 + 58, `800 12px ${EN}`, C.acc, 'left', 'alphabetic', '2px');
+      txt(k, ttl, 40, y0 + 92, `800 24px ${JP}`, fg);
+      k.fillStyle = bc; for (let j = 0; j < 2; j++) { rr(k, 40, y0 + 108 + j * 12, j ? 110 : 180, 6, 3); k.fill(); }
+    });
+    // 朝: 太陽 / 夜: 月と星 / 休日: 山の写真
+    k.fillStyle = C.acc; k.beginPath(); k.arc(380, 84, 34, 0, 7); k.fill();
+    k.strokeStyle = C.acc; k.lineWidth = 4; k.lineCap = 'round';
+    for (let j = 0; j < 8; j++) { const a = j * Math.PI / 4; k.beginPath(); k.moveTo(380 + Math.cos(a) * 44, 84 + Math.sin(a) * 44); k.lineTo(380 + Math.cos(a) * 54, 84 + Math.sin(a) * 54); k.stroke(); }
+    k.fillStyle = '#FFE5DB'; k.beginPath(); k.arc(380, VH + 84, 36, 0, 7); k.fill();
+    k.fillStyle = bg; k.beginPath(); k.arc(396, VH + 72, 32, 0, 7); k.fill();
+    k.fillStyle = '#FFE5DB';[[300, 50], [450, 40], [330, 130], [470, 120]].forEach(([a, b]) => { k.beginPath(); k.arc(a, VH + b, 2.5, 0, 7); k.fill(); });
+    pic(k, 300, 2 * VH + 28, 180, 112, 0, 10);
+    k.restore();
+    sbar(k, s / 2, 0.34);
+  });
+};

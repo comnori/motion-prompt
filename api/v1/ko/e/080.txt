@@ -1,0 +1,42 @@
+// Motion Prompt #080 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#080
+//
+// 형광펜 애니메이션 / Highlighter animation
+// 팩: lp (랜딩 페이지와 웹 효과) · element 08 · 분류: 스크롤 효과
+// 동작 요약: 문장이 화면에 들어오면 핵심 단어의 아래쪽 절반에 노란 형광펜 선이 왼쪽에서 오른쪽으로 그려집니다.
+// 동작 사양:
+//   - 스크롤: 0.35–1.0 s에 0→90 px, 1.6–2.2 s에 90→180 px, 3.3–4.4 s에 180→0(cubic ease-in-out).
+//   - 굵은 20 px 문장 두 줄을 페이지 위에서 190 px와 290 px에 놓아 처음에는 화면 아래에 숨깁니다.
+//   - 문장 위쪽이 발동선(뷰포트 높이의 80%, 134 px)을 지나면 핵심 단어 아래의 선을 그리기 시작합니다.
+//   - 선: 노랑 #FFE36B, 높이 11, 글자의 아래 부분(기준선 위 8 px부터 아래 3 px). 글자 뒤에 그리며 0.8 s 동안 왼쪽부터 너비 0 → 단어 너비로 늘립니다(cubic ease-out).
+//   - 화면 아래로 나가는 문장은 보이지 않는 상태로 초기화합니다.
+// 활용 상황: 랜딩 페이지를 읽는 순간 가장 중요한 문구를 강조할 때 사용합니다.
+// 태그: highlighter, marker, text-highlight, emphasis, scroll-reveal, copy, underline
+// 크기: 539x208 px · 반복 주기: 4.8 s
+// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#080
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 08
+// 08 マーカーアニメーション（大事な言葉が画面に入ると、蛍光ペンの線が左から引かれる）
+CELLS[7] = (k, w, h, u) => {
+  frame(k);
+  const SY = t => steps([[0.35, 0], [1.0, 90], [1.6, 90], [2.2, 180], [3.3, 180], [4.4, 0]], t), y = SY(u);
+  const LINE = VH * 0.8, DUR = 0.8, MARK = '#FFE36B', F = `800 20px ${JP}`;
+  const rows = [[190, ['毎日のごはんが', 'たった10分で', '作れる。']], [290, ['はじめてでも', '失敗しないレシピ', 'だけ。']]];
+  view(k, () => {
+    k.save(); k.translate(0, -y);
+    txt(k, '忙しい人のための', 70, 50, `700 14px ${JP}`, C.sub); txt(k, '台所の新しい相棒', 70, 80, `800 24px ${JP}`, C.ink);
+    bars(k, 70, 96, 330, 4, C.faint, 6, 12, 0.8);
+    for (const [base, parts] of rows) {
+      k.font = F; const ws = parts.map(s => k.measureText(s).width); let x = (VW - ws.reduce((a, b) => a + b, 0)) / 2;
+      const t0 = enteredAt(SY, base - 20, LINE, u), q = t0 === null ? 0 : eOut(P(u, t0, t0 + DUR));
+      if (q > 0) { k.fillStyle = MARK; k.fillRect(x + ws[0], base - 8, ws[1] * q, 11); }
+      parts.forEach((s, i) => { txt(k, s, x, base, F, i === 1 ? C.ink : '#4A5368'); x += ws[i]; });
+      bars(k, 110, base + 22, 291, 2, C.faint, 6, 12, 0.7);
+    }
+    k.restore();
+    sbar(k, y / 180, 0.5);
+  });
+};

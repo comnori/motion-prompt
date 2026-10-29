@@ -1,0 +1,34 @@
+// Motion Prompt #102 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#102
+//
+// 버터플라이 조명 / Butterfly lighting
+// 팩: photo (사진 표현·조명·스타일) · element 06 · 분류: 조명과 시간대
+// 동작 요약: 얼굴 정면 높은 곳의 조명이 켜집니다. 얼굴 양쪽은 균일하게 밝고 턱 아래에만 작은 대칭 그림자가 생깁니다.
+// 동작 사양:
+//   - 장면 1: y 150 수평선 앞의 상반신 인물(머리 중심 x 270, y 78, 반지름 29 px, 얼굴·머리카락 없음). 배경은 더 어두운 장면(하늘 #E7E5E1)으로 바뀝니다.
+//   - 머리: 전체를 #FFC75A로 밝힙니다(그림자 면 없음).
+//   - 턱 아래 그림자: 중심 y 78+1.06R의 타원, 너비 0.72R·높이 0.38R(R = 29, 약 21×11 px), 색 #33405A.
+//   - 몸: 중심의 ±0.8×56 px 안쪽은 밝고 바깥 얇은 띠는 기본색입니다. 평면도에서 조명은 카메라 쪽(0°), 오른쪽 위 표시 “0° · ↑45°”.
+//   - 시간: 0.4 s부터 1.4 s까지 효과가 나타나고 4.0 s까지 유지한 뒤 4.8 s까지 사라집니다(한 번 = 5 s, cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1)).
+// 활용 상황: 얼굴을 아름답게 표현하는 뷰티·패션 인물 사진에 사용합니다.
+// 태그: butterfly lighting, paramount lighting, beauty lighting, portrait lighting, overhead light, glamour
+// 크기: 539x208 px · 반복 주기: 5 s
+// 필요한 코드: kit photo -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/photo.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#102
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 06
+// バタフライライティング: 顔の正面・高い位置からの光。顔は左右対称に明るく、あごの下にだけ小さな影
+CELLS[5] = cell((k, u) => {
+  const a = env(u), R = PR, W = torsoW(R);
+  stagePortrait(k, pal(BASE, DIM, a));
+  const lit = mixc(BASE.person, BASE.lit, a), sh = mixc(BASE.person, BASE.shade, a);
+  bust(k, PX, PY, R, BASE.person, kk => {
+    torso(kk, PX, PY, R, PX - 0.8 * W, PX + 0.8 * W, lit);
+    kk.fillStyle = sh; kk.beginPath(); kk.ellipse(PX, PY + R * 1.06, R * 0.72, R * 0.38, 0, 0, TAU); kk.fill();    // あごの下の影（左右対称）
+    kk.fillStyle = lit; kk.beginPath(); kk.arc(PX, PY, R, 0, TAU); kk.fill();
+  });
+  plan(k, [[0, a]]);
+  hud(k, '0° · ↑45°');
+});

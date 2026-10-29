@@ -1,0 +1,39 @@
+// Motion Prompt #078 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#078
+//
+// 스크롤 스냅 / Scroll snap
+// 팩: lp (랜딩 페이지와 웹 효과) · element 06 · 분류: 스크롤 효과
+// 동작 요약: 조금 스크롤하면 나머지 거리를 페이지가 스스로 이동해 다음 섹션의 위쪽이 화면 상단에 맞춰집니다.
+// 동작 사양:
+//   - 각 섹션은 뷰포트와 같은 높이(168 px)입니다. 첫 섹션은 옅은 파랑, 둘째는 네이비입니다.
+//   - 2.4 s마다 한 번 스냅합니다. 0.45–0.85 s에 사용자가 34 px만 스크롤합니다(cubic ease-out).
+//   - 0.9–1.5 s에 페이지가 남은 134 px를 스스로 이동해 다음 섹션 상단을 맞춥니다(cubic ease-out).
+//   - 다음 2.4 s에는 같은 동작을 위로 하여 첫 섹션으로 돌아갑니다(scroll-snap-type: y mandatory 동작).
+// 활용 상황: 슬라이드처럼 한 화면씩 읽도록 구성한 페이지에 사용합니다.
+// 태그: scroll-snap, snap, full-page, sections, css, mandatory, scroll
+// 크기: 539x208 px · 반복 주기: 4.8 s
+// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#078
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 06
+// 06 スクロールスナップ（少しスクロールすると、次のセクションの頭までピタッと送られる）
+CELLS[5] = (k, w, h, u) => {
+  frame(k);
+  const T = CYC / 2, lu = mod(u, T), dir = u < T ? 1 : -1, from = u < T ? 0 : VH, DRIFT = 34;
+  const y = from + dir * (DRIFT * eOut(P(lu, 0.45, 0.85)) + (VH - DRIFT) * eOut(P(lu, 0.9, 1.5)));
+  view(k, () => {
+    k.save(); k.translate(0, -y);
+    for (let i = 0; i < 2; i++) {
+      const y0 = i * VH, dark = i === 1;
+      k.fillStyle = dark ? C.ink : C.blueL; k.fillRect(0, y0, VW, VH);
+      txt(k, '0' + (i + 1), 34, y0 + 70, `800 46px ${EN}`, C.acc);
+      txt(k, dark ? '使ってみる' : '知ってもらう', 34, y0 + 102, `800 18px ${JP}`, dark ? '#fff' : C.ink);
+      bars(k, 34, y0 + 118, 170, 2, dark ? 'rgba(255,255,255,.3)' : '#C3CDEA');
+      pic(k, 262, y0 + 24, 220, 120, dark ? 2 : 0, 8);
+    }
+    k.restore();
+    sbar(k, y / VH, 0.5);
+  });
+};

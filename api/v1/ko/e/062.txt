@@ -1,0 +1,55 @@
+// Motion Prompt #062 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#062
+//
+// 범위 슬라이더 / Range slider
+// 팩: ui (UI 컴포넌트 이름) · element 14 · 분류: 선택과 전환
+// 동작 요약: 가격 슬라이더의 왼쪽 손잡이를 오른쪽으로, 오른쪽 손잡이를 왼쪽으로 끌어 범위를 좁힌 뒤 둘 다 되돌립니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 트랙은 x 54–488, 높이 8, y 120이며 두 손잡이 사이는 파랑입니다. 범위는 ¥0–¥10,000입니다.
+//   - 손잡이: 흰색, 반지름 13, 3 px 파란 테두리. 드래그 중에는 반지름 15와 반지름 24의 옅은 파란 후광을 적용합니다.
+//   - 하한: 1.0–1.6 s에 0.1 → 0.3(¥1,000 → ¥3,000), 3.55–3.9 s에 복귀. 상한: 2.1–2.6 s에 1.0 → 0.8(¥10,000 → ¥8,000), 2.95–3.3 s에 복귀. 모두 easeInOutCubic입니다.
+//   - 각 손잡이 위에 높이 28의 값 말풍선을 둡니다. 드래그 중 파란 바탕과 흰 글자로 표시합니다. 오른쪽 위의 파란 범위 “¥1,000 – ¥10,000”은 ¥100 단위로 갱신합니다.
+//   - 커서는 드래그하는 손잡이 위에 놓입니다(1.0, 2.1, 2.95, 3.55 s에 누름).
+// 활용 상황: 가격·날짜·크기 등 최솟값과 최댓값이 있는 범위로 필터링할 때 사용합니다.
+// 태그: range-slider, slider, dual-thumb, min-max, price-filter, range
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#062
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 14
+// 14 レンジスライダー（Range slider）
+CELLS[13] = ui((w, h, t) => {
+  // つまみ2つで範囲を選ぶ：下限 ¥1,000→¥3,000、上限 ¥10,000→¥8,000、のち元へ戻す
+  const LO = tt => .1 + .2 * eio(seg(tt, 1.0, 1.6)) - .2 * eio(seg(tt, 3.55, 3.9));
+  const HI = tt => 1.0 - .2 * eio(seg(tt, 2.1, 2.6)) + .2 * eio(seg(tt, 2.95, 3.3));
+  const x0 = 54, x1 = 488, ty = 120, X_ = v => lerp(x0, x1, v);
+  const lo = LO(t), hi = HI(t), lx = X_(lo), hx = X_(hi);
+  const yen = v => '¥' + (Math.round(v * 100) * 100).toLocaleString('en-US');
+  text('価格', 24, 26, 16, '#555', 700);
+  text(yen(lo) + ' 〜 ' + yen(hi), w - 24, 26, 17, C.blue, 700, 'right', NUMF);
+  fillRR(x0, ty - 4, x1 - x0, 8, 4, '#e3e1df'); fillRR(lx, ty - 4, hx - lx, 8, 4, C.blue);
+  const loAct = (t > 1.0 && t < 1.7) || (t > 3.55 && t < 3.95), hiAct = t > 2.1 && t < 3.3;
+  [[lx, lo, loAct], [hx, hi, hiAct]].forEach(([kx, v, act]) => {
+    if (act) circle(kx, ty, 24, 'rgba(31,90,232,.14)');
+    shadowed(() => circle(kx, ty, act ? 15 : 13, '#fff'), 6, 2, .25); ring(kx, ty, act ? 15 : 13, C.blue, 3);
+    const val = yen(v), bw = tw(val, 15, 700, NUMF) + 18, bx = clamp(kx - bw / 2, 4, w - 4 - bw);
+    fillRR(bx, ty - 60, bw, 28, 7, act ? C.blue : C.lb);
+    X.beginPath(); X.moveTo(kx - 6, ty - 32); X.lineTo(kx, ty - 26); X.lineTo(kx + 6, ty - 32); X.fillStyle = act ? C.blue : C.lb; X.fill();
+    text(val, bx + bw / 2, ty - 46, 15, act ? '#fff' : C.blue, 700, 'center', NUMF);
+  });
+  text('¥0', x0, 154, 14, '#9a9896', 500, 'center', NUMF); text('¥10,000', x1 - 10, 154, 14, '#9a9896', 500, 'center', NUMF);
+  bar(24, 174, 220, C.line, 8);
+  const off = [w + 30, h + 30], L = tt => [X_(LO(tt)), ty + 4], Hh = tt => [X_(HI(tt)), ty + 4];
+  const mv = (a, b, ta, tb) => track([[ta, a[0], a[1]], [tb, b[0], b[1]]], t);
+  let pos;
+  if (t < 1.0) pos = mv(off, L(1.0), .3, .95);
+  else if (t < 1.7) pos = L(t);
+  else if (t < 2.1) pos = mv(L(1.7), Hh(2.1), 1.7, 2.05);
+  else if (t < 3.3) pos = Hh(t);
+  else if (t < 3.55) pos = mv(Hh(3.3), L(3.55), 3.3, 3.52);
+  else if (t < 3.95) pos = L(t);
+  else pos = mv(L(3.95), off, 3.95, 4.3);
+  pointer([[0, pos[0], pos[1]]], [1.0, 2.1, 2.95, 3.55], t);
+});

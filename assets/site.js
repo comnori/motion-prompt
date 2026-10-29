@@ -10,7 +10,121 @@
 
   // ------------------------------------------------------------------ text
   var I18N = {
+    ko: {
+      "navLabel": "사이트 메뉴",
+      "navFound": "사례",
+      "langLabel": "언어",
+      "themeToDark": "어두운 테마로 전환",
+      "themeToLight": "밝은 테마로 전환",
+      "author": "제작",
+      "authorName": "Shohei Ohtaki",
+      "whyLink": "만든 이유",
+      "makeLink": "내 분야와 언어로 만들기",
+      "addLink": "내 분야의 용어 추가하기",
+      "listLink": "용어 목록 (GitHub)",
+      "removeP1": "게시물 삭제나 수정은 ",
+      "removeLink": "GitHub 이슈 양식",
+      "removeP2": "으로 요청해 주세요. 확인 후 신속하게 처리합니다.",
+      "thanks1": "움직이는 예제를 보고 프롬프트를 복사하는 방식은",
+      "thanks2": "에서 영감을 얻었습니다. 감사합니다.",
+      "title": "Motion Prompt — AI에게 요청할 때 쓰는 용어 모음집",
+      "description": "모션 그래픽, 카메라 움직임, UI, 웹 효과, 사진 표현 {n}개를 움직이는 예제와 한국어 설명으로 살펴보고 프롬프트를 복사하세요.",
+      "skip": "예제 목록으로 이동",
+      "navHow": "사용 방법",
+      "eyebrow": "AI에게 요청할 때 쓰는 용어 모음집",
+      "h1": "AI를 지휘하는<br>크리에이티브 디렉터에게",
+      "lead": "모션 그래픽, 카메라 움직임, UI 컴포넌트, 랜딩 페이지와 사진 표현의 용어 {n}개를 움직이는 예제와 함께 모았습니다. 프롬프트를 복사하면 동작 사양과 참고 코드도 함께 전달할 수 있습니다.",
+      "factMoves": "용어",
+      "factPacks": "팩",
+      "factLicense": "라이선스",
+      "installSkillH": "스킬로 설치",
+      "installSkillP": "터미널에서 실행하세요. 설치한 뒤 AI에게 “motion-prompt 모음집을 열어 줘”라고 요청하면 이 갤러리가 열립니다. 예제를 선택하고 “AI에게 보내기”를 누르세요.",
+      "installPromptH": "프롬프트로 설치",
+      "installPromptP": "아래 문장을 Claude Code나 Codex에 붙여 넣으면 AI가 스킬을 설치하고 사용 방법을 안내합니다.",
+      "installPrompt": "https://github.com/showheyohtaki/motion-prompt 를 읽고 이 환경에 motion-prompt 스킬을 설치해 줘. 설치가 끝나면 사용 방법을 한국어로 세 줄로 알려 줘.",
+      "copy": "복사",
+      "copied": "복사했습니다",
+      "copyFailed": "복사하지 못했습니다",
+      "copyCmdLabel": "설치 명령어 복사",
+      "copyInstallLabel": "설치 프롬프트 복사",
+      "galleryH": "예제 목록",
+      "packFilterLabel": "팩으로 필터링",
+      "catFilterLabel": "분류로 필터링",
+      "all": "전체",
+      "allIn": "이 팩 전체",
+      "searchLabel": "예제 검색",
+      "searchPh": "이름·번호·태그로 검색",
+      "pause": "일시 정지",
+      "play": "재생",
+      "pauseLabel": "모든 예제 일시 정지",
+      "playLabel": "모든 예제 재생",
+      "count": "{n}개",
+      "countOf": "전체 {total}개 중 {n}개",
+      "empty": "검색 결과가 없습니다. 다른 단어나 번호로 검색해 보세요.",
+      "openLabel": "#{id} {name} 상세 보기",
+      "loadFailed": "불러오지 못했습니다",
+      "howH": "사용 방법",
+      "s1h": "AI에게 모음집 열기 요청",
+      "s1p": "motion-prompt 스킬을 설치한 AI에게 “motion-prompt 모음집을 열어 줘”라고 요청하세요. 브라우저에서 갤러리가 열립니다.",
+      "s2h": "보면서 선택",
+      "s2p": "원하는 예제의 “선택”을 누르세요. 여러 개를 고를 수 있습니다. 선택한 예제는 화면 아래에 모이며, “오프닝 제목에 사용” 같은 짧은 메모도 적을 수 있습니다.",
+      "s3h": "AI에게 보내고 작업 요청",
+      "s3p": "“AI에게 보내기”를 누르면 선택한 예제가 AI에게 전달됩니다. 이어서 “이 영상의 도입부를 이렇게 편집해 줘”라고 요청하세요. 이 버튼은 AI가 갤러리를 열었을 때 표시됩니다.",
+      "skillH": "이렇게 요청하세요",
+      "skillP": "이름이나 번호를 외울 필요는 없습니다. 무엇이라고 부르는지 모를 때는 사전을 찾듯 모음집을 열어 보세요.",
+      "say1": "motion-prompt 모음집을 열어 줘",
+      "say2": "어떤 카메라 움직임이 있어? 목록을 보여 줘.",
+      "say3": "(예제를 보낸 뒤) 이 영상의 도입부를 이렇게 편집해 줘.",
+      "altH": "스킬이 없거나 번호를 알고 있다면",
+      "altP1": "스킬이 없는 AI에게는 화면 아래 “선택 항목 복사”로 만든 문장을 붙여 넣으세요. 예제와 사양 URL이 포함됩니다. 하나만 사용할 때는 상세 화면의 “프롬프트 복사”도 가능합니다.",
+      "altP2": "번호를 알고 있다면 “motion-prompt의 #012와 #045를 사용해 줘”처럼 바로 요청할 수도 있습니다.",
+      "implH": "참고 코드 안내",
+      "implP": "모든 예제는 시간만으로 화면이 결정되는 Canvas 2D 함수입니다. 외부 라이브러리를 사용하지 않으며, 한 프레임씩 그릴 수 있어 영상 출력에도 사용할 수 있습니다.",
+      "dAsk": "AI 요청 예시",
+      "ownP": "여기에 있는 것은 예제입니다. 자신의 분야와 언어로도 이런 용어 모음집을 만들 수 있습니다.",
+      "ownLink": "만드는 방법과 프롬프트 (make-your-own)",
+      "langsP": "용어 목록은 스페인어와 중국어 간체·번체로도 제공됩니다.",
+      "langsLink": "6개 언어의 용어 목록 (GitHub)",
+      "dSpec": "동작 사양",
+      "dUse": "활용 상황",
+      "tagsLabel": "태그",
+      "promptLabel": "복사할 프롬프트",
+      "copyPrompt": "프롬프트 복사",
+      "copyCode": "코드 복사",
+      "showCode": "코드 보기",
+      "prev": "이전 용어",
+      "next": "다음 용어",
+      "close": "닫기",
+      "kitLink": "공통 보조 코드 (kit/{pack}.js)",
+      "txtLink": "사양이 포함된 코드 ({id}.txt)",
+      "codeLoading": "불러오는 중…",
+      "codeFailed": "코드를 불러오지 못했습니다.",
+      "size": "{w}×{h}px · 반복 주기 {c}초",
+      "pick": "선택",
+      "picked": "선택됨",
+      "pickLabel": "#{id} {name} 선택",
+      "unpickLabel": "#{id} {name} 선택 해제",
+      "trayCount": "선택 항목 {n}개",
+      "trayWait": "AI가 기다리고 있습니다. 선택을 마치면 “AI에게 보내기”를 누르세요.",
+      "trayEmpty": "예제의 “선택”을 누르면 여기에 모입니다.",
+      "noteLabel": "메모 (선택 사항)",
+      "notePh": "예: 오프닝 제목에 사용",
+      "send": "AI에게 보내기",
+      "sending": "AI에게 보내는 중…",
+      "copyPicked": "선택 항목 복사",
+      "shareUrl": "선택 항목 링크 복사",
+      "clearAll": "모두 해제",
+      "pickedLive": "#{id} {name}을 선택했습니다. 총 {n}개를 선택했습니다.",
+      "unpickedLive": "#{id} {name}의 선택을 해제했습니다. 총 {n}개를 선택했습니다.",
+      "clearedLive": "선택을 모두 해제했습니다.",
+      "outIntro": "motion-prompt 갤러리에서 다음 {n}개를 선택했습니다. 이 예제를 사용해 편집해 주세요.",
+      "outDemo": "예제",
+      "outSpec": "사양과 코드",
+      "outNote": "메모",
+      "outEnd": "자세한 사양은 motion-prompt 스킬의 get 명령으로 확인할 수 있습니다. 스킬이 없다면 각 항목의 “사양과 코드” URL을 읽어 주세요."
+    },
     ja: {
+      description: 'モーショングラフィックス、カメラワーク、UIパーツ、LP・Webサイトの演出、写真の表現の名前を{n}個、動く見本つきで並べました。プロンプトをコピーすれば、動きの仕様と参考実装も一緒に渡せます。',
       title: 'Motion Prompt｜AIに頼むための「名前」のライブラリ',
       skip: '見本の一覧へ移動', navLabel: 'サイト内', navHow: '使い方', navFound: '事例', langLabel: '言語',
       themeToDark: 'ダークモードに切り替える', themeToLight: 'ライトモードに切り替える',
@@ -52,7 +166,7 @@
       removeP1: '掲載の削除・訂正は', removeLink: 'GitHub の Issue のフォーム', removeP2: 'から依頼できます。確認後、すみやかに対応します。',
       dAsk: 'AIへの頼み方の例',
       ownP: 'ここにあるのは見本です。同じような名前の見本を、自分の分野・自分の言語でも作れます。', ownLink: '作り方とプロンプト（make-your-own）',
-      langsP: '名前の一覧は、スペイン語・中国語（簡体字・繁体字）でも読めます。', langsLink: '5言語の一覧（GitHub）',
+      langsP: '名前の一覧は、スペイン語・中国語（簡体字・繁体字）でも読めます。', langsLink: '6言語の一覧（GitHub）',
       dSpec: '動きの仕様', dUse: '使いどころ', tagsLabel: 'タグ', promptLabel: 'コピーされるプロンプト',
       copyPrompt: 'プロンプトをコピー', copyCode: 'コードをコピー', showCode: 'コードを見る',
       prev: '前の名前', next: '次の名前', close: '閉じる',
@@ -71,6 +185,7 @@
       outEnd: '詳しい仕様は motion-prompt スキルの get で取れます（スキルが入っていなければ、各行の「仕様とコード」のURLを読んでください）。',
     },
     en: {
+      description: '{n} names from motion graphics, camera work, UI components, landing pages and photography, each with a moving sample. Copy the prompt, and the motion spec and a reference implementation go with it.',
       title: 'Motion Prompt — a library of names for the things you ask an AI to make',
       skip: 'Skip to the gallery', navLabel: 'Site', navHow: 'How to use', navFound: 'Examples', langLabel: 'Language',
       themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode',
@@ -112,7 +227,7 @@
       removeP1: 'To ask for a removal or a correction, use the ', removeLink: 'issue form on GitHub', removeP2: '. We act on it once the request is confirmed.',
       dAsk: 'How to ask an AI',
       ownP: 'What is here is an example. You can make the same kind of name samples for your own field, in your own language.', ownLink: 'How to make one, with prompts (make-your-own)',
-      langsP: 'The name lists are also in Spanish and Chinese (Simplified and Traditional): Español, 简体中文, 繁體中文.', langsLink: 'Lists in five languages (GitHub)',
+      langsP: 'The name lists are also in Spanish and Chinese (Simplified and Traditional): Español, 简体中文, 繁體中文.', langsLink: 'Lists in six languages (GitHub)',
       dSpec: 'Motion spec', dUse: 'When to use it', tagsLabel: 'Tags', promptLabel: 'The prompt that is copied',
       copyPrompt: 'Copy prompt', copyCode: 'Copy code', showCode: 'View code',
       prev: 'Previous name', next: 'Next name', close: 'Close',
@@ -140,7 +255,7 @@
   var reduceMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
   var darkQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
   var state = {
-    lang: root.lang === 'en' ? 'en' : 'ja',
+    lang: MP_LANGUAGE.valid(root.lang) ? root.lang : 'en',
     pack: 'all', cat: 'all', q: '',
     playing: !reduceMotion.matches,
     open: null,           // id shown in the detail view
@@ -160,8 +275,7 @@
     return s;
   }
   function names(el) {
-    var ja = state.lang === 'ja';
-    return { main: ja ? el.name.ja : el.name.en, sub: ja ? el.name.en : el.name.ja };
+    return { main: el.name[state.lang] || el.name.en, sub: state.lang === 'en' ? el.name.ja : el.name.en };
   }
   function h(tag, attrs, kids) {
     var n = document.createElement(tag);
@@ -313,8 +427,8 @@
   function haystack(el) {
     var p = packBy[el.pack];
     var c = p.categories.filter(function (x) { return x.slug === el.category; })[0] || {};
-    return ['#' + el.id, el.id, String(+el.id), el.slug, el.pack, el.name.ja, el.name.en, el.meaning ? el.meaning.ja + ' ' + el.meaning.en : '', el.summary.ja, el.summary.en,
-      el.tags.join(' '), p.title.ja, p.title.en, c.ja || '', c.en || ''].join(' ').toLowerCase();
+    return ['#' + el.id, el.id, String(+el.id), el.slug, el.pack, el.name.ko, el.name.ja, el.name.en, el.meaning ? [el.meaning.ko, el.meaning.ja, el.meaning.en].join(' ') : '', el.summary.ko, el.summary.ja, el.summary.en,
+      el.tags.join(' '), p.title.ko, p.title.ja, p.title.en, c.ko || '', c.ja || '', c.en || ''].join(' ').toLowerCase();
   }
   function matches(el) {
     if (state.pack !== 'all' && state.pack.split(',').indexOf(el.pack) < 0) return false; // one pack, or several joined by commas (camera,camera2)
@@ -671,7 +785,7 @@
       var nm = names(elBy[id]);
       var sub = nm.sub && nm.sub !== nm.main ? (lang === 'ja' ? '（' + nm.sub + '）' : ' (' + nm.sub + ')') : '';
       lines.push((i + 1) + '. #' + id + ' ' + nm.main + sub);
-      lines.push('   ' + t('outDemo') + ': ' + SITE + '#' + id);
+      lines.push('   ' + t('outDemo') + ': ' + SITE + '?lang=' + lang + '#' + id);
       lines.push('   ' + t('outSpec') + ': ' + SITE + 'api/v1/' + lang + '/e/' + id + '.txt');
     });
     if (state.note) lines.push('', t('outNote') + ': ' + state.note);
@@ -698,7 +812,7 @@
   $('#tray-share').addEventListener('click', function () {
     var btn = this;
     if (!state.picks.length) return;
-    copyText(SITE + '?pick=' + state.picks.join(',')).then(function (ok) { flash(btn, ok); });
+    copyText(SITE + '?lang=' + state.lang + '&pick=' + state.picks.join(',')).then(function (ok) { flash(btn, ok); });
   });
   $('#tray-clear').addEventListener('click', function () {
     state.picks = []; savePicks();
@@ -717,6 +831,15 @@
   function applyText() {
     var lang = state.lang;
     root.lang = lang;
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.content = t('description', { n: CAT.count });
+    var ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.content = t('title');
+    var ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.content = t('description', { n: CAT.count });
+    var locales = { ja: 'ja_JP', en: 'en_US', ko: 'ko_KR' };
+    document.querySelector('meta[property="og:locale"]').content = locales[lang];
+    document.querySelectorAll('meta[property="og:locale:alternate"]').forEach(function (n, i) { n.content = Object.keys(locales).filter(function (l) { return l !== lang; }).map(function (l) { return locales[l]; })[i]; });
     $$('[data-t]').forEach(function (n) { n.textContent = t(n.getAttribute('data-t'), { n: CAT.count }); });
     $$('[data-t-html]').forEach(function (n) { n.innerHTML = t(n.getAttribute('data-t-html')); }); // own strings only
     $$('[data-t-attr]').forEach(function (n) {
@@ -728,7 +851,7 @@
     $('#fact-count').textContent = CAT.count;
     $('#fact-packs').textContent = CAT.packs.length;
     $('#tsv-link').href = 'api/v1/' + lang + '/catalog.tsv';
-    $$('[data-href-' + lang + ']').forEach(function (a) { a.href = a.getAttribute('data-href-' + lang); });
+    MP_LANGUAGE.links(lang);
     $('#d-prev').setAttribute('aria-label', t('prev'));
     $('#d-next').setAttribute('aria-label', t('next'));
     $('#d-close').setAttribute('aria-label', t('close'));
@@ -737,13 +860,11 @@
     applyTheme(); applyPlay();
   }
   function setLang(lang) {
+    if (!MP_LANGUAGE.valid(lang)) return;
+    store.set('mp-lang', lang);
+    MP_LANGUAGE.setUrl(lang);
     if (lang === state.lang) return;
     state.lang = lang;
-    store.set('mp-lang', lang);
-    if (/[?&]lang=/.test(location.search)) { // keep an agent-supplied ?lang= in step with the choice
-      var q = new URLSearchParams(location.search); q.set('lang', lang);
-      history.replaceState(history.state, '', location.pathname + '?' + q.toString() + location.hash);
-    }
     applyText(); buildChips(); buildGrid(); renderTray();
     if (state.open) fillDetail(elBy[state.open]);
   }

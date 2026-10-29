@@ -1,0 +1,47 @@
+// Motion Prompt #072 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#072
+//
+// 빈 상태 / Empty state
+// 팩: ui (UI 컴포넌트 이름) · element 24 · 분류: 탐색과 상태 표시
+// 동작 요약: 두 목록 행을 휴지통 아이콘으로 삭제하면 빈 상자 그림과 “아직 없습니다” 안내, “추가” 버튼이 나타납니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 두 줄 목록의 행은 494×48, 모서리 반지름 8이며 오른쪽에 휴지통 아이콘이 있습니다.
+//   - 커서는 0.95 s와 1.65 s에 휴지통을 클릭합니다. 각 행은 0.3 s 동안 easeInOutCubic으로 60 px 왼쪽으로 움직이며 사라지고, 둘째 행은 58 px 위로 올라 첫 자리를 채웁니다.
+//   - 1.95–2.3 s에 빈 상태가 8 px 올라오며 선형으로 나타납니다: 파란 선으로 그린 수신함, “아직 없습니다”(16 px, 일본어), 파란 “추가” 버튼(112×34).
+//   - 커서가 3.3 s에 “추가”를 클릭합니다. 빈 상태는 3.25–3.45 s에 사라지고 두 행은 3.35–3.7 s에 easeOutCubic으로 왼쪽에서 돌아옵니다.
+// 활용 상황: 처음 사용하는 화면이나 검색 결과가 없는 화면에서 다음 행동을 안내할 때 사용합니다.
+// 태그: empty-state, no-data, zero-state, blank-state, no-results, onboarding
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#072
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 24
+// 24 エンプティステート（Empty state）
+CELLS[23] = ui((w, h, t) => {
+  const r1 = eio(seg(t, 0.95, 1.25)), r2 = eio(seg(t, 1.65, 1.95));
+  const back = eo(seg(t, 3.35, 3.7));
+  const empty = seg(t, 1.95, 2.3) * (1 - seg(t, 3.25, 3.45));
+  bar(24, 14, 130, C.line2, 11);
+  const rows = [[r1, 0], [r2, 1]];
+  rows.forEach(([g, i]) => {
+    const gone = back > 0 ? 1 - back : g; if (gone >= 1) return;
+    const y = 40 + i * 58 - (i === 1 ? 58 * (back > 0 ? 0 : r1) : 0);
+    X.save(); X.globalAlpha = 1 - gone; X.translate(-60 * gone, 0);
+    strokeRR(24, y, 494, 48, 8, C.line2, 1.5); ring(48, y + 24, 9, C.line2, 2); bar(70, y + 12, 200, C.line2, 10); bar(70, y + 28, 140, C.line, 7);
+    // ゴミ箱
+    X.strokeStyle = '#888'; X.lineWidth = 2; X.lineJoin = 'round'; X.strokeRect(476, y + 18, 16, 18); X.beginPath(); X.moveTo(472, y + 17); X.lineTo(496, y + 17); X.moveTo(480, y + 13); X.lineTo(488, y + 13); X.stroke();
+    X.restore();
+  });
+  if (empty > 0) {
+    X.save(); X.globalAlpha = empty; const cy = 70 + 8 * (1 - empty);
+    X.strokeStyle = C.blue; X.lineWidth = 2.6; X.lineJoin = 'round';
+    X.beginPath(); X.moveTo(w / 2 - 26, cy - 4); X.lineTo(w / 2 - 18, cy - 22); X.lineTo(w / 2 + 18, cy - 22); X.lineTo(w / 2 + 26, cy - 4); X.lineTo(w / 2 + 26, cy + 16); X.lineTo(w / 2 - 26, cy + 16); X.closePath(); X.stroke();
+    X.beginPath(); X.moveTo(w / 2 - 26, cy - 4); X.lineTo(w / 2 - 9, cy - 4); X.lineTo(w / 2 - 6, cy + 3); X.lineTo(w / 2 + 6, cy + 3); X.lineTo(w / 2 + 9, cy - 4); X.lineTo(w / 2 + 26, cy - 4); X.stroke();
+    text('まだ何もありません', w / 2, cy + 40, 16, '#555', 600, 'center');
+    fillRR(w / 2 - 56, cy + 62, 112, 34, 8, C.blue); text('追加する', w / 2, cy + 79, 15, '#fff', 600, 'center');
+    X.restore();
+  }
+  pointer([[.3, w + 30, h + 30], [.9, 486, 67], [1.25, 486, 67], [1.6, 486, 67], [2.4, 486, 67], [3.2, w / 2 + 4, 156], [3.5, w / 2 + 4, 156], [4.2, w + 30, h + 30]], [0.95, 1.65, 3.3], t);
+});

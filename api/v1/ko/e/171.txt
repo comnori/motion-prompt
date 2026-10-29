@@ -1,0 +1,37 @@
+// Motion Prompt #171 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#171
+//
+// 하이퍼랩스 / Hyperlapse
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 03 · 분류: 카메라 움직임
+// 동작 요약: 카메라가 거리를 따라 전진하는 동안 해·구름·행인이 빠르게 움직이는 이동 타임랩스입니다.
+// 동작 사양:
+//   - 카메라: 0 m → 22 m 전진(높이 1.6 m, 피치 +0.05 rad)하며 해·구름·사람의 12시간을 빠르게 보여 줍니다(#039 Time-lapse는 카메라 고정).
+//   - 시간: 0.4 s부터 4.1 s까지(3.7 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 거리: x = ±7.5 m의 건물 12개(깊이 5–55 m, 높이 8–16 m)가 다가와 프레임 밖으로 지나갑니다.
+//   - 해는 카메라 앞 170 m에서 각도 -1.25 rad → +1.25 rad의 호를 따라 좌우 이동합니다. 구름 세 개는 총 140 m 오른쪽으로 이동하며 80 m마다 순환하고 작은 사람 여섯 명이 너비 11 m의 거리를 건넙니다.
+//   - 반투명 회색 건물 그림자는 해 반대 방향으로 드리워지고 해에 따라 회전합니다. 산은 카메라와 함께 움직여 크기를 유지합니다.
+//   - 복귀: 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다. 오른쪽 위에 시간·이동 거리를 표시합니다(06:00 · 0m → 18:00 · 22m).
+// 활용 상황: 도시나 건물을 통과하며 긴 거리와 긴 시간을 한 번에 보여 줄 때 사용합니다.
+// 태그: hyperlapse, time-lapse, moving timelapse, fast forward, travel, city, camera move
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#171
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 03
+// 03 ハイパーラプス: 街路を前へ進みながらのタイムラプス（太陽・雲・人影が早送り）。#039 タイムラプスはカメラが動かない
+const HL_BLD = [[-7.5, 4, 9, 5], [7.5, 3.4, 12, 9], [-7.5, 3.6, 14, 13], [7.5, 4, 8, 18], [-7.5, 3.2, 11, 22], [7.5, 3.6, 15, 27], [-7.5, 4, 9, 31], [7.5, 3.2, 12, 36], [-7.5, 3.6, 13, 40], [7.5, 4, 10, 45], [-7.5, 3.4, 16, 50], [7.5, 3.6, 9, 55]];
+CELLS[2] = shot(camCell((k, w, h, p) => {
+  const z = lerp(0, 22, p), a = lerp(-1.25, 1.25, p);
+  const clouds = [[-20 + mod(p * 140, 80) - 10, 18, z + 90, 2.2], [-50 + mod(p * 140 + 40, 80), 24, z + 120, 3], [-10 + mod(p * 140 + 20, 80) - 30, 13, z + 70, 1.6]];
+  const ex = HL_BLD.map(([x, bw, bh, zz]) => [x, 0, zz, (kk, s) => building(kk, s, bw, bh)]);
+  for (let i = 0; i < 6; i++) { const ph = mod(p * 6 + i / 6, 1), dir = i % 2 ? 1 : -1; ex.push([dir * lerp(-5.5, 5.5, ph), 0, 7 + i * 7, (kk) => { kk.fillStyle = i % 3 ? C.g4 : C.blueM; kk.fillRect(-0.12, 0, 0.24, 0.9); kk.beginPath(); kk.arc(0, 1.05, 0.13, 0, 7); kk.fill(); }]); }
+  world(k, w, h, cam({ z, y: 1.6, pitch: 0.05 }), {
+    buildings: false, trees: false, mtnZ: z, sun: [Math.sin(a) * 120, Math.cos(a) * 60 - 8, z + 170], sunCol: C.blueM, clouds, extra: ex, gridX: 24,
+    after: (kk, cc) => {   // 建物の影（太陽と反対側へ）
+      kk.fillStyle = 'rgba(160,160,165,.22)';
+      HL_BLD.forEach(([x, bw, bh, zz]) => { if (zz < cc.z + 1) return; const L = bh * 0.9; const q1 = proj(cc, x - bw / 2, 0, zz), q2 = proj(cc, x + bw / 2, 0, zz), q3 = proj(cc, x + bw / 2 - Math.sin(a) * L, 0, zz - Math.cos(a) * L * 0.4 - 1), q4 = proj(cc, x - bw / 2 - Math.sin(a) * L, 0, zz - Math.cos(a) * L * 0.4 - 1); if (q3.z < NEAR || q4.z < NEAR) return; kk.beginPath(); kk.moveTo(q1.x, q1.y); kk.lineTo(q2.x, q2.y); kk.lineTo(q3.x, q3.y); kk.lineTo(q4.x, q4.y); kk.fill(); });
+    }
+  });
+}, p => { const m = Math.round(lerp(6 * 60, 18 * 60, p) / 10) * 10; return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')} · ${Math.round(lerp(0, 22, p))}m`; }, 0.4, 4.1));

@@ -1,0 +1,29 @@
+// Motion Prompt #045 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#045
+//
+// 와이프 / Wipe
+// 팩: camera (카메라 움직임과 장면 전환) · element 21 · 분류: 장면 전환
+// 동작 요약: 세로 경계가 왼쪽에서 오른쪽으로 이동하고 그 뒤로 다음 화면이 드러납니다.
+// 동작 사양:
+//   - 연결: 1.7 s부터 2.8 s까지 1.1 s. 경계는 왼쪽 바깥(x = -4 px)에서 오른쪽 바깥(x = 543 px)까지 이동합니다.
+//   - 이징: cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 경계 왼쪽에는 다음 화면, 오른쪽에는 이전 화면이 보입니다. 화면 자체는 움직이지 않습니다(밀기가 아닌 클리핑으로 드러냄).
+//   - 경계: 이동 중에만 보이는 4 px 파란 세로선입니다.
+//   - 카메라와 피사체는 두 화면 모두 고정합니다.
+//   - 4.7 s마다 A→B와 B→A를 번갈아 표시합니다(왕복 9.4 s). 오른쪽 위에는 "A → B" / "B → A"를 표시합니다.
+// 활용 상황: 장면·주제의 분명한 변화나 비교 대상 사이의 전환을 나타낼 때 사용합니다.
+// 태그: wipe, linear wipe, reveal, clip, edge, left to right, transition
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#045
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 21
+// 21 ワイプ
+CELLS[20] = shot(abCell((k, w, h, u, A, B) => {
+  const p = eIO(P(u, 1.7, 2.8)), ex = p * (w + 8) - 4;
+  A(k, w, h);
+  if (p > 0) { k.save(); k.beginPath(); k.rect(0, 0, ex, h); k.clip(); k.fillStyle = '#fff'; k.fillRect(0, 0, w, h); B(k, w, h); k.restore(); }
+  if (p > 0 && p < 1) { k.fillStyle = C.blue; k.fillRect(ex - 2, 0, 4, h); }
+}));

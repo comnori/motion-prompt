@@ -1,0 +1,30 @@
+// Motion Prompt #173 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#173
+//
+// 스테디캠 / Steadicam
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 05 · 분류: 카메라 움직임
+// 동작 요약: 걷는 사람 뒤로 카메라가 부드럽게 전진합니다. 핸드헬드와 달리 빠른 떨림 없이 느리고 완만하게 흔들립니다.
+// 동작 사양:
+//   - 카메라: 일정한 1.7 m/s로 전진(4.7 s당 8 m). 높이 1.45 m, 피치 -0.02 rad, 이징 없음.
+//   - 흔들림: 높이 ±3.5 cm(4.7 s당 2주기), 좌우 ±5 cm(1주기), 요 ±0.012 rad, 롤 ±0.006 rad. 모두 정수 주기의 느리고 넓은 사인파입니다(#034 Handheld는 빠르고 불규칙).
+//   - 피사체: 카메라 5 m 앞에서 같은 속도로 걷습니다. 팔·다리는 4.7 s마다 5걸음 움직입니다.
+//   - 나무: x = -5 m에 높이 3.6 m, x = +5 m에 높이 3.2 m이며 8 m 간격입니다(두 줄은 4 m 시차). 산과 해는 카메라와 함께 움직입니다.
+//   - 8 m가 격자 2 m와 나무 8 m 간격의 배수여서 4.7 s마다 매끄럽게 반복됩니다. 오른쪽 위에는 STEADICAM을 표시합니다.
+// 활용 상황: 걸으며 이동하는 촬영을 매끄럽고 영화처럼 보이게 할 때 사용합니다.
+// 태그: steadicam, gimbal, stabilizer, smooth, glide, floating, camera move
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#173
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 05
+// 05 ステディカム: 低い周波数の小さなうねりだけで、なめらかに前進しながら人物を追う（#034 手持ちの細かい揺れとの違い）
+CELLS[4] = shot((k, w, h, u) => {
+  const v = 8 / CYC, z = u * v, T = u * 2 * Math.PI / CYC;   // 1周で8m進む＝格子（2m）と木（8m）の並びが継ぎ目なく戻る
+  const c = cam({ z, y: 1.45 + 0.035 * Math.sin(T * 2), x: 0.05 * Math.sin(T), yaw: 0.012 * Math.sin(T + 1), roll: 0.006 * Math.sin(T * 2 + 0.5), pitch: -0.02 });
+  const ex = [], L = 8, base = Math.floor(z / L) * L;
+  for (let i = 0; i < 10; i++) { const zz = base + i * L; ex.push([-5, 0, zz + 2, (kk, s) => tree(kk, s, 3.6)]); ex.push([5, 0, zz + 6, (kk, s) => tree(kk, s, 3.2, C.blueXL)]); }
+  world(k, w, h, c, { buildings: false, trees: false, extra: ex, mtnZ: z, sun: [30, 30, z + 170], gridX: 20, person: { z: z + 5, walk: T * 5 } });
+  return 'STEADICAM';
+});

@@ -1,0 +1,43 @@
+// Motion Prompt #124 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#124
+//
+// 위글 / Wiggle
+// 팩: motion2 (모션 그래픽 움직임 2) · element 04 · 분류: 움직임 기법
+// 동작 요약: 종이 한 번의 충격이 아니라 끊임없이 작고 불규칙하게 떨립니다.
+// 동작 사양:
+//   - 노란 종이 위쪽(중앙, y = 34)을 축으로 계속 움직입니다.
+//   - 각도는 네 사인파의 합입니다. 4.7 s당 23, 31, 43, 59주기(약 4.9, 6.6, 9.1, 12.6 Hz), 진폭 0.085, 0.065, 0.05, 0.035 rad(겹치면 최대 약 0.235 rad, 13.5°).
+//   - 위치도 떨립니다: x는 29, 47, 61주기(4, 3, 2 px), y는 37, 53주기(2.4, 1.8 px).
+//   - 모든 주파수는 4.7 s당 정수 주기여서 반복이 이어집니다. 주기 수에 공약수가 없어 규칙적으로 보이지 않습니다.
+//   - 종추(코랄, 반지름 13)는 반대로 흔들립니다(각도 × 70 px). 양옆의 흰 진동 호(반지름 86·110, 두께 6)가 계속 점멸합니다.
+// 활용 상황: 알림·전화 수신처럼 시선을 끌거나 불안정한 핸드헬드 느낌을 더할 때 사용합니다.
+// 태그: wiggle, jitter, shake, random, noise, bell, notification
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#124
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 04
+// 04 ウィグル（ベルが、小刻みに不規則に揺れ続ける。1回の衝撃ではなく、ずっと続く細かい揺れ）
+const WGF = 2 * Math.PI / CYC;
+const wsum = (u, arr) => arr.reduce((s, [kk, am, ph]) => s + am * Math.sin(WGF * kk * u + ph), 0);
+CELLS[3] = (k, w, h, u) => {
+  stage(k);
+  const rot = wsum(u, [[23, 0.085, 0.3], [31, 0.065, 1.9], [43, 0.05, 4.2], [59, 0.035, 2.6]]);
+  const dx = wsum(u, [[29, 4, 0.7], [47, 3, 3.1], [61, 2, 5.0]]), dy = wsum(u, [[37, 2.4, 2.2], [53, 1.8, 0.4]]);
+  const X = w / 2 + dx, Y = 34 + dy;
+  // 両わきの振動の線（揺れているあいだ、ずっと出ている）
+  k.strokeStyle = '#fff'; k.lineCap = 'round'; k.lineWidth = 6;
+  [[86, 0.85], [110, 0.5]].forEach(([r, al], j) => { const fl = 0.55 + 0.45 * Math.abs(Math.sin(WGF * (41 + j * 12) * u)); k.globalAlpha = al * fl;[0, Math.PI].forEach(base => { k.beginPath(); k.arc(w / 2, 104, r, base - 0.42, base + 0.42); k.stroke(); }); });
+  k.globalAlpha = 1;
+  k.save(); k.translate(X, Y); k.rotate(rot);
+  // 舌（ベルと逆にふれる）
+  k.fillStyle = C.coral; k.beginPath(); k.arc(-rot * 70, 128, 13, 0, 7); k.fill();
+  k.fillStyle = C.yel;
+  k.beginPath(); k.arc(0, 8, 10, 0, 7); k.fill();
+  k.beginPath(); k.moveTo(-50, 112); k.quadraticCurveTo(-42, 100, -42, 76); k.bezierCurveTo(-42, 36, -22, 18, 0, 18); k.bezierCurveTo(22, 18, 42, 36, 42, 76); k.quadraticCurveTo(42, 100, 50, 112); k.closePath(); k.fill();
+  rr(k, -60, 106, 120, 16, 8); k.fill();
+  k.fillStyle = 'rgba(255,255,255,.35)'; rr(k, -28, 40, 12, 50, 6); k.fill();
+  k.restore();
+};

@@ -1,0 +1,32 @@
+// Motion Prompt #184 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#184
+//
+// 익스트림 클로즈업 / Extreme close-up
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 16 · 분류: 앵글과 구도
+// 동작 요약: 얼굴 클로즈업에서 확대하여 눈이 화면을 가득 채우게 합니다.
+// 동작 사양:
+//   - 카메라는 얼굴의 오른쪽 눈을 향합니다. 눈은 중앙보다 왼쪽 0.06 m, 높이 1.66 m에 있으며, 카메라와 얼굴 중심 사이 거리는 1.3 m입니다. 카메라 위치는 고정합니다.
+//   - 초점 거리는 610 → 2040 px(표시 44 mm → 148 mm, 약 3.3배)입니다. f = 610×(2040/610)^p이며, p는 0.5–3.4 s의 cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)) 진행률입니다.
+//   - 파란 머리의 반지름은 0.16 m, 흰색 눈 타원은 0.045×0.028 m, 어두운 동공의 반지름은 0.016 m입니다. 흰색 하이라이트와 눈썹을 더합니다. 약 150 px 크기의 머리에서 눈만 보이는 구도로 확대합니다.
+//   - 배경의 나무와 건물에는 3 px 블러를 적용하며, 확대할수록 화면 밖으로 사라집니다.
+//   - 3.4–4.2 s 정지 후 마지막 0.5 s 동안 페이드합니다. 상단 표시는 ‘44 mm CU → 148 mm ECU’입니다.
+// 활용 상황: 감정이 최고조에 이르는 순간이나 아주 작은 세부에 집중할 때 사용합니다.
+// 태그: extreme close-up, ecu, close-up, eye, detail, macro, framing
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#184
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 16
+// 16 エクストリームクローズアップ: 顔のクローズアップから、目だけが画面を埋めるまで寄る
+CELLS[15] = shot(camCell((k, w, h, p) => {
+  const f = 610 * Math.pow(2040 / 610, p);
+  world(k, w, h, cam({ f, x: -0.06, y: 1.66 }), {
+    blurBg: 3, trees: true,
+    extra: [[0, 0, 1.3, (kk) => {   // 目のある顔
+      person(kk, 1);
+      [[-0.06, 1.66], [0.06, 1.66]].forEach(([x, y]) => { kk.fillStyle = '#fff'; kk.beginPath(); kk.ellipse(x, y, 0.045, 0.028, 0, 0, 7); kk.fill(); kk.fillStyle = C.ink; kk.beginPath(); kk.arc(x + 0.008, y, 0.016, 0, 7); kk.fill(); kk.fillStyle = '#fff'; kk.beginPath(); kk.arc(x + 0.014, y + 0.007, 0.005, 0, 7); kk.fill(); kk.strokeStyle = '#fff'; kk.lineWidth = 0.012; kk.beginPath(); kk.arc(x, y + 0.02, 0.05, Math.PI * 1.15, Math.PI * 1.85); kk.stroke(); });
+    }]]
+  });
+}, p => `${mm(610 * Math.pow(2040 / 610, p))} ${p > 0.85 ? 'ECU' : 'CU'}`));

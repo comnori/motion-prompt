@@ -1,0 +1,38 @@
+// Motion Prompt #049 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#049
+//
+// 모달 대화상자 / Modal dialog
+// 팩: ui (UI 컴포넌트 이름) · element 01 · 분류: 펼치기와 오버레이
+// 동작 요약: “열기”를 클릭하면 페이지가 어두워지고 중앙에 작은 창이 조금 커지며 나타납니다. ×를 누르면 닫힙니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 커서는 0.95 s에 왼쪽 아래 “열기” 버튼(120×36)에 도착하고 1.0 s에 클릭합니다.
+//   - 열림 정도 a: 1.0–1.32 s에 easeOutCubic으로 0→1. 카드 전체에 rgba(18,20,28) 덮개를 불투명도 0.42·a로 표시합니다.
+//   - 창: 흰색 280×140, 모서리 반지름 12, 중심 (271, 97). 그림자 블러 24, y 오프셋 8, 알파 0.25. 배율 0.9 + 0.1·a, 불투명도 a.
+//   - 내부: 굵은 제목 막대, 글 두 줄, 오른쪽 아래 파란 버튼 88×30, 오른쪽 위 ×.
+//   - 닫기: 커서가 3.0 s까지 ×로 이동하고 3.3 s에 클릭합니다. a에 (1 − 3.3–3.58 s의 easeInOutCubic)을 곱합니다.
+// 활용 상황: 확인이나 짧은 입력 양식처럼 사용자가 잠시 멈추고 한 가지를 처리해야 할 때 사용합니다.
+// 태그: modal, modal-dialog, dialog, popup, overlay, backdrop, lightbox, confirm
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#049
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 01
+// 01 モーダル（Modal dialog）
+CELLS[0] = ui((w, h, t) => {
+  pageLines(24, 18, 494);
+  fillRR(24, 92, 120, 36, 8, C.blue); text('開く', 84, 110, 16, '#fff', 600, 'center');
+  fillRR(170, 92, 348, 36, 8, C.block); fillRR(24, 142, 494, 38, 8, C.block);
+  const a = eo(seg(t, 1.0, 1.32)) * (1 - eio(seg(t, 3.3, 3.58)));
+  if (a > 0) {
+    X.fillStyle = `rgba(18,20,28,${.42 * a})`; X.fillRect(0, 0, w, h);
+    X.save(); X.globalAlpha = a; X.translate(271, 97); const s = .9 + .1 * a; X.scale(s, s);
+    shadowed(() => fillRR(-140, -70, 280, 140, 12, '#fff'), 24, 8, .25);
+    bar(-116, -48, 120, C.ink, 11); bar(-116, -20, 232); bar(-116, -2, 180);
+    fillRR(28, 26, 88, 30, 7, C.blue);
+    X.strokeStyle = '#9a9896'; X.lineWidth = 2.2; X.lineCap = 'round'; X.beginPath(); X.moveTo(110, -54); X.lineTo(120, -44); X.moveTo(120, -54); X.lineTo(110, -44); X.stroke();
+    X.restore();
+  }
+  pointer([[.3, w + 30, h + 30], [.95, 86, 114], [1.5, 86, 114], [3.0, 389, 50], [3.5, 389, 50], [4.2, w + 30, h + 30]], [1.0, 3.3], t);
+});

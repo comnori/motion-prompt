@@ -1,0 +1,26 @@
+// Motion Prompt #116 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#116
+//
+// 듀오톤 / Duotone
+// 팩: photo (사진 표현·조명·스타일) · element 20 · 분류: 색조와 마무리 표현
+// 동작 요약: 같은 풍경의 색을 어두운 부분의 인디고와 밝은 부분의 분홍, 두 색 사이 범위로 바꿉니다.
+// 동작 사양:
+//   - 장면 3: 왼쪽에 흉상(머리 중심 x 140, y 82, 반지름 28 px), 오른쪽에 언덕·집·나무·해(x 432, y 54, 반지름 15 px)가 있습니다.
+//   - 두 색: 어두운 끝 #1F2A5C, 밝은 끝 #FF9FB2.
+//   - 변환: 각 색의 휘도 L로 t = ((L − 70) / 180)^2.4를 구해 t에 따라 두 색을 섞습니다(밝은 계조의 차이를 넓힘).
+//   - 시간: 0.4 s부터 1.4 s까지 효과가 나타나고 4.0 s까지 유지한 뒤 4.8 s까지 사라집니다(한 번 = 5 s, cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1)).
+// 활용 상황: 포스터·음악 아트워크·소셜 이미지를 브랜드 색으로 통일할 때 사용합니다.
+// 태그: duotone, two-tone, gradient map, color overlay, poster, graphic
+// 크기: 539x208 px · 반복 주기: 5 s
+// 필요한 코드: kit photo -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/photo.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#116
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 20
+// デュオトーン: 暗い所を藍、明るい所をピンクの2色だけに置き換える
+CELLS[19] = cell((k, u) => {
+  const a = env(u);
+  const DUO = mapPal(BASE, c => mixc('#1F2A5C', '#FF9FB2', Math.pow(clamp((lum(c) - 70) / (250 - 70)), 2.4)));
+  stageLand(k, pal(BASE, DUO, a));
+});

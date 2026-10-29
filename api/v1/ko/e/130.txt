@@ -1,0 +1,31 @@
+// Motion Prompt #130 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#130
+//
+// 웨이브 텍스트 / Wave text
+// 팩: motion2 (모션 그래픽 움직임 2) · element 10 · 분류: 텍스트와 도형
+// 동작 요약: WAVE TEXT의 글자가 파도처럼 차례로 오르내립니다.
+// 동작 사양:
+//   - WAVE TEXT(70 px, 굵게, 자간 4 px). 4.7 s마다 세 번 파동이 지나갑니다(파동당 1.567 s).
+//   - 글자 i의 세로 오프셋 = −28·sin(φ − 0.62i), φ = 2π × 3 × time ÷ 4.7. 글자마다 앞 글자보다 0.62 rad 늦습니다.
+//   - 올라가는 글자는 세로로 늘어나고(1 + 0.06·s) 흰색에서 노랑으로 바뀝니다(s는 사인 값, 색에는 0–1로 제한).
+//   - 각 글자 아래의 타원 그림자는 글자가 올라갈수록 작아집니다.
+// 활용 상황: 로고·짧은 제목·음악에 맞춘 자막에 재미와 리듬을 더할 때 사용합니다.
+// 태그: wave-text, wave, text, letters, stagger, bounce, kinetic-type
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#130
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 10
+// 10 ウェーブテキスト（1文字ずつ、波のように順に上下する）
+CELLS[9] = (k, w, h, u) => {
+  stage(k);
+  const f = `800 70px ${DISP}`, cs = chars(k, 'WAVE TEXT', f, 4), Y = h / 2 + 2, ph = 2 * Math.PI * 3 * u / CYC;
+  cs.forEach((c, i) => {
+    if (c.ch === ' ') return;
+    const s = Math.sin(ph - i * 0.62), y = -28 * s;
+    k.fillStyle = 'rgba(0,0,0,.3)'; k.beginPath(); k.ellipse(w / 2 + c.x, Y + 62, c.w * (0.42 - 0.12 * s), 4, 0, 0, 7); k.fill();
+    k.save(); k.translate(w / 2 + c.x, Y + y); k.scale(1, 1 + 0.06 * s); txt(k, c.ch, 0, 0, f, mix('#FFFFFF', C.yel, clamp(s)), 'center', 'middle'); k.restore();
+  });
+};

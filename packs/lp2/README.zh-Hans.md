@@ -2,7 +2,7 @@
 
 # 落地页与网页效果（第 2 弹）
 
-24 个术语 · #145–168 · 分类 `lp2` · 语言: [English](README.md) / [Español](README.es.md) / [日本語](README.ja.md) / [繁體中文](README.zh-Hant.md)
+24 个术语 · #145–168 · 分类 `lp2` · 语言: [English](README.md) / [Español](README.es.md) / [日本語](README.ja.md) / [한국어](README.ko.md) / [繁體中文](README.zh-Hant.md)
 
 找到名称后直接告诉 AI。补充时长、幅度和运动对象，可以更接近你想要的效果。
 

@@ -1,0 +1,35 @@
+// Motion Prompt #175 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#175
+//
+// 고정 샷 / Locked-off shot
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 07 · 분류: 카메라 움직임
+// 동작 요약: 삼각대에 고정한 카메라 앞을 사람이 건너고 뒤로 자동차가 지나갑니다. 카메라는 한 픽셀도 움직이지 않습니다.
+// 동작 사양:
+//   - 카메라: 완전 고정(높이 1.4 m, 정면, 초점거리 330 px). 피사체만 움직입니다.
+//   - 피사체: 6.5 m 앞의 사람이 왼쪽에서 오른쪽으로 등속 이동합니다(4.7 s에 x = -6.2 m → +6.2 m). 팔·다리는 sin(u×7)×0.42 rad입니다.
+//   - 회색 자동차가 15 m 거리에서 오른쪽에서 왼쪽으로 이동합니다(4.7 s에 x = +16 m → -16 m).
+//   - 둘 다 프레임 밖에서 시작하고 끝나므로 4.7 s마다 매끄럽게 반복됩니다.
+//   - 왼쪽 아래에 회색 삼각대 표시, 오른쪽 위에 LOCKED를 표시합니다(#040 Freeze frame은 영상 시간을 멈추지만 여기서는 시간은 흐르고 카메라만 정지).
+// 활용 상황: 움직이는 피사체를 돋보이게 하거나 고정 관찰·타임랩스·합성의 바탕에 사용합니다.
+// 태그: locked-off, locked off, static shot, fixed camera, tripod, static, still camera
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#175
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 07
+// 07 ロックオフ: 三脚で固定したカメラの前を人物が横切り、奥を車が通る。カメラは1pxも動かない（#040 フリーズフレームは映像が止まる）
+CELLS[6] = shot((k, w, h, u) => {
+  const q = u / CYC;
+  world(k, w, h, cam({ y: 1.4 }), {
+    person: { x: lerp(-6.2, 6.2, q), z: 6.5, walk: u * 7 },
+    extra: [[lerp(16, -16, q), 0, 15, (kk) => { kk.fillStyle = C.g4; rr(kk, -1.9, 0.35, 3.8, 0.75, 0.25); kk.fill(); rr(kk, -1.1, 0.95, 2.1, 0.62, 0.28); kk.fill(); kk.fillStyle = C.ink; [-1.15, 1.15].forEach(x => { kk.beginPath(); kk.arc(x, 0.34, 0.34, 0, 7); kk.fill(); }); }]],
+    after: (kk) => {   // 三脚の印（左下）
+      kk.strokeStyle = C.g4; kk.lineWidth = 2.2; kk.lineCap = 'round'; const x = -w / 2 + 38, y = h / 2 - 20;
+      kk.beginPath(); kk.moveTo(x, y - 30); kk.lineTo(x - 12, y); kk.moveTo(x, y - 30); kk.lineTo(x + 12, y); kk.moveTo(x, y - 30); kk.lineTo(x, y - 2); kk.stroke();
+      kk.fillStyle = C.g4; rr(kk, x - 9, y - 42, 18, 12, 3); kk.fill();
+    }
+  });
+  return 'LOCKED';
+});

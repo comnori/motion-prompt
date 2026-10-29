@@ -1,0 +1,70 @@
+// Motion Prompt #122 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#122
+//
+// 팔로우 스루(후속 동작) / Follow-through
+// 팩: motion2 (모션 그래픽 움직임 2) · element 02 · 분류: 움직임 기법
+// 동작 요약: 둥근 캐릭터가 이동하다 갑자기 멈추면 머리의 깃발과 꼬리만 계속 흔들리다가 안정됩니다.
+// 동작 사양:
+//   - 2.35 s마다 한 번 이동합니다(4.7 s마다 두 번, 방향 교대). 몸은 민트색 원(반지름 38)입니다. 0.15–0.85 s에 303 px를 이동하며 처음 30%는 가속, 이후 등속을 유지하다 0.85 s에 갑자기 멈춥니다.
+//   - 깃발(58 px 흰 깃대·노란 깃발): 몸의 가속도가 스프링 각도에 작용합니다. a″ = −121a − 5.5a′ − 0.0175 × acceleration(고유 진동수 11 rad/s). 천은 깃대 각도의 0.6배만큼 더 휩니다.
+//   - 꼬리: 14 px 조각 일곱 개(코랄, 두께 14→6)에 느린 스프링 b″ = −56b − 2.8b′ − 0.012 × acceleration을 적용합니다. 조각 j는 j × 22/600 s(약 0.037 s) 전 값을 (0.55 + 0.16j)배로 사용합니다.
+//   - 두 스프링은 1/600 s 간격으로 미리 계산하고 그릴 때는 값을 조회하기만 합니다.
+//   - 각 이동의 마지막 0.3 s에 smoothstep으로 흔들림을 0으로 줄여 매끄럽게 반복합니다.
+// 활용 상황: 머리카락·옷·장신구·로고 장식처럼 몸에 붙은 부분의 무게감을 표현할 때 사용합니다.
+// 태그: follow-through, overlapping-action, secondary-motion, spring, drag, character, animation-principle
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#122
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 02
+// 02 フォロースルー（体が止まった後も、旗としっぽだけが遅れて揺れて収まる）
+const FTAB = (() => {
+  const T = CYC / 2, dt = 1 / 600, N = Math.ceil(T / dt) + 2, D = CW - 2 * 118;
+  const pos = lu => { const q = P(lu, 0.15, 0.85), c = 1 / 0.85; return (q < 0.3 ? q * q / 0.6 : 0.15 + (q - 0.3)) * c; };
+  const A = new Float32Array(N), B = new Float32Array(N);
+  let a = 0, va = 0, b = 0, vb = 0, xp = 0, vp = 0;
+  for (let i = 0; i < N; i++) {
+    const lu = i * dt, x = pos(lu) * D, v = (x - xp) / dt, acc = i ? (v - vp) / dt : 0; xp = x; vp = v;
+    va += (-121 * a - 5.5 * va - acc * 0.0175) * dt; a += va * dt;
+    vb += (-56 * b - 2.8 * vb - acc * 0.012) * dt; b += vb * dt;
+    const fade = 1 - smooth(P(lu, T - 0.3, T)); A[i] = a * fade; B[i] = b * fade;
+  }
+  return { A, B, pos, D };
+})();
+CELLS[1] = (k, w, h, u) => {
+  u = snapU(u);
+  stage(k);
+  const T = CYC / 2, n = Math.floor(u / T), lu = u - n * T, dir = n % 2 ? -1 : 1;
+  const i = Math.min(FTAB.A.length - 1, Math.round(lu * 600)), q = FTAB.pos(lu);
+  const xs = dir > 0 ? 118 : w - 118, x = xs + dir * q * FTAB.D;
+  const floor = h - 26, R = 38, cy = floor - R, a = dir * FTAB.A[i];
+  k.fillStyle = C.navy3; rr(k, 26, floor, w - 52, 5, 2.5); k.fill();
+  k.fillStyle = 'rgba(0,0,0,.3)'; k.beginPath(); k.ellipse(x, floor + 8, R * 1.1, 6, 0, 0, 7); k.fill();
+  // 滑っている間のスピード線
+  const moving = lu > 0.2 && lu < 0.85;
+  if (moving) { k.strokeStyle = C.dim; k.lineCap = 'round'; k.lineWidth = 6; k.globalAlpha = 0.7;[[-18, 70], [6, 100], [26, 56]].forEach(([dy, L]) => { const x0 = x - dir * (R + 30); k.beginPath(); k.moveTo(x0, cy + dy); k.lineTo(x0 - dir * L, cy + dy); k.stroke(); }); k.globalAlpha = 1; }
+  // しっぽ（体の後ろ）
+  let px = x - dir * (R - 8), py = cy + 10; const pts = [[px, py]];
+  for (let j = 1; j <= 7; j++) {
+    const ij = Math.max(0, i - j * 22), d = FTAB.B[ij] * (0.55 + j * 0.16), ang0 = Math.PI + 0.25 + d;
+    const ang = dir > 0 ? ang0 : Math.PI - ang0; px += Math.cos(ang) * 14; py += Math.sin(ang) * 14; pts.push([px, py]);
+  }
+  k.lineCap = 'round'; k.lineJoin = 'round'; k.strokeStyle = C.coral;
+  for (let j = 1; j < pts.length; j++) { k.lineWidth = lerp(14, 6, j / pts.length); k.beginPath(); k.moveTo(pts[j - 1][0], pts[j - 1][1]); k.lineTo(pts[j][0], pts[j][1]); k.stroke(); }
+  k.fillStyle = C.coral; k.beginPath(); k.arc(px, py, 9, 0, 7); k.fill();
+  // 体
+  k.fillStyle = C.mint; k.beginPath(); k.arc(x, cy, R, 0, 7); k.fill();
+  k.fillStyle = 'rgba(255,255,255,.18)'; k.beginPath(); k.arc(x - 10, cy - 12, R * 0.55, 0, 7); k.fill();
+  k.fillStyle = '#fff'; k.beginPath(); k.arc(x + dir * 16, cy - 6, 9, 0, 7); k.fill();
+  k.fillStyle = C.navy; k.beginPath(); k.arc(x + dir * 19, cy - 6, 4.5, 0, 7); k.fill();
+  // アンテナの旗
+  const L = 58, top = cy - R + 4;
+  k.save(); k.translate(x, top); k.rotate(a);
+  k.strokeStyle = '#fff'; k.lineWidth = 5; k.beginPath(); k.moveTo(0, 0); k.lineTo(0, -L); k.stroke();
+  k.rotate(a * 0.6);
+  k.fillStyle = C.yel; k.beginPath(); k.moveTo(0, -L); k.quadraticCurveTo(-dir * 22, -L + 4 + 8 * a * dir, -dir * 44, -L + 12); k.lineTo(0, -L + 28); k.closePath(); k.fill();
+  k.restore();
+  k.fillStyle = '#fff'; k.beginPath(); k.arc(x + Math.sin(a) * L, top - Math.cos(a) * L, 6, 0, 7); k.fill();
+};

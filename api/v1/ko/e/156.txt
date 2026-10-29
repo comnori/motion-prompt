@@ -1,0 +1,50 @@
+// Motion Prompt #156 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#156
+//
+// Text roll on hover / Text roll on hover
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 12 · 분류: 마우스와 입력 상호작용
+// 동작 요약: 메뉴에 커서를 올리면 글자가 하나씩 위로 굴러 나가고 같은 단어의 주황색 글자가 아래에서 들어옵니다. 벗어나면 되돌아갑니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트. 메뉴 단어 세 개 WORKS·ABOUT·CONTACT(30 px, 굵기 800, 자간 1 px). 커서는 왼쪽부터 각각 약 0.85 s 머뭅니다. 한 번은 4.7 s(팩의 9.4 s 주기마다 두 번)입니다.
+//   - 각 단어의 주황 복사본을 아래 40 px에 놓고 둘 다 높이 39 px 상자로 클리핑합니다(overflow: hidden).
+//   - 호버 시 글자마다 0.035 s 시차를 두고 0.36 s 동안 40 px 위로 이동합니다(cubic ease-in-out). 주황 복사본이 그 자리에 올라옵니다.
+//   - 벗어나면 같은 시차와 시간으로 아래로 되돌립니다.
+// 활용 상황: 헤더 메뉴나 버튼의 짧은 텍스트 링크에 만지는 듯한 반응을 줄 때 사용합니다.
+// 태그: text-roll, hover, menu, link, stagger, typography
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#156
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 12
+// 12 テキストロール（メニューの文字にカーソルを乗せると、文字が上に回って同じ文字が下から出てくる）
+CELLS[11] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const LINKS = ['WORKS', 'ABOUT', 'CONTACT'], F = `800 30px ${EN}`, GAP = 44, LY = 100, LH = 40;
+  const cur = t => path([[0, 110, 200], [0.4, 120, 92], [1.25, 140, 96], [1.5, 252, 92], [2.35, 268, 96], [2.6, 380, 92], [3.45, 400, 96], [3.9, 450, 200], [4.7, 110, 200]], t);
+  view(k, () => {
+    k.fillStyle = '#FFF3EA'; k.fillRect(0, 0, VW, VH);
+    logo(k, 24, 28); txt(k, 'MENU', VW - 26, 28.5, `800 11px ${EN}`, C.sub, 'right', 'middle', '2px');
+    k.font = F; k.letterSpacing = '1px'; const ws = LINKS.map(s => k.measureText(s).width); k.letterSpacing = '0px';
+    let x = (VW - ws.reduce((a, b) => a + b, 0) - GAP * (LINKS.length - 1)) / 2;
+    LINKS.forEach((s, i) => {
+      const x0 = x, x1 = x + ws[i], inside = t => { const [a, b] = cur(t); return a > x0 - 6 && a < x1 + 6 && b > LY - 30 && b < LY + 10; };
+      const on = inside(u), tc = lastSwitch(inside, u);
+      k.save(); k.beginPath(); k.rect(x0 - 4, LY - 31, ws[i] + 8, 39); k.clip();
+      let cxp = x0;
+      [...s].forEach((ch, j) => {
+        const f = tc === null ? (on ? 1 : 0) : eIO(P(u, tc + 0.035 * j, tc + 0.035 * j + 0.36)), q = on ? f : 1 - f;
+        k.font = F; k.letterSpacing = '1px'; const cw = k.measureText(ch).width; k.letterSpacing = '0px';
+        txt(k, ch, cxp, LY - LH * q, F, C.ink, 'left', 'alphabetic', '1px');
+        txt(k, ch, cxp, LY + LH - LH * q, F, C.acc, 'left', 'alphabetic', '1px');
+        cxp += cw;
+      });
+      k.restore();
+      x += ws[i] + GAP;
+    });
+    bars(k, VW / 2 - 110, 132, 220, 1, '#F1D9C9', 6);
+    const [cx, cy] = cur(u); cursor(k, cx, cy);
+  });
+};

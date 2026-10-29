@@ -178,6 +178,7 @@ h1 { font-size: clamp(40px, 6.1vw, 92px); line-height: 1.1; letter-spacing: -.03
 @keyframes d-in { from { opacity: 0; transform: translateY(14px); } }
 .d-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 10px 8px 20px; background: var(--bg); border-bottom: 1px solid var(--line); }
 .d-id { display: flex; align-items: baseline; gap: 12px; min-width: 0; font: 600 15px/1.4 var(--mono); }
+#d-id { flex: none; white-space: nowrap; }
 .d-where { font: 12.5px/1.4 var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .d-nav { display: flex; gap: 2px; flex: none; }
 #d-play { margin-right: 10px; }
@@ -301,3 +302,8 @@ html.has-tray { scroll-padding-bottom: calc(var(--tray-h, 0px) + 16px); }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Korean uses installed system fonts and keeps words together where space allows. */
+:lang(ko) { --font: "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; word-break: keep-all; overflow-wrap: anywhere; }
+:lang(ko) h1 { line-height: 1.2; letter-spacing: -.04em; }
+@media (max-width: 480px) { :lang(ko) .seg-b { padding-inline: 7px; } }

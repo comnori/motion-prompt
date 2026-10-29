@@ -1,0 +1,35 @@
+// Motion Prompt #125 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#125
+//
+// 펄스 / Pulse
+// 팩: motion2 (모션 그래픽 움직임 2) · element 05 · 분류: 움직임 기법
+// 동작 요약: 하트가 심장처럼 두 번씩 뛰며 고리가 퍼져 나갑니다.
+// 동작 사양:
+//   - 코랄색 하트가 1.175 s마다 뜁니다(4.7 s마다 네 번). 각 박동은 두 번의 “두근두근”입니다.
+//   - 배율 = 1 + 0.26·G(0.2 s, 너비 0.065) + 0.15·G(0.44 s, 너비 0.07). G = e^(−((t − centre) ÷ width)²)로 빠르게 부풀었다 바로 돌아옵니다.
+//   - 하트 윤곽 두 개가 0.16 s와 0.40 s부터 퍼집니다. 0.8 s 동안 배율 1.2→2.4, cubic ease-out.
+//   - 퍼지는 동안 불투명도 0.75→0(둘째는 60%), 선 두께 8.5→1.5 px입니다.
+// 활용 상황: 좋아요·녹화·라이브 표시나 누르게 하고 싶은 버튼에 생동감을 줄 때 사용합니다.
+// 태그: pulse, heartbeat, throb, scale, loop, like, attention
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#125
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 05
+// 05 パルス（ハートが鼓動のように、ドクン・ドクンと大きさを脈打たせる）
+CELLS[4] = (k, w, h, u) => {
+  stage(k);
+  const T = CYC / 4, lu = mod(u, T), X = w / 2, Y = h / 2 + 10;
+  const g = (c, s) => Math.exp(-Math.pow((lu - c) / s, 2));
+  const b = 0.26 * g(0.2, 0.065) + 0.15 * g(0.44, 0.07) + 0.26 * Math.exp(-Math.pow((lu - T - 0.2) / 0.065, 2));
+  for (const [t0, s] of [[0.16, 1], [0.4, 0.6]]) {
+    const q = P(lu, t0, t0 + 0.8); if (q <= 0 || q >= 1) continue;
+    k.save(); k.translate(X, Y); const sc = 1.2 + 1.2 * eOut(q); k.scale(sc, sc); heartPath(k, 44);
+    k.strokeStyle = C.coral; k.globalAlpha = (1 - q) * 0.75 * s; k.lineWidth = (7 * (1 - q) + 1.5) / sc; k.stroke(); k.restore();
+  }
+  k.globalAlpha = 1;
+  k.save(); k.translate(X, Y); k.scale(1 + b, 1 + b); heartPath(k, 44); k.fillStyle = C.coral; k.fill();
+  k.fillStyle = 'rgba(255,255,255,.75)'; k.beginPath(); k.ellipse(-30, -28, 9, 6, -0.7, 0, 7); k.fill(); k.restore();
+};

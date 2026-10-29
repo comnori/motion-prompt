@@ -1,0 +1,48 @@
+// Motion Prompt #127 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#127
+//
+// 핑퐁 루프 / Ping-pong loop
+// 팩: motion2 (모션 그래픽 움직임 2) · element 07 · 분류: 움직임 기법
+// 동작 요약: 정사각형이 끝까지 갔다가 역재생하듯 같은 경로로 돌아오기를 반복합니다.
+// 동작 사양:
+//   - 4.7 s마다 한 번 왕복합니다. 2.35 s 전진 후 같은 동작을 2.35 s 역재생합니다(진행도 g는 선형으로 0→1→0).
+//   - 민트색 둥근 정사각형(48 px, 모서리 반지름 13)이 x = 92에서 447까지 높이 62·|sin(3πg)|의 호 세 개를 따라 튀며 g에 따라 한 바퀴 회전합니다.
+//   - 잔상 네 개를 0.045 s 간격, 불투명도 0.1–0.4로 표시합니다.
+//   - 아래 재생 막대는 전진 때 파랑·재생 라벨, 복귀 때 코랄·역재생 라벨입니다. 진행 막대와 손잡이는 g를 따릅니다.
+//   - 양끝 전환점을 세로 기둥으로 표시합니다.
+// 활용 상황: 컷 없이 왕복 반복하는 로더·대기 애니메이션 등에 사용합니다.
+// 태그: ping-pong, loop, boomerang, yoyo, reverse, back-and-forth, loader
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#127
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 07
+// 07 ピンポンループ（端まで行ったら、同じ道を逆再生のように戻ってくる。往復をくり返す）
+CELLS[6] = (k, w, h, u) => {
+  u = snapU(u);
+  stage(k);
+  const q = u / CYC, fwd = q < 0.5, g = fwd ? 2 * q : 2 - 2 * q, X0 = 92, X1 = w - 92, base = 136, S = 48;
+  const pos = gg => [lerp(X0, X1, gg), base - 62 * Math.abs(Math.sin(3 * Math.PI * gg))];
+  k.save(); k.setLineDash([2, 12]); k.lineCap = 'round'; k.strokeStyle = C.navy3; k.lineWidth = 5; k.beginPath();
+  for (let i = 0; i <= 150; i++) { const [px, py] = pos(i / 150); i ? k.lineTo(px, py - S / 2) : k.moveTo(px, py - S / 2); } k.stroke(); k.restore();
+  k.fillStyle = C.navy3; rr(k, X0 - 40, base + 2, X1 - X0 + 80, 5, 2.5); k.fill();
+  // 両端の折り返し点
+  [X0, X1].forEach(xx => { k.fillStyle = C.navy3; rr(k, xx - 4, base - 70, 8, 72, 4); k.fill(); });
+  // 残像
+  for (let j = 4; j >= 1; j--) { const qq = mod(u - j * 0.045, CYC) / CYC, gg = qq < 0.5 ? 2 * qq : 2 - 2 * qq, [gx, gy] = pos(gg); k.globalAlpha = 0.1 * (5 - j); k.fillStyle = C.mint; k.save(); k.translate(gx, gy - S / 2); k.rotate(gg * Math.PI * 2); rr(k, -S / 2, -S / 2, S, S, 13); k.fill(); k.restore(); }
+  k.globalAlpha = 1;
+  const [x, y] = pos(g);
+  k.save(); k.translate(x, y - S / 2); k.rotate(g * Math.PI * 2);
+  k.fillStyle = C.mint; rr(k, -S / 2, -S / 2, S, S, 13); k.fill();
+  k.fillStyle = '#fff'; k.beginPath(); k.arc(S / 2 - 13, -S / 2 + 13, 6.5, 0, 7); k.fill();
+  k.restore();
+  // 再生バー
+  const ty = 184, tx0 = 196, tx1 = w - 34;
+  k.fillStyle = fwd ? C.blue : C.coral; rr(k, 22, ty - 20, 158, 40, 20); k.fill();
+  txt(k, fwd ? '▶ 再生' : '◀ 逆再生', 101, ty + 1, `800 25px ${JP}`, '#fff', 'center', 'middle');
+  k.fillStyle = C.navy3; rr(k, tx0, ty - 5, tx1 - tx0, 10, 5); k.fill();
+  k.fillStyle = fwd ? C.blue : C.coral; rr(k, tx0, ty - 5, Math.max(10, (tx1 - tx0) * g), 10, 5); k.fill();
+  k.fillStyle = C.yel; k.beginPath(); k.arc(tx0 + (tx1 - tx0) * g, ty, 12, 0, 7); k.fill();
+};

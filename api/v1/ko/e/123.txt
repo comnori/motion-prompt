@@ -1,0 +1,47 @@
+// Motion Prompt #123 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#123
+//
+// 바운스 / Bounce
+// 팩: motion2 (모션 그래픽 움직임 2) · element 03 · 분류: 움직임 기법
+// 동작 요약: 공이 떨어진 뒤 점점 낮게 튀다가 멈춥니다.
+// 동작 사양:
+//   - 2.35 s마다 한 번 떨어집니다(4.7 s마다 두 번: 먼저 노랑, 다음 코랄). 공 반지름은 26입니다.
+//   - 0.1 s부터 바닥 위 190 px에서 떨어집니다. 중력 1900 px/s², 바운스마다 속도의 56% 유지(반발계수 0.56). 반동 속도가 35 px/s 아래면 멈춥니다.
+//   - 가로로는 0.1–1.8 s에 x = 150→390으로 cubic ease-out 이동합니다.
+//   - 충돌 전후 0.045 s 동안 압축합니다: 너비 1 + sq, 높이 1 − sq, sq는 최대 0.4 × min(1, 충돌 속도 ÷ 850). 200 px/s보다 빠른 충돌은 좌우로 짧은 흰 선을 0.3 s 표시합니다.
+//   - 높아질수록 그림자가 작아집니다. 퇴장: 1.95–2.25 s에 배율에 (1 − backIn, s = 2)를 곱합니다.
+// 활용 상황: 아이콘·단어·제품 등이 무게감과 탄력을 지니고 떨어져 착지할 때 사용합니다.
+// 태그: bounce, drop, gravity, ball, physics, landing, easing
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#123
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 03
+// 03 バウンス（ボールが落ちて、だんだん低く弾みながら止まる）
+const BNC = (() => { const g = 1900, e = 0.56, d = 190, t0 = Math.sqrt(2 * d / g), v0 = g * t0; const segs = []; let t = t0, v = v0 * e; while (v > 35) { segs.push({ t, v }); t += 2 * v / g; v *= e; } const imp = [{ t: t0, v: v0 }]; segs.forEach((s, i) => { if (i) imp.push({ t: s.t, v: segs[i - 1].v }); }); return { g, d, t0, segs, imp, end: t }; })();
+function bounceH(t) { const B = BNC; if (t < B.t0) return B.d - 0.5 * B.g * Math.max(0, t) * Math.max(0, t) * (t < 0 ? 0 : 1); for (const s of B.segs) { const tau = t - s.t; if (tau >= 0 && tau < 2 * s.v / B.g) return s.v * tau - 0.5 * B.g * tau * tau; } return 0; }
+CELLS[2] = (k, w, h, u) => {
+  u = snapU(u);
+  stage(k);
+  const T = CYC / 2, n = Math.floor(u / T), lu = u - n * T, t = lu - 0.1;
+  const floor = h - 26, R = 26, rest = floor - R, x = lerp(150, 390, eOut(P(lu, 0.1, 1.8)));
+  const hg = t < 0 ? BNC.d : bounceH(t), out = 1 - backIn(P(lu, 1.95, 2.25), 2);
+  k.fillStyle = C.navy3; rr(k, 26, floor, w - 52, 5, 2.5); k.fill();
+  // 着地の印
+  let sq = 0;
+  for (const im of BNC.imp) {
+    const dtI = t - im.t;
+    if (Math.abs(dtI) < 0.045) sq = Math.max(sq, clamp(im.v / 850) * 0.4 * (1 - Math.abs(dtI) / 0.045));
+    if (dtI > 0 && dtI < 0.3 && im.v > 200) { const q = dtI / 0.3, ix = lerp(150, 390, eOut(P(im.t + 0.1, 0.1, 1.8))); k.strokeStyle = '#fff'; k.globalAlpha = 1 - q; k.lineWidth = 5; k.lineCap = 'round';[-1, 1].forEach(s => { k.beginPath(); k.moveTo(ix + s * (34 + 14 * q), floor - 6 - 8 * q); k.lineTo(ix + s * (48 + 22 * q), floor - 16 - 14 * q); k.stroke(); }); k.globalAlpha = 1; }
+  }
+  const sh = clamp(1 - hg / BNC.d);
+  k.fillStyle = 'rgba(0,0,0,.32)'; k.beginPath(); k.ellipse(x, floor + 7, R * (0.4 + 0.8 * sh) * out, 5 * (0.4 + 0.6 * sh) * out, 0, 0, 7); k.fill();
+  if (out > 0.01) {
+    k.save(); k.translate(x, rest - hg + R); k.scale((1 + sq) * out, (1 - sq) * out);
+    k.fillStyle = n ? C.coral : C.yel; k.beginPath(); k.arc(0, -R, R, 0, 7); k.fill();
+    k.fillStyle = 'rgba(255,255,255,.7)'; k.beginPath(); k.ellipse(-9, -R - 9, 8, 5, -0.6, 0, 7); k.fill();
+    k.restore();
+  }
+};

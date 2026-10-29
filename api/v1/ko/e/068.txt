@@ -1,0 +1,42 @@
+// Motion Prompt #068 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#068
+//
+// 단계 표시기 / Step indicator
+// 팩: ui (UI 컴포넌트 이름) · element 20 · 분류: 탐색과 상태 표시
+// 동작 요약: “다음”을 누를 때마다 네 단계 중 다음 원이 체크로 바뀌고 파란 선이 다음 단계까지 늘어납니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 네 단계(입력·확인·결제·완료, 일본어 표기)를 x 80, 207, 334, 461과 y 35에 놓습니다. 반지름 17의 원을 4 px 회색 선으로 연결합니다.
+//   - 커서는 오른쪽 아래 “다음” 버튼(110×38)을 0.9, 1.7, 2.5 s에 클릭합니다.
+//   - 클릭마다 현재 단계는 흰 체크가 있는 파란 원이 되고 다음 단계가 현재 단계(파란 원·흰 숫자)가 됩니다. 아직 도달하지 않은 단계는 흰색과 회색 테두리입니다.
+//   - 파란 선은 클릭마다 0.3 s 동안 easeInOutCubic으로 127 px 늘어납니다. 세 번째 클릭 후 네 단계 모두 체크됩니다.
+//   - 초기화: 표시기가 3.75–4.05 s에 사라지고 4.05–4.3 s에 1단계로 다시 나타납니다.
+// 활용 상황: 가입·결제처럼 여러 단계의 진행 상황과 남은 단계를 보여 줄 때 사용합니다.
+// 태그: step-indicator, stepper, steps, progress-steps, wizard, multi-step, checkout
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#068
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 20
+// 20 ステップインジケーター（Step indicator）
+CELLS[19] = ui((w, h, t) => {
+  const clicks = [.9, 1.7, 2.5]; let step = 0; clicks.forEach(c => { if (t >= c) step++; });
+  const reset = seg(t, 3.75, 4.05), back = seg(t, 4.05, 4.3);
+  const showStep = reset >= 1 ? 0 : step;
+  const xs = [80, 207, 334, 461], labs = ['入力', '確認', '支払い', '完了'];
+  const prog = clicks.reduce((s, c) => s + eio(seg(t, c, c + .3)), 0);
+  X.save(); X.globalAlpha = reset < 1 ? 1 - reset : back;
+  const pr = reset >= 1 ? 0 : prog;
+  fillRR(xs[0], 33, xs[3] - xs[0], 4, 2, '#e3e1df'); fillRR(xs[0], 33, (xs[1] - xs[0]) * pr, 4, 2, C.blue);
+  xs.forEach((x, i) => {
+    const done = i < showStep || (showStep === 3 && i === 3), cur = i === showStep && showStep < 3;
+    circle(x, 35, 17, done || cur ? C.blue : '#fff'); if (!(done || cur)) ring(x, 35, 16, C.line2, 2);
+    if (done) check(x, 35, 7, '#fff', 2.6); else text(String(i + 1), x, 36, 16, cur ? '#fff' : '#9a9896', 700, 'center', NUMF);
+    text(labs[i], x, 70, 14, done || cur ? C.blue : '#9a9896', 600, 'center');
+  });
+  X.restore();
+  strokeRR(24, 96, 494, 30, 7, C.line2, 1.5); bar(36, 106, 160, C.line); bar(24, 148, 200, C.line);
+  fillRR(w - 24 - 110, 142, 110, 38, 8, C.blue); text('次へ', w - 24 - 55, 161, 16, '#fff', 600, 'center');
+  pointer([[.3, w + 30, h + 30], [.85, w - 74, 166], [2.6, w - 74, 166], [3.3, w + 30, h + 30]], clicks, t);
+});

@@ -1,0 +1,45 @@
+// Motion Prompt #147 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#147
+//
+// 카드 쌓기 / Stacking cards
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 03 · 분류: 스크롤 효과
+// 동작 요약: 스크롤하면 다음 카드가 아래에서 올라와 조금 어긋나게 쌓이고 아래 카드들은 작고 어두워집니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트. 스크롤 단계 s: 0.3–1.1 s에 0→1, 1.6–2.4 s에 1→2, 3.2–4.4 s에 2→0(cubic ease-in-out). 한 번은 4.7 s(팩의 9.4 s 주기마다 두 번)입니다.
+//   - 중앙 카드 세 개(371 × 124, 모서리 반지름 12)를 페이지에서 170 px 간격으로 놓습니다. s의 한 단계마다 170 px 올라갑니다.
+//   - 상단에서 14, 26, 38 px에 멈춥니다(position: sticky, 카드마다 top 오프셋 12 px 증가). 새 카드가 이전 카드를 덮습니다.
+//   - 위에 쌓이는 카드마다 아래 카드는 위쪽 변 중앙을 기준으로 4.5% 줄어듭니다(두 장이면 9%). 네이비 레이어로 최대 16% 어둡게 합니다.
+//   - 카드 그림자는 블러 14 px, 위쪽 2 px입니다. 스크롤바 손잡이가 스크롤을 따라갑니다.
+// 활용 상황: 단계·기능·요금제를 카드 한 장씩 순서대로 보여 줄 때 사용합니다.
+// 태그: stacking-cards, sticky, scroll, cards, position-sticky, steps
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#147
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 03
+// 03 スタッキングカード（スクロールすると、次のカードが下から来て前のカードに少しずらして重なる）
+CELLS[2] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const s = steps([[0.3, 0], [1.1, 1], [1.6, 1], [2.4, 2], [3.2, 2], [4.4, 0]], u);
+  const CARDS = [[C.blueL, C.ink, C.acc, '01', '企画する', 0], [C.ink, '#fff', C.acc, '02', 'つくる', 2], [C.acc, '#fff', '#fff', '03', '届ける', 1]];
+  const X = 70, CWD = 371, CHT = 124, STEP = 170;
+  view(k, () => {
+    k.fillStyle = C.soft; k.fillRect(0, 0, VW, VH);
+    CARDS.forEach(([bg, fg, nc, no, ttl, pv], i) => {
+      const top = Math.max(14 + i * 12, 16 + i * STEP - s * STEP);
+      const cov = clamp(s - i), sc = 1 - 0.045 * cov - 0.045 * clamp(s - i - 1);
+      k.save(); k.translate(VW / 2, top); k.scale(sc, sc); k.translate(-VW / 2, 0);
+      k.save(); k.shadowColor = 'rgba(28,35,51,.22)'; k.shadowBlur = 14; k.shadowOffsetY = -2; k.fillStyle = bg; rr(k, X, 0, CWD, CHT, 12); k.fill(); k.restore();
+      txt(k, no, X + 24, 44, `800 26px ${EN}`, nc);
+      txt(k, ttl, X + 24, 78, `800 20px ${JP}`, fg);
+      bars(k, X + 24, 92, 140, 2, i === 0 ? '#C3CDEA' : 'rgba(255,255,255,.35)');
+      pic(k, X + CWD - 160, 14, 144, CHT - 28, pv, 8);
+      if (cov > 0) { k.fillStyle = `rgba(28,35,51,${0.16 * cov})`; rr(k, X, 0, CWD, CHT, 12); k.fill(); }
+      k.restore();
+    });
+    sbar(k, s / 2, 0.4);
+  });
+};

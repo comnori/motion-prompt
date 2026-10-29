@@ -1,0 +1,31 @@
+// Motion Prompt #141 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#141
+//
+// 픽셀화 / Pixelate
+// 팩: motion2 (모션 그래픽 움직임 2) · element 21 · 분류: 전환과 강조
+// 동작 요약: 화면이 점점 큰 블록으로 변하고 가장 거친 순간에 장면을 바꾼 뒤 다시 선명해집니다.
+// 동작 사양:
+//   - 들판 → 도시 → 들판을 각각 2.35 s씩 표시합니다. 0.2–1.9 s(1.7 s)에 블록 크기가 1, 2, 3, 4, 6, 8, 11, 15, 20, 27, 36 px로 커졌다 줄어듭니다(중간 1.05 s에 가장 큼).
+//   - 앞 절반에는 이전 장면, 뒤 절반에는 다음 장면을 표시하며 가장 거친 단계에서 교체합니다.
+//   - 방법: 보간을 켜고 화면을 너비 ÷ 블록 크기로 축소한 뒤 보간을 끄고 다시 확대합니다.
+// 활용 상황: 게임·복고·디지털 느낌의 전환이나 장면을 바꾸며 대상을 가릴 때 사용합니다.
+// 태그: pixelate, mosaic, pixel, transition, retro, 8-bit, scene-change
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#141
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 21
+// 21 ピクセレート（画面がだんだん粗いモザイクになり、いちばん粗いところで切り替わって細かく戻る）
+const SMC = mkCanvas(CW, CH), SMK = SMC.getContext('2d');
+const BLV = [1, 2, 3, 4, 6, 8, 11, 15, 20, 27, 36];
+CELLS[20] = abCell((k, w, h, u, a, b) => {
+  const S = [scField, scCity], p = P(u, TA - 0.3, TB + 0.4), tri = 1 - Math.abs(2 * p - 1), bs = BLV[Math.round(tri * (BLV.length - 1))];
+  const scr = p < 0.5 ? a : b;
+  if (bs <= 1) return S[scr](k, w, h);
+  TK.setTransform(1, 0, 0, 1, 0, 0); TK.globalCompositeOperation = 'source-over'; TK.clearRect(0, 0, w, h); S[scr](TK, w, h);
+  const sw = Math.ceil(w / bs), sh = Math.ceil(h / bs);
+  SMK.setTransform(1, 0, 0, 1, 0, 0); SMK.clearRect(0, 0, CW, CH); SMK.imageSmoothingEnabled = true; SMK.imageSmoothingQuality = 'high'; SMK.drawImage(TMP, 0, 0, sw, sh);
+  k.imageSmoothingEnabled = false; k.drawImage(SMC, 0, 0, sw, sh, 0, 0, sw * bs, sh * bs); k.imageSmoothingEnabled = true;
+});

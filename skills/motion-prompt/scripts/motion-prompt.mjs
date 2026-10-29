@@ -57,7 +57,7 @@ Usage: node motion-prompt.mjs <command> [options]
 
   pick                  open the gallery so the user can pick; prints what they picked   [--pack <pack>]
                         [--timeout <seconds, default ${PICK_TIMEOUT}>] [--no-open] [--local]
-  search <words...>     best matches (English or Japanese words)   [--pack <pack>] [--limit N]
+  search <words...>     best matches (English, Japanese or Korean words)   [--pack <pack>] [--limit N]
   list                  packs, categories and counts
   list --pack <pack>    every element in one pack (or in several: --pack camera,camera2)
   get <id> [<id>...]    code + spec for up to ${MAX_GET} elements (accepts 12, 012, #012 or a demo URL)
@@ -66,7 +66,7 @@ Usage: node motion-prompt.mjs <command> [options]
   info                  data source, counts, version, cache folder
 
 Options:
-  --lang ja|en          language of names and text (default en; Japanese search words switch to ja)
+  --lang ja|en|ko       language of names and text (default en; Japanese/Korean search words select ja/ko)
   --pack <pack[,pack]>  pick, search, list: one pack, or several joined by commas (a field's part 1 and part 2 together)
   --out <dir>           write files into <dir> instead of printing (get, prompt, kit)
   --refresh             ignore the disk cache
@@ -232,12 +232,13 @@ class Store {
 
 // ---------- catalog helpers ----------
 
+const HAS_KO = /[ㄱ-ㅎㅏ-ㅣ가-힣ᄀ-ᇿ]/;
 const HAS_JA = /[぀-ヿ㐀-鿿ｦ-ﾟ]/;
 const tx = (v, lang) => (v == null ? '' : typeof v === 'string' ? v : Array.isArray(v) ? v.join(' ') : String(v[lang] ?? v.en ?? v.ja ?? ''));
-const both = (v) => (v == null ? '' : typeof v === 'string' ? v : Array.isArray(v) ? v.join(' ') : `${tx(v.ja, 'ja')} ${tx(v.en, 'en')}`);
+const both = (v) => (v == null ? '' : typeof v === 'string' ? v : Array.isArray(v) ? v.join(' ') : ['ja', 'en', 'ko'].map(l => tx(v[l], l)).join(' '));
 const packKey = (p) => String(p.pack ?? p.id ?? p.slug ?? p.name ?? '');
 const pad = (n) => String(n).padStart(3, '0');
-const demoUrl = (id) => `${SITE}#${id}`;
+const demoUrl = (id, lang) => `${SITE}${lang === 'ko' ? '?lang=ko' : ''}#${id}`;
 
 function packsOf(cat) {
   const listed = Array.isArray(cat.packs) ? cat.packs.map((p) => (typeof p === 'string' ? { pack: p } : p)) : [];
@@ -250,7 +251,7 @@ function categoryLabel(cat, e, lang) {
   const p = packsOf(cat).find((x) => packKey(x) === e.pack);
   const c = p && Array.isArray(p.categories) ? p.categories.find((x) => x.slug === e.category) : null;
   if (!c) return { label: e.category || '', haystack: e.category || '' };
-  return { label: tx(c, lang) || c.slug, haystack: `${c.slug} ${c.ja ?? ''} ${c.en ?? ''}` };
+  return { label: tx(c, lang) || c.slug, haystack: `${c.slug} ${c.ja ?? ''} ${c.en ?? ''} ${c.ko ?? ''}` };
 }
 
 function requirePack(cat, name) {
@@ -297,11 +298,11 @@ function line(cat, e, lang) {
 
 function score(cat, e, tokens) {
   const name = both(e.name).toLowerCase();
-  const names = [tx(e.name, 'ja'), tx(e.name, 'en')].map((s) => s.toLowerCase());
+  const names = [tx(e.name, 'ja'), tx(e.name, 'en'), tx(e.name, 'ko')].map((s) => s.toLowerCase());
   const tags = (e.tags || []).map((t) => String(t).toLowerCase());
   const slug = String(e.slug || '').toLowerCase();
   const catHay = `${categoryLabel(cat, e, 'en').haystack} ${e.pack} ${both((packsOf(cat).find((p) => packKey(p) === e.pack) || {}).title)}`.toLowerCase();
-  const summary = both(e.summary).toLowerCase();
+  const summary = `${both(e.summary)} ${both(e.meaning)}`.toLowerCase();
   const deep = `${both(e.use)} ${both(e.spec)}`.toLowerCase();
   let total = 0;
   let matched = 0;
@@ -357,7 +358,7 @@ async function cmdSearch(store, args, flags, lang) {
   }
   for (const h of hits.slice(0, limit)) console.log(line(cat, h.e, lang));
   if (hits.length > limit) console.log(`… ${hits.length - limit} more. Narrow with --pack or raise --limit.`);
-  console.log(`\nNext: get <id> for the code and spec. Demo: ${SITE}#<id>`);
+  console.log(lang === 'ko' ? `\n다음 단계: get <id> --lang ko로 코드와 사양을 확인하세요. 예제: ${SITE}?lang=ko#<id>` : `\nNext: get <id> for the code and spec. Demo: ${SITE}#<id>`);
 }
 
 async function cmdList(store, flags, lang) {
@@ -508,6 +509,13 @@ function openBrowser(url) {
 }
 
 const PICK_TEXT = {
+  ko: {
+    done: 'AI에게 보냈습니다', close: '이 화면을 닫아도 됩니다. AI 화면으로 돌아가 어떻게 사용할지 알려 주세요.',
+    ignored: '카탈로그에 없는 번호는 전달하지 않았습니다: ', bad: '선택 항목을 읽지 못했습니다',
+    badBody: '갤러리로 돌아가 “AI에게 보내기”를 다시 누르세요. AI는 아직 기다리고 있습니다.',
+    none: '선택한 번호가 카탈로그에 없습니다', other: '다른 요청에 사용되는 주소입니다',
+    otherBody: 'AI가 열어 준 갤러리의 “AI에게 보내기”로 전송해 주세요.'
+  },
   ja: {
     done: 'AIに渡しました', close: 'この画面は閉じて大丈夫です。AIの画面に戻って、どう使うかを伝えてください。',
     ignored: 'カタログに無い番号は渡していません: ', bad: '選択を読み取れませんでした',
@@ -547,7 +555,7 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
       try { url = new URL(req.url, origin); } catch { return send(res, 400, 'Bad request'); }
       const q = url.searchParams;
       if (url.pathname === '/' && q.has('t')) {
-        const lang = flags.lang || (q.get('lang') === 'ja' ? 'ja' : q.get('lang') === 'en' ? 'en' : 'en');
+        const lang = flags.lang || (['ja', 'en', 'ko'].includes(q.get('lang')) ? q.get('lang') : 'en');
         const T = PICK_TEXT[lang];
         const given = Buffer.from(String(q.get('t')));
         const want = Buffer.from(token);
@@ -585,30 +593,31 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
 }
 
 function printPick(cat, { ids, unknown, note, lang }) {
-  const other = lang === 'ja' ? 'en' : 'ja';
-  const out = [`The user picked ${ids.length} element${ids.length === 1 ? '' : 's'} in the Motion Prompt gallery, in this order.`];
-  out.push(note ? `Note from the user: ${note}` : 'Note from the user: (none)');
+  const other = lang === 'en' ? 'ja' : 'en';
+  const ko = lang === 'ko';
+  const out = [ko ? `사용자가 Motion Prompt 갤러리에서 다음 ${ids.length}개 항목을 순서대로 선택했습니다.` : `The user picked ${ids.length} element${ids.length === 1 ? '' : 's'} in the Motion Prompt gallery, in this order.`];
+  out.push(ko ? `사용자 메모: ${note || '(없음)'}` : note ? `Note from the user: ${note}` : 'Note from the user: (none)');
   out.push('');
   ids.forEach((id, i) => {
     const e = cat.elements.find((x) => x.id === id);
     const name = tx(e.name, lang);
     const alt = tx(e.name, other);
     out.push(`${i + 1}. #${e.id}  ${name}${alt && alt !== name ? ` / ${alt}` : ''}  [${e.pack} / ${categoryLabel(cat, e, lang).label}]`);
-    if (e.meaning) out.push(`   Meaning: ${tx(e.meaning, lang)}`);
-    if (e.ask) out.push(`   How to ask: ${tx(e.ask, lang)}`);
+    if (e.meaning) out.push(`   ${ko ? '뜻' : 'Meaning'}: ${tx(e.meaning, lang)}`);
+    if (e.ask) out.push(`   ${ko ? '요청 예시' : 'How to ask'}: ${tx(e.ask, lang)}`);
     const spec = e.spec ? (Array.isArray(e.spec) ? e.spec : e.spec[lang] || e.spec.en || []) : [];
-    if (spec.length) { out.push('   Spec:'); for (const s of spec) out.push(`   - ${s}`); }
-    out.push(`   Demo: ${demoUrl(e.id)}`);
+    if (spec.length) { out.push(ko ? '   동작 사양:' : '   Spec:'); for (const s of spec) out.push(`   - ${s}`); }
+    out.push(`   ${ko ? '예제' : 'Demo'}: ${demoUrl(e.id, lang)}`);
     out.push('');
   });
-  if (unknown.length) out.push(`Ignored (not in the catalog): ${unknown.map((u) => `#${u}`).join(', ')}`, '');
+  if (unknown.length) out.push(`${ko ? '카탈로그에 없어 제외한 항목' : 'Ignored (not in the catalog)'}: ${unknown.map((u) => `#${u}`).join(', ')}`, '');
   const packs = [...new Set(ids.map((id) => cat.elements.find((x) => x.id === id).pack))];
-  out.push(`Next: use exactly these elements, no more and no fewer. Run "get ${ids.join(' ')}" for the code (at most ${MAX_GET} ids per call) and "kit <pack>" once for each of: ${packs.join(', ')}.`);
+  out.push(ko ? `다음 단계: 선택한 항목만 사용하세요. "get ${ids.join(' ')} --lang ko"로 코드를 가져오세요(호출당 최대 ${MAX_GET}개). 다음 팩마다 "kit <pack>"을 한 번 실행하세요: ${packs.join(', ')}.` : `Next: use exactly these elements, no more and no fewer. Run "get ${ids.join(' ')}" for the code (at most ${MAX_GET} ids per call) and "kit <pack>" once for each of: ${packs.join(', ')}.`);
   process.stdout.write(`${out.join('\n')}\n`);
 }
 
 async function cmdPick(store, args, flags) {
-  if (args.length) throw new CliError(EXIT.USAGE, 'pick takes no ids or words. Options: --pack <pack> --lang ja|en --timeout <seconds> --no-open --local');
+  if (args.length) throw new CliError(EXIT.USAGE, 'pick takes no ids or words. Options: --pack <pack> --lang ja|en|ko --timeout <seconds> --no-open --local');
   const timeoutSec = flags.timeout === undefined ? PICK_TIMEOUT : Number(flags.timeout);
   if (!Number.isFinite(timeoutSec) || timeoutSec < 1 || timeoutSec > 86400) throw new CliError(EXIT.USAGE, '--timeout must be a number of seconds between 1 and 86400.');
   const root = flags.local ? repoRoot() : null;
@@ -642,8 +651,8 @@ async function main() {
   const { flags, command, args } = parseArgs(process.argv.slice(2));
   if (flags.version) { console.log(VERSION); return; }
   if (flags.help || !command || command === 'help') { console.log(HELP); return; }
-  if (flags.lang && !['ja', 'en'].includes(flags.lang)) throw new CliError(EXIT.USAGE, '--lang must be ja or en.');
-  const lang = flags.lang || (command === 'search' && HAS_JA.test(args.join(' ')) ? 'ja' : 'en');
+  if (flags.lang && !['ja', 'en', 'ko'].includes(flags.lang)) throw new CliError(EXIT.USAGE, '--lang must be ja, en or ko.');
+  const lang = flags.lang || (command === 'search' && HAS_KO.test(args.join(' ')) ? 'ko' : command === 'search' && HAS_JA.test(args.join(' ')) ? 'ja' : 'en');
   const store = new Store({ refresh: flags.refresh });
   switch (command) {
     case 'search': return cmdSearch(store, args, flags, lang);

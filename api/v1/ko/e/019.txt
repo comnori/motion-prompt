@@ -1,0 +1,37 @@
+// Motion Prompt #019 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#019
+//
+// 리퀴드 전환 / Liquid transition
+// 팩: motion (모션 그래픽 움직임) · element 19 · 분류: 전환과 강조
+// 동작 요약: 물감 같은 액체가 위에서 흘러내려 화면을 채우며 다음 장면으로 바뀝니다.
+// 동작 사양:
+//   - 낮 → 밤 → 낮을 각각 2.35 s씩 표시합니다. 액체 레이어 두 개가 모두 quadratic ease-in-out으로 위에서 아래로 움직입니다.
+//   - 레이어 1(단색: 낮→밤은 파랑, 밤→낮은 코랄)은 0.35–1.5 s. 레이어 2(액체 모양으로 클리핑한 다음 장면 자체)는 0.7–1.8 s입니다.
+//   - 액체 앞부분은 y = −110에서 하단 가장자리보다 130 px 아래까지 이동합니다. 가장자리는 진폭 13 px와 8 px의 사인파 두 개로 물결치며 중간에서 가장 강합니다.
+//   - 앞부분에 끝이 둥근 물방울 일곱 개(너비 30–54 px)가 매달립니다. 길이 = 기본 30–110 px × (0.25 + 0.9 × 파동 강도)이며 중간에서 가장 깁니다.
+//   - 합쳐지는 표현: 모양을 흰색으로 그림 → 7 px 블러 → 알파 임곗값 적용 → 색 또는 다음 장면으로 채웁니다.
+// 활용 상황: 음식·뷰티·창작 영상 등에서 부드럽고 유기적으로 장면을 전환할 때 사용합니다.
+// 태그: liquid, transition, drip, paint, goo, fluid, wipe, scene-change
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#019
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 19
+// 19 リキッドトランジション（ペンキのような液体が上から垂れて流れ込み、次の画面になる）
+const DRIPS = [0, 1].map(s => { const R = rand(190 + s * 7), a = []; for (let i = 0; i < 7; i++) a.push({ x: 36 + i * 78 + (R() - 0.5) * 30, len: 30 + R() * 80, wd: 15 + R() * 12, ph: R() * 6 }); return a; });
+function liquidShape(g, w, h, p, set, u) {
+  const base = lerp(-110, h + 130, p), amp = Math.sin(Math.PI * clamp(p * 1.1));
+  g.beginPath(); g.moveTo(-20, -40);
+  for (let x = -20; x <= w + 20; x += 10) g.lineTo(x, base + amp * (13 * Math.sin(x * 0.021 + u * 3 + set) + 8 * Math.sin(x * 0.05 + u * 4.3)));
+  g.lineTo(w + 20, -40); g.closePath(); g.fill();
+  for (const d of DRIPS[set]) { const L = d.len * (0.25 + amp * 0.9), y0 = base - 20; g.beginPath(); g.roundRect(d.x - d.wd, y0, d.wd * 2, L + 20, d.wd); g.fill(); g.beginPath(); g.arc(d.x, y0 + L + 18, d.wd * 1.25, 0, 7); g.fill(); }
+}
+CELLS[18] = abCell((k, w, h, u, a, b) => {
+  const p1 = eIOs(P(u, TA - 0.15, TB)), p2 = eIOs(P(u, TA + 0.2, TB + 0.3));
+  SCR[a](k, w, h);
+  if (p1 > 0 && p2 < 1) k.drawImage(goo(g => liquidShape(g, w, h, p1, 0, u), 7, g => { g.fillStyle = a === 0 ? C.blue : C.coral; g.fillRect(0, 0, w, h); }), 0, 0);
+  if (p2 >= 1) SCR[b](k, w, h);
+  else if (p2 > 0) k.drawImage(goo(g => liquidShape(g, w, h, p2, 1, u + 1), 7, g => SCR[b](g, w, h)), 0, 0);
+});

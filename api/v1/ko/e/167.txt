@@ -1,0 +1,39 @@
+// Motion Prompt #167 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#167
+//
+// 아래로 스크롤 안내 / Scroll-down cue
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 23 · 분류: 콘텐츠를 돋보이게 하는 효과
+// 동작 요약: 히어로 아래 SCROLL 문구와 마우스 윤곽 안의 점, 양옆 화살표가 아래 방향 움직임을 반복합니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트의 히어로 아래 중앙에 SCROLL(11 px, 자간 3 px)과 마우스 윤곽(24 × 38, 모서리 반지름 12, 두께 2.2)을 둡니다. 한 박자 1.57 s(4.7 s마다 세 번, 9.4 s마다 여섯 번).
+//   - 안의 주황 점(5 × 9)은 박자의 처음 70% 동안 14 px 내려오고(quadratic ease-in-out), 45%–75% 구간에 사라진 뒤 다음 박자에 위에서 다시 나타납니다.
+//   - 양옆 40 px에 아래 화살표를 각각 두 개(두께 2.5) 놓고 반박자 시차로 24 px 내려옵니다. 불투명도는 사인 곡선으로 0 → 0.8 → 0입니다.
+// 활용 상황: 히어로가 화면을 채워 아래에 더 내용이 있음을 알려야 할 때 사용합니다.
+// 태그: scroll-cue, scroll-indicator, scroll-down, hero, arrow, loop
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#167
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 23
+// 23 スクロールダウンの合図（ファーストビューの下で「SCROLL」とマウスの形の中の点が、下へ促す動きをくり返す）
+CELLS[22] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const T = CYC / 3, f = mod(u, T) / T;
+  view(k, () => {
+    k.fillStyle = '#FFF4EA'; k.fillRect(0, 0, VW, VH);
+    txt(k, 'ようこそ、', 40, 40, `800 22px ${JP}`, C.ink); txt(k, '山の上の宿へ。', 40, 70, `800 22px ${JP}`, C.ink);
+    bars(k, 40, 84, 170, 2, '#EAD9CB');
+    pic(k, 286, 10, 200, 92, 1, 10);
+    // 合図
+    const mx = VW / 2;
+    txt(k, 'SCROLL', mx, 116, `800 11px ${EN}`, C.ink, 'center', 'middle', '3px');
+    k.strokeStyle = C.ink; k.lineWidth = 2.2; rr(k, mx - 12, 126, 24, 38, 12); k.stroke();
+    const dy = eIOs(clamp(f / 0.7)) * 14, da = 1 - clamp((f - 0.45) / 0.3);
+    k.fillStyle = `rgba(255,90,44,${da})`; rr(k, mx - 2.5, 133 + dy, 5, 9, 2.5); k.fill();
+    // 両わきの矢印も下へ流れる
+    [mx - 40, mx + 40].forEach(x => { for (let j = 0; j < 2; j++) { const ff = mod(f + j * 0.5, 1), yy = 128 + ff * 24, al = Math.sin(Math.PI * ff); k.strokeStyle = `rgba(28,35,51,${0.8 * al})`; k.lineWidth = 2.5; k.lineCap = 'round'; k.lineJoin = 'round'; k.beginPath(); k.moveTo(x - 8, yy); k.lineTo(x, yy + 8); k.lineTo(x + 8, yy); k.stroke(); } });
+  });
+};

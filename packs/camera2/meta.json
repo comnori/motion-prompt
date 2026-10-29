@@ -1,21 +1,22 @@
 {
   "pack": "camera2",
   "order": 8,
-  "title": { "ja": "カメラワークと切り替え 第2弾", "en": "Camera moves & transitions, part 2", "es": "Movimientos de cámara y transiciones, parte 2", "zh-Hans": "镜头运动与转场（第 2 弹）", "zh-Hant": "運鏡與轉場 第 2 彈" },
+  "title": { "ja": "カメラワークと切り替え 第2弾", "en": "Camera moves & transitions, part 2", "es": "Movimientos de cámara y transiciones, parte 2", "zh-Hans": "镜头运动与转场（第 2 弹）", "zh-Hant": "運鏡與轉場 第 2 彈", "ko": "카메라 움직임과 장면 전환 2" },
   "categories": [
-    { "slug": "camera-movement", "ja": "カメラの動き", "en": "Camera Movement", "es": "Movimientos de cámara", "zh-Hans": "镜头运动", "zh-Hant": "鏡頭運動" },
-    { "slug": "angles-framing", "ja": "アングル・画づくり", "en": "Angles & Framing", "es": "Ángulos y encuadre", "zh-Hans": "角度与构图", "zh-Hant": "角度與構圖" },
-    { "slug": "transitions-editing", "ja": "切り替え・編集", "en": "Transitions & Editing", "es": "Transiciones y edición", "zh-Hans": "转场与剪辑", "zh-Hant": "轉場與剪接" }
+    { "slug": "camera-movement", "ja": "カメラの動き", "en": "Camera Movement", "es": "Movimientos de cámara", "zh-Hans": "镜头运动", "zh-Hant": "鏡頭運動", "ko": "카메라 움직임" },
+    { "slug": "angles-framing", "ja": "アングル・画づくり", "en": "Angles & Framing", "es": "Ángulos y encuadre", "zh-Hans": "角度与构图", "zh-Hant": "角度與構圖", "ko": "앵글과 구도" },
+    { "slug": "transitions-editing", "ja": "切り替え・編集", "en": "Transitions & Editing", "es": "Transiciones y edición", "zh-Hans": "转场与剪辑", "zh-Hant": "轉場與剪接", "ko": "전환과 편집" }
   ],
   "elements": [
     {
       "no": "01", "slug": "pedestal", "category": "camera-movement",
-      "name": { "ja": "ペデスタル", "en": "Pedestal", "es": "Pedestal", "zh-Hans": "垂直升降镜头", "zh-Hant": "Pedestal 垂直升降" },
-      "meaning": { "ja": "カメラごと真上・真下へ平行移動", "en": "Move the whole camera straight up or down", "es": "Subir o bajar toda la cámara en línea recta", "zh-Hans": "相机整体垂直上下平移", "zh-Hant": "攝影機整台垂直上下平移" },
-      "ask": { "ja": "カメラの向きは変えずに、目の高さから3mまでペデスタルで真上に上げて。", "en": "Pedestal up from eye level to about 3 meters, keeping the camera pointed straight ahead.", "es": "Pedestal hacia arriba desde la altura de los ojos hasta unos 3 metros, con la cámara apuntando siempre al frente.", "zh-Hans": "保持镜头朝向不变，用垂直升降镜头从眼睛高度直线上升到约 3 m。", "zh-Hant": "攝影機方向不變，用 Pedestal 垂直升降從視線高度往正上方升到約 3 公尺。" },
+      "name": { "ja": "ペデスタル", "en": "Pedestal", "es": "Pedestal", "zh-Hans": "垂直升降镜头", "zh-Hant": "Pedestal 垂直升降", "ko": "페데스탈(카메라 수직 이동)" },
+      "meaning": { "ja": "カメラごと真上・真下へ平行移動", "en": "Move the whole camera straight up or down", "es": "Subir o bajar toda la cámara en línea recta", "zh-Hans": "相机整体垂直上下平移", "zh-Hant": "攝影機整台垂直上下平移", "ko": "카메라 전체를 수직으로 올리거나 내림" },
+      "ask": { "ja": "カメラの向きは変えずに、目の高さから3mまでペデスタルで真上に上げて。", "en": "Pedestal up from eye level to about 3 meters, keeping the camera pointed straight ahead.", "es": "Pedestal hacia arriba desde la altura de los ojos hasta unos 3 metros, con la cámara apuntando siempre al frente.", "zh-Hans": "保持镜头朝向不变，用垂直升降镜头从眼睛高度直线上升到约 3 m。", "zh-Hant": "攝影機方向不變，用 Pedestal 垂直升降從視線高度往正上方升到約 3 公尺。", "ko": "카메라가 정면을 향한 채 눈높이에서 약 3m 높이까지 페데스탈로 수직 이동해 줘." },
       "summary": {
         "ja": "カメラが向きを変えずに真上へ平行移動する。地平線は画面の中央のまま、人物と建物が下へ流れる。",
-        "en": "The camera moves straight up without changing its direction; the horizon stays centred while the person and buildings slide down."
+        "en": "The camera moves straight up without changing its direction; the horizon stays centred while the person and buildings slide down.",
+        "ko": "카메라가 방향을 바꾸지 않고 수직으로 올라갑니다. 수평선은 중앙에 남고 사람과 건물은 아래로 이동합니다."
       },
       "spec": {
         "ja": [
@@ -33,22 +34,32 @@
           "Because the pitch does not change, the horizon stays at the centre of the frame (#031 Crane up tilts down while rising)",
           "Return: hold 3.4–4.2 s, then cross-fade back to the start over the last 0.5 s (one pass = 4.7 s)",
           "Top-right readout shows the height (↕ 1.0m → ↕ 3.2m)"
+        ],
+        "ko": [
+          "카메라: 높이 1.0 m → 3.2 m로 수직 상승. 요·피치 방향과 초점거리 330 px는 고정합니다.",
+          "시간: 0.5 s부터 3.4 s까지(2.9 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).",
+          "피사체: 사람이 7 m 앞에 서 있으며 발부터 화면 아래로 나갑니다. 탑은 오른쪽 3.5 m, 거리 26 m에 있습니다.",
+          "피치가 변하지 않아 수평선은 프레임 중앙을 유지합니다(#031 Crane up은 상승하며 아래로 기울임).",
+          "복귀: 3.4–4.2 s에 정지한 뒤 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s).",
+          "오른쪽 위 높이 표시: ↕ 1.0m → ↕ 3.2m."
         ]
       },
       "use": {
         "ja": "棚や建物を下から上へなめらかに見せるとき、ティルトせずに目線の高さを変えるとき。",
-        "en": "To show a shelf or a building from bottom to top smoothly, or to change the eye level without tilting."
+        "en": "To show a shelf or a building from bottom to top smoothly, or to change the eye level without tilting.",
+        "ko": "선반·건물을 아래에서 위로 훑거나 기울임 없이 눈높이를 바꿀 때 사용합니다."
       },
       "tags": ["pedestal", "boom", "vertical move", "rise", "elevate", "camera move", "no tilt"]
     },
     {
       "no": "02", "slug": "barrel-roll", "category": "camera-movement",
-      "name": { "ja": "バレルロール", "en": "Barrel roll", "es": "Barrel roll (giro sobre el eje)", "zh-Hans": "横滚镜头", "zh-Hant": "Barrel roll" },
-      "meaning": { "ja": "レンズの軸でカメラを1回転", "en": "Roll the camera a full turn on its axis", "es": "Girar la cámara una vuelta completa sobre su eje", "zh-Hans": "相机绕镜头光轴旋转一整圈", "zh-Hant": "攝影機沿鏡頭軸向翻轉一整圈" },
-      "ask": { "ja": "ドローンの映像をバレルロールで1回転させて。3秒かけて。", "en": "Barrel roll the drone shot through one full rotation over 3 seconds.", "es": "Barrel roll de la toma de dron: una vuelta completa en 3 segundos.", "zh-Hans": "让无人机画面用横滚镜头旋转一整圈，用时 3 s。", "zh-Hant": "空拍畫面請用 Barrel roll 翻轉一整圈，花 3 秒。" },
+      "name": { "ja": "バレルロール", "en": "Barrel roll", "es": "Barrel roll (giro sobre el eje)", "zh-Hans": "横滚镜头", "zh-Hant": "Barrel roll", "ko": "배럴 롤" },
+      "meaning": { "ja": "レンズの軸でカメラを1回転", "en": "Roll the camera a full turn on its axis", "es": "Girar la cámara una vuelta completa sobre su eje", "zh-Hans": "相机绕镜头光轴旋转一整圈", "zh-Hant": "攝影機沿鏡頭軸向翻轉一整圈", "ko": "카메라를 촬영 축을 중심으로 한 바퀴 회전시킴" },
+      "ask": { "ja": "ドローンの映像をバレルロールで1回転させて。3秒かけて。", "en": "Barrel roll the drone shot through one full rotation over 3 seconds.", "es": "Barrel roll de la toma de dron: una vuelta completa en 3 segundos.", "zh-Hans": "让无人机画面用横滚镜头旋转一整圈，用时 3 s。", "zh-Hant": "空拍畫面請用 Barrel roll 翻轉一整圈，花 3 秒。", "ko": "드론 샷에 배럴 롤을 넣어 줘. 3초 동안 한 바퀴 회전하게 해 줘." },
       "summary": {
         "ja": "カメラがレンズの軸でぐるりと1回転し、地平線が一周して元に戻る。",
-        "en": "The camera rolls a full turn around its lens axis; the horizon goes all the way round and comes back level."
+        "en": "The camera rolls a full turn around its lens axis; the horizon goes all the way round and comes back level.",
+        "ko": "카메라가 렌즈 축을 중심으로 한 바퀴 회전하여 수평선이 완전히 돌고 다시 수평으로 돌아옵니다."
       },
       "spec": {
         "ja": [
@@ -64,22 +75,31 @@
           "Subject: a person stands still 7 m ahead; horizon, buildings and person all turn by the same angle, and white shows in the corners while turning",
           "Hold: 3.6–4.2 s. After a full turn the picture equals the start, so the final 0.5 s cross-fade is invisible (one pass = 4.7 s)",
           "Top-right readout shows the angle (↻ 0° → ↻ 360°)"
+        ],
+        "ko": [
+          "카메라: 위치 고정(높이 1.5 m), 롤만 0 → 2π rad(360°) 회전합니다. 화면 전체가 프레임 중앙을 중심으로 회전합니다.",
+          "시간: 0.5 s부터 3.6 s까지(3.1 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).",
+          "피사체: 사람이 7 m 앞에 서 있습니다. 수평선·건물·사람이 같은 각도로 돌며 회전 중 모서리에 흰색이 보입니다.",
+          "정지: 3.6–4.2 s. 한 바퀴 뒤 화면은 처음과 같아 마지막 0.5 s 크로스페이드가 보이지 않습니다(한 번 = 4.7 s).",
+          "오른쪽 위 각도 표시: ↻ 0° → ↻ 360°."
         ]
       },
       "use": {
         "ja": "飛行機やドローンの映像で勢いを出すとき、めまいや混乱を表すとき。",
-        "en": "For aerial or drone footage that needs energy, or to show dizziness and confusion."
+        "en": "For aerial or drone footage that needs energy, or to show dizziness and confusion.",
+        "ko": "항공·드론 영상에 에너지를 더하거나 어지러움·혼란을 표현할 때 사용합니다."
       },
       "tags": ["barrel roll", "roll", "360", "rotate", "spin", "aerial", "camera move"]
     },
     {
       "no": "03", "slug": "hyperlapse", "category": "camera-movement",
-      "name": { "ja": "ハイパーラプス", "en": "Hyperlapse", "es": "Hyperlapse", "zh-Hans": "移动延时", "zh-Hant": "移動縮時" },
-      "meaning": { "ja": "移動しながら撮るタイムラプス", "en": "A time-lapse shot while the camera travels", "es": "Un time-lapse grabado mientras la cámara avanza", "zh-Hans": "相机边移动边拍的延时摄影", "zh-Hant": "攝影機邊移動邊拍的縮時攝影" },
-      "ask": { "ja": "駅から公園まで歩きながらのハイパーラプス。雲が流れて、人が早送りで動くように。", "en": "Hyperlapse walking from the station to the park, clouds streaming and people in fast forward.", "es": "Hyperlapse caminando de la estación al parque, con las nubes pasando rápido y la gente en cámara rápida.", "zh-Hans": "拍一段从车站走到公园的移动延时：云朵流动，行人像快进一样移动。", "zh-Hant": "用移動縮時拍從車站走到公園的過程，雲快速飄過，路人像快轉一樣移動。" },
+      "name": { "ja": "ハイパーラプス", "en": "Hyperlapse", "es": "Hyperlapse", "zh-Hans": "移动延时", "zh-Hant": "移動縮時", "ko": "하이퍼랩스" },
+      "meaning": { "ja": "移動しながら撮るタイムラプス", "en": "A time-lapse shot while the camera travels", "es": "Un time-lapse grabado mientras la cámara avanza", "zh-Hans": "相机边移动边拍的延时摄影", "zh-Hant": "攝影機邊移動邊拍的縮時攝影", "ko": "카메라가 이동하며 촬영하는 타임랩스" },
+      "ask": { "ja": "駅から公園まで歩きながらのハイパーラプス。雲が流れて、人が早送りで動くように。", "en": "Hyperlapse walking from the station to the park, clouds streaming and people in fast forward.", "es": "Hyperlapse caminando de la estación al parque, con las nubes pasando rápido y la gente en cámara rápida.", "zh-Hans": "拍一段从车站走到公园的移动延时：云朵流动，行人像快进一样移动。", "zh-Hant": "用移動縮時拍從車站走到公園的過程，雲快速飄過，路人像快轉一樣移動。", "ko": "역에서 공원까지 걸어가는 하이퍼랩스를 만들어 줘. 구름이 흐르고 사람들이 빠르게 움직이게 해 줘." },
       "summary": {
         "ja": "街路を前へ進みながら、太陽・雲・人影が早送りで動く。タイムラプスとカメラの移動を同時に行う。",
-        "en": "The camera travels forward along a street while the sun, clouds and passers-by run in fast forward: a time-lapse that moves."
+        "en": "The camera travels forward along a street while the sun, clouds and passers-by run in fast forward: a time-lapse that moves.",
+        "ko": "카메라가 거리를 따라 전진하는 동안 해·구름·행인이 빠르게 움직이는 이동 타임랩스입니다."
       },
       "spec": {
         "ja": [
@@ -97,22 +117,32 @@
           "Sun: travels left to right along an arc, angle -1.25 rad → +1.25 rad, always 170 m ahead of the camera; three clouds drift 140 m right in total, wrapping every 80 m; six small figures cross an 11 m wide street",
           "Building shadows fall away from the sun and swing as it moves (translucent grey); the mountains move with the camera so they keep their size",
           "Return: cross-fade back to the start over the last 0.5 s; top-right readout shows the clock and the distance travelled (06:00 · 0m → 18:00 · 22m)"
+        ],
+        "ko": [
+          "카메라: 0 m → 22 m 전진(높이 1.6 m, 피치 +0.05 rad)하며 해·구름·사람의 12시간을 빠르게 보여 줍니다(#039 Time-lapse는 카메라 고정).",
+          "시간: 0.4 s부터 4.1 s까지(3.7 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).",
+          "거리: x = ±7.5 m의 건물 12개(깊이 5–55 m, 높이 8–16 m)가 다가와 프레임 밖으로 지나갑니다.",
+          "해는 카메라 앞 170 m에서 각도 -1.25 rad → +1.25 rad의 호를 따라 좌우 이동합니다. 구름 세 개는 총 140 m 오른쪽으로 이동하며 80 m마다 순환하고 작은 사람 여섯 명이 너비 11 m의 거리를 건넙니다.",
+          "반투명 회색 건물 그림자는 해 반대 방향으로 드리워지고 해에 따라 회전합니다. 산은 카메라와 함께 움직여 크기를 유지합니다.",
+          "복귀: 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다. 오른쪽 위에 시간·이동 거리를 표시합니다(06:00 · 0m → 18:00 · 22m)."
         ]
       },
       "use": {
         "ja": "街や建物の中を、長い距離と長い時間ぶん一気に見せるとき。",
-        "en": "To cover a long distance and a long stretch of time in one sweep through a city or a building."
+        "en": "To cover a long distance and a long stretch of time in one sweep through a city or a building.",
+        "ko": "도시나 건물을 통과하며 긴 거리와 긴 시간을 한 번에 보여 줄 때 사용합니다."
       },
       "tags": ["hyperlapse", "time-lapse", "moving timelapse", "fast forward", "travel", "city", "camera move"]
     },
     {
       "no": "04", "slug": "long-take", "category": "camera-movement",
-      "name": { "ja": "長回し", "en": "Long take", "es": "Plano secuencia (long take)", "zh-Hans": "长镜头", "zh-Hant": "一鏡到底" },
-      "meaning": { "ja": "カットを割らず1ショットで撮り続ける", "en": "One continuous shot with no cuts", "es": "Una sola toma continua, sin cortes", "zh-Hans": "不切换，一个镜头连续拍到底", "zh-Hant": "不剪接，一個鏡頭拍到底" },
-      "ask": { "ja": "準備から出発までを長回しで。カットを割らずに人物についていって。", "en": "Shoot from the preparation to the departure as one long take, following the person without a cut.", "es": "Graba desde la preparación hasta la salida en un plano secuencia, siguiendo a la persona sin cortar.", "zh-Hans": "从准备到出发用一个长镜头拍完，跟着人物，中间不切镜头。", "zh-Hant": "從準備到出發用一鏡到底拍完，中間不剪接，一路跟著人物。" },
+      "name": { "ja": "長回し", "en": "Long take", "es": "Plano secuencia (long take)", "zh-Hans": "长镜头", "zh-Hant": "一鏡到底", "ko": "롱 테이크" },
+      "meaning": { "ja": "カットを割らず1ショットで撮り続ける", "en": "One continuous shot with no cuts", "es": "Una sola toma continua, sin cortes", "zh-Hans": "不切换，一个镜头连续拍到底", "zh-Hant": "不剪接，一個鏡頭拍到底", "ko": "컷 없이 하나의 샷으로 계속 촬영함" },
+      "ask": { "ja": "準備から出発までを長回しで。カットを割らずに人物についていって。", "en": "Shoot from the preparation to the departure as one long take, following the person without a cut.", "es": "Graba desde la preparación hasta la salida en un plano secuencia, siguiendo a la persona sin cortar.", "zh-Hans": "从准备到出发用一个长镜头拍完，跟着人物，中间不切镜头。", "zh-Hant": "從準備到出發用一鏡到底拍完，中間不剪接，一路跟著人物。", "ko": "준비부터 출발까지 인물을 따라가며 컷 없이 하나의 롱 테이크로 촬영해 줘." },
       "summary": {
         "ja": "歩く人物をカットなしで追い続ける1ショット。画面下の帯は切れ目のない1本のまま。",
-        "en": "One continuous shot follows a walking person with no cut; the bar at the bottom stays a single unbroken strip."
+        "en": "One continuous shot follows a walking person with no cut; the bar at the bottom stays a single unbroken strip.",
+        "ko": "걷는 사람을 컷 없이 한 쇼트로 따라가며 아래 막대도 끊기지 않은 하나의 띠로 남습니다."
       },
       "spec": {
         "ja": [
@@ -130,22 +160,32 @@
           "Bottom strip: one blue bar labelled \"1ショット・カットなし\" (one shot, no cut) with a playhead, showing there is no break",
           "Return: stops at 4.2 s, then cross-fades back to the start over the last 0.5 s (one pass = 4.7 s)",
           "Top-right readout shows the elapsed time (NO CUT 0.0s → 4.2s)"
+        ],
+        "ko": [
+          "연결: 없음. 4.2 s 동안 한 쇼트로 사람을 따라갑니다(#041 Jump cut은 다섯 개로 나눔).",
+          "피사체: 사람이 왼쪽 앞(x = -3.4 m, 깊이 5.2 m)에서 오른쪽 뒤(x = 2.8 m, 깊이 9.6 m)로 등속 이동합니다. 팔·다리는 sin(t×7)×0.42 rad로 흔들립니다.",
+          "카메라: 사람을 따라 오른쪽 0 m → 1.4 m 이동하면서 회전합니다. yaw = atan2(person x - camera x, depth)×0.8, 높이 1.4 m.",
+          "아래 띠: 재생 헤드가 있는 파란 막대 하나에 “1ショット・カットなし”(한 쇼트·컷 없음)를 표시해 단절이 없음을 보여 줍니다.",
+          "복귀: 4.2 s에 멈추고 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s).",
+          "오른쪽 위 경과 시간: NO CUT 0.0s → 4.2s."
         ]
       },
       "use": {
         "ja": "緊張感や臨場感を切らさずに見せたいとき、動きの流れを1本で見せるとき。",
-        "en": "To keep tension and presence unbroken, or to show a sequence of movement as one flow."
+        "en": "To keep tension and presence unbroken, or to show a sequence of movement as one flow.",
+        "ko": "긴장과 현장감을 끊지 않거나 연속 동작을 하나의 흐름으로 보여 줄 때 사용합니다."
       },
       "tags": ["long take", "oner", "one shot", "continuous", "no cut", "sequence shot", "camera move"]
     },
     {
       "no": "05", "slug": "steadicam", "category": "camera-movement",
-      "name": { "ja": "ステディカム", "en": "Steadicam", "es": "Steadicam", "zh-Hans": "斯坦尼康", "zh-Hant": "Steadicam" },
-      "meaning": { "ja": "揺れを抑えてなめらかに移動", "en": "Smooth, floating movement with no shake", "es": "Un movimiento suave y flotante, sin temblor", "zh-Hans": "消除抖动，平稳流畅地移动", "zh-Hant": "不晃動、平順地移動" },
-      "ask": { "ja": "廊下を歩く人物の後ろをステディカムで。揺れなしでなめらかに。", "en": "Follow the person down the corridor with a Steadicam: smooth, no shake.", "es": "Sigue con Steadicam a la persona por el pasillo: suave, sin temblor.", "zh-Hans": "用斯坦尼康跟拍走廊里人物的背后，平稳无晃动。", "zh-Hant": "用 Steadicam 跟在走過走廊的人物後方，不晃動、平順地移動。" },
+      "name": { "ja": "ステディカム", "en": "Steadicam", "es": "Steadicam", "zh-Hans": "斯坦尼康", "zh-Hant": "Steadicam", "ko": "스테디캠" },
+      "meaning": { "ja": "揺れを抑えてなめらかに移動", "en": "Smooth, floating movement with no shake", "es": "Un movimiento suave y flotante, sin temblor", "zh-Hans": "消除抖动，平稳流畅地移动", "zh-Hant": "不晃動、平順地移動", "ko": "흔들림 없이 떠다니듯 부드럽게 이동함" },
+      "ask": { "ja": "廊下を歩く人物の後ろをステディカムで。揺れなしでなめらかに。", "en": "Follow the person down the corridor with a Steadicam: smooth, no shake.", "es": "Sigue con Steadicam a la persona por el pasillo: suave, sin temblor.", "zh-Hans": "用斯坦尼康跟拍走廊里人物的背后，平稳无晃动。", "zh-Hant": "用 Steadicam 跟在走過走廊的人物後方，不晃動、平順地移動。", "ko": "복도를 걷는 인물을 스테디캠으로 따라가 줘. 흔들림 없이 부드럽게 움직여 줘." },
       "summary": {
         "ja": "細かい揺れのない、ゆっくり大きなうねりだけで前へ進み、歩く人物を追う。手持ちとの違いが分かる。",
-        "en": "The camera glides forward after a walking person with only a slow, gentle sway and no jitter, unlike handheld."
+        "en": "The camera glides forward after a walking person with only a slow, gentle sway and no jitter, unlike handheld.",
+        "ko": "걷는 사람 뒤로 카메라가 부드럽게 전진합니다. 핸드헬드와 달리 빠른 떨림 없이 느리고 완만하게 흔들립니다."
       },
       "spec": {
         "ja": [
@@ -161,22 +201,31 @@
           "Subject: a person walks 5 m ahead of the camera at the same speed; legs and arms take 5 strides per 4.7 s",
           "Trees: 3.6 m tall at x = -5 m and 3.2 m tall at x = +5 m, every 8 m (the two rows offset by 4 m); the mountains and sun move with the camera",
           "8 m is a multiple of the grid (2 m) and tree (8 m) spacing, so it loops seamlessly every 4.7 s; top-right readout shows \"STEADICAM\""
+        ],
+        "ko": [
+          "카메라: 일정한 1.7 m/s로 전진(4.7 s당 8 m). 높이 1.45 m, 피치 -0.02 rad, 이징 없음.",
+          "흔들림: 높이 ±3.5 cm(4.7 s당 2주기), 좌우 ±5 cm(1주기), 요 ±0.012 rad, 롤 ±0.006 rad. 모두 정수 주기의 느리고 넓은 사인파입니다(#034 Handheld는 빠르고 불규칙).",
+          "피사체: 카메라 5 m 앞에서 같은 속도로 걷습니다. 팔·다리는 4.7 s마다 5걸음 움직입니다.",
+          "나무: x = -5 m에 높이 3.6 m, x = +5 m에 높이 3.2 m이며 8 m 간격입니다(두 줄은 4 m 시차). 산과 해는 카메라와 함께 움직입니다.",
+          "8 m가 격자 2 m와 나무 8 m 간격의 배수여서 4.7 s마다 매끄럽게 반복됩니다. 오른쪽 위에는 STEADICAM을 표시합니다."
         ]
       },
       "use": {
         "ja": "歩きながらの移動を、映画のようになめらかに見せたいとき。",
-        "en": "To make a walking move look smooth and cinematic."
+        "en": "To make a walking move look smooth and cinematic.",
+        "ko": "걸으며 이동하는 촬영을 매끄럽고 영화처럼 보이게 할 때 사용합니다."
       },
       "tags": ["steadicam", "gimbal", "stabilizer", "smooth", "glide", "floating", "camera move"]
     },
     {
       "no": "06", "slug": "follow-shot", "category": "camera-movement",
-      "name": { "ja": "フォローショット", "en": "Follow shot", "es": "Follow shot (seguimiento por detrás)", "zh-Hans": "背后跟拍", "zh-Hant": "背後跟拍" },
-      "meaning": { "ja": "被写体の後ろについていく", "en": "Follow behind the subject as they move", "es": "Ir detrás del sujeto mientras se mueve", "zh-Hans": "跟在主体身后移动", "zh-Hant": "跟在移動的被攝體後方" },
-      "ask": { "ja": "森の中を歩く人物の背中をフォローショットで。少し遅れてついていって。", "en": "Follow shot behind the person walking through the woods, trailing a little behind.", "es": "Follow shot por detrás de la persona que camina por el bosque, siguiéndola un poco atrás.", "zh-Hans": "用背后跟拍拍摄在林中行走的人物背影，稍微落后一点跟着。", "zh-Hant": "用背後跟拍拍攝在森林裡走路的人物，稍微落後一點跟著走。" },
+      "name": { "ja": "フォローショット", "en": "Follow shot", "es": "Follow shot (seguimiento por detrás)", "zh-Hans": "背后跟拍", "zh-Hant": "背後跟拍", "ko": "팔로 샷" },
+      "meaning": { "ja": "被写体の後ろについていく", "en": "Follow behind the subject as they move", "es": "Ir detrás del sujeto mientras se mueve", "zh-Hans": "跟在主体身后移动", "zh-Hant": "跟在移動的被攝體後方", "ko": "움직이는 피사체를 뒤에서 따라감" },
+      "ask": { "ja": "森の中を歩く人物の背中をフォローショットで。少し遅れてついていって。", "en": "Follow shot behind the person walking through the woods, trailing a little behind.", "es": "Follow shot por detrás de la persona que camina por el bosque, siguiéndola un poco atrás.", "zh-Hans": "用背后跟拍拍摄在林中行走的人物背影，稍微落后一点跟着。", "zh-Hant": "用背後跟拍拍攝在森林裡走路的人物，稍微落後一點跟著走。", "ko": "숲속을 걷는 인물을 조금 떨어진 뒤에서 팔로 샷으로 따라가 줘." },
       "summary": {
         "ja": "蛇行して歩く人物の後ろを、同じ道筋で少し遅れてついていく。人物は中央付近に留まり、背中が見える。",
-        "en": "The camera trails a weaving walker along the same path a few metres behind; the person stays near the centre, seen from the back."
+        "en": "The camera trails a weaving walker along the same path a few metres behind; the person stays near the centre, seen from the back.",
+        "ko": "구불구불 걷는 사람을 몇 미터 뒤에서 같은 경로로 따라가며 뒷모습이 화면 중앙 부근에 머뭅니다."
       },
       "spec": {
         "ja": [
@@ -192,22 +241,31 @@
           "Timing: 0.3 s to 4.2 s (3.9 s), cubic ease-in-out (about cubic-bezier(0.65,0,0.35,1)); legs and arms swing by sin(s×30)×0.42 rad",
           "The person stays near the centre of frame, seen from behind; posts and a rock beside the path sweep past in the foreground (#029 Tracking shot runs alongside)",
           "Return: cross-fade back to the start over the last 0.5 s (one pass = 4.7 s); top-right readout shows the distance to the person (FOLLOW 3.6–3.9m)"
+        ],
+        "ko": [
+          "경로: 사람이 x = 1.8·sin(2.2s), 깊이 z = 4 + 9s(s는 0부터 1) 곡선을 따라 거리 4 m에서 13 m로 걷습니다.",
+          "카메라: 같은 곡선의 s-0.4 위치(약 3.6–3.9 m 뒤)에서 항상 사람을 향합니다. yaw = atan2(person x - camera x, person z - camera z), 높이 1.5 m.",
+          "시간: 0.3 s부터 4.2 s까지(3.9 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)). 팔·다리는 sin(s×30)×0.42 rad로 흔들립니다.",
+          "사람의 뒷모습은 중앙 부근에 있고 길 옆 기둥·바위가 전경을 지나갑니다(#029 Tracking shot은 옆에서 나란히 이동).",
+          "복귀: 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s). 오른쪽 위에 FOLLOW 3.6–3.9m를 표시합니다."
         ]
       },
       "use": {
         "ja": "人物と一緒に場所へ入っていく感じを出すとき、ゲームのような三人称視点。",
-        "en": "To enter a place together with a character, or for a third-person, game-like view."
+        "en": "To enter a place together with a character, or for a third-person, game-like view.",
+        "ko": "인물과 함께 장소에 들어가거나 게임 같은 3인칭 시점을 만들 때 사용합니다."
       },
       "tags": ["follow shot", "follow", "behind", "third person", "trail", "walk", "camera move"]
     },
     {
       "no": "07", "slug": "locked-off-shot", "category": "camera-movement",
-      "name": { "ja": "ロックオフ", "en": "Locked-off shot", "es": "Plano fijo (locked-off shot)", "zh-Hans": "固定镜头", "zh-Hant": "固定鏡頭" },
-      "meaning": { "ja": "カメラは固定で被写体だけ動く", "en": "Camera fixed; only the subject moves", "es": "La cámara queda fija; solo se mueve el sujeto", "zh-Hans": "相机固定不动，只有主体移动", "zh-Hant": "攝影機固定，只有被攝體在動" },
-      "ask": { "ja": "交差点をロックオフで。カメラは三脚で固定して、人や車だけが通り過ぎるように。", "en": "Locked-off shot of the crossing: camera fixed on a tripod, only the people and cars pass through.", "es": "Plano fijo de la intersección: la cámara fija en un trípode, y que solo pasen las personas y los carros.", "zh-Hans": "用固定镜头拍十字路口：相机固定在三脚架上，只有行人和车辆经过。", "zh-Hant": "十字路口用固定鏡頭拍：攝影機架在三腳架上固定不動，只有行人和車輛經過。" },
+      "name": { "ja": "ロックオフ", "en": "Locked-off shot", "es": "Plano fijo (locked-off shot)", "zh-Hans": "固定镜头", "zh-Hant": "固定鏡頭", "ko": "고정 샷" },
+      "meaning": { "ja": "カメラは固定で被写体だけ動く", "en": "Camera fixed; only the subject moves", "es": "La cámara queda fija; solo se mueve el sujeto", "zh-Hans": "相机固定不动，只有主体移动", "zh-Hant": "攝影機固定，只有被攝體在動", "ko": "카메라는 고정하고 피사체만 움직임" },
+      "ask": { "ja": "交差点をロックオフで。カメラは三脚で固定して、人や車だけが通り過ぎるように。", "en": "Locked-off shot of the crossing: camera fixed on a tripod, only the people and cars pass through.", "es": "Plano fijo de la intersección: la cámara fija en un trípode, y que solo pasen las personas y los carros.", "zh-Hans": "用固定镜头拍十字路口：相机固定在三脚架上，只有行人和车辆经过。", "zh-Hant": "十字路口用固定鏡頭拍：攝影機架在三腳架上固定不動，只有行人和車輛經過。", "ko": "횡단보도를 고정 샷으로 촬영해 줘. 카메라는 삼각대에 고정하고 사람과 차만 지나가게 해 줘." },
       "summary": {
         "ja": "三脚で固定したカメラの前を人物が横切り、奥を車が通る。カメラは1pxも動かない。",
-        "en": "A person crosses in front of a tripod-fixed camera and a car passes behind; the camera does not move by a pixel."
+        "en": "A person crosses in front of a tripod-fixed camera and a car passes behind; the camera does not move by a pixel.",
+        "ko": "삼각대에 고정한 카메라 앞을 사람이 건너고 뒤로 자동차가 지나갑니다. 카메라는 한 픽셀도 움직이지 않습니다."
       },
       "spec": {
         "ja": [
@@ -223,22 +281,31 @@
           "A grey car crosses right to left 15 m away (x = +16 m → -16 m in 4.7 s)",
           "Both start and end outside the frame, so it loops seamlessly every 4.7 s",
           "A grey tripod mark at bottom left; top-right readout shows \"LOCKED\" (#040 Freeze frame stops the footage time; here time runs and only the camera is still)"
+        ],
+        "ko": [
+          "카메라: 완전 고정(높이 1.4 m, 정면, 초점거리 330 px). 피사체만 움직입니다.",
+          "피사체: 6.5 m 앞의 사람이 왼쪽에서 오른쪽으로 등속 이동합니다(4.7 s에 x = -6.2 m → +6.2 m). 팔·다리는 sin(u×7)×0.42 rad입니다.",
+          "회색 자동차가 15 m 거리에서 오른쪽에서 왼쪽으로 이동합니다(4.7 s에 x = +16 m → -16 m).",
+          "둘 다 프레임 밖에서 시작하고 끝나므로 4.7 s마다 매끄럽게 반복됩니다.",
+          "왼쪽 아래에 회색 삼각대 표시, 오른쪽 위에 LOCKED를 표시합니다(#040 Freeze frame은 영상 시간을 멈추지만 여기서는 시간은 흐르고 카메라만 정지)."
         ]
       },
       "use": {
         "ja": "動きの対比で被写体を目立たせるとき、定点観測、タイムラプスや合成の土台にするとき。",
-        "en": "To make the subject stand out by contrast, for fixed-point observation, or as a base for time-lapse and compositing."
+        "en": "To make the subject stand out by contrast, for fixed-point observation, or as a base for time-lapse and compositing.",
+        "ko": "움직이는 피사체를 돋보이게 하거나 고정 관찰·타임랩스·합성의 바탕에 사용합니다."
       },
       "tags": ["locked-off", "locked off", "static shot", "fixed camera", "tripod", "static", "still camera"]
     },
     {
       "no": "08", "slug": "fly-through", "category": "camera-movement",
-      "name": { "ja": "フライスルー", "en": "Fly-through", "es": "Fly-through (vuelo a través)", "zh-Hans": "穿越镜头", "zh-Hant": "Fly-through 穿越鏡頭" },
-      "meaning": { "ja": "窓や扉を通り抜けて進む", "en": "Fly through an opening into the next space", "es": "Atravesar una abertura volando hacia el espacio siguiente", "zh-Hans": "穿过窗户或门进入下一个空间", "zh-Hant": "穿過窗戶或門，進入下一個空間" },
-      "ask": { "ja": "窓からフライスルーで部屋の中へ入って、テーブルの上まで寄って。", "en": "Fly-through from the window into the room and over to the table.", "es": "Fly-through desde la ventana hacia adentro del cuarto y hasta la mesa.", "zh-Hans": "用穿越镜头从窗户进入房间，一直推到桌子上方。", "zh-Hant": "用 Fly-through 穿越鏡頭從窗戶飛進房間，一路靠近到桌子上方。" },
+      "name": { "ja": "フライスルー", "en": "Fly-through", "es": "Fly-through (vuelo a través)", "zh-Hans": "穿越镜头", "zh-Hant": "Fly-through 穿越鏡頭", "ko": "플라이 스루" },
+      "meaning": { "ja": "窓や扉を通り抜けて進む", "en": "Fly through an opening into the next space", "es": "Atravesar una abertura volando hacia el espacio siguiente", "zh-Hans": "穿过窗户或门进入下一个空间", "zh-Hant": "穿過窗戶或門，進入下一個空間", "ko": "열린 공간을 날아서 통과해 다음 공간으로 들어감" },
+      "ask": { "ja": "窓からフライスルーで部屋の中へ入って、テーブルの上まで寄って。", "en": "Fly-through from the window into the room and over to the table.", "es": "Fly-through desde la ventana hacia adentro del cuarto y hasta la mesa.", "zh-Hans": "用穿越镜头从窗户进入房间，一直推到桌子上方。", "zh-Hant": "用 Fly-through 穿越鏡頭從窗戶飛進房間，一路靠近到桌子上方。", "ko": "창문을 지나 방 안으로 들어와 탁자까지 이동하는 플라이 스루로 촬영해 줘." },
       "summary": {
         "ja": "窓のあいた壁へ向かって進み、窓を通り抜けて向こう側の場所へ出る。",
-        "en": "The camera flies toward a wall with a window, passes through the opening and comes out into the place beyond."
+        "en": "The camera flies toward a wall with a window, passes through the opening and comes out into the place beyond.",
+        "ko": "카메라가 창문 있는 벽으로 다가가 창문을 통과하고 너머 공간으로 나옵니다."
       },
       "spec": {
         "ja": [
@@ -256,22 +323,32 @@
           "Pass-through: the wall stops being drawn 0.25 m in front of the camera; by then the window edge is outside the frame (half-width about 1580 px), so it vanishes unseen",
           "After the pass the place beyond fills the frame and the camera closes to 2 m from the person (#035 FPV drone shot keeps weaving between trees)",
           "Return: hold 3.6–4.2 s, then cross-fade back to the start over the last 0.5 s; top-right readout shows the distance to the window (\"窓まで 8.0m\" → \"通過\", passed)"
+        ],
+        "ko": [
+          "카메라: 0 m → 12.5 m 전진(높이 1.3 m, 방향 고정). 8 m 앞의 창문 있는 벽을 통과합니다.",
+          "시간: 0.5 s부터 3.6 s까지(3.1 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).",
+          "벽: 너비 80 m·높이 14 m의 옅은 회색 평면에 너비 2.4 m·높이 2.2 m 창문(창턱 높이 0.15 m). 창으로 사람(오른쪽 0.3 m, 거리 14.5 m)·나무·건물·산이 보입니다.",
+          "통과: 카메라 앞 0.25 m에서 벽을 그리지 않습니다. 그때 창 가장자리는 이미 화면 밖(반너비 약 1580 px)이므로 사라지는 것이 보이지 않습니다.",
+          "통과 후 너머 공간이 화면을 채우고 카메라가 사람과의 거리 2 m까지 다가갑니다(#035 FPV drone shot은 나무 사이를 계속 지그재그로 이동).",
+          "복귀: 3.6–4.2 s에 정지한 뒤 마지막 0.5 s에 크로스페이드합니다. 오른쪽 위 창문 거리 표시는 “窓まで 8.0m” → “通過”(통과)입니다."
         ]
       },
       "use": {
         "ja": "建物の中へ入る導入、場所から場所への移動を1つの動きで見せるとき。",
-        "en": "To enter a building as an opening move, or to travel from one place to another in a single move."
+        "en": "To enter a building as an opening move, or to travel from one place to another in a single move.",
+        "ko": "건물 안으로 들어가는 도입부나 한 번의 이동으로 공간을 연결할 때 사용합니다."
       },
       "tags": ["fly-through", "flythrough", "through the window", "pass through", "drone", "interior", "camera move"]
     },
     {
       "no": "09", "slug": "low-angle", "category": "angles-framing",
-      "name": { "ja": "ローアングル", "en": "Low angle", "es": "Contrapicado (low angle)", "zh-Hans": "低角度镜头", "zh-Hant": "仰角鏡頭" },
-      "meaning": { "ja": "低い位置から見上げて撮る", "en": "Shoot from low down, looking up", "es": "Grabar desde abajo, mirando hacia arriba", "zh-Hans": "从低处向上拍", "zh-Hant": "從低處往上拍" },
-      "ask": { "ja": "ヒーローの登場はローアングルで。地面近くから見上げて。", "en": "Shoot the hero's entrance from a low angle, looking up from near the ground.", "es": "Graba la entrada del héroe en contrapicado, mirando hacia arriba desde cerca del suelo.", "zh-Hans": "英雄登场用低角度镜头，从贴近地面处向上拍。", "zh-Hant": "英雄登場用仰角鏡頭，從靠近地面的位置往上拍。" },
+      "name": { "ja": "ローアングル", "en": "Low angle", "es": "Contrapicado (low angle)", "zh-Hans": "低角度镜头", "zh-Hant": "仰角鏡頭", "ko": "로우 앵글" },
+      "meaning": { "ja": "低い位置から見上げて撮る", "en": "Shoot from low down, looking up", "es": "Grabar desde abajo, mirando hacia arriba", "zh-Hans": "从低处向上拍", "zh-Hant": "從低處往上拍", "ko": "낮은 위치에서 위로 올려다보며 촬영함" },
+      "ask": { "ja": "ヒーローの登場はローアングルで。地面近くから見上げて。", "en": "Shoot the hero's entrance from a low angle, looking up from near the ground.", "es": "Graba la entrada del héroe en contrapicado, mirando hacia arriba desde cerca del suelo.", "zh-Hans": "英雄登场用低角度镜头，从贴近地面处向上拍。", "zh-Hant": "英雄登場用仰角鏡頭，從靠近地面的位置往上拍。", "ko": "주인공이 등장하는 장면을 지면 가까이에서 올려다보는 로우 앵글로 촬영해 줘." },
       "summary": {
         "ja": "カメラを地面近くまで下げて見上げる。人物が大きく、建物が高くそびえて見える。",
-        "en": "The camera drops to near the ground and looks up; the person looks big and the buildings tower."
+        "en": "The camera drops to near the ground and looks up; the person looks big and the buildings tower.",
+        "ko": "카메라가 지면 가까이 내려가 위를 보면서 사람은 커 보이고 건물은 높이 솟아 보입니다."
       },
       "spec": {
         "ja": [
@@ -287,22 +364,31 @@
           "Subject: a person stands still 4.5 m ahead; an 11.8 m tower stands 3 m left, 22 m away. As the camera looks up, person and tower stretch upward and the horizon drops",
           "Hold: stays at the low angle from 2.2 s to 4.2 s (time to read the composition itself)",
           "Return: cross-fade back to eye level over the last 0.5 s (one pass = 4.7 s); top-right readout shows angle and height (↗ 0° · 1.5m → ↗ 18° · 0.4m)"
+        ],
+        "ko": [
+          "카메라: 높이 1.5 m → 0.35 m, 피치 0 → +0.32 rad(약 18° 위). 전후 이동은 없습니다.",
+          "시간: 0.6 s부터 2.2 s까지(1.6 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).",
+          "피사체: 사람이 4.5 m 앞에 서 있고 높이 11.8 m의 탑은 왼쪽 3 m, 거리 22 m입니다. 위를 보면서 사람과 탑은 위로 길어지고 수평선은 내려갑니다.",
+          "정지: 2.2–4.2 s에 낮은 앵글을 유지하여 구도를 볼 시간을 줍니다.",
+          "복귀: 마지막 0.5 s 동안 눈높이로 크로스페이드합니다(한 번 = 4.7 s). 오른쪽 위 각도·높이는 ↗ 0° · 1.5m → ↗ 18° · 0.4m입니다."
         ]
       },
       "use": {
         "ja": "人物を強く・大きく見せたいとき、建物の高さを強調するとき。",
-        "en": "To make a person look powerful or large, or to emphasise the height of a building."
+        "en": "To make a person look powerful or large, or to emphasise the height of a building.",
+        "ko": "사람을 강하고 크게 보이게 하거나 건물 높이를 강조할 때 사용합니다."
       },
       "tags": ["low angle", "worm's eye", "look up", "from below", "power", "heroic", "angle"]
     },
     {
       "no": "10", "slug": "high-angle", "category": "angles-framing",
-      "name": { "ja": "ハイアングル", "en": "High angle", "es": "Picado (high angle)", "zh-Hans": "高角度镜头", "zh-Hant": "俯角鏡頭" },
-      "meaning": { "ja": "高い位置から見下ろして撮る", "en": "Shoot from above, looking down", "es": "Grabar desde arriba, mirando hacia abajo", "zh-Hans": "从高处向下拍", "zh-Hant": "從高處往下拍" },
-      "ask": { "ja": "迷子の場面はハイアングルで。少し上から見下ろして小さく見せて。", "en": "Use a high angle for the lost-child scene, looking down from above so they look small.", "es": "Usa un picado para la escena del niño perdido, mirando desde arriba para que se vea pequeño.", "zh-Hans": "迷路孩子的场景用高角度镜头，从稍高处向下拍，让孩子显得很小。", "zh-Hant": "迷路小孩的場景用俯角鏡頭，從稍高的地方往下拍，讓他看起來很渺小。" },
+      "name": { "ja": "ハイアングル", "en": "High angle", "es": "Picado (high angle)", "zh-Hans": "高角度镜头", "zh-Hant": "俯角鏡頭", "ko": "하이 앵글" },
+      "meaning": { "ja": "高い位置から見下ろして撮る", "en": "Shoot from above, looking down", "es": "Grabar desde arriba, mirando hacia abajo", "zh-Hans": "从高处向下拍", "zh-Hant": "從高處往下拍", "ko": "높은 위치에서 아래를 내려다보며 촬영함" },
+      "ask": { "ja": "迷子の場面はハイアングルで。少し上から見下ろして小さく見せて。", "en": "Use a high angle for the lost-child scene, looking down from above so they look small.", "es": "Usa un picado para la escena del niño perdido, mirando desde arriba para que se vea pequeño.", "zh-Hans": "迷路孩子的场景用高角度镜头，从稍高处向下拍，让孩子显得很小。", "zh-Hant": "迷路小孩的場景用俯角鏡頭，從稍高的地方往下拍，讓他看起來很渺小。", "ko": "길을 잃은 아이 장면은 하이 앵글로 촬영해 줘. 위에서 내려다봐 아이가 작아 보이게 해 줘." },
       "summary": {
         "ja": "カメラを高い位置へ上げて見下ろす。人物が小さく、地面が画面の大半を占める。",
-        "en": "The camera rises and looks down; the person looks small and the ground fills most of the frame."
+        "en": "The camera rises and looks down; the person looks small and the ground fills most of the frame.",
+        "ko": "카메라가 올라가 아래를 보면서 사람은 작아지고 지면이 화면 대부분을 채웁니다."
       },
       "spec": {
         "ja": [
@@ -318,22 +404,31 @@
           "Subject: a person stands still 5 m ahead; as the camera looks down they shrink and move lower, the ground grid fills most of the frame and the horizon leaves at the top",
           "Hold: stays at the high angle from 2.2 s to 4.2 s (#031 Crane up keeps rising to 9 m; 13 Bird's-eye view looks straight down at 90°)",
           "Return: cross-fade back to eye level over the last 0.5 s (one pass = 4.7 s); top-right readout shows angle and height (↘ 0° · 1.5m → ↘ 29° · 4.5m)"
+        ],
+        "ko": [
+          "카메라: 높이 1.5 m → 4.5 m, 피치 0 → -0.5 rad(약 29° 아래). 전후 이동은 없습니다.",
+          "시간: 0.6 s부터 2.2 s까지(1.6 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).",
+          "피사체: 사람이 5 m 앞에 서 있습니다. 아래를 보면서 사람이 작아져 아래로 내려가고 지면 격자가 대부분을 채우며 수평선은 위로 나갑니다.",
+          "정지: 2.2–4.2 s에 높은 앵글을 유지합니다(#031 Crane up은 9 m까지 계속 상승, 13 Bird’s-eye view는 90° 수직으로 내려다봄).",
+          "복귀: 마지막 0.5 s 동안 눈높이로 크로스페이드합니다(한 번 = 4.7 s). 오른쪽 위 각도·높이는 ↘ 0° · 1.5m → ↘ 29° · 4.5m입니다."
         ]
       },
       "use": {
         "ja": "人物を弱く・小さく見せたいとき、状況を俯瞰で説明するとき。",
-        "en": "To make a person look vulnerable or small, or to explain a situation from above."
+        "en": "To make a person look vulnerable or small, or to explain a situation from above.",
+        "ko": "사람을 작고 약하게 보이게 하거나 위에서 상황을 설명할 때 사용합니다."
       },
       "tags": ["high angle", "look down", "from above", "overhead", "vulnerable", "angle"]
     },
     {
       "no": "11", "slug": "pov-shot", "category": "angles-framing",
-      "name": { "ja": "POVショット", "en": "POV shot", "es": "Plano subjetivo (POV)", "zh-Hans": "POV 镜头", "zh-Hant": "POV 主觀鏡頭" },
-      "meaning": { "ja": "登場人物の目線で見る", "en": "See through a character's eyes", "es": "Ver a través de los ojos de un personaje", "zh-Hans": "以角色的视线观看", "zh-Hant": "透過角色的眼睛看" },
-      "ask": { "ja": "ドアを開けて部屋に入る瞬間はPOVショットで。本人の目線で。", "en": "The moment of opening the door and entering the room as a POV shot, through their eyes.", "es": "El momento de abrir la puerta y entrar al cuarto en plano subjetivo, a través de sus ojos.", "zh-Hans": "开门走进房间的那一刻用 POV 镜头，以角色本人的视线拍摄。", "zh-Hant": "打開門走進房間的那一刻用 POV 主觀鏡頭，以本人的視線拍攝。" },
+      "name": { "ja": "POVショット", "en": "POV shot", "es": "Plano subjetivo (POV)", "zh-Hans": "POV 镜头", "zh-Hant": "POV 主觀鏡頭", "ko": "시점 샷(POV)" },
+      "meaning": { "ja": "登場人物の目線で見る", "en": "See through a character's eyes", "es": "Ver a través de los ojos de un personaje", "zh-Hans": "以角色的视线观看", "zh-Hant": "透過角色的眼睛看", "ko": "등장인물의 눈으로 보는 화면" },
+      "ask": { "ja": "ドアを開けて部屋に入る瞬間はPOVショットで。本人の目線で。", "en": "The moment of opening the door and entering the room as a POV shot, through their eyes.", "es": "El momento de abrir la puerta y entrar al cuarto en plano subjetivo, a través de sus ojos.", "zh-Hans": "开门走进房间的那一刻用 POV 镜头，以角色本人的视线拍摄。", "zh-Hant": "打開門走進房間的那一刻用 POV 主觀鏡頭，以本人的視線拍攝。", "ko": "문을 열고 방에 들어가는 순간을 인물의 눈으로 보는 시점 샷으로 촬영해 줘." },
       "summary": {
         "ja": "登場人物の目で見た画。歩く揺れと画面下の両手で一人称だと分かり、前の人物がこちらに手を振る。",
-        "en": "Seen through a character's eyes: the walking sway and the hands at the bottom say first person, and the person ahead waves at you."
+        "en": "Seen through a character's eyes: the walking sway and the hands at the bottom say first person, and the person ahead waves at you.",
+        "ko": "인물의 눈으로 봅니다. 걸음의 흔들림과 아래쪽 손이 1인칭임을 보여 주고 앞의 사람이 나를 향해 손을 흔듭니다."
       },
       "spec": {
         "ja": [
@@ -349,22 +444,31 @@
           "Hands: blue rounded hands at both bottom corners (±178 px from centre), a white phone in the right one; they move with the body, so the hands stay still and the world sways",
           "The other person, 7.5 m ahead, raises both arms and waves only from 1.6 s to 3.4 s (looking at you); two posts in the foreground",
           "Return: cross-fade back to the start over the last 0.5 s (one pass = 4.7 s); top-right readout shows \"POV\""
+        ],
+        "ko": [
+          "카메라: 눈높이 1.6 m에서 0 m → 3.2 m 전진합니다. 0.3–4.2 s(3.9 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).",
+          "걸음 흔들림: 높이 ±3 cm(4.7 s당 6주기), 롤 ±0.008 rad(3주기). 이동 중에만 적용합니다.",
+          "손: 아래 양 모서리에 파란 둥근 손(중앙에서 ±178 px), 오른손에 흰 휴대폰. 몸과 함께 움직여 손은 고정되고 세상이 흔들립니다.",
+          "7.5 m 앞의 상대는 1.6–3.4 s에만 양팔을 들고 나를 향해 흔듭니다. 전경에는 기둥 두 개가 있습니다.",
+          "복귀: 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s). 오른쪽 위에 POV를 표시합니다."
         ]
       },
       "use": {
         "ja": "観客に登場人物と同じ体験をさせたいとき、ゲームやVR風の見せ方。",
-        "en": "To put the viewer in the character's place, or for a game-like or VR-like feel."
+        "en": "To put the viewer in the character's place, or for a game-like or VR-like feel.",
+        "ko": "관객을 인물의 위치에 놓거나 게임·VR 느낌을 줄 때 사용합니다."
       },
       "tags": ["pov", "point of view", "first person", "subjective", "eyes", "hands", "angle"]
     },
     {
       "no": "12", "slug": "over-the-shoulder", "category": "angles-framing",
-      "name": { "ja": "オーバーザショルダー", "en": "Over-the-shoulder", "es": "Plano sobre el hombro (over-the-shoulder)", "zh-Hans": "过肩镜头", "zh-Hant": "過肩鏡頭" },
-      "meaning": { "ja": "肩越しに相手を撮る", "en": "Frame one person over another's shoulder", "es": "Encuadrar a una persona por encima del hombro de otra", "zh-Hans": "越过一人的肩膀拍另一人", "zh-Hant": "越過一個人的肩膀拍另一個人" },
-      "ask": { "ja": "会話は肩越しのオーバーザショルダーで。手前の肩は少しぼかして。", "en": "Shoot the conversation over the shoulder, with the foreground shoulder slightly out of focus.", "es": "Graba la conversación en plano sobre el hombro, con el hombro en primer plano un poco desenfocado.", "zh-Hans": "对话用过肩镜头拍摄，前景的肩膀稍微虚化。", "zh-Hant": "對話用過肩鏡頭拍，前景的肩膀稍微模糊。" },
+      "name": { "ja": "オーバーザショルダー", "en": "Over-the-shoulder", "es": "Plano sobre el hombro (over-the-shoulder)", "zh-Hans": "过肩镜头", "zh-Hant": "過肩鏡頭", "ko": "오버 더 숄더 샷" },
+      "meaning": { "ja": "肩越しに相手を撮る", "en": "Frame one person over another's shoulder", "es": "Encuadrar a una persona por encima del hombro de otra", "zh-Hans": "越过一人的肩膀拍另一人", "zh-Hant": "越過一個人的肩膀拍另一個人", "ko": "한 사람의 어깨 너머로 다른 사람을 담음" },
+      "ask": { "ja": "会話は肩越しのオーバーザショルダーで。手前の肩は少しぼかして。", "en": "Shoot the conversation over the shoulder, with the foreground shoulder slightly out of focus.", "es": "Graba la conversación en plano sobre el hombro, con el hombro en primer plano un poco desenfocado.", "zh-Hans": "对话用过肩镜头拍摄，前景的肩膀稍微虚化。", "zh-Hant": "對話用過肩鏡頭拍，前景的肩膀稍微模糊。", "ko": "대화를 오버 더 숄더 샷으로 촬영해 줘. 앞쪽 어깨는 살짝 흐리게 해 줘." },
       "summary": {
         "ja": "手前の人物の後頭部と肩を画面の端に入れ、その肩越しに相手を撮る。手前はぼけ、相手にピント。",
-        "en": "The back of one person's head and shoulder sit at the edge of frame and the other person is seen past them; the foreground is soft, the subject sharp."
+        "en": "The back of one person's head and shoulder sit at the edge of frame and the other person is seen past them; the foreground is soft, the subject sharp.",
+        "ko": "한 사람의 뒤통수와 어깨가 화면 가장자리를 차지하고 그 너머 상대를 봅니다. 전경은 흐리고 상대는 선명합니다."
       },
       "spec": {
         "ja": [
@@ -380,22 +484,31 @@
           "Camera: height 1.55 m, yaw +0.05 rad; pushes in slowly 0 m → 0.35 m from 0.5 s to 3.4 s (cubic ease-in-out (about cubic-bezier(0.65,0,0.35,1)))",
           "The other person sways arms and legs by 0.35·sin(u×5) rad, as if talking",
           "Return: hold 3.4–4.2 s, then cross-fade back to the start over the last 0.5 s; top-right readout shows \"OTS\""
+        ],
+        "ko": [
+          "구도: 앞사람의 회색 뒤통수·어깨(왼쪽 0.62 m, 거리 1.15 m)가 왼쪽 경계를 채웁니다. 파란 상대(오른쪽 0.32 m, 거리 3.1 m)는 어깨 너머로 보입니다.",
+          "초점: 전경 어깨에 2.6 px 블러, 상대는 선명하며 가슴 위로 잡습니다.",
+          "카메라: 높이 1.55 m, 요 +0.05 rad. 0.5–3.4 s에 0 m → 0.35 m 천천히 전진합니다(cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1)).",
+          "상대는 말하듯 팔·다리를 0.35·sin(u×5) rad로 흔듭니다.",
+          "복귀: 3.4–4.2 s에 정지하고 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다. 오른쪽 위에 OTS를 표시합니다."
         ]
       },
       "use": {
         "ja": "会話の場面で2人の位置関係を見せるとき、相手の表情に集中させるとき。",
-        "en": "To show who is facing whom in a conversation and to focus on the other person's expression."
+        "en": "To show who is facing whom in a conversation and to focus on the other person's expression.",
+        "ko": "대화에서 누가 누구를 마주 보는지 보여 주고 상대의 표정에 집중할 때 사용합니다."
       },
       "tags": ["over-the-shoulder", "ots", "dialogue", "conversation", "shoulder", "two shot", "angle"]
     },
     {
       "no": "13", "slug": "birds-eye-view", "category": "angles-framing",
-      "name": { "ja": "バーズアイ", "en": "Bird's-eye view", "es": "Plano cenital (bird's-eye view)", "zh-Hans": "鸟瞰镜头", "zh-Hant": "鳥瞰鏡頭" },
-      "meaning": { "ja": "真上から真下を見下ろす", "en": "Straight down from directly overhead", "es": "Directo hacia abajo, desde justo encima", "zh-Hans": "从正上方垂直向下拍", "zh-Hant": "從正上方垂直往下拍" },
-      "ask": { "ja": "交差点を真上からのバーズアイで。人と車が上から見た形で動くように。", "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top.", "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.", "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。", "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。" },
+      "name": { "ja": "バーズアイ", "en": "Bird's-eye view", "es": "Plano cenital (bird's-eye view)", "zh-Hans": "鸟瞰镜头", "zh-Hant": "鳥瞰鏡頭", "ko": "버즈 아이 뷰" },
+      "meaning": { "ja": "真上から真下を見下ろす", "en": "Straight down from directly overhead", "es": "Directo hacia abajo, desde justo encima", "zh-Hans": "从正上方垂直向下拍", "zh-Hant": "從正上方垂直往下拍", "ko": "바로 위에서 수직으로 내려다봄" },
+      "ask": { "ja": "交差点を真上からのバーズアイで。人と車が上から見た形で動くように。", "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top.", "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.", "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。", "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。", "ko": "교차로를 바로 위에서 내려다보는 버즈 아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘." },
       "summary": {
         "ja": "真上から真下を見下ろす。道・人・車・木がすべて上から見た形になり、上がるほど広い範囲が見える。",
-        "en": "Looking straight down from overhead: road, people, cars and trees appear as top-down shapes, and more comes into view as the camera rises."
+        "en": "Looking straight down from overhead: road, people, cars and trees appear as top-down shapes, and more comes into view as the camera rises.",
+        "ko": "카메라가 지면을 수직으로 내려다봅니다. 도로·사람·자동차·나무가 위에서 본 도형으로 보이며, 카메라가 높아질수록 더 넓은 영역이 드러납니다."
       },
       "spec": {
         "ja": [
@@ -413,22 +526,32 @@
           "Subjects: a person (head circle and shoulder ellipse) walks 5.2 m up the right side of the road, a car (1.8×4 m) drives 6.8 m down the left side; both move in proportion to the progress p",
           "As the camera rises everything shrinks and more of the ground comes into view (10 High angle looks down at a slant)",
           "Return: hold 3.4–4.2 s, then cross-fade back to the start over the last 0.5 s; top-right readout shows \"↓ 90° · 9m → 15m\""
+        ],
+        "ko": [
+          "카메라는 수직 아래를 향하고(피치 -π/2 = -90°), 원점 바로 위에서 높이 9 m → 15 m로 상승합니다.",
+          "타이밍: 0.5–3.4 s(2.9 s), cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1).",
+          "지면: 2 m 격자와 폭 3.2 m의 도로, 흰색 점선 중앙선. 나무 여섯 그루는 원, 건물 세 채는 위에서 본 사각형으로 표시합니다.",
+          "사람은 머리 원과 어깨 타원으로 표현하고 도로 오른쪽을 따라 5.2 m 걷습니다. 1.8×4 m 자동차는 왼쪽을 따라 반대 방향으로 6.8 m 이동합니다. 두 이동 모두 진행률 p에 비례합니다.",
+          "높이가 올라가면 모든 대상이 작아지고 더 넓은 지면이 보입니다. ‘10 High angle’은 비스듬히 내려다보는 구도입니다.",
+          "3.4–4.2 s 정지 후 마지막 0.5 s 동안 크로스페이드합니다. 상단 표시는 ‘↓90° · 9 m → 15 m’입니다."
         ]
       },
       "use": {
         "ja": "配置や動線を図のように見せたいとき、神の視点で俯瞰するとき。",
-        "en": "To show layout and paths like a diagram, or for a god's-eye overview."
+        "en": "To show layout and paths like a diagram, or for a god's-eye overview.",
+        "ko": "배치와 이동 경로를 도식처럼 보여 주거나 전지적 시점을 만들 때 사용합니다."
       },
       "tags": ["bird's-eye", "birds eye", "top-down", "overhead", "straight down", "aerial", "angle"]
     },
     {
       "no": "14", "slug": "deep-focus", "category": "angles-framing",
-      "name": { "ja": "ディープフォーカス", "en": "Deep focus", "es": "Foco profundo (deep focus)", "zh-Hans": "深焦镜头", "zh-Hant": "深焦" },
-      "meaning": { "ja": "手前から奥まで全部にピント", "en": "Near and far all in sharp focus", "es": "Todo nítido, de lo cercano a lo lejano", "zh-Hans": "从近处到远处全部清晰", "zh-Hant": "從前景到背景全部清楚對焦" },
-      "ask": { "ja": "手前のカップも奥の人物もはっきり見せたいので、ディープフォーカスで。", "en": "Deep focus, so the cup in front and the person behind are both sharp.", "es": "Foco profundo, para que la taza de adelante y la persona de atrás se vean nítidas.", "zh-Hans": "前景的杯子和后方的人物都要清晰，所以用深焦镜头。", "zh-Hant": "前景的杯子和後方的人物都要拍清楚，請用深焦。" },
+      "name": { "ja": "ディープフォーカス", "en": "Deep focus", "es": "Foco profundo (deep focus)", "zh-Hans": "深焦镜头", "zh-Hant": "深焦", "ko": "딥 포커스" },
+      "meaning": { "ja": "手前から奥まで全部にピント", "en": "Near and far all in sharp focus", "es": "Todo nítido, de lo cercano a lo lejano", "zh-Hans": "从近处到远处全部清晰", "zh-Hant": "從前景到背景全部清楚對焦", "ko": "가까운 곳부터 먼 곳까지 모두 선명하게 초점을 맞춤" },
+      "ask": { "ja": "手前のカップも奥の人物もはっきり見せたいので、ディープフォーカスで。", "en": "Deep focus, so the cup in front and the person behind are both sharp.", "es": "Foco profundo, para que la taza de adelante y la persona de atrás se vean nítidas.", "zh-Hans": "前景的杯子和后方的人物都要清晰，所以用深焦镜头。", "zh-Hant": "前景的杯子和後方的人物都要拍清楚，請用深焦。", "ko": "딥 포커스로 앞의 컵과 뒤의 인물이 모두 선명하게 나오게 해 줘." },
       "summary": {
         "ja": "手前の花から奥の人物・建物まで、同時に全部にピントが合っていく。",
-        "en": "From the flower in front to the person and buildings behind, everything comes into sharp focus at the same time."
+        "en": "From the flower in front to the person and buildings behind, everything comes into sharp focus at the same time.",
+        "ko": "앞쪽의 꽃부터 뒤쪽의 사람과 건물까지 여러 거리의 대상이 동시에 선명해집니다."
       },
       "spec": {
         "ja": [
@@ -444,22 +567,31 @@
           "Timing: 0.5 s to 3.4 s (2.9 s), cubic ease-in-out (about cubic-bezier(0.65,0,0.35,1))",
           "Focus markers: blue corner brackets on both the flower (half-width 46 px) and the person (half-width 30 px), opacity 0 → 1 as focus arrives",
           "Return: hold 3.4–4.2 s, then cross-fade back to the start over the last 0.5 s; top-right readout shows the aperture (f/1.8 → f/16)"
+        ],
+        "ko": [
+          "카메라는 높이 1.1 m에 고정합니다.",
+          "꽃은 왼쪽 0.75 m, 거리 2 m에 두고 블러를 5 → 0 px로 줄입니다. 뒤쪽 사람은 오른쪽 0.9 m, 거리 9 m에 두며, 사람·건물·산의 블러를 함께 6 → 0 px로 줄입니다. #033 Rack focus는 한쪽을 흐리게 만듭니다.",
+          "타이밍: 0.5–3.4 s(2.9 s), cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1).",
+          "꽃에는 반너비 46 px, 사람에는 반너비 30 px의 파란색 초점 괄호를 표시하고 불투명도를 0 → 1로 높입니다.",
+          "3.4–4.2 s 정지 후 마지막 0.5 s 동안 페이드합니다. 표시는 f/1.8 → f/16입니다."
         ]
       },
       "use": {
         "ja": "画面のどこを見てもよい場面、奥行きの中で複数の出来事を同時に見せるとき。",
-        "en": "When the viewer may look anywhere in the frame, or to show several things happening at different depths at once."
+        "en": "When the viewer may look anywhere in the frame, or to show several things happening at different depths at once.",
+        "ko": "서로 다른 거리에 있는 대상들을 동시에 읽을 수 있게 보여 줄 때 사용합니다."
       },
       "tags": ["deep focus", "depth of field", "everything sharp", "f/16", "small aperture", "pan focus", "focus"]
     },
     {
       "no": "15", "slug": "establishing-shot", "category": "angles-framing",
-      "name": { "ja": "エスタブリッシングショット", "en": "Establishing shot", "es": "Plano de establecimiento (establishing shot)", "zh-Hans": "定场镜头", "zh-Hant": "定場鏡頭" },
-      "meaning": { "ja": "場面の最初に場所を見せる引きの画", "en": "A wide opening shot that shows the place", "es": "Un plano abierto al inicio que muestra el lugar", "zh-Hans": "开场交代地点的远景", "zh-Hant": "場景一開始交代地點的遠景" },
-      "ask": { "ja": "冒頭は街全体が見えるエスタブリッシングショットから。場所の名前も出して。", "en": "Open with an establishing shot of the whole town, with the location name on screen.", "es": "Abre con un plano de establecimiento de todo el pueblo, con el nombre del lugar en pantalla.", "zh-Hans": "开头先用能看到整个城镇的定场镜头，同时显示地名。", "zh-Hant": "開場先用看得到整座城鎮的定場鏡頭，並打上地點名稱。" },
+      "name": { "ja": "エスタブリッシングショット", "en": "Establishing shot", "es": "Plano de establecimiento (establishing shot)", "zh-Hans": "定场镜头", "zh-Hant": "定場鏡頭", "ko": "설정 샷" },
+      "meaning": { "ja": "場面の最初に場所を見せる引きの画", "en": "A wide opening shot that shows the place", "es": "Un plano abierto al inicio que muestra el lugar", "zh-Hans": "开场交代地点的远景", "zh-Hant": "場景一開始交代地點的遠景", "ko": "장소를 소개하는 넓은 구도의 도입 샷" },
+      "ask": { "ja": "冒頭は街全体が見えるエスタブリッシングショットから。場所の名前も出して。", "en": "Open with an establishing shot of the whole town, with the location name on screen.", "es": "Abre con un plano de establecimiento de todo el pueblo, con el nombre del lugar en pantalla.", "zh-Hans": "开头先用能看到整个城镇的定场镜头，同时显示地名。", "zh-Hant": "開場先用看得到整座城鎮的定場鏡頭，並打上地點名稱。", "ko": "마을 전체를 보여 주는 설정 샷으로 시작하고, 화면에 장소 이름을 표시해 줘." },
       "summary": {
         "ja": "広角・高い位置から街全体を見せる引きの画。ゆっくり寄りながら、場所の表示が左下に出る。",
-        "en": "A wide, high view of the whole town; the camera pushes in slowly and a location caption appears at bottom left."
+        "en": "A wide, high view of the whole town; the camera pushes in slowly and a location caption appears at bottom left.",
+        "ko": "높고 넓은 구도로 도시 전체를 보여 주며 천천히 전진합니다. 왼쪽 아래에는 장소 설명이 나타납니다."
       },
       "spec": {
         "ja": [
@@ -475,22 +607,31 @@
           "Scene: eight city buildings 30 m away, a tower 16 m right and 36 m away, three clouds and mountains; a small person 1 m left, 12 m away gives the scale",
           "Location caption: from 0.9 s to 1.3 s a white card reading \"EXT. CITY – DAY\" (158×30 px, blue bar on its left) fades in at bottom left while moving up 8 px, then stays",
           "Return: cross-fade back to the start over the last 0.5 s (one pass = 4.7 s); top-right readout shows \"16mm WIDE\""
+        ],
+        "ko": [
+          "광각 초점 거리 220 px(표시 16 mm), 높이 4.5 m, 피치 -0.06 rad. 카메라는 -5 m → -2.5 m로 전진합니다.",
+          "타이밍: 0.3–4.2 s(3.9 s), cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1).",
+          "건물 여덟 채가 30 m 구간에 펼쳐집니다. 오른쪽의 높이 16 m 탑은 거리 36 m에 있고, 구름 세 개와 산을 배치합니다. 작은 사람은 왼쪽 1 m, 거리 12 m에 있습니다.",
+          "장소 설명은 0.9–1.3 s에 나타납니다. 158×30 px 흰색 카드와 파란 왼쪽 막대, ‘EXT. CITY – DAY’ 문구가 8 px 올라오며 페이드인한 뒤 유지됩니다.",
+          "4.7 s 반복의 마지막 0.5 s 동안 페이드합니다. 상단에는 ‘16 mm WIDE’를 표시합니다."
         ]
       },
       "use": {
         "ja": "場面の冒頭でどこにいるかを伝えるとき、場所や時間が変わったとき。",
-        "en": "At the start of a scene to say where we are, or whenever the place or time changes."
+        "en": "At the start of a scene to say where we are, or whenever the place or time changes.",
+        "ko": "장면이 벌어지는 장소를 소개하거나 시간·장소의 변화를 알릴 때 사용합니다."
       },
       "tags": ["establishing shot", "wide shot", "location", "opening", "scene setting", "aerial", "framing"]
     },
     {
       "no": "16", "slug": "extreme-close-up", "category": "angles-framing",
-      "name": { "ja": "エクストリームクローズアップ", "en": "Extreme close-up", "es": "Primerísimo primer plano (extreme close-up)", "zh-Hans": "大特写", "zh-Hant": "大特寫" },
-      "meaning": { "ja": "目や指先など一部だけを大写し", "en": "Fill the frame with one small detail", "es": "Llenar el cuadro con un detalle pequeño", "zh-Hans": "只放大眼睛或指尖等局部", "zh-Hant": "只把眼睛、指尖等局部拍滿畫面" },
-      "ask": { "ja": "涙がこぼれる瞬間は、目だけのエクストリームクローズアップで。", "en": "Extreme close-up on just the eye at the moment the tear falls.", "es": "Primerísimo primer plano solo del ojo en el momento en que cae la lágrima.", "zh-Hans": "眼泪落下的瞬间，用只拍眼睛的大特写。", "zh-Hant": "眼淚滑落的瞬間，用只拍眼睛的大特寫。" },
+      "name": { "ja": "エクストリームクローズアップ", "en": "Extreme close-up", "es": "Primerísimo primer plano (extreme close-up)", "zh-Hans": "大特写", "zh-Hant": "大特寫", "ko": "익스트림 클로즈업" },
+      "meaning": { "ja": "目や指先など一部だけを大写し", "en": "Fill the frame with one small detail", "es": "Llenar el cuadro con un detalle pequeño", "zh-Hans": "只放大眼睛或指尖等局部", "zh-Hant": "只把眼睛、指尖等局部拍滿畫面", "ko": "작은 부분 하나로 화면을 가득 채움" },
+      "ask": { "ja": "涙がこぼれる瞬間は、目だけのエクストリームクローズアップで。", "en": "Extreme close-up on just the eye at the moment the tear falls.", "es": "Primerísimo primer plano solo del ojo en el momento en que cae la lágrima.", "zh-Hans": "眼泪落下的瞬间，用只拍眼睛的大特写。", "zh-Hant": "眼淚滑落的瞬間，用只拍眼睛的大特寫。", "ko": "눈물이 떨어지는 순간 눈만 익스트림 클로즈업해 줘." },
       "summary": {
         "ja": "顔のクローズアップから、目だけが画面を埋めるまで寄る。",
-        "en": "From a close-up of the face to a frame filled by nothing but the eyes."
+        "en": "From a close-up of the face to a frame filled by nothing but the eyes.",
+        "ko": "얼굴 클로즈업에서 확대하여 눈이 화면을 가득 채우게 합니다."
       },
       "spec": {
         "ja": [
@@ -506,22 +647,31 @@
           "Face: a blue head (radius 0.16 m) with white eyes (ellipses 0.045×0.028 m), dark pupils (radius 0.016 m), highlights and white brows; it starts as a close-up of the whole face (head about 150 px across) and ends with only the eyes filling the frame",
           "Background: trees and buildings blurred 3 px, leaving the frame as the lens closes in",
           "Return: hold 3.4–4.2 s, then cross-fade back to the start over the last 0.5 s; top-right readout shows the focal length and the abbreviation (44mm CU → 148mm ECU)"
+        ],
+        "ko": [
+          "카메라는 얼굴의 오른쪽 눈을 향합니다. 눈은 중앙보다 왼쪽 0.06 m, 높이 1.66 m에 있으며, 카메라와 얼굴 중심 사이 거리는 1.3 m입니다. 카메라 위치는 고정합니다.",
+          "초점 거리는 610 → 2040 px(표시 44 mm → 148 mm, 약 3.3배)입니다. f = 610×(2040/610)^p이며, p는 0.5–3.4 s의 cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)) 진행률입니다.",
+          "파란 머리의 반지름은 0.16 m, 흰색 눈 타원은 0.045×0.028 m, 어두운 동공의 반지름은 0.016 m입니다. 흰색 하이라이트와 눈썹을 더합니다. 약 150 px 크기의 머리에서 눈만 보이는 구도로 확대합니다.",
+          "배경의 나무와 건물에는 3 px 블러를 적용하며, 확대할수록 화면 밖으로 사라집니다.",
+          "3.4–4.2 s 정지 후 마지막 0.5 s 동안 페이드합니다. 상단 표시는 ‘44 mm CU → 148 mm ECU’입니다."
         ]
       },
       "use": {
         "ja": "感情の一番の山場、小さな細部に注目させたいとき。",
-        "en": "For the emotional peak, or to make the viewer notice one small detail."
+        "en": "For the emotional peak, or to make the viewer notice one small detail.",
+        "ko": "감정이 최고조에 이르는 순간이나 아주 작은 세부에 집중할 때 사용합니다."
       },
       "tags": ["extreme close-up", "ecu", "close-up", "eye", "detail", "macro", "framing"]
     },
     {
       "no": "17", "slug": "insert-shot", "category": "transitions-editing",
-      "name": { "ja": "インサートショット", "en": "Insert shot", "es": "Inserto (insert shot)", "zh-Hans": "插入镜头", "zh-Hant": "插入鏡頭" },
-      "meaning": { "ja": "同じ場面の細部を差し込む", "en": "Cut in to a detail of the same scene", "es": "Cortar a un detalle de la misma escena", "zh-Hans": "插入同一场景中的细节", "zh-Hant": "插入同一場景的細節畫面" },
-      "ask": { "ja": "鍵を回すところはインサートショットで手元に寄って、すぐ戻して。", "en": "Insert shot of the hand turning the key, then straight back to the scene.", "es": "Inserto de la mano girando la llave, y de vuelta a la escena enseguida.", "zh-Hans": "转动钥匙时用插入镜头拍手部特写，然后马上切回。", "zh-Hant": "轉鑰匙的地方用插入鏡頭拍手部特寫，接著馬上回到原本的畫面。" },
+      "name": { "ja": "インサートショット", "en": "Insert shot", "es": "Inserto (insert shot)", "zh-Hans": "插入镜头", "zh-Hant": "插入鏡頭", "ko": "인서트 샷" },
+      "meaning": { "ja": "同じ場面の細部を差し込む", "en": "Cut in to a detail of the same scene", "es": "Cortar a un detalle de la misma escena", "zh-Hans": "插入同一场景中的细节", "zh-Hant": "插入同一場景的細節畫面", "ko": "같은 장면의 세부 모습을 끼워 넣음" },
+      "ask": { "ja": "鍵を回すところはインサートショットで手元に寄って、すぐ戻して。", "en": "Insert shot of the hand turning the key, then straight back to the scene.", "es": "Inserto de la mano girando la llave, y de vuelta a la escena enseguida.", "zh-Hans": "转动钥匙时用插入镜头拍手部特写，然后马上切回。", "zh-Hant": "轉鑰匙的地方用插入鏡頭拍手部特寫，接著馬上回到原本的畫面。", "ko": "열쇠를 돌리는 손의 인서트 샷을 넣은 뒤 바로 원래 장면으로 돌아가 줘." },
       "summary": {
         "ja": "人物の場面に、同じ場面の手元の時計の大写しを1.3秒だけ差し込み、元の画へ戻る。",
-        "en": "A big close-up of the watch on the person's wrist is cut into the scene for 1.3 s, then it returns to the same shot."
+        "en": "A big close-up of the watch on the person's wrist is cut into the scene for 1.3 s, then it returns to the same shot.",
+        "ko": "손목시계의 세부를 1.3초 동안 보여 준 뒤 같은 장면으로 돌아옵니다."
       },
       "spec": {
         "ja": [
@@ -537,22 +687,31 @@
           "Detail (INSERT): a big close-up of the wrist from the same scene; a blue sleeve (600×92 px, rotated -0.35 rad) on pale blue, a white dial (radius 58 px), dark hands and a blue second hand that makes one turn in 1.3 s",
           "Bottom strip: three sections A (grey), detail (blue), A (grey) with a playhead; what is cut in belongs to the same scene (21 Cutaway shows a different subject)",
           "Top-right readout shows \"SHOT A\" → \"INSERT\" → \"SHOT A\"; at 4.7 s it cuts straight back to the start"
+        ],
+        "ko": [
+          "1.6 s와 2.9 s에 전환 프레임 0개의 스트레이트 컷을 사용합니다. 세부 화면은 1.3 s 동안 유지됩니다.",
+          "장면 A: 높이 1.4 m에 고정한 카메라. 사람은 왼쪽 0.6 m, 거리 6 m에 있고 손목의 시계는 어두운 점으로 보입니다. 기둥은 오른쪽 2.2 m, 거리 4 m에 있습니다.",
+          "INSERT: 연한 파란 배경 위에 600×92 px 소매를 -0.35 rad 회전해 배치합니다. 시계판 반지름은 58 px, 시침·분침은 어두운 색이며, 파란 초침이 1.3 s에 한 바퀴 회전합니다.",
+          "하단 타임라인은 회색 A → 파란 세부 화면 → 회색 A이며 재생 헤드가 이동합니다. 같은 장면의 세부입니다(21 Cutaway는 다른 장면입니다).",
+          "상단은 ‘SHOT A → INSERT → SHOT A’로 바뀝니다. 4.7 s에 시작 장면으로 컷합니다."
         ]
       },
       "use": {
         "ja": "小さな物や手元の動作を見せるとき、重要な小道具を強調するとき。",
-        "en": "To show a small object or a hand action, or to point out an important prop."
+        "en": "To show a small object or a hand action, or to point out an important prop.",
+        "ko": "소품의 정보나 손으로 하는 행동을 자세히 보여 줄 때 사용합니다."
       },
       "tags": ["insert shot", "insert", "detail", "close-up", "cut in", "prop", "edit"]
     },
     {
       "no": "18", "slug": "morph-cut", "category": "transitions-editing",
-      "name": { "ja": "モーフカット", "en": "Morph cut", "es": "Morph cut", "zh-Hans": "变形剪切", "zh-Hant": "Morph Cut" },
-      "meaning": { "ja": "同じ画の間をなめらかにつなぐ", "en": "Blend two takes so the join disappears", "es": "Une dos tomas para que el corte desaparezca", "zh-Hans": "平滑衔接相同构图的两段画面", "zh-Hant": "把相同構圖的兩段平順接起來" },
-      "ask": { "ja": "インタビューの言い直しをモーフカットで消して、つなぎ目が見えないように。", "en": "Remove the repeated sentence in the interview with a morph cut, so the join is invisible.", "es": "Quita la frase repetida de la entrevista con un morph cut, para que no se note la unión.", "zh-Hans": "用变形剪切去掉采访中说错重来的部分，让接缝看不出来。", "zh-Hant": "請用 Morph Cut 剪掉訪談中重講的句子，讓接點看不出來。" },
+      "name": { "ja": "モーフカット", "en": "Morph cut", "es": "Morph cut", "zh-Hans": "变形剪切", "zh-Hant": "Morph Cut", "ko": "모프 컷" },
+      "meaning": { "ja": "同じ画の間をなめらかにつなぐ", "en": "Blend two takes so the join disappears", "es": "Une dos tomas para que el corte desaparezca", "zh-Hans": "平滑衔接相同构图的两段画面", "zh-Hant": "把相同構圖的兩段平順接起來", "ko": "두 테이크를 자연스럽게 합쳐 연결부를 감춤" },
+      "ask": { "ja": "インタビューの言い直しをモーフカットで消して、つなぎ目が見えないように。", "en": "Remove the repeated sentence in the interview with a morph cut, so the join is invisible.", "es": "Quita la frase repetida de la entrevista con un morph cut, para que no se note la unión.", "zh-Hans": "用变形剪切去掉采访中说错重来的部分，让接缝看不出来。", "zh-Hant": "請用 Morph Cut 剪掉訪談中重講的句子，讓接點看不出來。", "ko": "인터뷰에서 반복한 문장을 모프 컷으로 제거해 줘. 연결부가 드러나지 않게 해 줘." },
       "summary": {
         "ja": "同じ人物の2つのテイクを、位置と姿勢をなめらかに補間してつなぐ。ジャンプカットのように飛ばない。",
-        "en": "Two takes of the same person are joined by smoothly interpolating position and pose, so nothing jumps as in a jump cut."
+        "en": "Two takes of the same person are joined by smoothly interpolating position and pose, so nothing jumps as in a jump cut.",
+        "ko": "두 테이크 사이의 위치와 자세를 부드럽게 보간하여 점프 없이 연결합니다."
       },
       "spec": {
         "ja": [
@@ -568,22 +727,31 @@
           "Only during the morph a blur of sin(q×π)×2.2 px is applied to the whole frame to soften the join (#041 Jump cut lets the position jump)",
           "Bottom strip: take 1 (grey), morph (blue, narrow), take 2 (grey) with a playhead",
           "Return: cross-fade back to the start of take 1 over the last 0.5 s; top-right readout shows \"TAKE 1\" → \"MORPH\" → \"TAKE 2\""
+        ],
+        "ko": [
+          "테이크 1은 0–2.0 s이며 카메라 높이는 1.45 m로 고정합니다. 사람은 왼쪽 0.4 m, 거리 3.3 m, 팔다리 각도 -0.45 rad입니다. 테이크 2는 2.45 s부터 시작하며 오른쪽 0.35 m, 팔다리 각도 +0.55 rad입니다. 두 자세 모두 0.12·sin(t×3) rad로 흔들립니다.",
+          "모프 구간은 2.0–2.45 s(0.45 s), quadratic ease-in-out, 약 cubic-bezier(0.45,0,0.55,1)입니다. 위치를 보간하고 동일한 위치에서 두 자세를 크로스페이드합니다.",
+          "모프 구간에만 전체 프레임에 sin(q×π)×2.2 px 블러를 적용합니다. #041 Jump cut은 위치가 즉시 바뀝니다.",
+          "하단에는 회색 테이크 1, 좁은 파란 모프 구간, 회색 테이크 2를 표시합니다.",
+          "마지막 0.5 s 동안 테이크 1 시작 화면으로 페이드합니다. 상단 표시는 ‘TAKE 1 → MORPH → TAKE 2’입니다."
         ]
       },
       "use": {
         "ja": "インタビューや語りの間を詰めるとき、言い間違いを目立たずに消すとき。",
-        "en": "To tighten an interview or narration, or to remove a slip without drawing attention."
+        "en": "To tighten an interview or narration, or to remove a slip without drawing attention.",
+        "ko": "인터뷰에서 말실수나 불필요한 구간을 제거하고 자연스럽게 이어 붙일 때 사용합니다."
       },
       "tags": ["morph cut", "morph", "seamless", "interview", "talking head", "edit", "transition"]
     },
     {
       "no": "19", "slug": "fade-to-black", "category": "transitions-editing",
-      "name": { "ja": "フェードアウト", "en": "Fade to black", "es": "Fundido a negro (fade to black)", "zh-Hans": "淡出到黑场", "zh-Hant": "淡出至黑" },
-      "meaning": { "ja": "画面が暗くなって終わる", "en": "The picture darkens to black", "es": "La imagen se oscurece hasta quedar en negro", "zh-Hans": "画面逐渐变暗直至全黑", "zh-Hant": "畫面逐漸暗成全黑" },
-      "ask": { "ja": "場面の終わりは1秒のフェードアウトで黒へ。次の場面は黒から明けて。", "en": "End the scene with a 1-second fade to black, then fade in from black.", "es": "Cierra la escena con un fundido a negro de 1 segundo, y luego abre la siguiente desde negro.", "zh-Hans": "场景结尾用 1 s 淡出到黑场，下一场景再从黑场中淡入。", "zh-Hant": "場景結尾用 1 秒的淡出至黑，下一個場景再從黑畫面淡入。" },
+      "name": { "ja": "フェードアウト", "en": "Fade to black", "es": "Fundido a negro (fade to black)", "zh-Hans": "淡出到黑场", "zh-Hant": "淡出至黑", "ko": "페이드 투 블랙" },
+      "meaning": { "ja": "画面が暗くなって終わる", "en": "The picture darkens to black", "es": "La imagen se oscurece hasta quedar en negro", "zh-Hans": "画面逐渐变暗直至全黑", "zh-Hant": "畫面逐漸暗成全黑", "ko": "화면이 점점 어두워져 검은색이 됨" },
+      "ask": { "ja": "場面の終わりは1秒のフェードアウトで黒へ。次の場面は黒から明けて。", "en": "End the scene with a 1-second fade to black, then fade in from black.", "es": "Cierra la escena con un fundido a negro de 1 segundo, y luego abre la siguiente desde negro.", "zh-Hans": "场景结尾用 1 s 淡出到黑场，下一场景再从黑场中淡入。", "zh-Hant": "場景結尾用 1 秒的淡出至黑，下一個場景再從黑畫面淡入。", "ko": "장면을 1초의 페이드 투 블랙으로 끝낸 뒤, 검은 화면에서 다시 페이드 인해 줘." },
       "summary": {
         "ja": "画面全体が黒へ沈んで終わり、黒から次の場面が明けてくる。",
-        "en": "The whole picture sinks to black, and the next scene brightens out of the black."
+        "en": "The whole picture sinks to black, and the next scene brightens out of the black.",
+        "ko": "화면이 검게 사라진 뒤 다음 장면이 서서히 나타납니다."
       },
       "spec": {
         "ja": [
@@ -599,22 +767,31 @@
           "Fade in: from 3.1 s to 4.3 s (1.2 s) the black goes from 100% → 0 with the same easing",
           "Camera: fixed in both pictures (A at height 1.4 m; B at height 1.6 m, pitch +0.1 rad); the subjects do not move either",
           "Alternates A→B and B→A every 4.7 s (9.4 s for the round trip); top-right readout shows \"FADE OUT\" / \"FADE IN\"; the viewfinder marks stay over the black"
+        ],
+        "ko": [
+          "1.4–2.6 s(1.2 s)에 검정 rgb(20,20,24)의 불투명도를 0 → 100%로 높입니다. quadratic ease-in-out, 약 cubic-bezier(0.45,0,0.55,1).",
+          "2.6–3.1 s에는 완전히 검은 화면을 유지합니다. 2.9 s에 보이지 않는 스트레이트 컷으로 장면을 바꿉니다.",
+          "3.1–4.3 s(1.2 s)에 같은 이징으로 검정 불투명도를 100 → 0%로 줄입니다.",
+          "장면 A의 카메라는 높이 1.4 m, B는 높이 1.6 m와 피치 +0.1 rad로 고정합니다. 피사체는 움직이지 않습니다.",
+          "4.7 s마다 장면을 번갈아 보여 주며 왕복은 9.4 s입니다. 상단에는 ‘FADE OUT / IN’을 표시하고 뷰파인더는 검은 화면 위에 남습니다."
         ]
       },
       "use": {
         "ja": "章の区切り、時間の大きな経過、物語の終わり。",
-        "en": "For a chapter break, a long passage of time, or the end of a story."
+        "en": "For a chapter break, a long passage of time, or the end of a story.",
+        "ko": "챕터 구분, 시간 경과, 장면의 끝을 표현할 때 사용합니다."
       },
       "tags": ["fade to black", "fade out", "fade in", "black", "ending", "transition"]
     },
     {
       "no": "20", "slug": "iris-out", "category": "transitions-editing",
-      "name": { "ja": "アイリスアウト", "en": "Iris out", "es": "Iris out (cierre en iris)", "zh-Hans": "圈出", "zh-Hant": "Iris out 圓形收合" },
-      "meaning": { "ja": "丸い窓が閉じて暗くなる", "en": "A circle closes down to black", "es": "Un círculo se cierra hasta dejar todo en negro", "zh-Hans": "圆形窗口收拢，画面变黑", "zh-Hant": "圓形視窗縮小，畫面變黑" },
-      "ask": { "ja": "昔の映画風に、主人公を中心にアイリスアウトで閉じて終わって。", "en": "Old-film style: iris out, closing on the hero to end the scene.", "es": "Al estilo del cine antiguo: iris out, cerrando sobre el protagonista para terminar la escena.", "zh-Hans": "以老电影的风格，用圈出收拢到主角身上，结束这个场景。", "zh-Hant": "做成老電影的風格，以主角為中心用 Iris out 圓形收合，收成全黑後結束。" },
+      "name": { "ja": "アイリスアウト", "en": "Iris out", "es": "Iris out (cierre en iris)", "zh-Hans": "圈出", "zh-Hant": "Iris out 圓形收合", "ko": "아이리스 아웃" },
+      "meaning": { "ja": "丸い窓が閉じて暗くなる", "en": "A circle closes down to black", "es": "Un círculo se cierra hasta dejar todo en negro", "zh-Hans": "圆形窗口收拢，画面变黑", "zh-Hant": "圓形視窗縮小，畫面變黑", "ko": "원형으로 화면이 좁아지며 검은색으로 닫힘" },
+      "ask": { "ja": "昔の映画風に、主人公を中心にアイリスアウトで閉じて終わって。", "en": "Old-film style: iris out, closing on the hero to end the scene.", "es": "Al estilo del cine antiguo: iris out, cerrando sobre el protagonista para terminar la escena.", "zh-Hans": "以老电影的风格，用圈出收拢到主角身上，结束这个场景。", "zh-Hant": "做成老電影的風格，以主角為中心用 Iris out 圓形收合，收成全黑後結束。", "ko": "옛 영화처럼 주인공을 중심으로 원이 닫히는 아이리스 아웃으로 장면을 끝내 줘." },
       "summary": {
         "ja": "人物を中心に丸い窓が閉じて黒になり、次の場面は丸い窓が開いて現れる。",
-        "en": "A circle closes down on the person until the frame is black, then opens again on the next scene."
+        "en": "A circle closes down on the person until the frame is black, then opens again on the next scene.",
+        "ko": "원형 창이 닫히며 화면이 검게 되고, 다음 피사체를 중심으로 다시 열립니다."
       },
       "spec": {
         "ja": [
@@ -632,22 +809,32 @@
           "Iris in: from 3.1 s to 4.4 s (1.3 s) the circle grows from 0 to 340 px around the incoming picture's subject",
           "Edge: while the radius is at least 1 px, a 2 px blue circle marks the rim; the camera is fixed in both pictures",
           "Alternates A→B and B→A every 4.7 s (9.4 s for the round trip); top-right readout shows \"IRIS OUT\" / \"IRIS IN\""
+        ],
+        "ko": [
+          "아이리스 아웃은 1.3–2.7 s(1.4 s), 반지름 340 → 0 px입니다. quadratic ease-in-out, 약 cubic-bezier(0.45,0,0.55,1)을 사용하며 원 바깥은 #141418로 채웁니다.",
+          "원의 중심은 화면에 투영된 피사체 위치입니다. A의 사람 머리는 왼쪽 0.6 m, 높이 1.63 m, 거리 7 m입니다. B의 자동차는 오른쪽 1.2 m, 높이 0.9 m, 거리 9 m입니다.",
+          "2.7–3.1 s에는 검은 화면을 유지하고 2.9 s에 컷으로 장면을 바꿉니다.",
+          "아이리스 인은 3.1–4.4 s(1.3 s), 다음 피사체를 중심으로 반지름 0 → 340 px입니다.",
+          "반지름이 1 px 이상이면 2 px 파란 테두리를 표시합니다. 두 장면의 카메라는 고정합니다.",
+          "4.7 s마다 번갈아 전환하며 왕복은 9.4 s입니다. 상단 표시는 ‘IRIS OUT / IN’입니다."
         ]
       },
       "use": {
         "ja": "無声映画やアニメ風の終わり方、コミカルな区切り。",
-        "en": "For a silent-film or cartoon-style ending, or a playful break."
+        "en": "For a silent-film or cartoon-style ending, or a playful break.",
+        "ko": "무성영화나 만화처럼 장난스러운 장면 전환에 사용합니다."
       },
       "tags": ["iris out", "iris in", "iris wipe", "circle", "old film", "cartoon", "transition"]
     },
     {
       "no": "21", "slug": "cutaway", "category": "transitions-editing",
-      "name": { "ja": "カットアウェイ", "en": "Cutaway", "es": "Plano de recurso (cutaway)", "zh-Hans": "切出镜头", "zh-Hant": "Cutaway 切出鏡頭" },
-      "meaning": { "ja": "別の対象へ切り替えて戻る", "en": "Cut to something else, then back", "es": "Cortar a otra cosa y volver", "zh-Hans": "切到其他对象后再切回", "zh-Hant": "切到其他對象，再切回來" },
-      "ask": { "ja": "話している途中で客席の反応にカットアウェイして、また戻して。", "en": "Cut away to the audience reaction in the middle of the talk, then back.", "es": "A mitad de la charla, corta a un plano de recurso de la reacción del público y vuelve.", "zh-Hans": "讲话途中用切出镜头切到观众的反应，再切回来。", "zh-Hant": "講話講到一半，用 Cutaway 切出鏡頭切到觀眾的反應，再切回來。" },
+      "name": { "ja": "カットアウェイ", "en": "Cutaway", "es": "Plano de recurso (cutaway)", "zh-Hans": "切出镜头", "zh-Hant": "Cutaway 切出鏡頭", "ko": "컷어웨이" },
+      "meaning": { "ja": "別の対象へ切り替えて戻る", "en": "Cut to something else, then back", "es": "Cortar a otra cosa y volver", "zh-Hans": "切到其他对象后再切回", "zh-Hant": "切到其他對象，再切回來", "ko": "다른 대상을 잠깐 보여 준 뒤 원래 장면으로 돌아옴" },
+      "ask": { "ja": "話している途中で客席の反応にカットアウェイして、また戻して。", "en": "Cut away to the audience reaction in the middle of the talk, then back.", "es": "A mitad de la charla, corta a un plano de recurso de la reacción del público y vuelve.", "zh-Hans": "讲话途中用切出镜头切到观众的反应，再切回来。", "zh-Hant": "講話講到一半，用 Cutaway 切出鏡頭切到觀眾的反應，再切回來。", "ko": "발표 중간에 관객 반응으로 컷어웨이했다가 돌아와 줘." },
       "summary": {
         "ja": "話す人物の場面から、聞いている客席へ切り替えて戻る。差し込むのは別の対象。",
-        "en": "From the speaker to the listening audience and back; what is cut in is a different subject."
+        "en": "From the speaker to the listening audience and back; what is cut in is a different subject.",
+        "ko": "이야기하는 사람에서 관객의 반응으로 잠시 전환한 뒤 원래 장면으로 돌아옵니다."
       },
       "spec": {
         "ja": [
@@ -663,22 +850,31 @@
           "Other subject (CUTAWAY): the listening audience, five people 3.1–4.6 m away in blue and pale blue with both arms up, bouncing by |sin(t×9+i)|×5 cm; no background (a different place)",
           "Bottom strip: A (grey), other subject (blue), A (grey) with a playhead (17 Insert shot shows a detail of the same scene)",
           "Top-right readout shows \"SHOT A\" → \"CUTAWAY\" → \"SHOT A\"; at 4.7 s it cuts straight back to the start"
+        ],
+        "ko": [
+          "1.7 s에 다른 장면으로, 3.0 s에 원래 장면으로 전환 프레임 0개의 컷을 사용합니다. 다른 장면은 1.3 s 동안 보입니다.",
+          "장면 A: 카메라 높이 1.4 m로 고정. 거리 5.5 m의 사람이 말하며 팔다리를 0.45·sin(u×6) rad로 움직입니다. 회색 연단은 오른쪽 0.9 m에 있습니다.",
+          "관객 장면에는 거리 3.1–4.6 m에 파란색과 연한 파란색 사람 다섯 명을 배치합니다. 팔을 들고 |sin(t×9+i)|×5 cm만큼 뜁니다. 배경을 공유하지 않는 다른 장소입니다.",
+          "하단은 회색 A → 파란 다른 장면 → 회색 A이며 재생 헤드가 이동합니다. 17 Insert는 같은 장면의 세부를 보여 줍니다.",
+          "상단은 ‘SHOT A → CUTAWAY → SHOT A’입니다. 4.7 s에 시작 화면으로 컷합니다."
         ]
       },
       "use": {
         "ja": "反応を見せるとき、時間の省略や言い間違いのカットをごまかすとき。",
-        "en": "To show a reaction, or to hide a time skip or a removed slip."
+        "en": "To show a reaction, or to hide a time skip or a removed slip.",
+        "ko": "반응을 보여 주거나 원래 장면의 생략·말실수를 가릴 때 사용합니다."
       },
       "tags": ["cutaway", "reaction shot", "b-roll", "cut away", "audience", "edit"]
     },
     {
       "no": "22", "slug": "cross-cutting", "category": "transitions-editing",
-      "name": { "ja": "クロスカッティング", "en": "Cross-cutting", "es": "Montaje paralelo (cross-cutting)", "zh-Hans": "交叉剪辑", "zh-Hant": "交叉剪接" },
-      "meaning": { "ja": "同時に進む2つの場面を交互に", "en": "Alternate between two simultaneous scenes", "es": "Alternar entre dos escenas que pasan al mismo tiempo", "zh-Hans": "交替呈现同时发生的两个场景", "zh-Hant": "交替呈現同時發生的兩個場景" },
-      "ask": { "ja": "逃げる人と追う車をクロスカッティングで交互に。だんだん短く切って。", "en": "Cross-cut between the runner and the chasing car, with the cuts getting shorter.", "es": "Montaje paralelo entre la persona que corre y el carro que la persigue, con cortes cada vez más cortos.", "zh-Hans": "用交叉剪辑交替展示逃跑的人和追赶的车，镜头逐渐变短。", "zh-Hant": "逃跑的人和追趕的車用交叉剪接交替呈現，每個鏡頭越剪越短。" },
+      "name": { "ja": "クロスカッティング", "en": "Cross-cutting", "es": "Montaje paralelo (cross-cutting)", "zh-Hans": "交叉剪辑", "zh-Hant": "交叉剪接", "ko": "교차 편집" },
+      "meaning": { "ja": "同時に進む2つの場面を交互に", "en": "Alternate between two simultaneous scenes", "es": "Alternar entre dos escenas que pasan al mismo tiempo", "zh-Hans": "交替呈现同时发生的两个场景", "zh-Hant": "交替呈現同時發生的兩個場景", "ko": "동시에 일어나는 두 장면을 번갈아 보여 줌" },
+      "ask": { "ja": "逃げる人と追う車をクロスカッティングで交互に。だんだん短く切って。", "en": "Cross-cut between the runner and the chasing car, with the cuts getting shorter.", "es": "Montaje paralelo entre la persona que corre y el carro que la persigue, con cortes cada vez más cortos.", "zh-Hans": "用交叉剪辑交替展示逃跑的人和追赶的车，镜头逐渐变短。", "zh-Hant": "逃跑的人和追趕的車用交叉剪接交替呈現，每個鏡頭越剪越短。", "ko": "달리는 사람과 뒤쫓는 자동차를 교차 편집해 줘. 컷 길이가 점점 짧아지게 해 줘." },
       "summary": {
         "ja": "同時に進む2つの場面（走る人物と走る車）を、だんだん短く交互に見せる。",
-        "en": "Two scenes happening at the same time, a runner and a car, alternate in shorter and shorter cuts."
+        "en": "Two scenes happening at the same time, a runner and a car, alternate in shorter and shorter cuts.",
+        "ko": "달리는 사람과 다가오는 자동차를 점점 짧은 간격으로 번갈아 보여 주어 긴장감을 높입니다."
       },
       "spec": {
         "ja": [
@@ -696,22 +892,32 @@
           "Camera: A at height 1.3 m, fixed, with four posts in the foreground; B at height 1.6 m, pitch +0.06 rad, fixed, with the city and sun",
           "Bottom strip: eight alternating sections A (grey) and B (blue) with a playhead; the last 0.3 s cross-fades back to the start of A",
           "Top-right readout shows \"SCENE A\" / \"SCENE B\""
+        ],
+        "ko": [
+          "두 장면은 같은 시계를 공유합니다. A의 달리는 사람은 왼쪽 0.3 m에서 깊이 15 → 4.5 m로 이동하며 팔다리는 u×12로 움직입니다. B의 자동차는 도시의 오른쪽 1 m에서 깊이 17 → 4.5 m로 이동합니다. 두 이동 모두 4.7 s 동안 진행됩니다.",
+          "컷 시점은 0 / 1.1 / 2.0 / 2.7 / 3.3 / 3.8 / 4.2 / 4.5 s입니다. 간격은 1.1 → 0.9 → 0.7 → 0.6 → 0.5 → 0.4 → 0.3 s로 짧아집니다.",
+          "화면에 보이지 않는 동안에도 각 장면의 동작은 계속 진행됩니다.",
+          "A는 높이 1.3 m의 고정 카메라와 기둥 네 개, B는 높이 1.6 m·피치 +0.06 rad의 고정 카메라와 도시·태양으로 구성합니다.",
+          "하단의 여덟 구간은 회색 A와 파란 B가 번갈아 나타나며 재생 헤드가 이동합니다. 마지막 0.3 s 동안 A로 페이드합니다.",
+          "상단에는 ‘SCENE A / B’를 표시합니다."
         ]
       },
       "use": {
         "ja": "追跡や救出など、同時進行の緊張を高めるとき。",
-        "en": "To build tension between things happening at once, such as a chase or a rescue."
+        "en": "To build tension between things happening at once, such as a chase or a rescue.",
+        "ko": "추격·구조처럼 동시에 진행되는 사건을 연결하고 긴장감을 높일 때 사용합니다."
       },
       "tags": ["cross-cutting", "parallel editing", "intercut", "parallel action", "chase", "edit"]
     },
     {
       "no": "23", "slug": "bullet-time", "category": "transitions-editing",
-      "name": { "ja": "バレットタイム", "en": "Bullet time", "es": "Bullet time", "zh-Hans": "子弹时间", "zh-Hant": "子彈時間" },
-      "meaning": { "ja": "止まった時間の中をカメラが回る", "en": "Time stands still while the camera circles", "es": "El tiempo se detiene mientras la cámara gira alrededor", "zh-Hans": "时间静止，相机绕主体旋转", "zh-Hant": "時間停住，只有攝影機繞著轉" },
-      "ask": { "ja": "跳んだ頂点でバレットタイム。時間を止めてカメラだけ回り込んで。", "en": "Bullet time at the top of the jump: freeze the moment and circle the camera around.", "es": "Bullet time en lo más alto del salto: congela el momento y haz que la cámara gire alrededor.", "zh-Hans": "在跳跃最高点用子弹时间：让时间停住，只有相机绕着人物转。", "zh-Hant": "跳到最高點時用子彈時間：時間停住，只有攝影機繞著人物轉。" },
+      "name": { "ja": "バレットタイム", "en": "Bullet time", "es": "Bullet time", "zh-Hans": "子弹时间", "zh-Hant": "子彈時間", "ko": "불릿 타임" },
+      "meaning": { "ja": "止まった時間の中をカメラが回る", "en": "Time stands still while the camera circles", "es": "El tiempo se detiene mientras la cámara gira alrededor", "zh-Hans": "时间静止，相机绕主体旋转", "zh-Hant": "時間停住，只有攝影機繞著轉", "ko": "시간이 멈춘 순간 카메라가 주위를 돎" },
+      "ask": { "ja": "跳んだ頂点でバレットタイム。時間を止めてカメラだけ回り込んで。", "en": "Bullet time at the top of the jump: freeze the moment and circle the camera around.", "es": "Bullet time en lo más alto del salto: congela el momento y haz que la cámara gire alrededor.", "zh-Hans": "在跳跃最高点用子弹时间：让时间停住，只有相机绕着人物转。", "zh-Hant": "跳到最高點時用子彈時間：時間停住，只有攝影機繞著人物轉。", "ko": "점프의 정점에서 불릿 타임을 넣어 줘. 순간을 정지시키고 카메라가 주위를 돌게 해 줘." },
       "summary": {
         "ja": "跳躍の頂点で時間がほぼ止まり、その間にカメラが人物の周りを回り込む。",
-        "en": "Time nearly stops at the top of a jump while the camera circles around the person."
+        "en": "Time nearly stops at the top of a jump while the camera circles around the person.",
+        "ko": "점프 중인 피사체의 시간이 느려지는 동안 카메라가 주위를 돌아갑니다."
       },
       "spec": {
         "ja": [
@@ -727,22 +933,31 @@
           "Camera: during the slow part it travels on a circle of radius 6 m around the person from -0.6 rad to +0.6 rad (about 69°), cubic ease-in-out (about cubic-bezier(0.65,0,0.35,1)); always facing the centre, height 1.6 m, pitch -0.05 rad",
           "The next 4.7 s pass circles the other way (+0.6 → -0.6 rad), so the 9.4 s loop is seamless (#030 Orbit does not stop time)",
           "A dashed circle of radius 1.3 m on the ground and a ring of trees at 10 m; top-right readout shows \"×1.0\" → \"BULLET ×0.1\" → \"×1.0\""
+        ],
+        "ko": [
+          "영상 시간은 0–1.5 s에 정상 속도, 1.5–3.3 s에 0.1배 속도입니다(실제 1.8 s 동안 영상은 0.18 s 진행). 이후 다시 정상 속도가 되며 영상 시간은 u−1.62입니다.",
+          "거리 9 m의 사람이 영상 시간 0.6–2.6 s에 점프하며 최고 높이는 1.1 m이고 팔을 듭니다. 느린 구간은 점프 진행률 45–54%에 머뭅니다. 나뭇잎 아홉 개도 같은 영상 시간을 따릅니다.",
+          "카메라는 느린 구간에 반지름 6 m로 -0.6 → +0.6 rad(약 69°) 회전합니다. cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1)을 사용하며 항상 중심을 바라봅니다. 높이는 1.6 m, 피치는 -0.05 rad입니다.",
+          "다음 4.7 s 구간에는 +0.6 → -0.6 rad로 반대 방향 회전하여 9.4 s 반복을 자연스럽게 잇습니다. #030 Orbit은 피사체의 시간을 멈추지 않습니다.",
+          "지면에는 반지름 1.3 m 점선 원, 주변에는 반지름 10 m의 나무 고리를 배치합니다. 상단 표시는 ‘×1.0 → BULLET ×0.1 → ×1.0’입니다."
         ]
       },
       "use": {
         "ja": "決めの瞬間を立体的に見せるとき、アクションの見せ場。",
-        "en": "To show a decisive moment in three dimensions, or as the highlight of an action scene."
+        "en": "To show a decisive moment in three dimensions, or as the highlight of an action scene.",
+        "ko": "액션의 정점을 입체적으로 살펴보게 할 때 사용합니다."
       },
       "tags": ["bullet time", "time slice", "frozen moment", "orbit", "slow motion", "matrix", "effect"]
     },
     {
       "no": "24", "slug": "montage", "category": "transitions-editing",
-      "name": { "ja": "モンタージュ", "en": "Montage", "es": "Secuencia de montaje (montage)", "zh-Hans": "蒙太奇", "zh-Hant": "蒙太奇" },
-      "meaning": { "ja": "短いカットを重ねて時間を縮める", "en": "A run of short shots condensing time", "es": "Una serie de tomas cortas que comprime el tiempo", "zh-Hans": "用一连串短镜头压缩时间", "zh-Hant": "接連幾個短鏡頭來壓縮時間" },
-      "ask": { "ja": "練習の1か月をモンタージュで。短いカットを7つくらい並べて。", "en": "A one-month training montage: about seven short shots in a row.", "es": "Una secuencia de montaje de un mes de entrenamiento: unas siete tomas cortas seguidas.", "zh-Hans": "用蒙太奇表现一个月的练习，连续排列约 7 个短镜头。", "zh-Hant": "一個月的練習用蒙太奇呈現，接約 7 個短鏡頭。" },
+      "name": { "ja": "モンタージュ", "en": "Montage", "es": "Secuencia de montaje (montage)", "zh-Hans": "蒙太奇", "zh-Hant": "蒙太奇", "ko": "몽타주" },
+      "meaning": { "ja": "短いカットを重ねて時間を縮める", "en": "A run of short shots condensing time", "es": "Una serie de tomas cortas que comprime el tiempo", "zh-Hans": "用一连串短镜头压缩时间", "zh-Hant": "接連幾個短鏡頭來壓縮時間", "ko": "짧은 샷들을 이어 붙여 긴 시간을 압축함" },
+      "ask": { "ja": "練習の1か月をモンタージュで。短いカットを7つくらい並べて。", "en": "A one-month training montage: about seven short shots in a row.", "es": "Una secuencia de montaje de un mes de entrenamiento: unas siete tomas cortas seguidas.", "zh-Hans": "用蒙太奇表现一个月的练习，连续排列约 7 个短镜头。", "zh-Hant": "一個月的練習用蒙太奇呈現，接約 7 個短鏡頭。", "ko": "한 달의 훈련을 짧은 샷 약 일곱 개가 이어지는 몽타주로 보여 줘." },
       "summary": {
         "ja": "7つの短いカットで30日分の練習を見せる。つなぎは直結で、右上の日付が飛ぶ。",
-        "en": "Seven short shots show thirty days of training; straight cuts, with the date jumping at top right."
+        "en": "Seven short shots show thirty days of training; straight cuts, with the date jumping at top right.",
+        "ko": "여러 짧은 쇼트를 이어 붙여 오랜 시간의 노력과 변화를 빠르게 보여 줍니다."
       },
       "spec": {
         "ja": [
@@ -756,11 +971,18 @@
           "Shots: 1 tracking a runner (legs at t×14), 2 a jump in the park, 3 sunrise (sun rising from 4 m to 12 m), 4 arms raised from a low angle, 5 walking in the city (focal length 420 px), 6 circling the person from -0.3 to +0.3 rad, 7 arms raised in front of a flag",
           "Thirty days of training condensed into 4.7 s; camera position, height and focal length change with every shot (#041 Jump cut keeps the same framing)",
           "Bottom strip: seven sections, only the current shot in blue; the last 0.3 s cross-fades back to the start of the first shot"
+        ],
+        "ko": [
+          "전환 프레임 0개의 스트레이트 컷으로 일곱 쇼트를 연결합니다. 길이는 0.75 / 0.7 / 0.65 / 0.65 / 0.65 / 0.6 / 0.7 s, 합계 4.7 s입니다. 상단 표시는 ‘DAY 1 → 3 → 7 → 12 → 20 → 28 → 30’입니다.",
+          "쇼트 1: 달리는 사람을 따라가며 팔다리는 t×14로 움직입니다. 2: 공원에서 점프. 3: 일출과 높이 4 → 12 m 상승. 4: 팔을 든 사람의 로 앵글. 5: 초점 거리 420 px의 도시 걷기. 6: -0.3 → +0.3 rad 오빗. 7: 팔을 들고 깃발을 든 모습.",
+          "30일을 4.7 s로 압축하며 쇼트마다 카메라 위치·높이·초점 거리가 바뀝니다. #041 Jump cut은 같은 프레이밍을 유지합니다.",
+          "하단은 일곱 구간이며 현재 구간을 파란색으로 표시합니다. 마지막 0.3 s 동안 첫 쇼트로 페이드합니다."
         ]
       },
       "use": {
         "ja": "長い期間の変化や努力を短く見せるとき。",
-        "en": "To show a long period of change or effort in a short time."
+        "en": "To show a long period of change or effort in a short time.",
+        "ko": "긴 시간의 변화나 노력의 과정을 압축해서 보여 줄 때 사용합니다."
       },
       "tags": ["montage", "sequence", "training montage", "time passing", "quick cuts", "edit"]
     }

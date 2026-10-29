@@ -1,0 +1,38 @@
+// Motion Prompt #094 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#094
+//
+// 마키 / Marquee
+// 팩: lp (랜딩 페이지와 웹 효과) · element 22 · 분류: 로딩·탐색·배경 반복 효과
+// 동작 요약: 네이비 띠 안에서 주황 점으로 구분한 큰 서비스 이름이 끊김 없이 왼쪽으로 흘러갑니다.
+// 동작 사양:
+//   - 띠: 높이 58, 네이비, 뷰포트 전체 너비. 글자: 30 px, 매우 굵게, 자간 1 px, 흰색.
+//   - 한 묶음은 네 단어(WEB DESIGN / BRANDING / MOTION / UI/UX)이며 간격은 64 px입니다. 각 사이에 주황 점(반지름 6)을 둡니다.
+//   - 주기(4.8 s)마다 한 묶음 너비(여기서는 약 881 px)만큼 등속으로 왼쪽 이동합니다. 묶음을 측정해 그 너비로 오프셋을 순환하므로 이음새가 보이지 않습니다.
+//   - 뷰포트 너비가 채워질 때까지 묶음을 반복합니다.
+// 활용 상황: 서비스 이름·고객 로고·슬로건을 활기 있게 보여 줄 때 사용합니다.
+// 태그: marquee, ticker, infinite-loop, scrolling-text, logo-strip, band, loop
+// 크기: 539x208 px · 반복 주기: 4.8 s
+// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#094
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 22
+// 22 マーキー（文字の帯が、途切れずに横へ流れ続ける）
+CELLS[21] = (k, w, h, u) => {
+  frame(k);
+  const WORDS = ['WEB DESIGN', 'BRANDING', 'MOTION', 'UI/UX'], F = `800 30px ${EN}`, GAPW = 64;
+  view(k, () => {
+    bars(k, 34, 20, 180, 1, C.ink, 10); bars(k, 34, 38, 300, 1);
+    k.fillStyle = C.ink; k.fillRect(0, 58, VW, 58);
+    k.font = F; k.letterSpacing = '1px'; const ws = WORDS.map(s => k.measureText(s).width); k.letterSpacing = '0px';
+    const unit = ws.reduce((a, b) => a + b + GAPW, 0);
+    let x = -mod(u / CYC, 1) * unit;                 // 1周期で1組ぶん左へ
+    for (let rep = 0; x < VW; rep++) WORDS.forEach((s, i) => {
+      txt(k, s, x, 88, F, '#fff', 'left', 'middle', '1px');
+      k.fillStyle = C.acc; k.beginPath(); k.arc(x + ws[i] + GAPW / 2, 88, 6, 0, 7); k.fill();
+      x += ws[i] + GAPW;
+    });
+    for (let i = 0; i < 3; i++) { k.fillStyle = C.soft; rr(k, 34 + i * 152, 130, 136, 30, 6); k.fill(); bars(k, 46 + i * 152, 142, 90, 1, C.faint); }
+  });
+};

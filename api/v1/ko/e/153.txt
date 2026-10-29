@@ -1,0 +1,71 @@
+// Motion Prompt #153 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#153
+//
+// 호버 3D 틸트 / 3D tilt on hover
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 09 · 분류: 마우스와 입력 상호작용
+// 동작 요약: 커서가 카드 위를 움직이면 카드가 입체적으로 기울고 표면의 빛도 이동합니다. 벗어나면 평평하게 돌아옵니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트. 중앙에 카드 220 × 132(모서리 반지름 14)를 둡니다. 커서는 들어와 0.6 s마다 모서리 부근을 방문한 뒤 나갑니다(cubic ease-in-out). 한 번은 4.7 s(팩의 9.4 s 주기마다 두 번)입니다.
+//   - 기울기: 중심에서의 커서 오프셋을 반너비·반높이로 나눠 −1…1로 만듭니다. 가로 오프셋 × 0.32 rad(약 18°)는 Y축, 세로 오프셋 × 0.32 rad는 X축 회전이며 커서 쪽 면이 뒤로 기웁니다.
+//   - 깊이: 관찰자 거리 520 px(perspective: 520px). 가까운 부분은 크게 그립니다.
+//   - 호버 시 0.4 s 동안 기울기와 빛을 적용합니다(cubic ease-out). 벗어나면 같은 0.4 s에 평평해집니다.
+//   - 빛: 커서 중심의 흰 방사형 빛, 반지름 130 px, 중앙 불투명도 0.42. 바닥 그림자는 기울기 반대 방향으로 최대 10 px 이동합니다.
+// 활용 상황: 회원 카드·제품 패키지·요금 카드가 집어 들 수 있는 물체처럼 느껴지게 할 때 사용합니다.
+// 태그: tilt, 3d, hover, perspective, card, glare, parallax
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#153
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 09
+// 09 3Dチルト（カーソルの動きに合わせて、カードが奥行きをもって傾く）
+// カードの面（TC）と縦に傾けた面（TD）を描く下書き用の canvas。拡大して描くときは、その倍率ぶん細かく描く
+const TC = document.createElement('canvas'); TC.width = 220; TC.height = 132; const TCK = TC.getContext('2d');
+const TD = document.createElement('canvas'); TD.width = 300; TD.height = 190; const TDK = TD.getContext('2d');
+const TDW = 300, TDH = 190;
+CELLS[8] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const BX = VW / 2, BY = 82, BW = 220, BH = 132, MAXA = 0.32, D = 520;
+  const cur = t => path([[0, 80, 190], [0.6, 190, 40], [1.2, 335, 50], [1.8, 330, 125], [2.4, 180, 122], [3.0, 258, 80], [3.6, 470, 190], [4.7, 80, 190]], t);
+  const inside = t => { const [x, y] = cur(t); return Math.abs(x - BX) < BW / 2 && Math.abs(y - BY) < BH / 2; };
+  const q = trans(inside, u, 0.4, eOut), [cx, cy] = cur(u);
+  const nx = clamp((cx - BX) / (BW / 2), -1, 1), ny = clamp((cy - BY) / (BH / 2), -1, 1);
+  const ry = nx * MAXA * q, rx = ny * MAXA * q;
+  // 呼び出し側の拡大率 S（詳細表示などで2倍・3倍に描かれるとき）。下書きの canvas を S 倍の細かさにする
+  const m = k.getTransform(), S = Math.min(4, Math.max(1, Math.hypot(m.a, m.b)));
+  const cw = Math.ceil(BW * S), ch = Math.ceil(BH * S), dw = Math.ceil(TDW * S), dh = Math.ceil(TDH * S);
+  if (TC.width !== cw || TC.height !== ch) { TC.width = cw; TC.height = ch; }
+  if (TD.width !== dw || TD.height !== dh) { TD.width = dw; TD.height = dh; }
+  // カードの面
+  const g = TCK; g.clearRect(0, 0, TC.width, TC.height);
+  g.save(); g.scale(S, S); rr(g, 0, 0, BW, BH, 14); g.clip();
+  const gr = g.createLinearGradient(0, 0, BW, BH); gr.addColorStop(0, '#2B4FD6'); gr.addColorStop(1, '#7D9AF4'); g.fillStyle = gr; g.fillRect(0, 0, BW, BH);
+  g.fillStyle = 'rgba(255,255,255,.12)'; g.beginPath(); g.arc(BW - 30, 20, 70, 0, 7); g.fill();
+  logo(g, 18, 26, '#fff');
+  g.fillStyle = '#FFD9C9'; rr(g, 18, 52, 34, 26, 5); g.fill();
+  txt(g, 'MEMBER CARD', 18, 104, `700 11px ${EN}`, 'rgba(255,255,255,.8)', 'left', 'alphabetic', '2px');
+  txt(g, '0123  4567  8910', 18, 122, `700 13px ${EN}`, '#fff', 'left', 'alphabetic', '1px');
+  const gx = (nx * 0.5 + 0.5) * BW, gy = (ny * 0.5 + 0.5) * BH, gl = g.createRadialGradient(gx, gy, 0, gx, gy, 130);
+  gl.addColorStop(0, `rgba(255,255,255,${0.42 * q})`); gl.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gl; g.fillRect(0, 0, BW, BH);
+  g.restore();
+  // 縦の傾き（横の帯で描く）→ 横の傾き（縦の帯で描く）
+  const d = TDK; d.clearRect(0, 0, TD.width, TD.height);
+  const N = 44;
+  for (let i = 0; i < N; i++) {
+    const v0 = i / N - 0.5, v1 = (i + 1) / N - 0.5, z0 = v0 * BH * Math.sin(rx), z1 = v1 * BH * Math.sin(rx), s0 = D / (D + z0), s1 = D / (D + z1);
+    const y0 = TDH / 2 + v0 * BH * Math.cos(rx) * s0, y1 = TDH / 2 + v1 * BH * Math.cos(rx) * s1, sw = BW * (s0 + s1) / 2;
+    d.drawImage(TC, 0, i * BH / N * S, BW * S, (BH / N + 0.6) * S, (TDW / 2 - sw / 2) * S, y0 * S, sw * S, (y1 - y0 + 0.6) * S);
+  }
+  view(k, () => {
+    k.fillStyle = C.soft; k.fillRect(0, 0, VW, VH);
+    k.fillStyle = `rgba(28,35,51,${0.1 + 0.05 * q})`; k.beginPath(); k.ellipse(BX - nx * 10 * q, 158, 96, 7, 0, 0, 7); k.fill();
+    for (let i = 0; i < N; i++) {
+      const f0 = i / N - 0.5, f1 = (i + 1) / N - 0.5, z0 = f0 * TDW * Math.sin(ry), z1 = f1 * TDW * Math.sin(ry), s0 = D / (D + z0), s1 = D / (D + z1);
+      const x0 = BX + f0 * TDW * Math.cos(ry) * s0, x1 = BX + f1 * TDW * Math.cos(ry) * s1, sh = TDH * (s0 + s1) / 2;
+      k.drawImage(TD, i * TDW / N * S, 0, (TDW / N + 0.6) * S, TDH * S, x0, BY - sh / 2, x1 - x0 + 0.6, sh);
+    }
+    cursor(k, cx, cy);
+  });
+};

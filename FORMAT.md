@@ -3,7 +3,7 @@
 Motion Prompt is a library of names: the words a field uses for the things you ask an AI to make, each
 with a moving sample. Each element is a small, dependency-free Canvas 2D animation that is a
 **pure function of time**, with its name and a one-line meaning in several languages, an example
-of how to ask for it, and a copyable prompt (ja/en), so people can tell Claude Code / Codex
+of how to ask for it, and a copyable prompt (ja/en/ko), so people can tell Claude Code / Codex
 "use #012 and #045" or "swap this title for #005".
 
 Repo: GitHub `showheyohtaki/motion-prompt` (MIT) → GitHub Pages
@@ -15,7 +15,7 @@ scripts with zero npm dependencies. Only `make-your-own/` (rendering your own vi
 ## Layout
 
 ```
-index.html  assets/{runtime.js,site.css,site.js,catalog.js*}   the gallery site (* = generated)
+index.html  assets/{runtime.js,language.js,site.css,site.js,catalog.js*}   the gallery site (* = generated)
 packs/<pack>/pack.js  packs/<pack>/meta.json  (optional fonts/)   source of truth
 packs/README.md  packs/<pack>/README.md  README.<lang>.md*   the name lists, readable on GitHub (* = generated)
 api/v1/…                                   generated static API (committed)
@@ -135,15 +135,15 @@ A field without the new language shows its English text in that list. The headin
 list ("Name", "What it is", …) are English unless you add a block for the language to `DOC` in
 `tools/build.mjs`; add its display name to `LANG_NAME` there too.
 
-The gallery, `api/v1/<lang>/` and the copyable prompt are served in `ja` and `en` only (`LANGS` in
-`tools/build.mjs`). In those, a pack with no Japanese shows its English text. Other languages are
+The gallery, `api/v1/<lang>/` and the copyable prompt are served in `ja`, `en` and `ko` (`LANGS` in
+`tools/build.mjs`). In those, a missing translation falls back to English. Other languages are
 carried in `api/v1/catalog.json` and shown in the generated lists.
 
 ## Generated API (tools/build.mjs writes these; the skill CLI and the site read them)
 
 ```
 api/v1/catalog.json                 { version, count, packs:[…], elements:[{ id, pack, no, slug, category, width, height, cycle, name, meaning, ask, summary, spec, use, tags }] }
-api/v1/<lang>/catalog.tsv           header comment line, then: id  pack  category  title  tags  summary      (lang = ja | en)
+api/v1/<lang>/catalog.tsv           header comment line, then: id  pack  category  title  tags  summary      (lang = ja | en | ko)
 api/v1/<lang>/e/<id>.txt            one element: license line, info header (name, what it shows, spec, use, size, cycle, "Needs: kit <pack>", live demo URL), then the element code block
 api/v1/<lang>/p/<id>.txt            the copy-paste prompt for that element (same text the site's "copy prompt" button copies)
 api/v1/kit/<pack>.js                @kit + all @shared blocks of the pack, plus a short header showing how to run one element standalone
@@ -152,7 +152,18 @@ api/v1/kit/<pack>.js                @kit + all @shared blocks of the pack, plus 
 First line of every `e/<id>.txt` and `kit/<pack>.js`:
 `// Motion Prompt #<id> · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#<id>`
 
-Live demo deep link: `https://showheyohtaki.github.io/motion-prompt/#<id>`.
+Live demo deep link: `https://showheyohtaki.github.io/motion-prompt/#<id>`. Add `?lang=ko` before the hash for Korean.
+
+The gallery and examples use this language priority:
+
+```mermaid
+flowchart LR
+  URL["Valid ?lang"] -->|absent or invalid| Saved["Saved mp-lang"]
+  Saved -->|absent or invalid| Browser["Browser language: ja, en, ko"]
+  Browser -->|unsupported| English["English"]
+```
+
+A manual language switch updates the URL and saved choice. Page links and shared selections keep the chosen language. Names retain the English term alongside the translation; embedded posts and Canvas sample lettering stay in their original language. Run `node tools/test-localization.mjs` after building to check translations, generated prompts and CLI handoffs.
 
 ## Tooling
 
@@ -165,3 +176,5 @@ Live demo deep link: `https://showheyohtaki.github.io/motion-prompt/#<id>`.
   `dev/preview.html?pack=<pack>` (playing), `&t=1.2` (frozen) or `&only=5` (one element).
 - A pack's `cycle` may be longer than one pass of the motion (camera uses 9.4s).
 - The kit's first line uses the pack's ID range, e.g. `#001-024`.
+
+Browser localization checks: `node tools/check-localization.mjs` (requires Playwright; use `MP_PLAYWRIGHT` as with `tools/check.mjs`). This covers desktop and mobile layouts, language selection, prompt copying, shared selections, examples with blocked embeds and a real browser-to-CLI handoff.

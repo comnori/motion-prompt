@@ -1,0 +1,50 @@
+// Motion Prompt #024 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#024
+//
+// Impact shake / Impact shake
+// 팩: motion (모션 그래픽 움직임) · element 24 · 분류: 전환과 강조
+// 동작 요약: 무거운 제목 판이 쿵 떨어지며 충격으로 화면 전체가 흔들립니다.
+// 동작 사양:
+//   - 2.35 s마다 한 번 떨어집니다(먼저 노란 판, 다음은 코랄색 판). 판은 250 × 100, 모서리 반지름 18입니다.
+//   - 낙하: 0.3–0.62 s에 화면 위에서 바닥까지 cubic ease-in으로 가속합니다. 낙하 중 세로로 1.12× 늘어납니다.
+//   - 0.62 s에 착지합니다. 화면 전체가 1.1 s 동안 흔들립니다: x 15 px × e^(−5t) × sin(2π·5t), y 11 px × e^(−5t) × cos(2π·6.5t), 회전 0.02 rad × e^(−5t) × sin(2π·5t + 0.6).
+//   - 착지 후 0.3 s 동안 판이 세로로 최대 22% 눌렸다가 복구됩니다(가로로 같은 비율만큼 넓어짐, 밑면 고정).
+//   - 배경 블록 네 개가 0.03–0.06 s 늦게 0.5 s 동안 최대 24 px 튀어 오릅니다. 흰 선 여섯 개와 먼지 여섯 덩이가 바닥에서 퍼지며 0.55 s 안에 사라집니다.
+//   - 퇴장: 1.85–2.2 s에 판을 300 px 위로 이동합니다(backIn, s = 1.6).
+// 활용 상황: 중요한 제목이나 숫자를 무게감과 힘을 담아 등장시킬 때 사용합니다.
+// 태그: shake, impact, camera-shake, slam, drop, thud, headline, emphasis
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#024
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 24
+// 24 インパクトシェイク（重い見出しの板がドンと落ち、その衝撃で画面ごと揺れる）
+CELLS[23] = (k, w, h, u) => {
+  const T = CYC / 2, n = Math.floor(u / T), lu = u - n * T;
+  const floor = h - 30, SW = 250, SH = 100, tI = 0.62, tau = lu - tI;
+  let y = lu < 0.3 ? -SH - 20 : lu < tI ? lerp(-SH - 20, floor - SH, eIn(P(lu, 0.3, tI))) : floor - SH;
+  y -= 300 * backIn(P(lu, 1.85, 2.2), 1.6);
+  let dx = 0, dy = 0, rot = 0;
+  if (tau > 0 && tau < 1.1) { const e = Math.exp(-5 * tau), ph = 2 * Math.PI * 5 * tau; dx = 15 * e * Math.sin(ph); dy = 11 * e * Math.cos(ph * 1.3); rot = 0.02 * e * Math.sin(ph + 0.6); }
+  k.fillStyle = C.navy; k.fillRect(0, 0, w, h);
+  k.save(); k.translate(w / 2 + dx, h / 2 + dy); k.rotate(rot); k.translate(-w / 2, -h / 2);
+  k.fillStyle = C.navy; k.fillRect(-40, -40, w + 80, h + 80);
+  // 背景の小物（衝撃で少し跳ねる）
+  [[34, 62, 86, C.navy2, 0.06], [104, 46, 54, C.navy3, 0.03], [w - 150, 50, 66, C.navy3, 0.03], [w - 90, 62, 104, C.navy2, 0.06]].forEach(([x, bw, bh, col, dl]) => { const t = tau - dl, hop = t > 0 && t < 0.5 ? -24 * Math.sin(Math.PI * t / 0.5) * (1 - t) : 0; k.fillStyle = col; rr(k, x, floor - bh + hop, bw, bh, [10, 10, 0, 0]); k.fill(); k.fillStyle = C.blue; k.globalAlpha = 0.55; rr(k, x + 10, floor - bh + 12 + hop, bw - 20, 8, 4); k.fill(); k.globalAlpha = 1; });
+  k.fillStyle = C.navy3; k.fillRect(-40, floor, w + 80, 5);
+  // 衝撃の線とほこり
+  if (tau > 0 && tau < 0.55) {
+    const q = eOut(tau / 0.55); k.strokeStyle = '#fff'; k.lineCap = 'round'; k.lineWidth = 7 * (1 - q);
+    for (let i = 0; i < 6; i++) { const s = i % 2 ? 1 : -1, j = Math.floor(i / 2), a = -0.12 - j * 0.34, r0 = 140 + 46 * q, r1 = r0 + 32; k.beginPath(); k.moveTo(w / 2 + s * Math.cos(a) * r0, floor - 4 + Math.sin(a) * r0); k.lineTo(w / 2 + s * Math.cos(a) * r1, floor - 4 + Math.sin(a) * r1); if (q < 0.97) k.stroke(); }
+    k.fillStyle = C.dim; k.globalAlpha = 0.8 * (1 - q); for (let i = 0; i < 6; i++) { const s = i % 2 ? 1 : -1, d = 130 + q * (50 + i * 14); k.beginPath(); k.arc(w / 2 + s * d, floor - 8 - q * (6 + i * 4), 9 + q * 8 - i, 0, 7); k.fill(); } k.globalAlpha = 1;
+  }
+  const sq = tau > 0 && tau < 0.3 ? 1 - 0.22 * Math.sin(tau / 0.3 * Math.PI) : (lu < tI && lu > 0.3 ? 1.12 : 1);
+  k.save(); k.translate(w / 2, y + SH); k.scale(2 - sq, sq);
+  k.fillStyle = n ? C.coral : C.yel; rr(k, -SW / 2, -SH, SW, SH, 18); k.fill();
+  k.fillStyle = 'rgba(15,26,61,.14)'; rr(k, -SW / 2, -16, SW, 16, [0, 0, 18, 18]); k.fill();
+  txt(k, n ? 'SALE' : 'NEW!', 0, -SH / 2 + 4, `800 74px ${DISP}`, n ? '#fff' : C.navy, 'center', 'middle', '2px');
+  k.restore();
+  k.restore();
+};

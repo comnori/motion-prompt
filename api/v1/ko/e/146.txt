@@ -1,0 +1,44 @@
+// Motion Prompt #146 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#146
+//
+// 스크롤 텍스트 리빌 / Scroll text reveal
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 02 · 분류: 스크롤 효과
+// 동작 요약: 스크롤에 따라 옅은 회색 제목이 왼쪽 위부터 한 글자씩 진해지고 위로 스크롤하면 끝 글자부터 다시 흐려집니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트. 스크롤 진행도 p: 0.3–2.6 s에 0→1, 3.2–4.4 s에 1→0(cubic ease-in-out). 페이지는 p × 40 px 위로 움직입니다. 한 번은 4.7 s(팩의 9.4 s 주기마다 두 번)입니다.
+//   - 세 줄 제목, 총 24글자(27 px, 굵기 800, 행 높이 38 px). 처음에는 모두 옅은 회색 #D6DBE4입니다.
+//   - 글자 n(0부터)의 진하기는 clamp(p × 26 − n)입니다. 각 글자가 진행도의 1/26 동안 본문색 #1C2333에 도달하며 스크롤에 연동됩니다.
+//   - 역방향 스크롤에는 같은 식으로 마지막 글자부터 흐려집니다. 본문 막대와 스크롤바 손잡이는 페이지와 함께 움직입니다.
+// 활용 상황: 콘셉트·창업자 메시지처럼 천천히 읽어야 하는 짧은 문장에 사용합니다.
+// 태그: scroll, text-reveal, scroll-driven, typography, opacity, storytelling
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#146
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 02
+// 02 スクロールテキストリビール（薄い見出しの文字が、スクロールに合わせて左から1文字ずつ濃くなる）
+CELLS[1] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const p = steps([[0.3, 0], [2.6, 1], [3.2, 1], [4.4, 0]], u), y = p * 40;
+  const LINES = ['毎日の小さな工夫が、', '暮らしを少しずつ', '変えていく。'], F = `800 27px ${JP}`;
+  const total = LINES.join('').length;
+  view(k, () => {
+    k.save(); k.translate(0, -y);
+    txt(k, 'ABOUT US', 40, 34, `800 11px ${EN}`, C.acc, 'left', 'alphabetic', '2px');
+    let n = 0;
+    LINES.forEach((s, li) => {
+      let x = 40; k.font = F;
+      for (const ch of s) {
+        const f = clamp(p * (total + 2) - n);
+        txt(k, ch, x, 72 + li * 38, F, mix('#D6DBE4', C.ink, f));
+        k.font = F; x += k.measureText(ch).width; n++;
+      }
+    });
+    bars(k, 40, 168, 300, 3, C.faint, 6, 12, 0.7);
+    k.restore();
+    sbar(k, p, 0.55);
+  });
+};

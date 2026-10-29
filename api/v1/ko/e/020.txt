@@ -1,0 +1,36 @@
+// Motion Prompt #020 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#020
+//
+// Zoom through / Zoom through
+// 팩: motion (모션 그래픽 움직임) · element 20 · 분류: 전환과 강조
+// 동작 요약: 카메라가 글자 O의 구멍으로 들어가 다음 장면으로 나옵니다.
+// 동작 사양:
+//   - 장면 X(노란 바탕의 ZOOM) → 장면 Y(파란 바탕의 GO!) → 장면 X를 각각 2.35 s씩 표시합니다.
+//   - O 구멍의 중심(반지름 24.5)을 기준으로 현재 장면을 확대합니다. 최대 배율은 구멍이 프레임 전체를 덮는 배율의 1.08×(약 14×)입니다.
+//   - 배율 = maxScale^p(일정한 속도로 보이는 지수 확대).
+//   - p = 0.8 × cubic ease-in(0.25–1.2 s) + 0.2 × cubic ease-out(1.2–1.65 s)로, 시작은 가속하고 끝은 감속합니다.
+//   - 구멍 안에는 다음 장면을 1/maxScale 배율로 배치합니다. 확대가 끝나면 정확히 전체 크기가 되며 다음 장면으로 전환합니다.
+// 활용 상황: 로고나 글자 속으로 들어가 추진력 있게 다음 장면으로 이동할 때 사용합니다.
+// 태그: zoom, zoom-through, transition, push-in, scale, tunnel, scene-change
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#020
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 20
+// 20 ズームスルー（文字の「O」の穴へ突っ込んで、その先の画面へ抜ける）
+function ring(k, x, y, col) { k.strokeStyle = col; k.lineWidth = 21; k.beginPath(); k.arc(x, y, 35, 0, 7); k.stroke(); }
+const ZP = [{ x: 228, y: 106, r: 24.5 }, { x: 300, y: 106, r: 24.5 }];
+function scrX(k, w, h) { k.fillStyle = C.yel; k.fillRect(0, 0, w, h); const f = `800 118px ${DISP}`; txt(k, 'Z', 128, 110, f, C.navy, 'center', 'middle'); ring(k, 228, 106, C.navy); ring(k, 324, 106, C.navy); txt(k, 'M', 432, 110, f, C.navy, 'center', 'middle'); }
+function scrY(k, w, h) { k.fillStyle = C.blue; k.fillRect(0, 0, w, h); const f = `800 118px ${DISP}`; txt(k, 'G', 208, 110, f, '#fff', 'center', 'middle'); ring(k, 300, 106, '#fff'); txt(k, '!', 372, 110, f, C.yel, 'center', 'middle'); }
+const SCZ = [scrX, scrY], ZBG = [C.yel, C.blue];
+CELLS[19] = abCell((k, w, h, u, a, b) => {
+  const po = ZP[a], Smax = Math.hypot(Math.max(po.x, w - po.x), Math.max(po.y, h - po.y)) / po.r * 1.08;
+  const p = eIn(P(u, TA - 0.25, TB - 0.3)) * 0.8 + eOut(P(u, TB - 0.3, TB + 0.15)) * 0.2;
+  if (p >= 1) return SCZ[b](k, w, h);
+  const s = Math.pow(Smax, p), Z = (kk, sc) => { kk.translate(po.x, po.y); kk.scale(sc, sc); kk.translate(-po.x, -po.y); };
+  k.save(); Z(k, s); SCZ[a](k, w, h);
+  k.save(); k.beginPath(); k.arc(po.x, po.y, po.r, 0, 7); k.clip(); k.fillStyle = ZBG[b]; k.fillRect(0, 0, w, h); Z(k, 1 / Smax); SCZ[b](k, w, h); k.restore();
+  k.restore();
+});

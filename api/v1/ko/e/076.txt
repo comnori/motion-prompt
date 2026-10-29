@@ -1,0 +1,51 @@
+// Motion Prompt #076 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#076
+//
+// 피닝 / Pinning
+// 팩: lp (랜딩 페이지와 웹 효과) · element 04 · 분류: 스크롤 효과
+// 동작 요약: 네이비 섹션이 화면을 채우면 멈춥니다. 계속 스크롤하면 숫자와 사진이 1→2→3으로 바뀐 뒤 섹션이 다시 올라갑니다.
+// 동작 사양:
+//   - 스크롤: 0.3–3.0 s에 0→500 px, 3.5–4.5 s에 500→0(cubic ease-in-out).
+//   - 높이 168의 네이비 섹션이 스크롤 110 px에서 상단에 닿고 이후 300 px 동안 고정됩니다(GSAP ScrollTrigger pin).
+//   - 고정 중 진행도: p = (scroll − 110) / 300. 왼쪽 세로선(길이 124)이 p에 따라 주황색으로 채워집니다.
+//   - p = 1/3 및 2/3에서 다음 단계로 이동합니다(±0.07, cubic ease-in-out). 숫자(46 px)는 52 px 위로 굴러가고 사진(226 × 124)은 124 px 위로 이동합니다.
+//   - 300 px 후 고정을 해제하고 아래 흰 섹션과 함께 위로 스크롤됩니다.
+// 활용 상황: 한 화면에서 단계·특징·변경 전후를 차례로 보여 줄 때 사용합니다.
+// 태그: pin, pinning, scrolltrigger, gsap, scroll-driven, steps, storytelling
+// 크기: 539x208 px · 반복 주기: 4.8 s
+// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#076
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 04
+// 04 ピン留め（セクションが画面に止まったまま、中身だけがスクロールで進む）
+CELLS[3] = (k, w, h, u) => {
+  frame(k);
+  const y = steps([[0.3, 0], [3.0, 500], [3.5, 500], [4.5, 0]], u);
+  const PIN0 = 110, PD = 300;
+  const top = y < PIN0 ? PIN0 - y : y < PIN0 + PD ? 0 : PIN0 + PD - y, p = clamp((y - PIN0) / PD);
+  // 中身は 1/3・2/3 の所で次のステップへ（前後 ±0.07 の範囲で easeInOut）
+  const f = eIO(P(p, 1 / 3 - 0.07, 1 / 3 + 0.07)) + eIO(P(p, 2 / 3 - 0.07, 2 / 3 + 0.07));
+  view(k, () => {
+    txt(k, '3ステップで完成', 34, 56 - y, `800 22px ${JP}`, C.ink); bars(k, 34, 72 - y, 240, 2);
+    k.save(); k.translate(0, top);
+    k.fillStyle = C.ink; k.fillRect(0, 0, VW, VH);
+    // 左: STEP の番号（スクロール量に合わせて回る）
+    txt(k, 'STEP', 34, 40, `700 12px ${EN}`, 'rgba(255,255,255,.6)', 'left', 'alphabetic', '2px');
+    k.save(); k.beginPath(); k.rect(30, 46, 120, 52); k.clip();
+    for (let i = 0; i < 3; i++) txt(k, '0' + (i + 1), 32, 90 + (i - f) * 52, `800 46px ${EN}`, '#fff');
+    k.restore();
+    bars(k, 34, 110, 150, 3, 'rgba(255,255,255,.28)');
+    // 進み具合の線
+    k.fillStyle = 'rgba(255,255,255,.16)'; rr(k, 232, 22, 4, 124, 2); k.fill();
+    k.fillStyle = C.acc; rr(k, 232, 22, 4, 124 * p, 2); k.fill();
+    // 右: 写真が順に入れ替わる
+    k.save(); rr(k, 256, 22, 226, 124, 8); k.clip();
+    for (let i = 0; i < 3; i++) pic(k, 256, 22 + (i - f) * 124, 226, 124, i, 0);
+    k.restore();
+    k.fillStyle = '#fff'; k.fillRect(0, VH, VW, 200); bars(k, 34, VH + 30, 300, 3);
+    k.restore();
+    sbar(k, y / 500, 0.3);
+  });
+};

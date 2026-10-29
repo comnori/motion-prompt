@@ -1,0 +1,48 @@
+// Motion Prompt #157 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#157
+//
+// Hover image reveal / Hover image reveal
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 13 · 분류: 마우스와 입력 상호작용
+// 동작 요약: 텍스트 목록의 행에 커서를 올리면 그 항목 사진이 커서 옆에 나타나 따라다닙니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트에 텍스트 목록 네 줄(행 39 px, 이름 17 px)을 둡니다. 커서는 각 행에 약 1 s씩 머물며 내려갑니다. 한 번 4.7 s(팩의 9.4 s마다 두 번).
+//   - 호버한 행: 0.25 s 동안 cubic ease-out으로 이름이 오른쪽 8 px 이동하고 이름과 오른쪽 화살표가 주황색이 됩니다. 벗어나면 0.25 s에 복귀합니다.
+//   - 사진: 해당 행의 132 × 84 사진(모서리 반지름 6, 그림자)이 커서 오른쪽 26 px, 조금 위에 나타납니다. 세로로 창 안에 머물게 합니다.
+//   - 같은 0.25 s 동안 불투명도 0→1, 배율 0.85×→1×로 나타납니다. 지연 없이 커서를 따르며 다음 행으로 이동하면 이전 사진이 사라지고 새 사진이 들어옵니다.
+// 활용 상황: 작업·프로젝트·매물 목록을 가벼운 텍스트 형태로 유지하면서 관심 항목의 사진만 보여 줄 때 사용합니다.
+// 태그: hover, image-reveal, list, cursor-follow, preview, portfolio
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#157
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 13
+// 13 ホバーで画像プレビュー（文字だけのリストの行にカーソルを乗せると、その行の写真がカーソルの横に出る）
+CELLS[12] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const NAMES = ['オーロラの丘', '湖のほとりの小屋', '海辺のヴィラ', '星空のテラス'], RT = 6, RH = 39;
+  const cur = t => path([[0, 140, 200], [0.4, 150, 26], [1.15, 190, 28], [1.4, 205, 65], [2.15, 230, 67], [2.4, 245, 104], [3.15, 265, 106], [3.4, 280, 143], [3.9, 292, 144], [4.3, 150, 200], [4.7, 140, 200]], t);
+  const [cx, cy] = cur(u);
+  view(k, () => {
+    NAMES.forEach((s, i) => {
+      const top = RT + i * RH, inside = t => { const [a, b] = cur(t); return b > top && b < top + RH && a > 20 && a < 490; };
+      const q = trans(inside, u, 0.25);
+      txt(k, '0' + (i + 1), 30, top + 25, `800 12px ${EN}`, C.sub);
+      txt(k, s, 64 + 8 * q, top + 26, `800 17px ${JP}`, mix(C.ink, C.acc, q));
+      txt(k, '→', 476, top + 25, `700 15px ${EN}`, mix('#B7BFCC', C.acc, q), 'right');
+      k.fillStyle = C.rule; k.fillRect(24, top + RH, VW - 48, 1);
+    });
+    NAMES.forEach((s, i) => {
+      const top = RT + i * RH, q = trans(t => { const [a, b] = cur(t); return b > top && b < top + RH && a > 20 && a < 490; }, u, 0.25);
+      if (q <= 0) return;
+      const iw = 132, ih = 84, px = cx + 26, py = clamp(cy - 46, 4, VH - ih - 4), sc = 0.85 + 0.15 * q;
+      k.save(); k.globalAlpha = q; k.translate(px + iw / 2, py + ih / 2); k.scale(sc, sc);
+      k.shadowColor = 'rgba(28,35,51,.25)'; k.shadowBlur = 12; k.shadowOffsetY = 4; k.fillStyle = '#fff'; rr(k, -iw / 2, -ih / 2, iw, ih, 6); k.fill(); k.shadowColor = 'transparent';
+      pic(k, -iw / 2, -ih / 2, iw, ih, [0, 2, 1, 2][i], 6);
+      k.restore();
+    });
+    cursor(k, cx, cy);
+  });
+};

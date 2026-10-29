@@ -1,0 +1,48 @@
+// Motion Prompt #151 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#151
+//
+// 맨 위로 버튼 / Back-to-top button
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 07 · 분류: 스크롤 효과
+// 동작 요약: 아래로 스크롤하면 오른쪽 아래에 둥근 화살표 버튼이 나타나고 누르면 맨 위로 돌아갑니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트. 0.2–1.7 s에 스크롤 0→300 px로 페이지 아래까지 이동합니다(cubic ease-in-out). 한 번은 4.7 s(팩의 9.4 s 주기마다 두 번)입니다.
+//   - 버튼: 오른쪽 아래 주황 원(중심 x = 472, y = 138, 반지름 19, 흰 위 화살표, 그림자 블러 10 px). 스크롤 80–140 px 구간에서 10 px 올라오며 나타납니다(cubic ease-out).
+//   - 2.6 s에 클릭합니다. 커서가 놓이면 0.2 s 동안 어두워집니다(#FF5A2C → #D9431C).
+//   - 클릭 후 2.66–3.26 s에 스크롤 300→0(0.6 s, cubic ease-in-out). 80 px 아래에서는 같은 식으로 버튼이 사라집니다.
+// 활용 상황: 긴 글·랜딩 페이지·제품 목록에서 상단 메뉴로 돌아가기 쉽게 할 때 사용합니다.
+// 태그: back-to-top, scroll-to-top, button, navigation, floating-button, smooth-scroll
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#151
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 07
+// 07 トップへ戻るボタン（下までスクロールすると右下に丸いボタンが出て、押すと一気に先頭へ戻る）
+CELLS[6] = (k, w, h, u) => {
+  u = snapU(u);
+  frame(k);
+  const CLK = 2.6, MAX = 300;
+  const y = u < CLK + 0.02 ? steps([[0.2, 0], [1.7, MAX]], u) : MAX * (1 - eIO(P(u, CLK + 0.06, CLK + 0.66)));
+  const cur = t => path([[0, 340, 205], [1.6, 340, 205], [2.35, 472, 138], [2.95, 472, 138], [3.6, 340, 205], [4.7, 340, 205]], t);
+  const [cx, cy] = cur(u);
+  view(k, () => {
+    k.save(); k.translate(0, -y);
+    txt(k, 'BLOG', 70, 32, `800 11px ${EN}`, C.acc, 'left', 'alphabetic', '2px');
+    txt(k, '週末にできる、小さな旅', 70, 58, `800 19px ${JP}`, C.ink);
+    pic(k, 70, 72, 371, 100, 2, 8);
+    for (let b = 0; b < 3; b++) { const y0 = 192 + b * 82; k.fillStyle = C.ink; rr(k, 70, y0, 150, 9, 4.5); k.fill(); bars(k, 70, y0 + 22, 371, 4, C.faint, 6, 12); }
+    k.fillStyle = C.ink; k.fillRect(0, 438, VW, 80); logo(k, 70, 454, '#fff'); bars(k, 300, 451, 140, 1, 'rgba(255,255,255,.3)');
+    k.restore();
+    const tb = eOut(clamp((y - 80) / 60));
+    if (tb > 0) {
+      const hov = trans(t => { const [a, b] = cur(t); return Math.hypot(a - 472, b - 138) < 20; }, u, 0.2);
+      k.save(); k.globalAlpha = tb; k.translate(0, 10 * (1 - tb));
+      k.save(); k.shadowColor = 'rgba(28,35,51,.3)'; k.shadowBlur = 10; k.shadowOffsetY = 3; k.fillStyle = mix(C.acc, '#D9431C', hov); k.beginPath(); k.arc(472, 138, 19, 0, 7); k.fill(); k.restore();
+      k.strokeStyle = '#fff'; k.lineWidth = 2.6; k.lineCap = 'round'; k.lineJoin = 'round'; k.beginPath(); k.moveTo(465, 142); k.lineTo(472, 134.5); k.lineTo(479, 142); k.stroke();
+      k.restore();
+    }
+    sbar(k, y / MAX, 0.34);
+    click(k, cx, cy, u, [CLK]);
+  });
+};

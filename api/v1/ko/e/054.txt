@@ -1,0 +1,36 @@
+// Motion Prompt #054 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#054
+//
+// 툴팁 / Tooltip
+// 팩: ui (UI 컴포넌트 이름) · element 06 · 분류: 펼치기와 오버레이
+// 동작 요약: “?” 아이콘 위에 커서를 올리면 위쪽의 어두운 말풍선에 짧은 설명이 나오고, 커서를 치우면 사라집니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 라벨 옆 (196, 121)에 “?” 아이콘(파란 고리, 반지름 13)을 놓습니다.
+//   - 클릭 없이 호버만 합니다. 1.05 s에 “?”에 도착하고 3.15 s까지 머문 뒤 4.1 s까지 카드 밖으로 나갑니다.
+//   - 표시 정도 a: 1.15–1.35 s에 easeOutCubic으로 0→1. 불투명도 a, 6 px 위로 올라 제자리에 도착합니다.
+//   - 말풍선: #26282c, 184×36, 모서리 반지름 8, 위쪽 y 64. 너비 16·높이 8의 삼각형이 아래의 아이콘을 가리키며 글자는 흰색 15 px입니다.
+//   - 숨기기: 3.25–3.45 s에 선형으로 1→0.
+// 활용 상황: 페이지 공간을 차지하지 않고 아이콘이나 약어에 한 줄 힌트를 더할 때 사용합니다.
+// 태그: tooltip, hint, hover, help, info, title
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#054
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 06
+// 06 ツールチップ（Tooltip）
+CELLS[5] = ui((w, h, t) => {
+  pageLines(24, 16, 494);
+  bar(24, 116, 150, C.line2, 11); ring(196, 121, 13, C.blue, 2.2); text('?', 196, 122, 16, C.blue, 700, 'center', NUMF);
+  fillRR(24, 146, 494, 34, 8, C.block);
+  const a = eo(seg(t, 1.15, 1.35)) * (1 - seg(t, 3.25, 3.45));
+  if (a > 0) {
+    X.save(); X.globalAlpha = a; const yy = 64 + 6 * (1 - a);
+    fillRR(196 - 92, yy, 184, 36, 8, C.dark);
+    X.beginPath(); X.moveTo(196 - 8, yy + 36); X.lineTo(196, yy + 44); X.lineTo(196 + 8, yy + 36); X.fillStyle = C.dark; X.fill();
+    text('小さな説明が出る', 196, yy + 18, 15, '#fff', 600, 'center'); X.restore();
+  }
+  // 乗せるだけ（クリックしない）
+  pointer([[.3, w + 30, h + 30], [1.05, 200, 126], [3.15, 200, 126], [4.1, w + 30, h + 30]], [], t);
+});

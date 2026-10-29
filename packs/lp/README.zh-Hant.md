@@ -2,7 +2,7 @@
 
 # Landing Page 與網站效果
 
-24 個名稱 · #073–096 · 包 `lp` · 語言: [English](README.md) / [Español](README.es.md) / [日本語](README.ja.md) / [简体中文](README.zh-Hans.md)
+24 個名稱 · #073–096 · 包 `lp` · 語言: [English](README.md) / [Español](README.es.md) / [日本語](README.ja.md) / [한국어](README.ko.md) / [简体中文](README.zh-Hans.md)
 
 找到名稱後，直接告訴 AI。再加上「幾秒」「多強」「什麼在動」，結果會更接近你想要的。
 
