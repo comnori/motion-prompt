@@ -1,4 +1,4 @@
-// Motion Prompt #084 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#084
+// Motion Prompt #084 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#084
 //
 // Magnetic button / Magnetic button
 // 팩: lp (랜딩 페이지와 웹 효과) · element 12 · 분류: 호버와 클릭 상호작용
@@ -11,8 +11,8 @@
 // 활용 상황: 가입·문의처럼 가장 클릭을 유도하고 싶은 버튼에 사용합니다.
 // 태그: magnetic, magnetic-button, hover, cursor, elastic, cta, interaction
 // 크기: 539x208 px · 반복 주기: 4.8 s
-// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#084
+// 필요한 코드: kit lp -> https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#084
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

@@ -1,12 +1,14 @@
 # Motion Prompt
 
+> **Personal edition by comnori:** [Gallery](https://comnori.github.io/motion-prompt/) · [Deployment guide](PERSONAL-PAGES.md). This branch is for personal GitHub Pages only; do not merge it into main or submit it upstream. Skill installation, contribution and contact instructions below refer to the original project. Original author: Shohei Ohtaki.
+
 **English** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
 > 日本語の説明は [README.ja.md](README.ja.md) にあります。
 > 한국어 설명은 [README.ko.md](README.ko.md), 한국어 용어 목록은 [`packs/`](packs/README.md)에 있습니다.
 > 中文用户：所有名称一览都有简体中文和繁體中文版本，见 [`packs/`](packs/README.md)。
 > En español: todas las listas de nombres están en español en [`packs/`](packs/README.md).
-> The name lists are in English, Japanese, Spanish, Simplified Chinese, Traditional Chinese and Korean (see [`packs/`](packs/README.md)); the gallery is in English, Japanese and Korean. Open the [Korean gallery](https://showheyohtaki.github.io/motion-prompt/?lang=ko), or use the JA / EN / KO buttons. For another language, give [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md) to a coding AI.
+> The name lists are in English, Japanese, Spanish, Simplified Chinese, Traditional Chinese and Korean (see [`packs/`](packs/README.md)); the gallery is in English, Japanese and Korean. Open the [Korean gallery](https://comnori.github.io/motion-prompt/?lang=ko), or use the JA / EN / KO buttons. For another language, give [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md) to a coding AI.
 
 A library of names for the things you ask an AI to make. Each name comes with a moving sample, a one-line meaning and an example of how to ask for it. Eight sets are in it now, 24 names each and 192 in all: motion-graphics moves (`motion`), camera moves (`camera`), UI component names (`ui`), landing page and web effects (`lp`), photo looks, lighting and styles (`photo`), motion-graphics moves, part 2 (`motion2`), landing page and web effects, part 2 (`lp2`), and camera moves and transitions, part 2 (`camera2`). It also comes with the prompts to make the same kind of library for your own field, in your own language.
 
@@ -14,9 +16,9 @@ A library of names for the things you ask an AI to make. Each name comes with a 
 |---|---|
 | ![Motion graphics names 01–08](assets/preview-motion.gif) | ![Camera move names 01–08](assets/preview-camera.gif) |
 
-- Gallery (every sample, moving): https://showheyohtaki.github.io/motion-prompt/
+- Gallery (every sample, moving): https://comnori.github.io/motion-prompt/
 - Name lists you can read here on GitHub: [`packs/`](packs/README.md)
-- Examples from other people who share names with samples (embeds and links to their posts on X): https://showheyohtaki.github.io/motion-prompt/found.html
+- Examples from other people who share names with samples (embeds and links to their posts on X): https://comnori.github.io/motion-prompt/found.html
 
 ## Why I made this
 
@@ -43,7 +45,7 @@ Shohei Ohtaki
 | 145–168 | `lp2`: landing page and web effects, part 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
 | 169–192 | `camera2`: camera moves and transitions, part 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-Each list gives the number, the name, what it means and an example of how to ask an AI for it, in English, Japanese, Spanish, Simplified Chinese, Traditional Chinese and Korean. The same names move in the [gallery](https://showheyohtaki.github.io/motion-prompt/).
+Each list gives the number, the name, what it means and an example of how to ask an AI for it, in English, Japanese, Spanish, Simplified Chinese, Traditional Chinese and Korean. The same names move in the [gallery](https://comnori.github.io/motion-prompt/).
 
 Each pack has its own look. The motion and motion2 packs are dark navy with four colors. The camera and camera2 packs are light gray with one blue. The ui pack is warm off-white with black and one blue, and a cursor sets each part moving. The lp and lp2 packs draw a white browser window on a pale gray desk, with a vermilion accent and blue for the pictures on the page. The photo pack has no shared palette: each card is painted in the colors of its own scene, and the effect fades in and back out so you can compare. That is on purpose. What a pack has to get right is the names, not a house style.
 
@@ -217,7 +219,7 @@ Three files make up the skill: the instructions (`SKILL.md`), notes on moving an
 
 The script makes GET requests for the text files below and nothing else. Nothing from your project is uploaded. `pick` also opens a temporary listener on your own machine (127.0.0.1) that receives only the numbers and note sent by "Send to AI" in the gallery.
 
-1. `https://showheyohtaki.github.io/motion-prompt/api/v1/`
+1. `https://comnori.github.io/motion-prompt/api/v1/`
 2. if that is unreachable: `https://raw.githubusercontent.com/showheyohtaki/motion-prompt/main/api/v1/`
 
 | File | Contents |

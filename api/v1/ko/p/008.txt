@@ -12,6 +12,6 @@ Motion Prompt #008
 - 충돌 후: 가로 흔들림 10 px × e^(−9t) × sin(38t), 세로 압축 20% × e^(−11t), 0.4 s 동안 방사형 선 8개를 표시합니다.
 활용 상황: 내레이션이나 가사의 핵심 단어를 움직임으로 기억에 남기고 싶을 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/008.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/008.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

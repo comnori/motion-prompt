@@ -1,4 +1,4 @@
-// Motion Prompt #041 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#041
+// Motion Prompt #041 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#041
 //
 // 점프 컷 / Jump cut
 // 팩: camera (카메라 움직임과 장면 전환) · element 17 · 분류: 장면 전환
@@ -13,8 +13,8 @@
 // 활용 상황: 대화나 작업의 쉬는 부분을 줄여 속도를 높이거나 시간이 빠르게 흐르는 모습을 보여 줄 때 사용합니다.
 // 태그: jump cut, cut, time skip, same framing, vlog, ellipsis, edit
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#041
+// 필요한 코드: kit camera -> https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#041
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

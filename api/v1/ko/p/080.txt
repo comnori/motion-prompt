@@ -11,6 +11,6 @@ Motion Prompt #080
 - 화면 아래로 나가는 문장은 보이지 않는 상태로 초기화합니다.
 활용 상황: 랜딩 페이지를 읽는 순간 가장 중요한 문구를 강조할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/080.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/080.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

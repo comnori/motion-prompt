@@ -11,6 +11,6 @@ Motion Prompt #185
 - 상단은 ‘SHOT A → INSERT → SHOT A’로 바뀝니다. 4.7 s에 시작 장면으로 컷합니다.
 활용 상황: 소품의 정보나 손으로 하는 행동을 자세히 보여 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/185.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/185.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -12,6 +12,6 @@ Motion Prompt #025
 - 오른쪽 위에는 각도를 정수 도 단위로 표시합니다(-18° → +18°).
 활용 상황: 넓은 장소를 보여 주거나 장면 한쪽에서 다른 쪽으로 시선을 옮길 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/025.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/025.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -11,6 +11,6 @@ Motion Prompt #182
 - 3.4–4.2 s 정지 후 마지막 0.5 s 동안 페이드합니다. 표시는 f/1.8 → f/16입니다.
 활용 상황: 서로 다른 거리에 있는 대상들을 동시에 읽을 수 있게 보여 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/182.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/182.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

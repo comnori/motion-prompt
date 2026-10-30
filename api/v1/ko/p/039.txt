@@ -12,6 +12,6 @@ Motion Prompt #039
 - 복귀: 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다. 오른쪽 위 시계는 10분 단위로 06:00 → 18:00을 표시합니다.
 활용 상황: 도시·하늘·작업의 변화나 긴 시간을 짧은 영상으로 보여 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/039.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/039.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

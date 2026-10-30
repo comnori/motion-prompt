@@ -1,4 +1,4 @@
-// Motion Prompt #142 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#142
+// Motion Prompt #142 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#142
 //
 // 산산조각 / Shatter
 // 팩: motion2 (모션 그래픽 움직임 2) · element 22 · 분류: 전환과 강조
@@ -12,8 +12,8 @@
 // 활용 상황: 강하게 전달할 제목이나 결과 직전에 충격·파괴·반전을 표현할 때 사용합니다.
 // 태그: shatter, glass-break, broken-glass, shards, crack, transition, impact
 // 크기: 539x208 px · 반복 주기: 4.7 s
-// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#142
+// 필요한 코드: kit motion2 -> https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#142
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

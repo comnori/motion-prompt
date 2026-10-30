@@ -1,4 +1,4 @@
-// Motion Prompt #065 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#065
+// Motion Prompt #065 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#065
 //
 // 햄버거 메뉴 / Hamburger menu
 // 팩: ui (UI 컴포넌트 이름) · element 17 · 분류: 탐색과 상태 표시
@@ -11,8 +11,8 @@
 // 활용 상황: 좁은 화면에서 주요 탐색 메뉴를 버튼 하나 안에 넣을 때 사용합니다.
 // 태그: hamburger-menu, hamburger, menu-icon, nav-toggle, mobile-menu, menu
 // 크기: 542x191 px · 반복 주기: 4.5 s
-// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#065
+// 필요한 코드: kit ui -> https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#065
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

@@ -12,6 +12,6 @@ Motion Prompt #023
 - 배경 밝기는 변하지 않습니다(전체 화면 깜박임 없음). 무작위 값은 고정 시드를 사용합니다.
 활용 상황: 제목이나 장면 전환에 디지털·오류·불안정한 느낌을 짧게 강조할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/023.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/023.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

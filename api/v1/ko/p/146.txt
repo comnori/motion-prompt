@@ -10,6 +10,6 @@ Motion Prompt #146
 - 역방향 스크롤에는 같은 식으로 마지막 글자부터 흐려집니다. 본문 막대와 스크롤바 손잡이는 페이지와 함께 움직입니다.
 활용 상황: 콘셉트·창업자 메시지처럼 천천히 읽어야 하는 짧은 문장에 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/146.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/146.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

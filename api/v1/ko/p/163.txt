@@ -10,6 +10,6 @@ Motion Prompt #163
 - 2.4 s에 아래 점 클릭: 첫 툴팁은 0.25 s에 사라지고 새 툴팁이 아래 점 오른쪽에 열립니다. 3.8 s에 다시 누르면 닫힙니다.
 활용 상황: 제품·평면도·지도 한 장 안의 여러 지점을 설명할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/163.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/163.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -11,6 +11,6 @@ Motion Prompt #168
 - 오른쪽 아래에 재생 상태(일시 정지·음소거)를 표시합니다. 실제 사이트의 영상에는 autoplay, muted, loop, playsinline을 사용합니다.
 활용 상황: 여행·호텔·식당·채용처럼 사진 한 장보다 분위기와 움직임이 중요한 히어로에 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/168.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/168.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

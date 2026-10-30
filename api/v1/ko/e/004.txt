@@ -1,4 +1,4 @@
-// Motion Prompt #004 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#004
+// Motion Prompt #004 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#004
 //
 // 라인 드로잉 / Line draw
 // 팩: motion (모션 그래픽 움직임) · element 04 · 분류: 등장과 텍스트 연출
@@ -13,8 +13,8 @@
 // 활용 상황: 그래프·경로·밑줄·손으로 그린 원처럼 선 자체를 보여 주는 것이 핵심일 때 사용합니다.
 // 태그: line-draw, trim-path, stroke, draw-on, chart, path, write-on
 // 크기: 539x208 px · 반복 주기: 4.7 s
-// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#004
+// 필요한 코드: kit motion -> https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#004
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

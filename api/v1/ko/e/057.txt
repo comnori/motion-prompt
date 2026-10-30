@@ -1,4 +1,4 @@
-// Motion Prompt #057 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#057
+// Motion Prompt #057 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#057
 //
 // 탭 / Tabs
 // 팩: ui (UI 컴포넌트 이름) · element 09 · 분류: 선택과 전환
@@ -12,8 +12,8 @@
 // 활용 상황: 같은 공간에서 관련된 여러 화면을 전환해 볼 수 있게 할 때 사용합니다.
 // 태그: tabs, tab-bar, tabbed, navigation, switch-view, underline
 // 크기: 542x191 px · 반복 주기: 4.5 s
-// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#057
+// 필요한 코드: kit ui -> https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#057
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

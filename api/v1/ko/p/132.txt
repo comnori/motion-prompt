@@ -9,6 +9,6 @@ Motion Prompt #132
 - 아래 슬라이더(x = 112→427, y = 180)의 왼쪽은 가늘게, 오른쪽은 굵게입니다. 노란 손잡이(반지름 14)가 v를 따라가며 위에 현재 굵기를 표시합니다.
 활용 상황: 제목·로고·단어 하나의 글자 자체로 소리의 크기나 감정을 표현할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/132.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/132.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

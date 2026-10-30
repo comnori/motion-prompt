@@ -11,6 +11,6 @@ Motion Prompt #153
 - 빛: 커서 중심의 흰 방사형 빛, 반지름 130 px, 중앙 불투명도 0.42. 바닥 그림자는 기울기 반대 방향으로 최대 10 px 이동합니다.
 활용 상황: 회원 카드·제품 패키지·요금 카드가 집어 들 수 있는 물체처럼 느껴지게 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/153.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/153.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

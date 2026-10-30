@@ -12,6 +12,6 @@ Motion Prompt #009
 - 각 레일에는 동일 시간 간격의 위치를 나타내는 점 12개가 있습니다(위는 등간격, 아래는 양끝에 밀집).
 활용 상황: 이동·크기·회전에 가속과 감속을 넣어 기계적인 움직임을 줄일 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/009.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/009.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -11,6 +11,6 @@ Motion Prompt #175
 - 왼쪽 아래에 회색 삼각대 표시, 오른쪽 위에 LOCKED를 표시합니다(#040 Freeze frame은 영상 시간을 멈추지만 여기서는 시간은 흐르고 카메라만 정지).
 활용 상황: 움직이는 피사체를 돋보이게 하거나 고정 관찰·타임랩스·합성의 바탕에 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/175.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/175.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

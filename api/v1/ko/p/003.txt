@@ -12,6 +12,6 @@ Motion Prompt #003
 - 점 10개(코랄·파랑 교대, 반지름 8→4.8): 타원(x ×1.45, y ×0.78)을 따라 반지름 58→150으로 퍼지며 발동 후 0.3–0.72 s에 사라집니다. 하트 채우기는 1.92–2.2 s에 사라집니다.
 활용 상황: 좋아요·성공·정답처럼 어떤 동작이나 성취가 발생한 순간을 강조할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/003.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/003.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

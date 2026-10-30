@@ -11,6 +11,6 @@ Motion Prompt #015
 - 모양은 원·정사각형·삼각형(크기 5–11 px), 색은 파랑·코랄·노랑·민트이며 최대 ±4.5 rad/s로 회전합니다.
 활용 상황: 색종이 조각이나 불꽃 대신 축하 분위기와 생동감을 더할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/015.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/015.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

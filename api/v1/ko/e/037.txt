@@ -1,4 +1,4 @@
-// Motion Prompt #037 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#037
+// Motion Prompt #037 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#037
 //
 // 슬로 모션 / Slow motion
 // 팩: camera (카메라 움직임과 장면 전환) · element 13 · 분류: 촬영 방식과 시간 연출
@@ -13,8 +13,8 @@
 // 활용 상황: 짧은 동작이나 표정을 자세히 보게 하거나 감정의 절정을 강조할 때 사용합니다.
 // 태그: slow motion, slow-mo, slomo, high frame rate, 120fps, time stretch, jump
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#037
+// 필요한 코드: kit camera -> https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#037
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

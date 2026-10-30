@@ -11,6 +11,6 @@ Motion Prompt #051
 - 닫기: 2.75 s에 손가락이 손잡이 (271, 68)에 닿고 3.0–3.6 s에 아래로 끕니다. a에 (1 − 3.0–3.6 s의 easeInOutCubic)을 곱해 손가락을 따라 화면 아래로 내립니다.
 활용 상황: 모바일에서 현재 화면을 보면서 세부 정보나 선택지를 표시할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/051.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/051.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

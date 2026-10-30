@@ -11,6 +11,6 @@ Motion Prompt #074
 - 위로 되돌아갈 때 요소가 화면 아래로 빠져나가면 보이지 않는 상태로 초기화하고 다음 진입 때 다시 재생합니다.
 활용 상황: 긴 랜딩 페이지에서 스크롤에 따라 내용을 조금씩 등장시킬 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/074.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/074.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

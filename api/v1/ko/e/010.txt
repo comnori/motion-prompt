@@ -1,4 +1,4 @@
-// Motion Prompt #010 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#010
+// Motion Prompt #010 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#010
 //
 // 오버슈트 / Overshoot
 // 팩: motion (모션 그래픽 움직임) · element 10 · 분류: 움직임 다듬기
@@ -12,8 +12,8 @@
 // 활용 상황: 도착하는 요소에 탄력과 에너지를 더할 때 사용합니다.
 // 태그: overshoot, spring, bounce, settle, elastic, gauge, meter, needle
 // 크기: 539x208 px · 반복 주기: 4.7 s
-// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#010
+// 필요한 코드: kit motion -> https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#010
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

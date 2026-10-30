@@ -11,6 +11,6 @@ Motion Prompt #010
 - 복귀: 3.7 s부터 값 = 0.7 × e^(−7.5t)·cos(8.5t)로 0으로 돌아갑니다(멈추기 전에 잠깐 0 아래로 내려감).
 활용 상황: 도착하는 요소에 탄력과 에너지를 더할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/010.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/010.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

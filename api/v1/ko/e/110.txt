@@ -1,4 +1,4 @@
-// Motion Prompt #110 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#110
+// Motion Prompt #110 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#110
 //
 // 어안 렌즈 / Fisheye lens
 // 팩: photo (사진 표현·조명·스타일) · element 14 · 분류: 렌즈와 카메라 효과
@@ -13,8 +13,8 @@
 // 활용 상황: 스케이트보드·뮤직비디오 등에서 대담하고 장난스럽거나 구멍으로 들여다보는 듯한 시점에 사용합니다.
 // 태그: fisheye, fisheye lens, barrel distortion, ultra wide, 8mm, distortion
 // 크기: 539x208 px · 반복 주기: 5 s
-// 필요한 코드: kit photo -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/photo.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#110
+// 필요한 코드: kit photo -> https://comnori.github.io/motion-prompt/api/v1/kit/photo.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#110
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

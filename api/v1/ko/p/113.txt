@@ -10,6 +10,6 @@ Motion Prompt #113
 - 시간: 0.4 s부터 1.4 s까지 효과가 나타나고 4.0 s까지 유지한 뒤 4.8 s까지 사라집니다(한 번 = 5 s, cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1)).
 활용 상황: 깨끗하고 가볍고 부드러운 제품·인물 사진에 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/113.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/photo.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/113.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/photo.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

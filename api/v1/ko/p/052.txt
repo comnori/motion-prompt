@@ -11,6 +11,6 @@ Motion Prompt #052
 - 열리는 동안 화살표를 180°·ex 회전하고 테두리를 옅은 파랑, 제목을 파랑으로 바꿉니다.
 활용 상황: FAQ나 긴 설명에서 제목을 훑어보고 필요한 내용만 펼치게 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/052.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/052.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

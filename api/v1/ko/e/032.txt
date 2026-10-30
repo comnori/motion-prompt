@@ -1,4 +1,4 @@
-// Motion Prompt #032 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#032
+// Motion Prompt #032 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#032
 //
 // 돌리 줌(버티고 효과) / Dolly zoom (Vertigo)
 // 팩: camera (카메라 움직임과 장면 전환) · element 08 · 분류: 카메라 움직임
@@ -13,8 +13,8 @@
 // 활용 상황: 깨달음의 순간이나 불안·충격을 시각적으로 표현할 때 사용합니다.
 // 태그: dolly zoom, vertigo, zolly, push pull, background stretch, unease, camera move
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#032
+// 필요한 코드: kit camera -> https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#032
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

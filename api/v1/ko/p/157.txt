@@ -10,6 +10,6 @@ Motion Prompt #157
 - 같은 0.25 s 동안 불투명도 0→1, 배율 0.85×→1×로 나타납니다. 지연 없이 커서를 따르며 다음 행으로 이동하면 이전 사진이 사라지고 새 사진이 들어옵니다.
 활용 상황: 작업·프로젝트·매물 목록을 가벼운 텍스트 형태로 유지하면서 관심 항목의 사진만 보여 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/157.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/157.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

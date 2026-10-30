@@ -10,6 +10,6 @@ Motion Prompt #159
 - 포커스 중 테두리는 0.15 s에 회색→네이비, 두께 1.5 → 2.2 px가 됩니다. 삭제를 시작하면 메시지는 사라집니다.
 활용 상황: 가입·문의 양식에서 제출 전에 오류를 알아차리게 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/159.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/159.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

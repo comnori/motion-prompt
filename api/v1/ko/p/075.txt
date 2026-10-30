@@ -11,6 +11,6 @@ Motion Prompt #075
 - 사진·제목·카드 세 개의 콘텐츠는 헤더 아래에서 정상 스크롤됩니다.
 활용 상황: 긴 페이지에서 메뉴와 주요 행동 버튼을 계속 사용할 수 있게 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/075.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/075.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

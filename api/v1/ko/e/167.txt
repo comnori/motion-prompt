@@ -1,4 +1,4 @@
-// Motion Prompt #167 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#167
+// Motion Prompt #167 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#167
 //
 // 아래로 스크롤 안내 / Scroll-down cue
 // 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 23 · 분류: 콘텐츠를 돋보이게 하는 효과
@@ -10,8 +10,8 @@
 // 활용 상황: 히어로가 화면을 채워 아래에 더 내용이 있음을 알려야 할 때 사용합니다.
 // 태그: scroll-cue, scroll-indicator, scroll-down, hero, arrow, loop
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#167
+// 필요한 코드: kit lp2 -> https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#167
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

@@ -1,4 +1,4 @@
-// Motion Prompt #050 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#050
+// Motion Prompt #050 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#050
 //
 // 드로어(오프캔버스) / Drawer (Off-canvas)
 // 팩: ui (UI 컴포넌트 이름) · element 02 · 분류: 펼치기와 오버레이
@@ -12,8 +12,8 @@
 // 활용 상황: 특히 모바일에서 탐색 메뉴나 필터를 필요할 때만 꺼내 쓸 수 있게 할 때 사용합니다.
 // 태그: drawer, off-canvas, offcanvas, side-menu, navigation-drawer, sheet, sidebar, slide-in
 // 크기: 542x191 px · 반복 주기: 4.5 s
-// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#050
+// 필요한 코드: kit ui -> https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#050
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

@@ -11,6 +11,6 @@ Motion Prompt #020
 - 구멍 안에는 다음 장면을 1/maxScale 배율로 배치합니다. 확대가 끝나면 정확히 전체 크기가 되며 다음 장면으로 전환합니다.
 활용 상황: 로고나 글자 속으로 들어가 추진력 있게 다음 장면으로 이동할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/020.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/020.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

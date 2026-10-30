@@ -11,6 +11,6 @@ Motion Prompt #068
 - 초기화: 표시기가 3.75–4.05 s에 사라지고 4.05–4.3 s에 1단계로 다시 나타납니다.
 활용 상황: 가입·결제처럼 여러 단계의 진행 상황과 남은 단계를 보여 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/068.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/068.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

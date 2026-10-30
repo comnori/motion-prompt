@@ -18,8 +18,10 @@ const language = context.window.MP_LANGUAGE;
 for (const [query, saved, browser, expected] of [
   ['?lang=ko', 'ja', 'en-US', 'ko'], ['?lang=en', 'ko', 'ko-KR', 'en'],
   ['?lang=invalid', 'ko', 'ja-JP', 'ko'], ['', null, 'ko-KR', 'ko'],
-  ['', 'invalid', 'ja-JP', 'ja'], ['', null, 'fr-FR', 'en'],
-  ['', null, '', 'en'], ['?lang=ko-KR', 'en', 'ko', 'en'],
+  ['', 'invalid', 'ja-JP', 'ko'], ['', null, 'fr-FR', 'ko'],
+  ['', null, '', 'ko'], ['?lang=ko-KR', 'en', 'ko', 'en'],
+  ['', null, 'en-US', 'ko'], ['', null, 'ja-JP', 'ko'],
+  ['?lang=invalid', 'invalid', 'en-US', 'ko'], ['', 'ja', 'en-US', 'ja'],
 ]) assert.equal(language.resolve(query, saved, browser), expected);
 const state = { detail: '001' };
 context.location = { href: 'https://example.test/motion-prompt/?pack=camera&pick=025&cb=local#025' };
@@ -46,6 +48,11 @@ for (const file of ['assets/site.js', 'assets/found.js']) {
 }
 
 const catalog = json('api/v1/catalog.json');
+const personalSite = 'https://comnori.github.io/motion-prompt/';
+assert.equal(catalog.site, personalSite);
+assert.equal(catalog.repo, 'https://github.com/comnori/motion-prompt');
+assert.equal(catalog.count, 192);
+assert.equal(catalog.packs.length, 8);
 const generated = { window: {} };
 vm.runInNewContext(read('assets/catalog.js'), generated);
 assert.deepEqual(JSON.parse(JSON.stringify(generated.window.MP_CATALOG)), catalog);
@@ -78,9 +85,23 @@ for (const lang of langs) {
   for (const el of catalog.elements) {
     const pack = catalog.packs.find(p => p.pack === el.pack);
     assert.equal(read('api/v1/' + lang + '/p/' + el.id + '.txt').trimEnd(), prompt(el, pack.title[lang], lang));
+    for (const dir of ['e', 'p']) {
+      const text = read('api/v1/' + lang + '/' + dir + '/' + el.id + '.txt');
+      assert.ok(text.includes(personalSite + 'api/v1/kit/' + el.pack + '.js'));
+      assert.ok(!text.includes('https://showheyohtaki.github.io/motion-prompt/'));
+    }
+    assert.ok(read('api/v1/' + lang + '/e/' + el.id + '.txt').includes('MIT License (c) 2026 Shohei Ohtaki'));
     // Only the descriptive header differs; executable reference code stays identical.
     const code = text => text.slice(text.indexOf('\n\n') + 2);
     assert.equal(code(read('api/v1/' + lang + '/e/' + el.id + '.txt')), code(read('api/v1/en/e/' + el.id + '.txt')));
+  }
+}
+for (const pack of catalog.packs) {
+  assert.ok(read('api/v1/kit/' + pack.pack + '.js').includes(personalSite));
+  for (const file of fs.readdirSync(path.join(root, 'packs', pack.pack)).filter(n => /^README.*\.md$/.test(n))) {
+    const text = read('packs/' + pack.pack + '/' + file);
+    assert.ok(text.includes(personalSite));
+    assert.ok(!text.includes('https://showheyohtaki.github.io/motion-prompt/'));
   }
 }
 const examples = json('examples/found.json');

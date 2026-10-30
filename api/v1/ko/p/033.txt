@@ -12,6 +12,6 @@ Motion Prompt #033
 - 복귀: 2.6–4.2 s에 정지한 뒤 마지막 0.5 s 동안 크로스페이드합니다. 오른쪽 위에 초점 거리를 표시합니다(◎ 2m → ◎ 9m).
 활용 상황: 컷 전환 없이 전경에서 배경으로, 또는 그 반대로 시선을 옮길 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/033.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/033.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

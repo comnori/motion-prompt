@@ -11,6 +11,6 @@ Motion Prompt #057
 - 내용: 이전 패널은 0.2 s 동안 선형으로 사라집니다. 0.1 s 뒤 새 패널이 0.2 s 동안 나타나며 8 px 올라옵니다.
 활용 상황: 같은 공간에서 관련된 여러 화면을 전환해 볼 수 있게 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/057.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/057.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -1,4 +1,4 @@
-// Motion Prompt #120 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#120
+// Motion Prompt #120 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#120
 //
 // 이중 노출 / Double exposure
 // 팩: photo (사진 표현·조명·스타일) · element 24 · 분류: 색조와 마무리 표현
@@ -13,8 +13,8 @@
 // 활용 상황: 인물을 장소·기억·내면세계와 연결하는 포스터나 표지에 사용합니다.
 // 태그: double exposure, multiple exposure, blend, silhouette, surreal, composite
 // 크기: 539x208 px · 반복 주기: 5 s
-// 필요한 코드: kit photo -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/photo.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#120
+// 필요한 코드: kit photo -> https://comnori.github.io/motion-prompt/api/v1/kit/photo.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#120
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

@@ -10,6 +10,6 @@ Motion Prompt #064
 - 위의 세 줄 목록은 1.05, 2.15, 3.35 s 전후 각각 0.2 s 안에 불투명도 1 → 0 → 1로 변하며 최저점에서 내용이 교체됩니다.
 활용 상황: 검색 결과·기사 등 긴 목록을 번호가 있는 페이지로 나눌 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/064.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/064.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

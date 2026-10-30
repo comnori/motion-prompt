@@ -1,4 +1,4 @@
-// Motion Prompt #176 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#176
+// Motion Prompt #176 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#176
 //
 // 플라이 스루 / Fly-through
 // 팩: camera2 (카메라 움직임과 장면 전환 2) · element 08 · 분류: 카메라 움직임
@@ -13,8 +13,8 @@
 // 활용 상황: 건물 안으로 들어가는 도입부나 한 번의 이동으로 공간을 연결할 때 사용합니다.
 // 태그: fly-through, flythrough, through the window, pass through, drone, interior, camera move
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#176
+// 필요한 코드: kit camera2 -> https://comnori.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#176
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

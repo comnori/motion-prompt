@@ -10,6 +10,6 @@ Motion Prompt #086
 - 벗어나면 0.3 s 동안 왼쪽 끝이 오른쪽으로 이동해 선이 오른쪽으로 사라집니다(transform-origin을 오른쪽에 둔 scaleX와 유사).
 활용 상황: 메뉴나 텍스트 링크에서 포인터 위치를 차분하게 알려 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/086.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/086.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

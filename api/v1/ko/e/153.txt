@@ -1,4 +1,4 @@
-// Motion Prompt #153 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#153
+// Motion Prompt #153 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#153
 //
 // 호버 3D 틸트 / 3D tilt on hover
 // 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 09 · 분류: 마우스와 입력 상호작용
@@ -12,8 +12,8 @@
 // 활용 상황: 회원 카드·제품 패키지·요금 카드가 집어 들 수 있는 물체처럼 느껴지게 할 때 사용합니다.
 // 태그: tilt, 3d, hover, perspective, card, glare, parallax
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#153
+// 필요한 코드: kit lp2 -> https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#153
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

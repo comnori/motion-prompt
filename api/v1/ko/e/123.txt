@@ -1,4 +1,4 @@
-// Motion Prompt #123 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#123
+// Motion Prompt #123 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#123
 //
 // 바운스 / Bounce
 // 팩: motion2 (모션 그래픽 움직임 2) · element 03 · 분류: 움직임 기법
@@ -12,8 +12,8 @@
 // 활용 상황: 아이콘·단어·제품 등이 무게감과 탄력을 지니고 떨어져 착지할 때 사용합니다.
 // 태그: bounce, drop, gravity, ball, physics, landing, easing
 // 크기: 539x208 px · 반복 주기: 4.7 s
-// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#123
+// 필요한 코드: kit motion2 -> https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#123
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

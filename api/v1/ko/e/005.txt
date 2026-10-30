@@ -1,4 +1,4 @@
-// Motion Prompt #005 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#005
+// Motion Prompt #005 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#005
 //
 // 마스크 리빌 / Mask reveal
 // 팩: motion (모션 그래픽 움직임) · element 05 · 분류: 등장과 텍스트 연출
@@ -12,8 +12,8 @@
 // 활용 상황: 제목이나 헤드라인을 정돈된 느낌으로 등장시킬 때 사용합니다.
 // 태그: mask, reveal, clip, wipe, title, text, slide-up, headline
 // 크기: 539x208 px · 반복 주기: 4.7 s
-// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#005
+// 필요한 코드: kit motion -> https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#005
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

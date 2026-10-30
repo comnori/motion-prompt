@@ -12,6 +12,6 @@ Motion Prompt #004
 - 지우기: 원 3.5–4.0 s, 선 3.65–4.45 s, 축 3.85–4.55 s. 각각 시작점부터 줄어듭니다. 화살촉은 4.3–4.45 s에 사라집니다.
 활용 상황: 그래프·경로·밑줄·손으로 그린 원처럼 선 자체를 보여 주는 것이 핵심일 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/004.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/004.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

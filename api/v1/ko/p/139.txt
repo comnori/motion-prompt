@@ -10,6 +10,6 @@ Motion Prompt #139
 - 멀어지는 면은 최대 55% 어두워집니다(0.55·sinφ). 들어오는 면은 55% 어둡게 시작해 밝아집니다(0.55·cosφ). 바닥 그림자는 보이는 너비를 따릅니다.
 활용 상황: 제품·요금제·화면을 차례로 보여 주면서 깊이감을 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/139.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/139.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -1,4 +1,4 @@
-// Motion Prompt #179 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#179
+// Motion Prompt #179 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/#179
 //
 // POVショット / POV shot
 // パック: camera2 (カメラワークと切り替え 第2弾) · element 11 · カテゴリ: アングル・画づくり
@@ -12,8 +12,8 @@
 // 使いどころ: 観客に登場人物と同じ体験をさせたいとき、ゲームやVR風の見せ方。
 // タグ: pov, point of view, first person, subjective, eyes, hands, angle
 // サイズ: 539x208 px · 1周: 9.4 s
-// Needs: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
-// 動く見本: https://showheyohtaki.github.io/motion-prompt/#179
+// Needs: kit camera2 -> https://comnori.github.io/motion-prompt/api/v1/kit/camera2.js
+// 動く見本: https://comnori.github.io/motion-prompt/#179
 //
 // cells[i](k, w, h, u) … k = CanvasRenderingContext2D（呼ぶ側でクリアと save/restore 済み）、w・h = サイズ、u = 秒（0 以上 1周 未満）。u だけで絵が決まる。
 // ここから要素のコード。CELLS や定数・補助関数は kit にある。

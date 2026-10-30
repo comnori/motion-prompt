@@ -26,10 +26,12 @@ const server = http.createServer((req,res)=>{
 });
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const base='http://127.0.0.1:'+server.address().port+'/motion-prompt/';
+const personalSite='https://comnori.github.io/motion-prompt/';
+const personalBranch='https://github.com/comnori/motion-prompt/tree/codex/personal-pages';
 const browser = await chromium.launch({channel:'chrome',headless:true}).catch(() => chromium.launch({headless:true}));
 const errors=[];
 async function context(options={}) {
- const ctx=await browser.newContext({locale:'ko-KR',reducedMotion:'reduce',viewport:{width:1440,height:1000},...options});
+ const ctx=await browser.newContext({locale:'en-US',reducedMotion:'reduce',viewport:{width:1440,height:1000},...options});
  await ctx.route('https://platform.twitter.com/**',r=>r.abort());
  await ctx.addInitScript(()=>{
   window.__copied='';
@@ -46,12 +48,39 @@ async function noOverflow(page,label) {
  assert.ok(dimensions.scroll<=dimensions.width+1,label+': '+JSON.stringify(dimensions));
 }
 try {
+ // Crawlers and visitors without JavaScript receive Korean metadata and copy too.
+ const staticCtx=await browser.newContext({javaScriptEnabled:false,locale:'en-US'});
+ const staticPage=await staticCtx.newPage();
+ for(const file of ['', 'found.html']){
+  await staticPage.goto(base+file);
+  assert.equal(await staticPage.locator('html').getAttribute('lang'),'ko');
+  assert.ok((await staticPage.title()).includes('comnori'));
+  assert.equal(await staticPage.locator('link[rel="canonical"]').getAttribute('href'),personalSite+file);
+  assert.equal(await staticPage.locator('meta[property="og:url"]').getAttribute('content'),personalSite+file);
+  assert.equal(await staticPage.locator('meta[property="og:image"]').getAttribute('content'),personalSite+'assets/og.png');
+  assert.equal(await staticPage.locator('meta[property="og:locale"]').getAttribute('content'),'ko_KR');
+  assert.match(await staticPage.locator('h1').textContent(),/[가-힣]/);
+  assert.equal(await staticPage.locator('[data-lang="ko"]').getAttribute('aria-pressed'),'true');
+  assert.equal(await staticPage.locator('.top-gh').getAttribute('href'),personalBranch);
+  assert.equal(await staticPage.locator('[data-t="personalEdition"]').textContent(),'개인 배포: comnori');
+  assert.equal(await staticPage.locator('[data-t="sourceLink"]').getAttribute('href'),'https://github.com/showheyohtaki/motion-prompt');
+ }
+ await staticCtx.close();
+ const japaneseCtx=await context({locale:'ja-JP'});
+ const japanese=await japaneseCtx.newPage();
+ await japanese.goto(base+'?lang=invalid'); await ready(japanese,'ko');
+ await japanese.goto(base+'found.html');
+ await japanese.waitForFunction(()=>document.querySelectorAll('.ex').length===12);
+ assert.equal(await japanese.locator('html').getAttribute('lang'),'ko');
+ await japaneseCtx.close();
  const ctx=await context();
  const p=await ctx.newPage();
  await p.goto(base); await ready(p,'ko');
  await p.locator('[data-lang="ko"]').click();
  assert.equal(await p.evaluate(()=>localStorage.getItem('mp-lang')),'ko');
  assert.match(await p.title(),/용어 모음집/);
+ assert.equal(await p.locator('#cmd').textContent(),'npx skills add showheyohtaki/motion-prompt');
+ assert.match(await p.locator('[data-t="installSkillH"]').textContent(),/원본/);
  assert.equal(await p.locator('meta[property="og:locale"]').getAttribute('content'),'ko_KR');
  assert.ok((await p.locator('[data-page-link="found.html"]').first().getAttribute('href')).includes('lang=ko'));
  await p.screenshot({path:'.tmp/ko-desktop-light.png'});
@@ -69,6 +98,7 @@ try {
  assert.ok((await p.locator('#d-sub').textContent()).startsWith(catalog.elements[0].name.en));
  await p.locator('#d-copy-prompt').click();
  assert.equal(await p.evaluate(()=>window.__copied),fs.readFileSync('api/v1/ko/p/001.txt','utf8').trimEnd());
+ assert.ok((await p.evaluate(()=>window.__copied)).includes(personalSite+'api/v1/ko/e/001.txt'));
  await p.locator('#d-copy-code').click();
  assert.match(await p.evaluate(()=>window.__copied),/api\/v1\/kit\/motion.js/);
  await p.locator('#d-pick').click();
@@ -87,8 +117,10 @@ try {
  await p.locator('#tray-share').click();
  let share=await p.evaluate(()=>window.__copied);
  assert.match(share,/lang=ko&pick=001/);
+ assert.ok(share.startsWith(personalSite+'?'));
  await p.locator('#tray-main').click();
  assert.match(await p.evaluate(()=>window.__copied),/api\/v1\/ko\/e\/001.txt/);
+ assert.ok((await p.evaluate(()=>window.__copied)).includes(personalSite+'api/v1/ko/e/001.txt'));
  await p.goto(base+'?lang=ko&pick=001,192');
  await ready(p,'ko');
  assert.equal(await p.locator('#tray-list li').count(),2);
@@ -103,7 +135,8 @@ try {
  await p.locator('[data-lang="ja"]').click();
  await p.locator('[data-lang="en"]').click();
  await p.locator('[data-lang="ko"]').click();
- assert.ok((await p.locator('[data-href-ja]').first().getAttribute('href')).includes('README.ko.md'));
+ assert.equal(await p.locator('[data-t="makeLink"]').getAttribute('href'),'https://github.com/comnori/motion-prompt/blob/codex/personal-pages/make-your-own/README.ko.md');
+ assert.match(await p.locator('[data-t="recLink"]').textContent(),/원본/);
  await p.locator('.logo').click(); await ready(p,'ko');
  await p.locator('[data-lang="en"]').click();
  await p.reload(); await ready(p,'en');

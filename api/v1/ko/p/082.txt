@@ -9,6 +9,6 @@ Motion Prompt #082
 - 틀 밖의 내용은 클리핑합니다(overflow: hidden). 틀과 캡션은 움직이지 않습니다.
 활용 상황: 작업물·제품·기사 사진 목록에서 선택하려는 항목을 표시할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/082.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/082.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -10,6 +10,6 @@ Motion Prompt #061
 - 아래 목록: 카드 네 개(242×54, 두 열·두 행). 조건에 맞지 않으면 불투명도가 1에서 0.12로 줄어듭니다.
 활용 상황: 간단한 필터를 조합해 목록이나 검색 결과를 좁히게 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/061.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/061.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

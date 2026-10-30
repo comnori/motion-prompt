@@ -10,6 +10,6 @@ Motion Prompt #002
 - 퇴장: 막대는 1.78 + 0.045·i s부터 0.26 s 동안 cubic ease-in으로 줄어듭니다. 점은 먼저 1.70 + 0.045·i s부터 0.2 s 동안 사라집니다.
 활용 상황: 목록·그래프·카드 등 여러 항목을 순서대로 등장시켜 시선을 유도할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/002.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/002.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

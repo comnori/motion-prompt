@@ -1,4 +1,4 @@
-// Motion Prompt #133 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#133
+// Motion Prompt #133 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#133
 //
 // 텍스트 마스크 / Text mask
 // 팩: motion2 (모션 그래픽 움직임 2) · element 13 · 분류: 텍스트와 도형
@@ -11,8 +11,8 @@
 // 활용 상황: 제목이나 브랜드 이름 안에 사진·영상을 넣어 글자와 이미지를 결합할 때 사용합니다.
 // 태그: text-mask, mask, clipping-mask, knockout, text, typography, title
 // 크기: 539x208 px · 반복 주기: 4.7 s
-// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#133
+// 필요한 코드: kit motion2 -> https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#133
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

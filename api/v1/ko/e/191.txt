@@ -1,4 +1,4 @@
-// Motion Prompt #191 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#191
+// Motion Prompt #191 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#191
 //
 // 불릿 타임 / Bullet time
 // 팩: camera2 (카메라 움직임과 장면 전환 2) · element 23 · 분류: 전환과 편집
@@ -12,8 +12,8 @@
 // 활용 상황: 액션의 정점을 입체적으로 살펴보게 할 때 사용합니다.
 // 태그: bullet time, time slice, frozen moment, orbit, slow motion, matrix, effect
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#191
+// 필요한 코드: kit camera2 -> https://comnori.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#191
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

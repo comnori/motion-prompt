@@ -1,9 +1,11 @@
 # Motion Prompt
 
+> **comnori의 개인 배포:** [한국어 갤러리](https://comnori.github.io/motion-prompt/) · [개인 배포 안내](PERSONAL-PAGES.md). 이 브랜치는 개인 GitHub Pages 전용이며 main 병합·상위 저장소 PR 대상이 아닙니다. 아래 스킬 설치·기여·문의 안내는 원본 프로젝트를 대상으로 합니다. 원작자: Shohei Ohtaki.
+
 [English](README.md) | [日本語](README.ja.md) | **한국어**
 
 > 한국어 용어 목록은 [`packs/`](packs/README.md)의 각 팩에 있는 한국어 링크에서 볼 수 있습니다. 영어·일본어·스페인어·중국어 간체·중국어 번체 목록도 제공됩니다.
-> 갤러리와 CLI는 한국어·영어·일본어를 지원합니다. [한국어 갤러리](https://showheyohtaki.github.io/motion-prompt/?lang=ko)에서 예제를 보고, 한국어 동작 사양과 프롬프트를 복사할 수 있습니다. [한국어 예제 영상 6편과 제작 안내](make-your-own/README.ko.md)도 제공합니다.
+> 갤러리와 CLI는 한국어·영어·일본어를 지원합니다. [한국어 갤러리](https://comnori.github.io/motion-prompt/?lang=ko)에서 예제를 보고, 한국어 동작 사양과 프롬프트를 복사할 수 있습니다. [한국어 예제 영상 6편과 제작 안내](make-your-own/README.ko.md)도 제공합니다.
 > 다른 언어로 영상을 만들려면 [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md)를 코딩 AI에 전달하세요.
 
 AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 이름 모음집입니다. 각 이름에는 움직이는 예제, 한 줄 설명, 요청 예시가 있습니다. 현재 8개 팩에 24개씩, 총 192개 용어를 담았습니다. 모션 그래픽 움직임(`motion`), 카메라 움직임(`camera`), UI 컴포넌트 이름(`ui`), 랜딩 페이지와 웹 효과(`lp`), 사진 표현·조명·스타일(`photo`), 모션 그래픽 움직임 2(`motion2`), 랜딩 페이지와 웹 효과 2(`lp2`), 카메라 움직임과 장면 전환 2(`camera2`)입니다. 자신의 분야와 언어로 같은 형태의 모음집을 만들 수 있는 프롬프트도 제공합니다.
@@ -12,17 +14,16 @@ AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 이름 모음�
 |---|---|
 | ![모션 그래픽 용어 01–08](assets/preview-motion.gif) | ![카메라 움직임 용어 01–08](assets/preview-camera.gif) |
 
-- [한국어 갤러리(모든 움직이는 예제)](https://showheyohtaki.github.io/motion-prompt/?lang=ko)
+- [한국어 갤러리(모든 움직이는 예제)](https://comnori.github.io/motion-prompt/?lang=ko)
 - GitHub에서 바로 읽는 용어 목록: [`packs/`](packs/README.md)
-- [다른 사람들이 이름과 예제를 공유한 사례](https://showheyohtaki.github.io/motion-prompt/found.html?lang=ko) (X 게시물 임베드와 링크)
+- [다른 사람들이 이름과 예제를 공유한 사례](https://comnori.github.io/motion-prompt/found.html?lang=ko) (X 게시물 임베드와 링크)
 
 ## 언어 선택
 
 ```mermaid
 flowchart LR
   URL["유효한 ?lang 값"] -->|없으면| Saved["저장한 언어"]
-  Saved -->|없으면| Browser["브라우저 언어"]
-  Browser -->|지원하지 않으면| English["영어"]
+  Saved -->|없으면| Korean["한국어"]
 ```
 
 상단의 JA / EN / KO 버튼으로 언어를 바꾸면 선택이 저장됩니다. 사례 페이지와 공유 링크에도 선택한 언어가 유지됩니다. 한국어에서는 영어 원어를 함께 표시합니다. 외부 게시물과 Canvas 예제 안의 문구는 원문을 유지합니다.
@@ -54,7 +55,7 @@ Shohei Ohtaki
 | 145–168 | `lp2`: 랜딩 페이지와 웹 효과 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
 | 169–192 | `camera2`: 카메라 움직임과 장면 전환 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-각 목록에는 번호, 이름, 뜻, AI 요청 예시가 있습니다. 한국어 목록에는 영어 원어도 함께 표시합니다. 한국어 명칭의 실제 사용 근거를 확인하지 못한 일부 항목은 영어 원어를 이름으로 유지하고, 뜻과 AI 요청 예시는 한국어로 제공합니다. [전체 팩 목록](packs/README.md)에서 다른 언어로 이동할 수 있으며, [갤러리](https://showheyohtaki.github.io/motion-prompt/)에서는 같은 이름의 움직이는 예제를 볼 수 있습니다.
+각 목록에는 번호, 이름, 뜻, AI 요청 예시가 있습니다. 한국어 목록에는 영어 원어도 함께 표시합니다. 한국어 명칭의 실제 사용 근거를 확인하지 못한 일부 항목은 영어 원어를 이름으로 유지하고, 뜻과 AI 요청 예시는 한국어로 제공합니다. [전체 팩 목록](packs/README.md)에서 다른 언어로 이동할 수 있으며, [갤러리](https://comnori.github.io/motion-prompt/)에서는 같은 이름의 움직이는 예제를 볼 수 있습니다.
 
 팩마다 시각적 스타일이 다릅니다. `motion`과 `motion2`는 짙은 네이비 바탕에 네 가지 색을, `camera`와 `camera2`는 밝은 회색 바탕에 파란색 하나를 사용합니다. `ui`는 따뜻한 흰색 바탕에 검정과 파랑을 사용하며 커서가 각 요소를 움직입니다. `lp`와 `lp2`는 옅은 회색 책상 위에 흰 브라우저 창을 그리고, 주홍색을 강조색으로, 파란색을 페이지 안의 이미지에 사용합니다. `photo`에는 공통 색상표가 없습니다. 카드마다 장면에 맞는 색을 쓰고, 효과가 나타났다 사라져 전후를 비교할 수 있습니다. 의도한 차이입니다. 팩에서 가장 중요한 것은 통일된 스타일보다 정확한 이름입니다.
 
@@ -235,7 +236,7 @@ npx skills add showheyohtaki/motion-prompt
 
 스크립트는 아래 출처의 텍스트 파일을 GET 요청으로 가져옵니다. 프로젝트의 내용을 업로드하지 않습니다. `pick`은 로컬 컴퓨터의 `127.0.0.1`에 임시 수신기를 열어 갤러리에서 "AI에게 보내기"로 보낸 번호와 메모만 받습니다.
 
-1. `https://showheyohtaki.github.io/motion-prompt/api/v1/`
+1. `https://comnori.github.io/motion-prompt/api/v1/`
 2. 위 출처에 연결되지 않으면: `https://raw.githubusercontent.com/showheyohtaki/motion-prompt/main/api/v1/`
 
 | 파일 | 내용 |

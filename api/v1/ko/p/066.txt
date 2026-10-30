@@ -11,6 +11,6 @@ Motion Prompt #066
 - 복귀: 커서가 첫 카드로 이동하고(2.45–2.8 s에 파란 윤곽선) 2.7 s에 클릭합니다. 2.7–2.95 s에 상세 페이지로 돌아옵니다.
 활용 상황: 계층이 깊은 사이트에서 현재 위치와 상위 페이지로 돌아갈 경로를 보여 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/066.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/066.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

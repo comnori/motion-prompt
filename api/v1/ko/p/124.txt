@@ -11,6 +11,6 @@ Motion Prompt #124
 - 종추(코랄, 반지름 13)는 반대로 흔들립니다(각도 × 70 px). 양옆의 흰 진동 호(반지름 86·110, 두께 6)가 계속 점멸합니다.
 활용 상황: 알림·전화 수신처럼 시선을 끌거나 불안정한 핸드헬드 느낌을 더할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/124.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/124.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

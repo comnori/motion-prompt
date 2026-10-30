@@ -1,4 +1,4 @@
-// Motion Prompt #157 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#157
+// Motion Prompt #157 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#157
 //
 // Hover image reveal / Hover image reveal
 // 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 13 · 분류: 마우스와 입력 상호작용
@@ -11,8 +11,8 @@
 // 활용 상황: 작업·프로젝트·매물 목록을 가벼운 텍스트 형태로 유지하면서 관심 항목의 사진만 보여 줄 때 사용합니다.
 // 태그: hover, image-reveal, list, cursor-follow, preview, portfolio
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#157
+// 필요한 코드: kit lp2 -> https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#157
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

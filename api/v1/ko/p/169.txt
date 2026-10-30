@@ -12,6 +12,6 @@ Motion Prompt #169
 - 오른쪽 위 높이 표시: ↕ 1.0m → ↕ 3.2m.
 활용 상황: 선반·건물을 아래에서 위로 훑거나 기울임 없이 눈높이를 바꿀 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/169.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/169.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -11,6 +11,6 @@ Motion Prompt #160
 - 3.9–4.1 s에 사라지고 4.1–4.4 s에 원래 전송 버튼이 6 px 올라오며 돌아옵니다(cubic ease-out).
 활용 상황: 전송·구매·저장처럼 결과를 잠시 기다려야 하는 버튼에 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/160.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/160.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -12,8 +12,8 @@ import vm from 'node:vm';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
-const SITE = 'https://showheyohtaki.github.io/motion-prompt/';
-const REPO = 'https://github.com/showheyohtaki/motion-prompt';
+const SITE = 'https://comnori.github.io/motion-prompt/';
+const REPO = 'https://github.com/comnori/motion-prompt';
 const LICENCE = 'MIT License (c) 2026 Shohei Ohtaki';
 const VERSION = 1;
 const LANGS = ['ja', 'en', 'ko'];   // languages of the gallery, the API folders and the copyable prompt
@@ -37,7 +37,7 @@ const isStr = v => typeof v === 'string' && v.trim() !== '';
 // This function is also written into assets/catalog.js (as source text), so the site's
 // "copy prompt" button and api/v1/<lang>/p/<id>.txt can never drift apart. Keep it self-contained.
 function mpPrompt(el, packTitle, lang) {
-  var base = 'https://showheyohtaki.github.io/motion-prompt/';
+  var base = 'https://comnori.github.io/motion-prompt/';
   var en = lang === 'en';
   var spec = el.spec[lang].map(function (s) { return '- ' + s; }).join('\n');
   var ref = base + 'api/v1/' + lang + '/e/' + el.id + '.txt';

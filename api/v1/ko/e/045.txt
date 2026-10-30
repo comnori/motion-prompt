@@ -1,4 +1,4 @@
-// Motion Prompt #045 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#045
+// Motion Prompt #045 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#045
 //
 // 와이프 / Wipe
 // 팩: camera (카메라 움직임과 장면 전환) · element 21 · 분류: 장면 전환
@@ -13,8 +13,8 @@
 // 활용 상황: 장면·주제의 분명한 변화나 비교 대상 사이의 전환을 나타낼 때 사용합니다.
 // 태그: wipe, linear wipe, reveal, clip, edge, left to right, transition
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#045
+// 필요한 코드: kit camera -> https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#045
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

@@ -1,4 +1,4 @@
-// Motion Prompt #071 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#071
+// Motion Prompt #071 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#071
 //
 // 배지 / Badge
 // 팩: ui (UI 컴포넌트 이름) · element 23 · 분류: 탐색과 상태 표시
@@ -12,8 +12,8 @@
 // 활용 상황: 읽지 않은 메시지나 장바구니 항목처럼 개수에 주의를 끌 때 사용합니다.
 // 태그: badge, notification-badge, counter, count, dot, unread
 // 크기: 542x191 px · 반복 주기: 4.5 s
-// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#071
+// 필요한 코드: kit ui -> https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#071
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

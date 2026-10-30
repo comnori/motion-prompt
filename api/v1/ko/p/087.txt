@@ -10,6 +10,6 @@ Motion Prompt #087
 - 3.62 s에 놓습니다. 왼쪽 위에 BEFORE, 오른쪽 위에 AFTER를 표시합니다.
 활용 상황: 리모델링·뷰티·사진 보정처럼 변화의 효과를 보여 주는 페이지에 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/087.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/087.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

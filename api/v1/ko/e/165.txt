@@ -1,4 +1,4 @@
-// Motion Prompt #165 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#165
+// Motion Prompt #165 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#165
 //
 // Animated shape divider / Animated shape divider
 // 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 21 · 분류: 콘텐츠를 돋보이게 하는 효과
@@ -11,8 +11,8 @@
 // 활용 상황: 바다·여름·어린이 관련 사이트 등에서 섹션 경계를 직선보다 부드럽게 표현할 때 사용합니다.
 // 태그: shape-divider, wave, section-divider, svg, ambient, loop
 // 크기: 539x208 px · 반복 주기: 9.4 s
-// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#165
+// 필요한 코드: kit lp2 -> https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#165
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

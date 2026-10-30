@@ -10,6 +10,6 @@ Motion Prompt #072
 - 커서가 3.3 s에 “추가”를 클릭합니다. 빈 상태는 3.25–3.45 s에 사라지고 두 행은 3.35–3.7 s에 easeOutCubic으로 왼쪽에서 돌아옵니다.
 활용 상황: 처음 사용하는 화면이나 검색 결과가 없는 화면에서 다음 행동을 안내할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/072.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/072.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/ui.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

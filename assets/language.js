@@ -3,12 +3,11 @@
   'use strict';
   var supported = ['ja', 'en', 'ko'];
   function valid(lang) { return supported.indexOf(lang) !== -1; }
-  function resolve(search, saved, browserLanguage) {
+  function resolve(search, saved) {
     var requested = new URLSearchParams(search).get('lang');
     if (valid(requested)) return requested;
     if (valid(saved)) return saved;
-    var base = String(browserLanguage || '').toLowerCase().split('-')[0];
-    return valid(base) ? base : 'en';
+    return 'ko';
   }
   function setUrl(lang) {
     var url = new URL(location.href);

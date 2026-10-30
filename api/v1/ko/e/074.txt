@@ -1,4 +1,4 @@
-// Motion Prompt #074 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#074
+// Motion Prompt #074 · MIT License (c) 2026 Shohei Ohtaki · https://comnori.github.io/motion-prompt/?lang=ko#074
 //
 // 스크롤 페이드 인 / Fade-in on scroll
 // 팩: lp (랜딩 페이지와 웹 효과) · element 02 · 분류: 스크롤 효과
@@ -12,8 +12,8 @@
 // 활용 상황: 긴 랜딩 페이지에서 스크롤에 따라 내용을 조금씩 등장시킬 때 사용합니다.
 // 태그: fade-in, scroll-reveal, reveal-on-scroll, intersection-observer, aos, entrance, scroll
 // 크기: 539x208 px · 반복 주기: 4.8 s
-// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
-// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#074
+// 필요한 코드: kit lp -> https://comnori.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://comnori.github.io/motion-prompt/?lang=ko#074
 //
 // cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
 // 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.

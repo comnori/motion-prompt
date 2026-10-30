@@ -11,6 +11,6 @@ Motion Prompt #019
 - 합쳐지는 표현: 모양을 흰색으로 그림 → 7 px 블러 → 알파 임곗값 적용 → 색 또는 다음 장면으로 채웁니다.
 활용 상황: 음식·뷰티·창작 영상 등에서 부드럽고 유기적으로 장면을 전환할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/019.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/019.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -9,6 +9,6 @@ Motion Prompt #167
 - 양옆 40 px에 아래 화살표를 각각 두 개(두께 2.5) 놓고 반박자 시차로 24 px 내려옵니다. 불투명도는 사인 곡선으로 0 → 0.8 → 0입니다.
 활용 상황: 히어로가 화면을 채워 아래에 더 내용이 있음을 알려야 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/167.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/167.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

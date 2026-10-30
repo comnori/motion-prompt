@@ -10,6 +10,6 @@ Motion Prompt #131
 - 글자는 흰색, 가운데점은 노랑입니다.
 활용 상황: 로고 주위·길·강·파도 등 형태를 따라 글자를 흐르게 하거나 반복되는 글자 띠에 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/131.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/131.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

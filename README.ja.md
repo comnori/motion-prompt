@@ -1,5 +1,7 @@
 # Motion Prompt
 
+> **comnori の個人版:** [ギャラリー](https://comnori.github.io/motion-prompt/) · [運用案内](PERSONAL-PAGES.md)。このブランチは個人用 GitHub Pages 専用です。main への逆マージや原作への PR は行いません。以下のスキル導入・貢献・問い合わせ案内は原作プロジェクト向けです。原作者: Shohei Ohtaki。
+
 [English](README.md) | **日本語** | [한국어](README.ko.md)
 
 AIに何かを作ってもらうときに使う「名前」のライブラリです。名前の1つずつに、動く見本・一言の意味・AIへの頼み方の例が付いています。いま入っているのは、モーショングラフィックスの動き（`motion`）、カメラワーク（`camera`）、UIパーツの名前（`ui`）、LP・Webサイトの演出（`lp`）、写真の表現・光と画風（`photo`）、モーショングラフィックスの演出 第2弾（`motion2`）、LP・Webサイトの演出 第2弾（`lp2`）、カメラワークと切り替え 第2弾（`camera2`）の8つで、それぞれ24個、合わせて192個です。同じような名前の見本を、自分の分野・自分の言語で作るためのプロンプトも入っています。
@@ -8,9 +10,9 @@ AIに何かを作ってもらうときに使う「名前」のライブラリで
 |---|---|
 | ![モーショングラフィックスの名前 01–08](assets/preview-motion.gif) | ![カメラワークの名前 01–08](assets/preview-camera.gif) |
 
-- ギャラリー（全部の見本が動きます）: https://showheyohtaki.github.io/motion-prompt/
+- ギャラリー（全部の見本が動きます）: https://comnori.github.io/motion-prompt/
 - GitHub の上でそのまま読める名前の一覧: [`packs/`](packs/README.md)
-- 名前と見本を公開しているほかの人たちの事例（X のポストの埋め込みとリンク）: https://showheyohtaki.github.io/motion-prompt/found.html
+- 名前と見本を公開しているほかの人たちの事例（X のポストの埋め込みとリンク）: https://comnori.github.io/motion-prompt/found.html
 
 ## なぜ作ったか
 
@@ -37,7 +39,7 @@ AIに何かを作ってもらうときに使う「名前」のライブラリで
 | 145–168 | `lp2`: LP・Webサイトの演出 第2弾 | 24 | [日本語](packs/lp2/README.ja.md) · [English](packs/lp2/README.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
 | 169–192 | `camera2`: カメラワークと切り替え 第2弾 | 24 | [日本語](packs/camera2/README.ja.md) · [English](packs/camera2/README.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-一覧には、番号・名前・英語名・一言の意味・AIへの頼み方の例が並んでいます。一覧は日本語・英語・スペイン語・中国語（簡体字・繁体字）・韓国語で読めます（ギャラリーの画面は日本語・英語・韓国語）。[韓国語のギャラリー](https://showheyohtaki.github.io/motion-prompt/?lang=ko)も開けます。同じ名前が[ギャラリー](https://showheyohtaki.github.io/motion-prompt/)で動きます。
+一覧には、番号・名前・英語名・一言の意味・AIへの頼み方の例が並んでいます。一覧は日本語・英語・スペイン語・中国語（簡体字・繁体字）・韓国語で読めます（ギャラリーの画面は日本語・英語・韓国語）。[韓国語のギャラリー](https://comnori.github.io/motion-prompt/?lang=ko)も開けます。同じ名前が[ギャラリー](https://comnori.github.io/motion-prompt/)で動きます。
 
 パックごとに見た目が違います。モーショングラフィックス（第1弾・第2弾）は濃紺に4色、カメラワーク（第1弾・第2弾）は薄いグレーに青1色です。UIパーツは温かみのある白に黒と青1色で、カーソルが触れると部品が動きます。LP・Webサイトの演出（第1弾・第2弾）は、薄いグレーの机の上に白いブラウザの窓を描き、差し色は朱、ページの中の写真には青を使います。写真の表現には共通の色がなく、カードごとにその場面の色で描き、効果がかかっては戻るので前後を見比べられます。わざとそうしています。パックがそろえるべきなのは名前であって、決まった見た目ではありません。
 
@@ -214,7 +216,7 @@ AI は次の順に進めます。
 
 データは静的ファイルで、次の場所から読みます。CLI はこれらを取得するだけで、あなたのプロジェクトの情報を送信しません。`pick` は手元（127.0.0.1）に一時的な受け口を開き、ギャラリーの「AIに渡す」から、選んだ番号とメモだけを受け取ります。
 
-1. `https://showheyohtaki.github.io/motion-prompt/api/v1/`
+1. `https://comnori.github.io/motion-prompt/api/v1/`
 2. 1 に届かないとき: `https://raw.githubusercontent.com/showheyohtaki/motion-prompt/main/api/v1/`
 
 | ファイル | 内容 |

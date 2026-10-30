@@ -11,6 +11,6 @@ Motion Prompt #029
 - 반복: 4.7 s마다 시작점으로 즉시 돌아갑니다(기둥과 지면 격자는 연결되지만 배경 건물과 나무는 뛰어 바뀜).
 활용 상황: 걷거나 달리는 피사체를 따라가며 동작과 이동감을 함께 보여 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/029.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/029.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/camera.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

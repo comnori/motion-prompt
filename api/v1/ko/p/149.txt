@@ -10,6 +10,6 @@ Motion Prompt #149
 - 스크롤 중 헤더 아래에 12 px 그림자를 둡니다(처음 30 px 스크롤에서 불투명도 0→0.14). 스크롤바 손잡이도 따라갑니다.
 활용 상황: 휴대폰처럼 공간이 좁을 때 콘텐츠 영역을 넓히면서 조금만 스크롤하면 메뉴를 열 수 있게 할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/149.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/149.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/lp2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

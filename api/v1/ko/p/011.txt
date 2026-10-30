@@ -11,6 +11,6 @@ Motion Prompt #011
 - 높이 올라갈수록 그림자는 작고 얇아집니다. 착지할 때마다 짧은 노란 선이 좌우로 뻗습니다(바운스 시간의 약 18%).
 활용 상황: 캐릭터나 로고에 무게감과 부드러움을 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/011.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/011.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

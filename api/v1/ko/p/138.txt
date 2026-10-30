@@ -9,6 +9,6 @@ Motion Prompt #138
 - 이전 장면은 아래에 유지합니다. 두 화면 자체는 움직이지 않습니다.
 활용 상황: 낮과 밤·변경 전후 등 두 장면을 분명하게 전환하거나 복고풍 느낌을 줄 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/138.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/138.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

@@ -11,6 +11,6 @@ Motion Prompt #128
 - 위아래에 구멍이 있는 검은 필름 띠(각각 26 px)와 초당 프레임 수 라벨을 둡니다.
 활용 상황: 매끄러운 움직임보다 손으로 만든 클레이 애니메이션·콜라주 느낌이 필요할 때 사용합니다.
 
-참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/128.txt
-공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://comnori.github.io/motion-prompt/api/v1/ko/e/128.txt
+공통 보조 코드: https://comnori.github.io/motion-prompt/api/v1/kit/motion2.js
 참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.
