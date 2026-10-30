@@ -68,7 +68,7 @@ try {
  assert.equal(await p.locator('#d-name').textContent(),catalog.elements[0].name.ko);
  assert.ok((await p.locator('#d-sub').textContent()).startsWith(catalog.elements[0].name.en));
  await p.locator('#d-copy-prompt').click();
- assert.equal(await p.evaluate(()=>window.__copied),fs.readFileSync('api/v1/ko/p/001.txt','utf8').trimEnd());
+ assert.equal(await p.evaluate(()=>window.__copied),fs.readFileSync('api/v1/ko/p/001.txt','utf8').replace(/\r\n/g, '\n').trimEnd());
  await p.locator('#d-copy-code').click();
  assert.match(await p.evaluate(()=>window.__copied),/api\/v1\/kit\/motion.js/);
  await p.locator('#d-pick').click();

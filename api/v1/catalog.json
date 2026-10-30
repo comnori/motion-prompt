@@ -1,5 +1,5 @@
 {
- "version": "1.cac8ecbba8",
+ "version": "1.e5e7729c3c",
  "site": "https://showheyohtaki.github.io/motion-prompt/",
  "repo": "https://github.com/showheyohtaki/motion-prompt",
  "count": 192,
@@ -14047,7 +14047,7 @@
     "es": "Plano cenital (bird's-eye view)",
     "zh-Hans": "鸟瞰镜头",
     "zh-Hant": "鳥瞰鏡頭",
-    "ko": "버즈 아이 뷰"
+    "ko": "버드아이 뷰"
    },
    "meaning": {
     "ja": "真上から真下を見下ろす",
@@ -14063,7 +14063,7 @@
     "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.",
     "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。",
     "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。",
-    "ko": "교차로를 바로 위에서 내려다보는 버즈 아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘."
+    "ko": "교차로를 바로 위에서 내려다보는 버드아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘."
    },
    "summary": {
     "ja": "真上から真下を見下ろす。道・人・車・木がすべて上から見た形になり、上がるほど広い範囲が見える。",

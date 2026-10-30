@@ -138,7 +138,7 @@ HTML은 실제 시계를 사용하지 않습니다. 각 프레임은 프레임 �
 - 일본어 HTML은 처음에 세 페이지를 순서대로 보여 주는 30초짜리 영상으로 작성되었습니다. 현재 예제는 영어판처럼 페이지별로 렌더링합니다. 원본 게시물의 일본어 MP4와 새 렌더링은 하드 컷에서 한 프레임 정도 차이가 날 수 있습니다.
 - 예제 HTML의 코드 주석은 대부분 일본어입니다.
 - Canvas의 `roundRect`, `letterSpacing`을 사용하므로 최근 Chromium이 필요합니다. 일반 설치 절차에서는 Playwright가 설치한 Chromium을 사용합니다.
-- 두 예제의 카드는 갤러리의 `camera`, `motion` 팩에도 들어 있습니다. [팩 목록](../packs/README.md)을 참고하세요. 새 세트를 갤러리에 추가하는 절차는 [CONTRIBUTING.ko.md](../CONTRIBUTING.ko.md)에 있습니다.
+- 두 예제의 카드는 갤러리의 `camera`, `motion` 팩에도 들어 있습니다. [팩 목록](../packs/README.md)을 참고하세요. 새 세트를 갤러리에 추가하는 절차는 원본 기여 안내의 [영문](../CONTRIBUTING.md)과 [일문](../CONTRIBUTING.ja.md)에 있습니다.
 
 ## 라이선스
 

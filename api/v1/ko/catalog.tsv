@@ -179,7 +179,7 @@
 178	camera2	앵글과 구도	하이 앵글 (High angle)	high angle,look down,from above,overhead,vulnerable,angle	카메라가 올라가 아래를 보면서 사람은 작아지고 지면이 화면 대부분을 채웁니다.
 179	camera2	앵글과 구도	시점 샷(POV) (POV shot)	pov,point of view,first person,subjective,eyes,hands,angle	인물의 눈으로 봅니다. 걸음의 흔들림과 아래쪽 손이 1인칭임을 보여 주고 앞의 사람이 나를 향해 손을 흔듭니다.
 180	camera2	앵글과 구도	오버 더 숄더 샷 (Over-the-shoulder)	over-the-shoulder,ots,dialogue,conversation,shoulder,two shot,angle	한 사람의 뒤통수와 어깨가 화면 가장자리를 차지하고 그 너머 상대를 봅니다. 전경은 흐리고 상대는 선명합니다.
-181	camera2	앵글과 구도	버즈 아이 뷰 (Bird's-eye view)	bird's-eye,birds eye,top-down,overhead,straight down,aerial,angle	카메라가 지면을 수직으로 내려다봅니다. 도로·사람·자동차·나무가 위에서 본 도형으로 보이며, 카메라가 높아질수록 더 넓은 영역이 드러납니다.
+181	camera2	앵글과 구도	버드아이 뷰 (Bird's-eye view)	bird's-eye,birds eye,top-down,overhead,straight down,aerial,angle	카메라가 지면을 수직으로 내려다봅니다. 도로·사람·자동차·나무가 위에서 본 도형으로 보이며, 카메라가 높아질수록 더 넓은 영역이 드러납니다.
 182	camera2	앵글과 구도	딥 포커스 (Deep focus)	deep focus,depth of field,everything sharp,f/16,small aperture,pan focus,focus	앞쪽의 꽃부터 뒤쪽의 사람과 건물까지 여러 거리의 대상이 동시에 선명해집니다.
 183	camera2	앵글과 구도	설정 샷 (Establishing shot)	establishing shot,wide shot,location,opening,scene setting,aerial,framing	높고 넓은 구도로 도시 전체를 보여 주며 천천히 전진합니다. 왼쪽 아래에는 장소 설명이 나타납니다.
 184	camera2	앵글과 구도	익스트림 클로즈업 (Extreme close-up)	extreme close-up,ecu,close-up,eye,detail,macro,framing	얼굴 클로즈업에서 확대하여 눈이 화면을 가득 채우게 합니다.

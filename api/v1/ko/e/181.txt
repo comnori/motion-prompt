@@ -1,6 +1,6 @@
 // Motion Prompt #181 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#181
 //
-// 버즈 아이 뷰 / Bird's-eye view
+// 버드아이 뷰 / Bird's-eye view
 // 팩: camera2 (카메라 움직임과 장면 전환 2) · element 13 · 분류: 앵글과 구도
 // 동작 요약: 카메라가 지면을 수직으로 내려다봅니다. 도로·사람·자동차·나무가 위에서 본 도형으로 보이며, 카메라가 높아질수록 더 넓은 영역이 드러납니다.
 // 동작 사양:
