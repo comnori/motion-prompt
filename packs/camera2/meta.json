@@ -502,9 +502,9 @@
     },
     {
       "no": "13", "slug": "birds-eye-view", "category": "angles-framing",
-      "name": { "ja": "バーズアイ", "en": "Bird's-eye view", "es": "Plano cenital (bird's-eye view)", "zh-Hans": "鸟瞰镜头", "zh-Hant": "鳥瞰鏡頭", "ko": "버즈 아이 뷰" },
+      "name": { "ja": "バーズアイ", "en": "Bird's-eye view", "es": "Plano cenital (bird's-eye view)", "zh-Hans": "鸟瞰镜头", "zh-Hant": "鳥瞰鏡頭", "ko": "버드아이 뷰" },
       "meaning": { "ja": "真上から真下を見下ろす", "en": "Straight down from directly overhead", "es": "Directo hacia abajo, desde justo encima", "zh-Hans": "从正上方垂直向下拍", "zh-Hant": "從正上方垂直往下拍", "ko": "바로 위에서 수직으로 내려다봄" },
-      "ask": { "ja": "交差点を真上からのバーズアイで。人と車が上から見た形で動くように。", "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top.", "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.", "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。", "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。", "ko": "교차로를 바로 위에서 내려다보는 버즈 아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘." },
+      "ask": { "ja": "交差点を真上からのバーズアイで。人と車が上から見た形で動くように。", "en": "Bird's-eye view of the crossing from directly above, people and cars moving as seen from the top.", "es": "Plano cenital de la intersección, justo desde arriba, con las personas y los carros moviéndose vistos desde lo alto.", "zh-Hans": "从正上方用鸟瞰镜头拍十字路口，人和车以从上往下看的样子移动。", "zh-Hant": "十字路口用正上方的鳥瞰鏡頭拍，讓行人和車輛以從上往下看的樣子移動。", "ko": "교차로를 바로 위에서 내려다보는 버드아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘." },
       "summary": {
         "ja": "真上から真下を見下ろす。道・人・車・木がすべて上から見た形になり、上がるほど広い範囲が見える。",
         "en": "Looking straight down from overhead: road, people, cars and trees appear as top-down shapes, and more comes into view as the camera rises.",

@@ -29,7 +29,7 @@
 | [#178](https://showheyohtaki.github.io/motion-prompt/?lang=ko#178) | **하이 앵글** | High angle | 높은 위치에서 아래를 내려다보며 촬영함 | 길을 잃은 아이 장면은 하이 앵글로 촬영해 줘. 위에서 내려다봐 아이가 작아 보이게 해 줘. |
 | [#179](https://showheyohtaki.github.io/motion-prompt/?lang=ko#179) | **시점 샷(POV)** | POV shot | 등장인물의 눈으로 보는 화면 | 문을 열고 방에 들어가는 순간을 인물의 눈으로 보는 시점 샷으로 촬영해 줘. |
 | [#180](https://showheyohtaki.github.io/motion-prompt/?lang=ko#180) | **오버 더 숄더 샷** | Over-the-shoulder | 한 사람의 어깨 너머로 다른 사람을 담음 | 대화를 오버 더 숄더 샷으로 촬영해 줘. 앞쪽 어깨는 살짝 흐리게 해 줘. |
-| [#181](https://showheyohtaki.github.io/motion-prompt/?lang=ko#181) | **버즈 아이 뷰** | Bird's-eye view | 바로 위에서 수직으로 내려다봄 | 교차로를 바로 위에서 내려다보는 버즈 아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘. |
+| [#181](https://showheyohtaki.github.io/motion-prompt/?lang=ko#181) | **버드아이 뷰** | Bird's-eye view | 바로 위에서 수직으로 내려다봄 | 교차로를 바로 위에서 내려다보는 버드아이 뷰로 촬영해 줘. 사람과 차가 움직이는 모습을 위에서 보여 줘. |
 | [#182](https://showheyohtaki.github.io/motion-prompt/?lang=ko#182) | **딥 포커스** | Deep focus | 가까운 곳부터 먼 곳까지 모두 선명하게 초점을 맞춤 | 딥 포커스로 앞의 컵과 뒤의 인물이 모두 선명하게 나오게 해 줘. |
 | [#183](https://showheyohtaki.github.io/motion-prompt/?lang=ko#183) | **설정 샷** | Establishing shot | 장소를 소개하는 넓은 구도의 도입 샷 | 마을 전체를 보여 주는 설정 샷으로 시작하고, 화면에 장소 이름을 표시해 줘. |
 | [#184](https://showheyohtaki.github.io/motion-prompt/?lang=ko#184) | **익스트림 클로즈업** | Extreme close-up | 작은 부분 하나로 화면을 가득 채움 | 눈물이 떨어지는 순간 눈만 익스트림 클로즈업해 줘. |

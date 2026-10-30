@@ -31,6 +31,17 @@ for (const [key, val] of [['pack','camera'], ['pick','025'], ['cb','local']]) as
 assert.equal(changed.hash, '#025');
 
 const placeholders = s => [...new Set(String(s).match(/\{\w+\}/g) || [])].sort();
+// This compares the two metadata translations, not the animation's implementation.
+// Preserve explicit negative values and repeated numbers while allowing translated word order.
+const numbers = text => (text
+  .replace(/\bfigure eight\b|8자/gi, 'figure-eight').replace(/\bthirty\b/gi, '30')
+  .replace(/\u2212/g, '-').replace(/(\d)\s*-\s*(?=\d)/g, '$1–')
+  .replace(/-\s+(?=\d)/g, '-')
+  .match(/-?\d+(?:\.\d+)?/g) || []).sort();
+assert.deepEqual(numbers('u - 1.62; figure eight; Thirty days'), numbers('u−1.62; 8자; 30일'));
+assert.notDeepEqual(numbers('-90 degrees'), numbers('90도'));
+assert.notDeepEqual(numbers('0.4 then 0.4'), numbers('0.4'));
+assert.notDeepEqual(numbers('0.4'), numbers('0.4 and 0.8'));
 for (const file of ['assets/site.js', 'assets/found.js']) {
   const source = read(file);
   const match = source.match(/var I18N = (\{[\s\S]*?\n  \});/);
@@ -63,8 +74,7 @@ for (const pack of catalog.packs.filter(p => koreanPacks.has(p.pack))) {
     }
     assert.equal(el.spec.ko.length, el.spec.en.length);
     el.spec.en.forEach((line, i) => {
-      for (const n of line.match(/\d+(?:\.\d+)?/g) || [])
-        assert.ok((el.spec.ko[i].match(/\d+(?:\.\d+)?/g) || []).includes(n), pack.pack + '/' + el.no + ': missing ' + n);
+      assert.deepEqual(numbers(el.spec.ko[i]), numbers(line), pack.pack + '/' + el.no + '/spec line ' + (i + 1) + ': translated numbers differ');
     });
     const built = catalog.elements.find(e => e.pack === pack.pack && e.no === el.no);
     for (const key of ['name','meaning','ask','summary','spec','use']) assert.deepEqual(built[key].ko, el[key].ko);

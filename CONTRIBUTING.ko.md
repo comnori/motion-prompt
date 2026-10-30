@@ -74,6 +74,8 @@
 
 현재 갤러리 사이트와 스킬의 명령줄 도구는 한국어·영어·일본어를 지원합니다. 추가한 언어는 `packs/` 아래의 목록과 `api/v1/catalog.json`에 포함됩니다. 자세한 내용은 [FORMAT.md](FORMAT.md)에 있습니다. 지원 언어를 수정했다면 빌드 후 `node tools/test-localization.mjs`를 실행하세요.
 
+기존 한국어 번역 192개의 출처와 불확실한 표기는 [한국어 용어 검토표](docs/korean-terminology.md)에 정리되어 있습니다. 한국어 표기까지 확인한 근거와 개념만 확인한 근거를 구분하므로, 용어를 수정할 때 해당 행도 함께 갱신해 주세요. 빌드 도구를 수정했다면 `node tools/test-build.mjs`를 실행하고, 생성물을 포함하기 전에 `node tools/build.mjs --check`로 최신 상태인지 확인하세요.
+
 영상도 자신의 언어로 만들려면 [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md)를 사용하세요.
 
 ## 자신의 분야 팩 추가하기

@@ -74,6 +74,8 @@ You can ask a coding AI to do steps 1 to 3 ("add Spanish to packs/camera/meta.js
 
 The gallery site and the skill's command line support English, Japanese and Korean. Your language appears in the lists under `packs/` and in `api/v1/catalog.json`. [FORMAT.md](FORMAT.md) has the details. For changes to supported languages, run `node tools/test-localization.mjs` after building.
 
+The [Korean terminology register](docs/korean-terminology.md) records sources and uncertainties for all 192 existing Korean entries. It distinguishes attested Korean wording from references that support only a concept; update the corresponding row when changing a name. For build-tool changes, run `node tools/test-build.mjs`. Before including generated files, run `node tools/build.mjs --check` to verify that they are current.
+
 To also make the videos in your language, use [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md).
 
 ## Add a pack for your field
