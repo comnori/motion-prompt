@@ -1,0 +1,34 @@
+// Motion Prompt #191 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#191
+//
+// 불릿 타임 / Bullet time
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 23 · 분류: 전환과 편집
+// 동작 요약: 점프 중인 피사체의 시간이 느려지는 동안 카메라가 주위를 돌아갑니다.
+// 동작 사양:
+//   - 영상 시간은 0–1.5 s에 정상 속도, 1.5–3.3 s에 0.1배 속도입니다(실제 1.8 s 동안 영상은 0.18 s 진행). 이후 다시 정상 속도가 되며 영상 시간은 u−1.62입니다.
+//   - 거리 9 m의 사람이 영상 시간 0.6–2.6 s에 점프하며 최고 높이는 1.1 m이고 팔을 듭니다. 느린 구간은 점프 진행률 45–54%에 머뭅니다. 나뭇잎 아홉 개도 같은 영상 시간을 따릅니다.
+//   - 카메라는 느린 구간에 반지름 6 m로 -0.6 → +0.6 rad(약 69°) 회전합니다. cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1)을 사용하며 항상 중심을 바라봅니다. 높이는 1.6 m, 피치는 -0.05 rad입니다.
+//   - 다음 4.7 s 구간에는 +0.6 → -0.6 rad로 반대 방향 회전하여 9.4 s 반복을 자연스럽게 잇습니다. #030 Orbit은 피사체의 시간을 멈추지 않습니다.
+//   - 지면에는 반지름 1.3 m 점선 원, 주변에는 반지름 10 m의 나무 고리를 배치합니다. 상단 표시는 ‘×1.0 → BULLET ×0.1 → ×1.0’입니다.
+// 활용 상황: 액션의 정점을 입체적으로 살펴보게 할 때 사용합니다.
+// 태그: bullet time, time slice, frozen moment, orbit, slow motion, matrix, effect
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#191
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 23
+// 23 バレットタイム: 跳躍の頂点で時間がほぼ止まり、その間にカメラが人物の周りを回り込む（#030 オービットは時間が止まらない）
+CELLS[22] = shot((k, w, h, u, cyc) => {
+  const T0 = 1.5, T1 = 3.3, SLOW = 0.1;
+  const tj = u < T0 ? u : u < T1 ? T0 + (u - T0) * SLOW : u - (T1 - T0) * (1 - SLOW);   // 実時間→映像時間
+  const q = P(tj, 0.6, 2.6), e = eIO(P(u, T0, T1));
+  const a = cyc % 2 === 0 ? lerp(-0.6, 0.6, e) : lerp(0.6, -0.6, e), R = 6, P0 = [0, 0, 9];
+  const c = cam({ x: P0[0] + Math.sin(a) * R, z: P0[2] - Math.cos(a) * R, yaw: -a, y: 1.6, pitch: -0.05 });
+  world(k, w, h, c, {
+    person: { z: 9, y: jumpY(q), armUp: q > 0 && q < 1, face: a }, ring: [0, 9, 10], trees: false, extra: leaves(tj, 1.5).map(l => [l[0], l[1], l[2] + 3, l[3]]),
+    after: (kk, cc) => { kk.strokeStyle = C.blueM; kk.lineWidth = 2; kk.setLineDash([5, 5]); kk.beginPath(); for (let i = 0; i <= 48; i++) { const b = i / 48 * Math.PI * 2; const qq = proj(cc, Math.sin(b) * 1.3, 0, 9 + Math.cos(b) * 1.3); i ? kk.lineTo(qq.x, qq.y) : kk.moveTo(qq.x, qq.y); } kk.stroke(); kk.setLineDash([]); }
+  });
+  return u >= T0 && u < T1 ? `BULLET ×${SLOW.toFixed(1)}` : '×1.0';
+});

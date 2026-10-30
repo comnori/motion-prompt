@@ -1,0 +1,39 @@
+// Motion Prompt #051 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#051
+//
+// 바텀 시트 / Bottom sheet
+// 팩: ui (UI 컴포넌트 이름) · element 03 · 분류: 펼치기와 오버레이
+// 동작 요약: 손가락으로 “상세 보기”를 누르면 아래에서 패널이 올라오고, 손잡이를 아래로 끌면 닫힙니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 손가락(반투명 원, 반지름 17, 흰 테두리)이 1.0 s에 아래 중앙의 “상세 보기” 버튼(170×36)을 누릅니다.
+//   - 열림 정도: 1.05–1.45 s에 easeOutCubic으로 0→1. 카드 전체 rgba(18,20,28) 덮개의 불투명도는 0.36·a입니다.
+//   - 시트: 흰색, 높이 136, 위 모서리 반지름 18. 위쪽 경계 y = 191 − 136·a. 그림자 블러 22, y 오프셋 −4. 위 중앙에 52×6 손잡이.
+//   - 내부: 굵은 제목 막대와 26×26 아이콘을 가진 두 줄.
+//   - 닫기: 2.75 s에 손가락이 손잡이 (271, 68)에 닿고 3.0–3.6 s에 아래로 끕니다. a에 (1 − 3.0–3.6 s의 easeInOutCubic)을 곱해 손가락을 따라 화면 아래로 내립니다.
+// 활용 상황: 모바일에서 현재 화면을 보면서 세부 정보나 선택지를 표시할 때 사용합니다.
+// 태그: bottom-sheet, sheet, modal-sheet, mobile, slide-up, drag-to-dismiss, panel
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#051
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 03
+// 03 ボトムシート（Bottom sheet）
+CELLS[2] = ui((w, h, t) => {
+  pageLines(24, 16, 494); fillRR(24, 76, 239, 54, 8, C.block); fillRR(279, 76, 239, 54, 8, C.block);
+  fillRR(186, 144, 170, 36, 18, C.blue); text('詳細を見る', 271, 162, 15, '#fff', 600, 'center');
+  const open = eo(seg(t, 1.05, 1.45));
+  const drag = eio(seg(t, 3.0, 3.6));
+  const a = open * (1 - drag);
+  if (open > 0 && a > 0.001) {
+    X.fillStyle = `rgba(18,20,28,${.36 * a})`; X.fillRect(0, 0, w, h);
+    const sh = 136, sy = h - sh * a;
+    shadowed(() => { rr(0, sy, w, sh + 20, 18); X.fillStyle = '#fff'; X.fill(); }, 22, -4, .2);
+    fillRR(w / 2 - 26, sy + 10, 52, 6, 3, C.line2);
+    bar(28, sy + 30, 160, C.ink, 11);
+    for (let i = 0; i < 2; i++) { const y = sy + 56 + i * 36; fillRR(28, y, 26, 26, 6, i ? C.mb : C.blue); bar(66, y + 4, 220, C.line); bar(66, y + 17, 140, C.line, 7); }
+  }
+  const sy = h - 136 * a;
+  finger([[.3, 271, 162], [1.6, 271, 162], [2.75, w / 2, h - 136 + 13], [3.0, w / 2, h - 136 + 13], [3.6, w / 2, h + 10]], [1.0, 3.0], t, (t > .6 && t < 1.6) || (t > 2.75 && t < 3.6));
+});

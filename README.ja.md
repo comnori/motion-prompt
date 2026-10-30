@@ -37,7 +37,7 @@ AIに何かを作ってもらうときに使う「名前」のライブラリで
 | 145–168 | `lp2`: LP・Webサイトの演出 第2弾 | 24 | [日本語](packs/lp2/README.ja.md) · [English](packs/lp2/README.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
 | 169–192 | `camera2`: カメラワークと切り替え 第2弾 | 24 | [日本語](packs/camera2/README.ja.md) · [English](packs/camera2/README.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-一覧には、番号・名前・英語名・一言の意味・AIへの頼み方の例が並んでいます。一覧は日本語・英語・韓国語・スペイン語・中国語（簡体字・繁体字）で読めます（ギャラリーの画面は日本語と英語）。同じ名前が[ギャラリー](https://showheyohtaki.github.io/motion-prompt/)で動きます。
+一覧には、番号・名前・英語名・一言の意味・AIへの頼み方の例が並んでいます。一覧は日本語・英語・スペイン語・中国語（簡体字・繁体字）・韓国語で読めます（ギャラリーの画面は日本語・英語・韓国語）。[韓国語のギャラリー](https://showheyohtaki.github.io/motion-prompt/?lang=ko)も開けます。同じ名前が[ギャラリー](https://showheyohtaki.github.io/motion-prompt/)で動きます。
 
 パックごとに見た目が違います。モーショングラフィックス（第1弾・第2弾）は濃紺に4色、カメラワーク（第1弾・第2弾）は薄いグレーに青1色です。UIパーツは温かみのある白に黒と青1色で、カーソルが触れると部品が動きます。LP・Webサイトの演出（第1弾・第2弾）は、薄いグレーの机の上に白いブラウザの窓を描き、差し色は朱、ページの中の写真には青を使います。写真の表現には共通の色がなく、カードごとにその場面の色で描き、効果がかかっては戻るので前後を見比べられます。わざとそうしています。パックがそろえるべきなのは名前であって、決まった見た目ではありません。
 
@@ -205,7 +205,7 @@ AI は次の順に進めます。
 | コマンド | 内容 |
 |---|---|
 | `pick` / `pick --pack camera` | ギャラリーを開き、「AIに渡す」で届いた選択（番号・名前・仕様・メモ）を表示する。最大15分待つ |
-| `search typewriter text` / `search 文字 登場` | 場面に合う要素を探す（英語・日本語） |
+| `search typewriter text` / `search 文字 登場` / `search 스크롤` | 場面に合う要素を探す（英語・日本語・韓国語） |
 | `list` / `list --pack motion` | パックとカテゴリの一覧、または 1 パックの全要素 |
 | `get 12 #045` | 選んだ要素の仕様とコード（1 回に 8 個まで） |
 | `kit motion` | そのパックの共通コード |
@@ -220,9 +220,9 @@ AI は次の順に進めます。
 | ファイル | 内容 |
 |---|---|
 | `catalog.json` | 版、件数、パック、全要素の名前・一言の意味・要約・仕様・タグ |
-| `{ja,en}/catalog.tsv` | 1 行 1 要素の一覧（id、pack、category、title、tags、summary） |
-| `{ja,en}/e/{id}.txt` | 要素 1 個: ライセンス行、説明、仕様、コード |
-| `{ja,en}/p/{id}.txt` | 要素 1 個のコピー用プロンプト |
+| `{ja,en,ko}/catalog.tsv` | 1 行 1 要素の一覧（id、pack、category、title、tags、summary） |
+| `{ja,en,ko}/e/{id}.txt` | 要素 1 個: ライセンス行、説明、仕様、コード |
+| `{ja,en,ko}/p/{id}.txt` | 要素 1 個のコピー用プロンプト |
 | `kit/{pack}.js` | パックの共通コード |
 
 このリポジトリを丸ごと clone して使う場合、CLI は手元の `api/v1` を優先して読むので、ネットワークは不要です。取得したデータはディスクに保存され、取得元に届かないときは保存済みの分を使います。

@@ -1,0 +1,48 @@
+// Motion Prompt #161 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#161
+//
+// 뷰 전환(공유 요소) / View transition (shared element)
+// 팩: lp2 (랜딩 페이지와 웹 효과 2) · element 17 · 분류: 콘텐츠를 돋보이게 하는 효과
+// 동작 요약: 목록 사진을 누르면 그 사진이 상세 페이지 상단 이미지로 커지고 나머지는 상세 화면으로 바뀝니다. 돌아가면 사진이 원래 자리로 줄어듭니다.
+// 동작 사양:
+//   - 511 × 168 뷰포트에 목록 사진 세 개(143 × 80, 모서리 반지름 6)를 둡니다. 0.75 s에 가운데 사진, 3.05 s에 상세 페이지의 “← 一覧へ”(목록으로)를 클릭합니다. 한 번 4.7 s(9.4 s마다 두 번).
+//   - 진입: 0.85–1.45 s(0.6 s, cubic ease-in-out)에 클릭한 사진이 목록 위치에서 상세 상단 479 × 94 이미지(모서리 반지름 8)로 연속 이동·확대됩니다. 계속 같은 사진을 사용합니다.
+//   - 이동의 처음 62% 동안 다른 사진과 제목이 사라지고 마지막 40% 동안 상세 제목·본문·복귀 버튼이 나타납니다. 50%에서 URL을 /works에서 /works/02로 바꿉니다.
+//   - 복귀: 3.15–3.75 s(0.6 s)에 같은 동작을 역으로 재생해 목록 자리로 돌아갑니다.
+//   - 목록 사진과 상세 사진이 같은 view-transition-name을 사용하는 View Transitions API의 모습입니다.
+// 활용 상황: 갤러리·제품 목록과 상세 화면 사이에서 무엇을 열었는지 놓치지 않게 할 때 사용합니다.
+// 태그: view-transition, shared-element, page-transition, morph, gallery, navigation
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit lp2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#161
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 17
+// 17 ビュートランジション（一覧の写真を押すと、その写真がそのまま大きくなって詳細ページの上部になる）
+CELLS[16] = (k, w, h, u) => {
+  u = snapU(u);
+  const e = u < 2.0 ? eIO(P(u, 0.85, 1.45)) : 1 - eIO(P(u, 3.15, 3.75));
+  frame(k, e > 0.5 ? 'example.com/works/02' : 'example.com/works');
+  const G = [24, 184, 344], GY = 44, GW = 143, GH = 80, NM = ['雪の山小屋', '海辺のカフェ', '夜の展望台'], PV = [0, 1, 2];
+  const T = { x: 16, y: 10, w: VW - 32, h: 94 };
+  const cur = t => path([[0, 420, 205], [0.5, 262, 88], [0.95, 262, 88], [1.6, 380, 150], [2.55, 380, 150], [2.9, 62, 30], [3.2, 62, 30], [3.9, 420, 205], [4.7, 420, 205]], t);
+  const [cx, cy] = cur(u);
+  view(k, () => {
+    const ga = 1 - clamp(e * 1.6);
+    k.save(); k.globalAlpha = ga;
+    txt(k, 'WORKS', 24, 30, `800 15px ${EN}`, C.ink, 'left', 'alphabetic', '2px');
+    for (let i = 0; i < 3; i++) { if (i !== 1) pic(k, G[i], GY, GW, GH, PV[i], 6); txt(k, NM[i], G[i], GY + GH + 20, `800 13px ${JP}`, C.ink); bars(k, G[i], GY + GH + 30, 90, 1, C.faint, 5); }
+    k.restore();
+    const x = lerp(G[1], T.x, e), y = lerp(GY, T.y, e), ww = lerp(GW, T.w, e), hh = lerp(GH, T.h, e);
+    pic(k, x, y, ww, hh, 1, lerp(6, 8, e));
+    const da = clamp((e - 0.6) / 0.4);
+    if (da > 0) {
+      k.save(); k.globalAlpha = da;
+      k.fillStyle = 'rgba(255,255,255,.92)'; rr(k, 26, 19, 74, 22, 11); k.fill(); txt(k, '← 一覧へ', 63, 30.5, `700 11px ${JP}`, C.ink, 'center', 'middle');
+      txt(k, '海辺のカフェ', 24, 134, `800 19px ${JP}`, C.ink); bars(k, 200, 122, 280, 3, C.faint, 6, 12, 0.7);
+      k.restore();
+    }
+    click(k, cx, cy, u, [0.75, 3.05]);
+  });
+};

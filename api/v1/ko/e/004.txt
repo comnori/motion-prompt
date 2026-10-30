@@ -1,0 +1,46 @@
+// Motion Prompt #004 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#004
+//
+// 라인 드로잉 / Line draw
+// 팩: motion (모션 그래픽 움직임) · element 04 · 분류: 등장과 텍스트 연출
+// 동작 요약: 그래프 선이 스스로 그려진 뒤 시작점부터 지워집니다.
+// 동작 사양:
+//   - 4.7 s마다 한 번 진행합니다. 각 선의 표시 구간(시작 비율부터 끝 비율까지)을 애니메이션하는 트림 패스로 그립니다.
+//   - 축(L자, 두께 6)은 0.08–0.7 s에, 그래프 선(민트, 두께 11, 7개 점을 지나는 부드러운 곡선, 둥근 끝)은 0.4–1.95 s에 그립니다. 둘 다 cubic ease-in-out입니다.
+//   - 그리는 동안 노란 점(반지름 12, 흰 중심 반지름 5)이 선의 앞끝을 따라갑니다.
+//   - 화살촉: 1.9–2.2 s에 backOut(s = 2.5)으로 펼쳐집니다. 날개 길이 26, 너비 20.
+//   - 코랄색 원(반지름 26, 두께 7)을 봉우리 하나 주위에 2.2–2.8 s 동안 위에서 시계 방향으로 그립니다.
+//   - 지우기: 원 3.5–4.0 s, 선 3.65–4.45 s, 축 3.85–4.55 s. 각각 시작점부터 줄어듭니다. 화살촉은 4.3–4.45 s에 사라집니다.
+// 활용 상황: 그래프·경로·밑줄·손으로 그린 원처럼 선 자체를 보여 주는 것이 핵심일 때 사용합니다.
+// 태그: line-draw, trim-path, stroke, draw-on, chart, path, write-on
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#004
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 04
+// 04 ラインドロー（グラフの線が、描かれるように伸びる。消えるときは後ろから追いかける）
+function smoothPath(pts, n = 16) { const out = []; for (let i = 0; i < pts.length - 1; i++) { const p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)]; for (let j = 0; j < n; j++) { const t = j / n, t2 = t * t, t3 = t2 * t; out.push([0.5 * (2 * p1[0] + (-p0[0] + p2[0]) * t + (2 * p0[0] - 5 * p1[0] + 4 * p2[0] - p3[0]) * t2 + (-p0[0] + 3 * p1[0] - 3 * p2[0] + p3[0]) * t3), 0.5 * (2 * p1[1] + (-p0[1] + p2[1]) * t + (2 * p0[1] - 5 * p1[1] + 4 * p2[1] - p3[1]) * t2 + (-p0[1] + 3 * p1[1] - 3 * p2[1] + p3[1]) * t3)]); } } out.push(pts[pts.length - 1]); return out; }
+function pathLen(pts) { const c = [0]; for (let i = 1; i < pts.length; i++) c.push(c[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1])); return c; }
+function ptAt(pts, cum, f) { const L = cum[cum.length - 1] * clamp(f); let i = 1; while (i < cum.length - 1 && cum[i] < L) i++; const t = (L - cum[i - 1]) / Math.max(1e-6, cum[i] - cum[i - 1]); return [lerp(pts[i - 1][0], pts[i][0], t), lerp(pts[i - 1][1], pts[i][1], t), Math.atan2(pts[i][1] - pts[i - 1][1], pts[i][0] - pts[i - 1][0])]; }
+function trim(k, pts, cum, f0, f1) { if (f1 - f0 <= 0.0005) return; const L = cum[cum.length - 1], a = L * f0, b = L * f1; k.beginPath(); const s = ptAt(pts, cum, f0); k.moveTo(s[0], s[1]); for (let i = 1; i < pts.length - 1; i++) if (cum[i] > a && cum[i] < b) k.lineTo(pts[i][0], pts[i][1]); const e = ptAt(pts, cum, f1); k.lineTo(e[0], e[1]); k.stroke(); }
+const LD = (() => { const a = smoothPath([[84, 158], [150, 126], [212, 146], [284, 86], [346, 108], [410, 60], [468, 34]]); const ax = [[70, 26], [70, 178], [486, 178]]; return { a, ac: pathLen(a), ax, axc: pathLen(ax) }; })();
+CELLS[3] = (k, w, h, u) => {
+  stage(k);
+  k.lineCap = 'round'; k.lineJoin = 'round';
+  const er = eIO(P(u, 3.85, 4.55));
+  // 軸
+  k.strokeStyle = C.navy3; k.lineWidth = 6; trim(k, LD.ax, LD.axc, er, eIO(P(u, 0.08, 0.7)));
+  // 線
+  const f1 = eIO(P(u, 0.4, 1.95)), f0 = eIO(P(u, 3.65, 4.45));
+  k.strokeStyle = C.mint; k.lineWidth = 11; trim(k, LD.a, LD.ac, f0, f1);
+  // 矢じり
+  const ah = backOut(P(u, 1.9, 2.2), 2.5) * (1 - P(u, 4.3, 4.45));
+  if (ah > 0.01) { const e = ptAt(LD.a, LD.ac, 1); k.save(); k.translate(e[0], e[1]); k.rotate(e[2]); k.beginPath(); k.moveTo(-26 * ah, -20 * ah); k.lineTo(4, 0); k.lineTo(-26 * ah, 20 * ah); k.stroke(); k.restore(); }
+  // 描いている先端
+  if (f1 > 0 && f1 < 1) { const e = ptAt(LD.a, LD.ac, f1); k.fillStyle = C.yel; k.beginPath(); k.arc(e[0], e[1], 12, 0, 7); k.fill(); k.fillStyle = '#fff'; k.beginPath(); k.arc(e[0], e[1], 5, 0, 7); k.fill(); }
+  // 山の点に丸が描かれる
+  const cf = eIO(P(u, 2.2, 2.8)), cb = eIO(P(u, 3.5, 4.0));
+  if (cf > cb) { k.strokeStyle = C.coral; k.lineWidth = 7; k.beginPath(); k.arc(284, 86, 26, -Math.PI / 2 + cb * Math.PI * 2, -Math.PI / 2 + cf * Math.PI * 2); k.stroke(); }
+};

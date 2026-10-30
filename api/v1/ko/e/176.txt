@@ -1,0 +1,34 @@
+// Motion Prompt #176 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#176
+//
+// 플라이 스루 / Fly-through
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 08 · 분류: 카메라 움직임
+// 동작 요약: 카메라가 창문 있는 벽으로 다가가 창문을 통과하고 너머 공간으로 나옵니다.
+// 동작 사양:
+//   - 카메라: 0 m → 12.5 m 전진(높이 1.3 m, 방향 고정). 8 m 앞의 창문 있는 벽을 통과합니다.
+//   - 시간: 0.5 s부터 3.6 s까지(3.1 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 벽: 너비 80 m·높이 14 m의 옅은 회색 평면에 너비 2.4 m·높이 2.2 m 창문(창턱 높이 0.15 m). 창으로 사람(오른쪽 0.3 m, 거리 14.5 m)·나무·건물·산이 보입니다.
+//   - 통과: 카메라 앞 0.25 m에서 벽을 그리지 않습니다. 그때 창 가장자리는 이미 화면 밖(반너비 약 1580 px)이므로 사라지는 것이 보이지 않습니다.
+//   - 통과 후 너머 공간이 화면을 채우고 카메라가 사람과의 거리 2 m까지 다가갑니다(#035 FPV drone shot은 나무 사이를 계속 지그재그로 이동).
+//   - 복귀: 3.6–4.2 s에 정지한 뒤 마지막 0.5 s에 크로스페이드합니다. 오른쪽 위 창문 거리 표시는 “窓まで 8.0m” → “通過”(통과)입니다.
+// 활용 상황: 건물 안으로 들어가는 도입부나 한 번의 이동으로 공간을 연결할 때 사용합니다.
+// 태그: fly-through, flythrough, through the window, pass through, drone, interior, camera move
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#176
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 08
+// 08 フライスルー: 壁の窓へ向かって飛び、通り抜けて向こうの場所へ出る（#035 FPV は木の間を抜けていく）
+CELLS[7] = shot(camCell((k, w, h, p) => {
+  const z = lerp(0, 12.5, p), WZ = 8;
+  world(k, w, h, cam({ z, y: 1.3 }), {
+    buildings: true, person: { x: 0.3, z: 14.5 },
+    extra: [[0, 0, WZ, (kk, s) => {   // 窓のあいた壁（偶奇塗り）
+      kk.fillStyle = C.g1; kk.beginPath(); kk.rect(-40, 0, 80, 14); kk.rect(-1.2, 0.15, 2.4, 2.2); kk.fill('evenodd');
+      kk.strokeStyle = C.g3; kk.lineWidth = 1.6 / s; kk.strokeRect(-1.2, 0.15, 2.4, 2.2);
+      kk.strokeStyle = C.g2; kk.lineWidth = 1.2 / s; kk.beginPath(); kk.moveTo(-40, 14); kk.lineTo(40, 14); kk.stroke();
+    }]]
+  });
+}, p => { const d = 8 - lerp(0, 12.5, p); return d > 0 ? `窓まで ${d.toFixed(1)}m` : '通過'; }, 0.5, 3.6));

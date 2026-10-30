@@ -1,0 +1,24 @@
+// Motion Prompt #036 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#036
+//
+// 더치 앵글 / Dutch angle
+// 팩: camera (카메라 움직임과 장면 전환) · element 12 · 분류: 촬영 방식과 시간 연출
+// 동작 요약: 수평이던 카메라가 렌즈 축을 중심으로 회전한 뒤 수평선이 기울어진 상태를 유지합니다.
+// 동작 사양:
+//   - 카메라: 위치 고정(높이 1.5 m), 롤 회전만 0 → 0.36 rad(약 21°) 적용. 화면 전체가 프레임 중심을 기준으로 회전합니다.
+//   - 시간: 0.6 s부터 2.2 s까지(1.6 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 피사체: 사람이 7 m 앞에 서 있습니다. 수평선·건물·사람이 모두 같은 각도로 기울어집니다.
+//   - 정지: 2.2 s부터 4.2 s까지 기울어진 상태를 유지하여 구도를 볼 시간을 줍니다.
+//   - 복귀: 마지막 0.5 s 동안 수평인 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s).
+//   - 오른쪽 위에 각도를 표시합니다(∠ 0° → ∠ 21°).
+// 활용 상황: 불안·긴장이나 무언가 잘못되었다는 느낌을 표현할 때 사용합니다.
+// 태그: dutch angle, dutch tilt, canted angle, oblique, roll, tension, tilted horizon
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#036
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 12
+// 12 ダッチアングル
+CELLS[11] = shot(camCell((k, w, h, p) => world(k, w, h, cam({ roll: lerp(0, 0.36, p) }), { person: { z: 7 } }), p => `∠ ${Math.round(lerp(0, 0.36, p) * 57.3)}°`, 0.6, 2.2));

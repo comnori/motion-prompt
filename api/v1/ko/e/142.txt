@@ -1,0 +1,60 @@
+// Motion Prompt #142 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#142
+//
+// 산산조각 / Shatter
+// 팩: motion2 (모션 그래픽 움직임 2) · element 22 · 분류: 전환과 강조
+// 동작 요약: 화면이 유리처럼 갈라지고 파편이 날아가 다음 장면이 나타납니다.
+// 동작 사양:
+//   - 산 → 낮 → 산을 각각 2.35 s씩 표시합니다. 충격점은 (304, 92)입니다.
+//   - 균열: 0.3–0.65 s. 방사형 선 열세 개와 반지름 약 40, 98, 175의 고리(각각 ±15%)가 중심에서 먼 순서로 나타납니다(cubic ease-out, 최대 420 px). 중앙의 흰 섬광 별은 0.6 s까지 사라집니다.
+//   - 0.82 s에 파괴: 이전 장면에서 잘라낸 파편 52개(13 × 고리 4개)가 220–480 px/s로 퍼집니다(세로 속도 × 0.7, 위쪽으로 최대 120 추가). 중력 1300 px/s², 회전 ±4 rad/s, 1 s 동안 최대 35% 축소.
+//   - 바깥 고리는 늦게 출발합니다(고리당 0.035 s와 무작위 최대 0.03 s). 각 파편은 출발 후 0.55–1.0 s에 사라집니다.
+//   - 파편에는 흰 2.5 px 가장자리를 두며 다음 장면은 아래에 놓습니다.
+// 활용 상황: 강하게 전달할 제목이나 결과 직전에 충격·파괴·반전을 표현할 때 사용합니다.
+// 태그: shatter, glass-break, broken-glass, shards, crack, transition, impact
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#142
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 22
+// 22 ガラス割れ（画面がガラスのようにひび割れ、破片が飛び散って次の画面が現れる）
+const SHARDS = (() => {
+  const R = rand(2222), I = [304, 92], NA = 13, RAD = [0, 40, 98, 175, 360], V = [];
+  const angs = []; for (let i = 0; i < NA; i++) angs.push((i + (R() - 0.5) * 0.6) / NA * Math.PI * 2);
+  for (let r = 0; r < RAD.length; r++) { V.push([]); for (let i = 0; i < NA; i++) { const rr_ = r ? RAD[r] * (0.85 + R() * 0.3) : 0, a = angs[i] + (r ? (R() - 0.5) * 0.12 : 0); V[r].push([I[0] + Math.cos(a) * rr_, I[1] + Math.sin(a) * rr_]); } }
+  const sh = [];
+  for (let r = 0; r < RAD.length - 1; r++) for (let i = 0; i < NA; i++) {
+    const j = (i + 1) % NA, poly = r ? [V[r][i], V[r][j], V[r + 1][j], V[r + 1][i]] : [I, V[1][j], V[1][i]];
+    const cxp = poly.reduce((s, p) => s + p[0], 0) / poly.length, cyp = poly.reduce((s, p) => s + p[1], 0) / poly.length;
+    const dx = cxp - I[0], dy = cyp - I[1], dd = Math.hypot(dx, dy) || 1, sp = 220 + R() * 260;
+    sh.push({ poly, c: [cxp, cyp], vx: dx / dd * sp, vy: dy / dd * sp * 0.7 - 120 * R(), spin: (R() - 0.5) * 8, dl: r * 0.035 + R() * 0.03 });
+  }
+  return { I, V, RAD, NA, sh };
+})();
+CELLS[21] = abCell((k, w, h, u, a, b) => {
+  const S = [scMtn, scrA], crack = eOut(P(u, TA - 0.2, TA + 0.15)) * 420, tb = TA + 0.32;
+  if (u < tb) {
+    S[a](k, w, h);
+    if (crack > 0) {
+      const { I, V, RAD, NA } = SHARDS; k.strokeStyle = '#fff'; k.lineWidth = 3; k.lineCap = 'round'; k.lineJoin = 'round'; k.globalAlpha = 0.95;
+      for (let i = 0; i < NA; i++) { k.beginPath(); k.moveTo(I[0], I[1]); for (let r = 1; r < RAD.length; r++) { if (RAD[r] * 0.85 > crack) break; k.lineTo(V[r][i][0], V[r][i][1]); } k.stroke(); }
+      for (let r = 1; r < RAD.length - 1; r++) { if (RAD[r] * 1.4 > crack) break; k.beginPath(); for (let i = 0; i <= NA; i++) { const p = V[r][i % NA]; i ? k.lineTo(p[0], p[1]) : k.moveTo(p[0], p[1]); } k.stroke(); }
+      k.globalAlpha = 1;
+      const fl = 1 - P(u, TA - 0.2, TA + 0.1); if (fl > 0) { k.fillStyle = '#fff'; star(k, I[0], I[1], 26 * fl + 6, 0.3, 0.3, 6); k.fill(); }
+    }
+    return;
+  }
+  S[b](k, w, h);
+  TK.setTransform(1, 0, 0, 1, 0, 0); TK.globalCompositeOperation = 'source-over'; TK.clearRect(0, 0, w, h); S[a](TK, w, h);
+  for (const s of SHARDS.sh) {
+    const t = u - tb - s.dl; let al = 1, x = 0, y = 0, rt = 0, sc = 1;
+    if (t > 0) { x = s.vx * t; y = s.vy * t + 0.5 * 1300 * t * t; rt = s.spin * t; sc = 1 - 0.35 * Math.min(1, t); al = 1 - P(t, 0.55, 1.0); }
+    if (al <= 0) continue;
+    k.save(); k.globalAlpha = al; k.translate(s.c[0] + x, s.c[1] + y); k.rotate(rt); k.scale(sc, sc); k.translate(-s.c[0], -s.c[1]);
+    polyPath(k, s.poly); k.save(); k.clip(); k.drawImage(TMP, 0, 0); k.restore();
+    k.strokeStyle = 'rgba(255,255,255,.85)'; k.lineWidth = 2.5; polyPath(k, s.poly); k.stroke();
+    k.restore();
+  }
+});

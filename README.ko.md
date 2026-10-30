@@ -3,7 +3,7 @@
 [English](README.md) | [日本語](README.ja.md) | **한국어**
 
 > 한국어 용어 목록은 [`packs/`](packs/README.md)의 각 팩에 있는 한국어 링크에서 볼 수 있습니다. 영어·일본어·스페인어·중국어 간체·중국어 번체 목록도 제공됩니다.
-> 갤러리와 CLI는 영어·일본어를 지원합니다. 한국어 번역은 이 README와 팩의 이름·뜻·AI 요청 예시에 적용되어 있으며, [한국어 예제 영상 6편과 제작 안내](make-your-own/README.ko.md)도 제공합니다.
+> 갤러리와 CLI는 한국어·영어·일본어를 지원합니다. [한국어 갤러리](https://showheyohtaki.github.io/motion-prompt/?lang=ko)에서 예제를 보고, 한국어 동작 사양과 프롬프트를 복사할 수 있습니다. [한국어 예제 영상 6편과 제작 안내](make-your-own/README.ko.md)도 제공합니다.
 > 다른 언어로 영상을 만들려면 [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md)를 코딩 AI에 전달하세요.
 
 AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 이름 모음집입니다. 각 이름에는 움직이는 예제, 한 줄 설명, 요청 예시가 있습니다. 현재 8개 팩에 24개씩, 총 192개 용어를 담았습니다. 모션 그래픽 움직임(`motion`), 카메라 움직임(`camera`), UI 컴포넌트 이름(`ui`), 랜딩 페이지와 웹 효과(`lp`), 사진 표현·조명·스타일(`photo`), 모션 그래픽 움직임 2(`motion2`), 랜딩 페이지와 웹 효과 2(`lp2`), 카메라 움직임과 장면 전환 2(`camera2`)입니다. 자신의 분야와 언어로 같은 형태의 모음집을 만들 수 있는 프롬프트도 제공합니다.
@@ -12,9 +12,22 @@ AI에게 무언가를 만들어 달라고 할 때 쓸 수 있는 이름 모음�
 |---|---|
 | ![모션 그래픽 용어 01–08](assets/preview-motion.gif) | ![카메라 움직임 용어 01–08](assets/preview-camera.gif) |
 
-- 갤러리(모든 움직이는 예제): https://showheyohtaki.github.io/motion-prompt/
+- [한국어 갤러리(모든 움직이는 예제)](https://showheyohtaki.github.io/motion-prompt/?lang=ko)
 - GitHub에서 바로 읽는 용어 목록: [`packs/`](packs/README.md)
-- 다른 사람들이 이름과 예제를 공유한 사례(X 게시물 임베드와 링크): https://showheyohtaki.github.io/motion-prompt/found.html
+- [다른 사람들이 이름과 예제를 공유한 사례](https://showheyohtaki.github.io/motion-prompt/found.html?lang=ko) (X 게시물 임베드와 링크)
+
+## 언어 선택
+
+```mermaid
+flowchart LR
+  URL["유효한 ?lang 값"] -->|없으면| Saved["저장한 언어"]
+  Saved -->|없으면| Browser["브라우저 언어"]
+  Browser -->|지원하지 않으면| English["영어"]
+```
+
+상단의 JA / EN / KO 버튼으로 언어를 바꾸면 선택이 저장됩니다. 사례 페이지와 공유 링크에도 선택한 언어가 유지됩니다. 한국어에서는 영어 원어를 함께 표시합니다. 외부 게시물과 Canvas 예제 안의 문구는 원문을 유지합니다.
+
+CLI에서 `--lang ko`를 지정하면 한국어로 조회합니다. `search 스크롤`처럼 한국어 검색어를 쓰면 자동으로 한국어를 선택하며, `pick`은 갤러리에서 사용자가 고른 언어를 따릅니다.
 
 ## 만든 이유
 
@@ -59,8 +72,8 @@ npx skills add showheyohtaki/motion-prompt
    ```text
    motion-prompt 모음집을 열어 줘.
    ```
-2. 브라우저에서 갤러리가 열립니다. 원하는 예제의 "Pick"을 누르세요. 여러 개를 선택할 수 있습니다. 화면 아래 메모란에는 "오프닝 제목에 사용"처럼 짧은 설명을 적습니다.
-3. "Send to AI"를 누르면 선택한 항목이 AI에게 전달됩니다. AI로 돌아가 원하는 작업을 설명하세요.
+2. 브라우저에서 갤러리가 열립니다. 원하는 예제의 "선택"을 누르세요. 여러 개를 선택할 수 있습니다. 화면 아래 메모란에는 "오프닝 제목에 사용"처럼 짧은 설명을 적습니다.
+3. "AI에게 보내기"를 누르면 선택한 항목이 AI에게 전달됩니다. AI로 돌아가 원하는 작업을 설명하세요.
    ```text
    이 영상의 도입부를 이렇게 편집해 줘.
    ```
@@ -187,7 +200,7 @@ npx skills add showheyohtaki/motion-prompt
    종료 코드 3은 데이터 출처에 접속할 수 없다는 뜻입니다. 네트워크 접근 권한을 받은 뒤 다시 실행합니다.
 
 5. `<skill-dir>/SKILL.md`를 읽고 사용법을 세 줄로 안내합니다. 예를 들면 다음과 같습니다.
-   - "motion-prompt 모음집을 열어 줘"라고 요청하세요. 갤러리가 열리면 원하는 항목의 "Pick"을 누른 뒤 "Send to AI"를 누르세요.
+   - "motion-prompt 모음집을 열어 줘"라고 요청하세요. 갤러리가 열리면 원하는 항목의 "선택"을 누른 뒤 "AI에게 보내기"를 누르세요.
    - 이어서 "이 영상의 도입부를 이렇게 편집해 줘"처럼 원하는 작업을 설명하세요.
    - 번호를 안다면 "#012와 #045를 사용해 줘"처럼 바로 요청할 수도 있습니다.
 
@@ -195,7 +208,7 @@ npx skills add showheyohtaki/motion-prompt
 
 ### 에이전트가 하는 일
 
-- 모음집을 요청하면 브라우저에서 갤러리를 열고, 사용자가 항목을 골라 "Send to AI"를 누를 때까지 최대 15분 기다립니다.
+- 모음집을 요청하면 브라우저에서 갤러리를 열고, 사용자가 항목을 골라 "AI에게 보내기"를 누를 때까지 최대 15분 기다립니다.
 - Canvas, Remotion, CSS, After Effects, 영상 생성 모델용 프롬프트 등 프로젝트의 영상 제작 방식을 확인합니다.
 - 사용자가 선택한 항목이나 지정한 번호를 사용합니다. 선택하지 않았다면 갤러리를 열도록 제안합니다. AI에게 골라 달라고 요청하면 장면에 맞는 항목을 카탈로그에서 검색합니다.
 - 선택한 움직임을 프로젝트에 맞게 구현합니다. 공개된 시간·이징·움직임의 크기는 유지하고, 글자·색·이미지는 사용자의 작업에 맞춥니다.
@@ -212,15 +225,15 @@ npx skills add showheyohtaki/motion-prompt
 
 | 명령 | 기능 |
 |---|---|
-| `pick` / `pick --pack camera` | 갤러리를 열고 Send to AI로 받은 번호·이름·사양·메모를 출력합니다. 최대 15분 기다립니다. |
-| `search typewriter text` / `search 文字 登場` | 영어 또는 일본어 단어로 장면에 맞는 항목을 찾습니다. |
+| `pick` / `pick --pack camera` | 갤러리를 열고 AI에게 보내기로 받은 번호·이름·사양·메모를 출력합니다. 최대 15분 기다립니다. |
+| `search typewriter text` / `search 文字 登場` / `search 스크롤` | 한국어·영어·일본어 단어로 장면에 맞는 항목을 찾습니다. |
 | `list` / `list --pack motion` | 전체 팩 개요 또는 한 팩의 항목 목록을 보여 줍니다. |
 | `get 12 #045` | 지정한 번호의 사양과 코드를 출력합니다. 한 번에 최대 8개입니다. |
 | `kit motion` | 팩의 공통 코드를 출력합니다. |
 | `prompt 12` | 항목의 복사·붙여넣기용 프롬프트를 출력합니다. |
 | `info` | 데이터 출처, 항목 수, 캐시 위치를 보여 줍니다. |
 
-스크립트는 아래 출처의 텍스트 파일을 GET 요청으로 가져옵니다. 프로젝트의 내용을 업로드하지 않습니다. `pick`은 로컬 컴퓨터의 `127.0.0.1`에 임시 수신기를 열어 갤러리에서 "Send to AI"로 보낸 번호와 메모만 받습니다.
+스크립트는 아래 출처의 텍스트 파일을 GET 요청으로 가져옵니다. 프로젝트의 내용을 업로드하지 않습니다. `pick`은 로컬 컴퓨터의 `127.0.0.1`에 임시 수신기를 열어 갤러리에서 "AI에게 보내기"로 보낸 번호와 메모만 받습니다.
 
 1. `https://showheyohtaki.github.io/motion-prompt/api/v1/`
 2. 위 출처에 연결되지 않으면: `https://raw.githubusercontent.com/showheyohtaki/motion-prompt/main/api/v1/`
@@ -228,9 +241,9 @@ npx skills add showheyohtaki/motion-prompt
 | 파일 | 내용 |
 |---|---|
 | `catalog.json` | 버전, 항목 수, 팩, 각 항목의 다국어 이름·뜻·요청 예시·요약·사양·태그 |
-| `{ja,en}/catalog.tsv` | 탭으로 구분한 색인: id, pack, category, title, tags, summary |
-| `{ja,en}/e/{id}.txt` | 개별 항목의 저작자 표시, 예제 설명, 사양, 코드 |
-| `{ja,en}/p/{id}.txt` | 개별 항목의 복사·붙여넣기용 프롬프트 |
+| `{ja,en,ko}/catalog.tsv` | 탭으로 구분한 색인: id, pack, category, title, tags, summary |
+| `{ja,en,ko}/e/{id}.txt` | 개별 항목의 저작자 표시, 예제 설명, 사양, 코드 |
+| `{ja,en,ko}/p/{id}.txt` | 개별 항목의 복사·붙여넣기용 프롬프트 |
 | `kit/{pack}.js` | 팩의 공통 코드 |
 
 저장소 전체를 복제하면 CLI는 로컬 `api/v1`을 먼저 읽으므로 네트워크가 필요 없습니다. 내려받은 데이터는 디스크에 보관하며, 원본에 접속할 수 없으면 저장된 사본을 사용합니다.

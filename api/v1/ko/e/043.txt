@@ -1,0 +1,34 @@
+// Motion Prompt #043 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#043
+//
+// 휩 팬 / Whip pan
+// 팩: camera (카메라 움직임과 장면 전환) · element 19 · 분류: 장면 전환
+// 동작 요약: 카메라가 옆으로 아주 빠르게 돌고, 흐릿한 잔상이 생긴 사이에 다음 장면으로 바뀝니다.
+// 동작 사양:
+//   - 연결: 1.7 s부터 2.5 s까지 0.8 s. 처음 0.4 s에는 이전 쇼트가 돌아 나가고 마지막 0.4 s에는 다음 쇼트가 돌아 들어와 멈춥니다.
+//   - 앞 절반: 이전 쇼트의 요 0 → +0.45 rad(약 26°), quadratic ease-in-out. 뒤 절반: 다음 쇼트의 요 -0.45 rad → 0, 같은 이징.
+//   - 교체: 50% 지점에서 바로 바꿉니다. 블러가 가장 강한 순간이므로 전환이 가려집니다.
+//   - 블러: ±1.6프레임(30 fps) 범위의 렌더링 9개를 평균합니다.
+//   - 카메라: 높이 1.4 m이며 회전 구간 외에는 고정합니다. 피사체(A의 사람, B의 자동차와 도시)는 움직이지 않습니다.
+//   - 4.7 s마다 A→B와 B→A를 번갈아 표시합니다(왕복 9.4 s). 오른쪽 위에는 "A → B" / "B → A"를 표시합니다.
+// 활용 상황: 활기를 유지하면서 장소나 주제를 바꿀 때 사용합니다.
+// 태그: whip pan, swish pan, motion blur, fast pan, transition, energy
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#043
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 19
+// 19 ホイップパン（ブレで次の場面へ）
+CELLS[18] = shot(abCell((k, w, h, u, A, B) => {
+  const t0 = 1.7, t1 = 2.5;
+  const at = (kk, s) => {   // s: 0..1 の進み。前半 A を右へ振り、後半 B が左から止まる
+    if (s < .5) world(kk, w, h, cam({ y: 1.4, yaw: eIOs(s * 2) * 0.45 }), A === sceneA ? { person: { x: -0.6, z: 7 } } : SB);
+    else world(kk, w, h, cam({ y: 1.4, yaw: -(1 - eIOs((s - .5) * 2)) * 0.45 }), B === sceneA ? { person: { x: -0.6, z: 7 } } : SB);
+  };
+  if (u < t0) return A(k, w, h);
+  if (u > t1) return B(k, w, h);
+  const s = P(u, t0, t1), ds = 1 / FPS / (t1 - t0);
+  mblur(k, at, clamp(s - ds * 1.6), clamp(s + ds * 1.6), 9);
+}));

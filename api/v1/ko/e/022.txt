@@ -1,0 +1,40 @@
+// Motion Prompt #022 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#022
+//
+// 라이트 스윕 / Light sweep
+// 팩: motion (모션 그래픽 움직임) · element 22 · 분류: 전환과 강조
+// 동작 요약: 빛 띠가 로고 배지 표면을 비스듬히 가로지릅니다.
+// 동작 사양:
+//   - 2.35 s마다 한 번 지나갑니다. 빛은 배지(400 × 112, 모서리 반지름 28, 파란 그라데이션) 안에만 클리핑해 그립니다.
+//   - 빛 띠: 너비 116 px의 흰 그라데이션(중앙 불투명도 0.72, 가장자리 0)과 78 px 떨어진 얇은 12 px 띠(불투명도 0.5). 0.42 rad(약 24°) 기울입니다.
+//   - 0.45–1.5 s에 quadratic ease-in-out으로 배지 왼쪽 130 px에서 오른쪽 130 px까지(660 px) 이동합니다.
+//   - 반짝임: 1.38–1.98 s에 오른쪽 위 모서리에 사각별을 표시합니다. 크기는 30 × sin(πq) × (1 + 0.2(1 − q))이며 0.9 rad 회전합니다.
+//   - 배지 자체는 움직이지 않습니다.
+// 활용 상황: 로고·배지·버튼에 고급스러운 마감을 더할 때 사용합니다.
+// 태그: light-sweep, shine, sheen, glint, highlight, logo, badge, premium
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#022
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 22
+// 22 ライトスイープ（ロゴの表面を、光の帯が斜めに横切る）
+CELLS[21] = (k, w, h, u) => {
+  stage(k);
+  const T = CYC / 2, lu = mod(u, T), p = eIOs(P(lu, 0.45, 1.5));
+  const BW = 400, BH = 112, X = w / 2 - BW / 2, Y = h / 2 - BH / 2;
+  k.fillStyle = 'rgba(0,0,0,.3)'; rr(k, X + 3, Y + 9, BW, BH, 28); k.fill();
+  const g = k.createLinearGradient(X, Y, X + BW, Y + BH); g.addColorStop(0, '#2B62E0'); g.addColorStop(1, '#4E8BFF'); k.fillStyle = g; rr(k, X, Y, BW, BH, 28); k.fill();
+  k.fillStyle = C.yel; star(k, X + 64, Y + BH / 2, 30, 0, 0.5); k.lineJoin = 'round'; k.strokeStyle = C.yel; k.lineWidth = 5; k.stroke(); k.fill();
+  txt(k, 'PREMIUM', X + 112, Y + BH / 2 + 3, `800 50px ${DISP}`, '#fff', 'left', 'middle', '3px');
+  if (p > 0 && p < 1) {
+    k.save(); rr(k, X, Y, BW, BH, 28); k.clip();
+    k.translate(lerp(X - 130, X + BW + 130, p), Y + BH / 2); k.rotate(0.42);
+    const gr = k.createLinearGradient(-58, 0, 58, 0); gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(0.5, 'rgba(255,255,255,.72)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+    k.fillStyle = gr; k.fillRect(-58, -160, 116, 320); k.fillStyle = 'rgba(255,255,255,.5)'; k.fillRect(78, -160, 12, 320);
+    k.restore();
+  }
+  // 抜けぎわのきらめき
+  const tt = lu - 1.38; if (tt > 0 && tt < 0.6) { const q = tt / 0.6, sc = Math.sin(Math.PI * q) * (1 + 0.2 * (1 - q)); k.save(); k.translate(X + BW - 8, Y + 6); k.rotate(q * 0.9); k.fillStyle = '#fff'; star(k, 0, 0, 30 * sc, 0, 0.22, 4); k.fill(); k.restore(); }
+};

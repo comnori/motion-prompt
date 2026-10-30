@@ -1,0 +1,26 @@
+// Motion Prompt #138 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#138
+//
+// 블라인드 전환 / Blinds transition
+// 팩: motion2 (모션 그래픽 움직임 2) · element 18 · 분류: 전환과 강조
+// 동작 요약: 얇은 띠 사이의 틈이 넓어져 다음 장면이 완전히 드러납니다.
+// 동작 사양:
+//   - 낮 → 밤 → 낮을 각각 2.35 s씩 표시합니다. 가로 띠 일곱 개(각각 208 ÷ 7 ≈ 29.7 px)입니다.
+//   - 0.4–1.65 s(1.25 s), quadratic ease-in-out. 모든 띠에서 동시에 위쪽부터 아래로 다음 장면을 드러내며 열린 높이 0에서 띠 전체 높이까지 늘립니다.
+//   - 이전 장면은 아래에 유지합니다. 두 화면 자체는 움직이지 않습니다.
+// 활용 상황: 낮과 밤·변경 전후 등 두 장면을 분명하게 전환하거나 복고풍 느낌을 줄 때 사용합니다.
+// 태그: blinds, venetian-blinds, stripes, transition, wipe, scene-change
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#138
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 18
+// 18 ブラインド（細い帯ごとのすき間がだんだん広がって、次の画面が開く）
+CELLS[17] = abCell((k, w, h, u, a, b) => {
+  const p = eIOs(P(u, TA - 0.1, TB + 0.15)), N = 7, sh = h / N, S = [scrA, scrB];
+  S[a](k, w, h);
+  if (p <= 0) return;
+  k.save(); k.beginPath(); for (let i = 0; i < N; i++) k.rect(0, i * sh, w, sh * p + (p > 0.999 ? 1 : 0)); k.clip(); S[b](k, w, h); k.restore();
+});

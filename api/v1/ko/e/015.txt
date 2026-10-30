@@ -1,0 +1,39 @@
+// Motion Prompt #015 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#015
+//
+// 파티클 / Particles
+// 팩: motion (모션 그래픽 움직임) · element 15 · 분류: 움직임 다듬기
+// 동작 요약: 방출점에서 입자가 계속 솟아올라 퍼진 뒤 떨어집니다.
+// 동작 사양:
+//   - 입자 84개를 화면 아래 중앙(가로 중앙, 하단 가장자리에서 20 px 위)에서 방출합니다.
+//   - 초기 속도: 가로 ±190 px/s, 위쪽 250–400 px/s. 중력은 470 px/s²이며 포물선 경로를 그립니다.
+//   - 각 입자는 2.35 s 또는 약 1.57 s 주기로 반복하며 무작위 시작 시차를 둡니다(시드를 고정해 실행마다 동일).
+//   - 수명은 최대 1.5 s입니다. 처음 0.06 s 동안 나타나고 마지막 30% 동안 사라집니다. 배율은 1.15→0.7입니다.
+//   - 모양은 원·정사각형·삼각형(크기 5–11 px), 색은 파랑·코랄·노랑·민트이며 최대 ±4.5 rad/s로 회전합니다.
+// 활용 상황: 색종이 조각이나 불꽃 대신 축하 분위기와 생동감을 더할 때 사용합니다.
+// 태그: particles, confetti, emitter, fountain, gravity, celebration, sparks
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#015
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 15
+// 15 パーティクル（粒が次々と噴き出して、飛び散って落ちる）
+const PARTS = (() => { const R = rand(15), a = []; for (let i = 0; i < 84; i++) { const n = R() < 0.5 ? 2 : 3; a.push({ T: CYC / n, ph: R() * CYC, vx: (R() - 0.5) * 2 * 190, vy: -(250 + R() * 150), sz: 5 + R() * 6, col: PAL[i % 4], kind: i % 3, spin: (R() - 0.5) * 9 }); } return a; })();
+CELLS[14] = (k, w, h, u) => {
+  stage(k);
+  const X = w / 2, Y = h - 20, G = 470;
+  for (const p of PARTS) {
+    const t = mod(u + p.ph, p.T), life = Math.min(p.T, 1.5); if (t > life) continue;
+    const x = X + p.vx * t, y = Y + p.vy * t + 0.5 * G * t * t, a = Math.min(1, t / 0.06) * (1 - smooth(P(t, life * 0.7, life))), sc = lerp(1.15, 0.7, t / life);
+    k.globalAlpha = a; k.fillStyle = p.col; k.save(); k.translate(x, y); k.rotate(t * p.spin); k.scale(sc, sc);
+    if (p.kind === 0) { k.beginPath(); k.arc(0, 0, p.sz, 0, 7); k.fill(); }
+    else if (p.kind === 1) { k.fillRect(-p.sz, -p.sz, p.sz * 2, p.sz * 2); }
+    else { k.beginPath(); k.moveTo(0, -p.sz * 1.3); k.lineTo(p.sz * 1.2, p.sz); k.lineTo(-p.sz * 1.2, p.sz); k.closePath(); k.fill(); }
+    k.restore();
+  }
+  k.globalAlpha = 1;
+  k.fillStyle = C.navy3; rr(k, X - 70, h - 12, 140, 30, 10); k.fill();
+  k.fillStyle = '#fff'; rr(k, X - 30, h - 22, 60, 30, 10); k.fill();
+};

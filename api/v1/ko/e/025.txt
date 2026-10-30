@@ -1,0 +1,25 @@
+// Motion Prompt #025 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#025
+//
+// 팬 / Pan
+// 팩: camera (카메라 움직임과 장면 전환) · element 01 · 분류: 카메라 움직임
+// 동작 요약: 카메라가 제자리에서 좌우로 회전합니다. 위치 이동이 아닌 회전이므로 가까운 레이어와 먼 레이어가 같은 양만큼 옆으로 움직입니다.
+// 동작 사양:
+//   - 카메라: 위치 고정(높이 1.5 m), 요 회전만 적용. -0.32 rad → +0.32 rad(-18° → +18°, 총 약 37°).
+//   - 시간: 0.5 s부터 3.4 s까지(2.9 s) 회전. cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 피사체: 약 1.8 m 키의 사람이 8 m 앞에 서 있으며 프레임 안에서 오른쪽에서 왼쪽으로 이동합니다.
+//   - 시차 없음: 산·건물·나무·사람이 모두 같은 각도만큼 이동합니다(539×208 카드에서 초점거리 330 px).
+//   - 복귀: 3.4–4.2 s에 정지한 뒤 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s).
+//   - 오른쪽 위에는 각도를 정수 도 단위로 표시합니다(-18° → +18°).
+// 활용 상황: 넓은 장소를 보여 주거나 장면 한쪽에서 다른 쪽으로 시선을 옮길 때 사용합니다.
+// 태그: pan, panning, yaw, rotate, horizontal, camera move, reveal
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#025
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 01
+// 01 パン: 回転なので全ての層が同じだけ横に流れる
+CELLS[0] = shot(camCell((k, w, h, p) => world(k, w, h, cam({ yaw: lerp(-0.32, 0.32, p) }), { person: { x: 0, z: 8 } }),
+  p => `${Math.round(lerp(-0.32, 0.32, p) * 57.3)}°`.replace(/^(\d)/, '+$1')));

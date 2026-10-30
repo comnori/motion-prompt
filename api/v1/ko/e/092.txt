@@ -1,0 +1,44 @@
+// Motion Prompt #092 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#092
+//
+// 페이지 전환 / Page transition
+// 팩: lp (랜딩 페이지와 웹 효과) · element 20 · 분류: 로딩·탐색·배경 반복 효과
+// 동작 요약: 작업 목록의 카드를 누르면 주황 패널이 왼쪽에서 화면을 덮습니다. URL이 바뀌고 패널이 오른쪽으로 나가 상세 페이지가 보입니다. 목록으로 돌아갈 때도 같은 전환을 사용합니다.
+// 동작 사양:
+//   - 0.8 s에 카드를 클릭합니다. 0.9–1.3 s에 주황색 전체 뷰포트 패널(중앙 로고)이 왼쪽에서 들어와 모두 덮습니다(cubic ease-in-out).
+//   - 완전히 덮인 1.3 s에 페이지와 주소창 URL(/works → /works/02)을 바꿉니다.
+//   - 1.4–1.85 s에 패널이 오른쪽으로 나갑니다(cubic ease-in-out).
+//   - 3.0 s에 “← 목록으로”를 클릭합니다. 패널은 3.1–3.5 s에 들어오고 3.5 s에 페이지가 바뀌며 3.6–4.05 s에 나갑니다.
+//   - 패널은 헤더를 포함한 뷰포트 전체를 덮습니다.
+// 활용 상황: 브랜드 사이트나 포트폴리오에서 페이지 사이를 연결할 때 사용합니다.
+// 태그: page-transition, transition, view-transitions, navigation, wipe, barba, spa
+// 크기: 539x208 px · 반복 주기: 4.8 s
+// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#092
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 20
+// 20 ページ遷移アニメーション（リンクを押すと、色の幕が横切って次のページに切り替わる）
+CELLS[19] = (k, w, h, u) => {
+  frame(k, u >= 1.3 && u < 3.5 ? 'example.com/works/02' : 'example.com/works');
+  const CLK = [0.8, 3.0];
+  const cover = t0 => eIO(P(u, t0, t0 + 0.4)), uncover = t0 => eIO(P(u, t0, t0 + 0.45));
+  // 幕の左端: 入る −VW→0、出る 0→VW
+  const xs = u < 1.4 ? -VW * (1 - cover(0.9)) : u < 3.1 ? VW * uncover(1.4) : u < 3.6 ? -VW * (1 - cover(3.1)) : VW * uncover(3.6);
+  const pageB = u >= 1.3 && u < 3.5;
+  const [cx, cy] = path([[0, 420, 150], [0.65, 255, 100], [2.6, 255, 100], [2.85, 46, 50], [3.3, 46, 50], [4.6, 420, 150], [4.8, 420, 150]], u);
+  view(k, () => {
+    header(k, 0);
+    if (!pageB) {
+      txt(k, 'WORKS', 34, 62, `800 18px ${EN}`, C.ink, 'left', 'alphabetic', '2px');
+      for (let i = 0; i < 3; i++) { const x = 34 + i * 152; pic(k, x, 74, 136, 60, i, 6); bars(k, x, 142, 100, 1, C.ink, 7); }
+    } else {
+      txt(k, '← 一覧へ', 34, 55, `700 12px ${JP}`, C.sub, 'left', 'middle');
+      pic(k, 34, 68, 240, 90, 1, 8);
+      txt(k, 'Project 02', 296, 96, `800 22px ${EN}`, C.ink); bars(k, 296, 110, 180, 3);
+    }
+    if (xs > -VW && xs < VW) { k.fillStyle = C.acc; k.fillRect(xs, 0, VW, VH); logo(k, xs + VW / 2 - 40, VH / 2, '#fff'); }
+    click(k, cx, cy, u, CLK);
+  });
+};

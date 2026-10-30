@@ -6,7 +6,7 @@
 > 한국어 설명은 [README.ko.md](README.ko.md), 한국어 용어 목록은 [`packs/`](packs/README.md)에 있습니다.
 > 中文用户：所有名称一览都有简体中文和繁體中文版本，见 [`packs/`](packs/README.md)。
 > En español: todas las listas de nombres están en español en [`packs/`](packs/README.md).
-> The name lists are in English, Japanese, Korean, Spanish, Simplified Chinese and Traditional Chinese (see [`packs/`](packs/README.md)); the gallery is in English and Japanese. For another language, give [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md) to a coding AI.
+> The name lists are in English, Japanese, Spanish, Simplified Chinese, Traditional Chinese and Korean (see [`packs/`](packs/README.md)); the gallery is in English, Japanese and Korean. Open the [Korean gallery](https://showheyohtaki.github.io/motion-prompt/?lang=ko), or use the JA / EN / KO buttons. For another language, give [`make-your-own/prompts/en/01-translate.md`](make-your-own/prompts/en/01-translate.md) to a coding AI.
 
 A library of names for the things you ask an AI to make. Each name comes with a moving sample, a one-line meaning and an example of how to ask for it. Eight sets are in it now, 24 names each and 192 in all: motion-graphics moves (`motion`), camera moves (`camera`), UI component names (`ui`), landing page and web effects (`lp`), photo looks, lighting and styles (`photo`), motion-graphics moves, part 2 (`motion2`), landing page and web effects, part 2 (`lp2`), and camera moves and transitions, part 2 (`camera2`). It also comes with the prompts to make the same kind of library for your own field, in your own language.
 
@@ -43,7 +43,7 @@ Shohei Ohtaki
 | 145–168 | `lp2`: landing page and web effects, part 2 | 24 | [English](packs/lp2/README.md) · [日本語](packs/lp2/README.ja.md) · [Español](packs/lp2/README.es.md) · [简体中文](packs/lp2/README.zh-Hans.md) · [繁體中文](packs/lp2/README.zh-Hant.md) · [한국어](packs/lp2/README.ko.md) |
 | 169–192 | `camera2`: camera moves and transitions, part 2 | 24 | [English](packs/camera2/README.md) · [日本語](packs/camera2/README.ja.md) · [Español](packs/camera2/README.es.md) · [简体中文](packs/camera2/README.zh-Hans.md) · [繁體中文](packs/camera2/README.zh-Hant.md) · [한국어](packs/camera2/README.ko.md) |
 
-Each list gives the number, the name, what it means and an example of how to ask an AI for it, in English, Japanese, Korean, Spanish, Simplified Chinese and Traditional Chinese. The same names move in the [gallery](https://showheyohtaki.github.io/motion-prompt/).
+Each list gives the number, the name, what it means and an example of how to ask an AI for it, in English, Japanese, Spanish, Simplified Chinese, Traditional Chinese and Korean. The same names move in the [gallery](https://showheyohtaki.github.io/motion-prompt/).
 
 Each pack has its own look. The motion and motion2 packs are dark navy with four colors. The camera and camera2 packs are light gray with one blue. The ui pack is warm off-white with black and one blue, and a cursor sets each part moving. The lp and lp2 packs draw a white browser window on a pale gray desk, with a vermilion accent and blue for the pictures on the page. The photo pack has no shared palette: each card is painted in the colors of its own scene, and the effect fades in and back out so you can compare. That is on purpose. What a pack has to get right is the names, not a house style.
 
@@ -208,7 +208,7 @@ Three files make up the skill: the instructions (`SKILL.md`), notes on moving an
 | Command | What it does |
 |---|---|
 | `pick` / `pick --pack camera` | opens the gallery and prints what arrives with "Send to AI": numbers, names, specs and your note. Waits up to 15 minutes |
-| `search typewriter text` / `search 文字 登場` | finds elements for a scene (English or Japanese words) |
+| `search typewriter text` / `search 文字 登場` / `search 스크롤` | finds elements for a scene (English, Japanese or Korean words) |
 | `list` / `list --pack motion` | an overview of all packs, or one pack listed element by element |
 | `get 12 #045` | prints the spec and then the code for those numbers (8 at most in one call) |
 | `kit motion` | the shared code of a pack |
@@ -223,9 +223,9 @@ The script makes GET requests for the text files below and nothing else. Nothing
 | File | Contents |
 |---|---|
 | `catalog.json` | version, count, packs, and every element's names, meaning, summary, spec and tags |
-| `{ja,en}/catalog.tsv` | the index as tab-separated text (id, pack, category, title, tags, summary) |
-| `{ja,en}/e/{id}.txt` | a single element: attribution line, what it shows, the spec, then its code |
-| `{ja,en}/p/{id}.txt` | the copy-paste prompt for one element |
+| `{ja,en,ko}/catalog.tsv` | the index as tab-separated text (id, pack, category, title, tags, summary) |
+| `{ja,en,ko}/e/{id}.txt` | a single element: attribution line, what it shows, the spec, then its code |
+| `{ja,en,ko}/p/{id}.txt` | the copy-paste prompt for one element |
 | `kit/{pack}.js` | the shared code of a pack |
 
 If you clone this whole repository, the CLI reads the local `api/v1` first and needs no network. Downloaded data is kept on disk, and the saved copy is used when the source cannot be reached.

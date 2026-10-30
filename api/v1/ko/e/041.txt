@@ -1,0 +1,31 @@
+// Motion Prompt #041 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#041
+//
+// 점프 컷 / Jump cut
+// 팩: camera (카메라 움직임과 장면 전환) · element 17 · 분류: 장면 전환
+// 동작 요약: 카메라 위치와 구도는 같지만 사람의 위치와 시계가 뛰어 바뀌며 같은 장면 안의 시간을 건너뜁니다.
+// 동작 사양:
+//   - 연결: 효과 없는 직접 컷(0프레임). 각각 0.94 s인 쇼트 5개(4.7 s ÷ 5).
+//   - 카메라: 모든 쇼트에서 위치와 구도가 동일합니다(높이 1.4 m, 정면). 배경은 한 픽셀도 움직이지 않습니다.
+//   - 변화: 7 m 거리의 사람 위치가 옆으로 -2.2 m → 1.4 m → -0.4 m → 2.4 m → 0.6 m로 바뀝니다. 쇼트 2와 4에서는 양팔을 올립니다.
+//   - 각 쇼트 안에서 사람은 정지합니다(위치와 자세의 차이로만 변화를 보여 줌).
+//   - 오른쪽 위 시계: 10:02 → 10:17 → 10:41 → 11:06 → 11:30. 같은 장소에서 시간을 건너뛰었음을 보여 줍니다.
+//   - 쇼트 5에서 쇼트 1로 바로 전환합니다.
+// 활용 상황: 대화나 작업의 쉬는 부분을 줄여 속도를 높이거나 시간이 빠르게 흐르는 모습을 보여 줄 때 사용합니다.
+// 태그: jump cut, cut, time skip, same framing, vlog, ellipsis, edit
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#041
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 17
+// 17 ジャンプカット（同じ画角で人物の位置と時刻だけ飛ぶ）
+CELLS[16] = shot((k, w, h, u) => {
+  const shots = [[-2.2, 0], [1.4, 1], [-0.4, 0], [2.4, 1], [0.6, 0]];
+  const times = ['10:02', '10:17', '10:41', '11:06', '11:30'];
+  const i = Math.min(4, Math.floor(u / (CYC / 5)));
+  const [x, arm] = shots[i];
+  world(k, w, h, cam({ y: 1.4 }), { person: { x, z: 7, armUp: !!arm } });
+  return times[i];
+});

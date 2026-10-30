@@ -1,0 +1,33 @@
+// Motion Prompt #060 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#060
+//
+// 세그먼티드 컨트롤 / Segmented control
+// 팩: ui (UI 컴포넌트 이름) · element 12 · 분류: 선택과 전환
+// 동작 요약: 일·주·월을 누르면 파란 강조 영역이 이동하고 아래 막대그래프 높이가 바뀝니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. (121, 12)에 회색 300×40 바탕(모서리 반지름 10)을 놓고 너비 100의 세 구간으로 나눕니다: 일·주·월(일본어 표기).
+//   - 선택 영역: 파란색 92×32, 모서리 반지름 8, 그림자 블러 6. 선택한 라벨은 흰색입니다.
+//   - 커서는 1.0 s에 주, 2.1 s에 월, 3.3 s에 일을 클릭합니다. 선택 영역은 매번 0.25 s 동안 easeInOutCubic으로 이동합니다.
+//   - 아래 그래프: 너비 34의 막대 일곱 개를 58 px 간격으로 배치합니다(여섯 번째는 파랑). 높이는 선택과 함께 세 데이터 집합(약 30–85, 40–100, 60–115) 사이에서 같은 이징으로 변합니다.
+// 활용 상황: 일·주·월처럼 같은 내용의 두 가지에서 네 가지 보기를 전환할 때 사용합니다.
+// 태그: segmented-control, segmented-button, button-group, toggle-group, switcher, view-switch
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#060
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 12
+// 12 セグメントコントロール（Segmented control）
+CELLS[11] = ui((w, h, t) => {
+  const pos = eio(seg(t, 1.0, 1.25)) + eio(seg(t, 2.1, 2.35)) - 2 * eio(seg(t, 3.3, 3.55));
+  const sx = 121, sy = 12, sw = 300, sh = 40, cw = sw / 3;
+  fillRR(sx, sy, sw, sh, 10, '#efedeb');
+  shadowed(() => fillRR(sx + 4 + pos * cw, sy + 4, cw - 8, sh - 8, 8, C.blue), 6, 2, .2);
+  ['日', '週', '月'].forEach((s, i) => { const near = 1 - clamp(Math.abs(pos - i)); text(s, sx + cw * i + cw / 2, sy + sh / 2 + 1, 17, near > .5 ? '#fff' : '#6d6b69', 700, 'center'); });
+  const sets = [[30, 55, 40, 70, 50, 85, 60], [60, 40, 90, 75, 100, 55, 80], [95, 70, 110, 60, 85, 115, 100]];
+  const fi = Math.floor(pos), fr = pos - fi, gi = Math.min(2, fi + 1);
+  X.fillStyle = C.line; X.fillRect(60, 182, 422, 1.5);
+  for (let k = 0; k < 7; k++) { const bh = lerp(sets[fi][k], sets[gi][k], eio(fr)); fillRR(72 + k * 58, 180 - bh, 34, bh, 5, k === 5 ? C.blue : C.mb); }
+  pointer([[.3, w + 30, h + 30], [.95, 276, 36], [1.6, 276, 36], [2.05, 376, 36], [2.8, 376, 36], [3.25, 176, 36], [3.7, 176, 36], [4.25, w + 30, h + 30]], [1.0, 2.1, 3.3], t);
+});

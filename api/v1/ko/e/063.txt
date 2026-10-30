@@ -1,0 +1,37 @@
+// Motion Prompt #063 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#063
+//
+// 스테퍼(+/−) / Stepper (+/−)
+// 팩: ui (UI 컴포넌트 이름) · element 15 · 분류: 선택과 전환
+// 동작 요약: +를 세 번 누르면 1에서 4로, −를 세 번 누르면 다시 1로 바뀝니다. 누를 때마다 숫자가 튀듯 커집니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. (171, 52)에 200×60 상자(모서리 반지름 12)를 놓습니다. 왼쪽 60 px에 −, 오른쪽 60 px에 파란 +, 가운데에 굵은 30 px 숫자.
+//   - 클릭: 0.9, 1.35, 1.8 s에 +(1 → 4), 2.8, 3.25, 3.7 s에 −(4 → 1).
+//   - 클릭 0.05 s 전부터 0.15 s 후까지 누른 구간을 옅은 파랑으로 표시합니다.
+//   - 숫자: 누를 때마다 0.25 s 동안 배율 1.18에서 1로 선형 복귀하며 그동안 파란색입니다.
+// 활용 상황: 수량·인원처럼 작은 정수를 한 번에 하나씩 조절할 때 사용합니다.
+// 태그: stepper, quantity, number-input, increment, decrement, plus-minus, spin-button
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#063
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 15
+// 15 ステッパー（Stepper (+/−)）
+CELLS[14] = ui((w, h, t) => {
+  bar(171, 24, 90, C.line2, 10);
+  const plus = [.9, 1.35, 1.8], minus = [2.8, 3.25, 3.7];
+  let n = 1; plus.forEach(c => { if (t >= c) n++; }); minus.forEach(c => { if (t >= c) n--; });
+  const last = [...plus, ...minus].filter(c => t >= c).pop();
+  const pop = last !== undefined ? 1 - seg(t, last, last + .25) : 0;
+  const bx = 171, by = 52, bw = 200, bh = 60;
+  strokeRR(bx, by, bw, bh, 12, C.line2, 1.8);
+  const pressP = plus.some(c => t >= c - .05 && t < c + .15), pressM = minus.some(c => t >= c - .05 && t < c + .15);
+  if (pressM) fillRR(bx + 2, by + 2, 58, bh - 4, 10, C.lb); if (pressP) fillRR(bx + bw - 60, by + 2, 58, bh - 4, 10, C.lb);
+  X.fillStyle = C.line2; X.fillRect(bx + 60, by + 10, 1.5, bh - 20); X.fillRect(bx + bw - 61, by + 10, 1.5, bh - 20);
+  text('−', bx + 30, by + bh / 2, 30, '#555', 500, 'center', NUMF); text('+', bx + bw - 30, by + bh / 2, 30, C.blue, 500, 'center', NUMF);
+  X.save(); X.translate(bx + bw / 2, by + bh / 2 + 1); X.scale(1 + .18 * pop, 1 + .18 * pop); text(String(n), 0, 0, 30, pop > .05 ? C.blue : C.ink, 700, 'center', NUMF); X.restore();
+  bar(171, 136, 200, C.line); bar(171, 154, 140, C.line);
+  pointer([[.3, w + 30, h + 30], [.85, 342, 86], [2.3, 342, 86], [2.75, 202, 86], [3.75, 202, 86], [4.3, w + 30, h + 30]], [...plus, ...minus], t);
+});

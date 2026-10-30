@@ -1,0 +1,36 @@
+// Motion Prompt #014 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#014
+//
+// 모션 트레일 / Motion trail
+// 팩: motion (모션 그래픽 움직임) · element 14 · 분류: 움직임 다듬기
+// 동작 요약: 8자 경로를 움직이는 공 뒤로 점점 희미해지는 잔상이 남습니다.
+// 동작 사양:
+//   - 공(코랄, 반지름 25, 흰 중심 반지름 11)이 4.7 s마다 8자를 한 번 그립니다: x = 196·sin(a), y = 62·sin(2a). a는 일정한 속도로 증가합니다.
+//   - 복사본 15개를 경로상에서 각각 0.105 rad(약 0.079 s)씩 뒤에 놓습니다.
+//   - 복사본 반지름은 22→6, 불투명도는 0.9 × (1 − i/15) + 0.05로, 오래된 잔상일수록 작고 흐립니다.
+//   - 복사본 색은 최신부터 오래된 순서로 코랄 → 노랑 → 파랑입니다.
+//   - 가장 오래된 복사본을 먼저 그리고 공 자체를 마지막에 그립니다.
+// 활용 상황: 날아가는 물체·커서·빛점 등의 속도나 이동 경로를 보여 줄 때 사용합니다.
+// 태그: trail, motion-trail, echo, afterimage, ghost, path, speed
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#014
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 14
+// 14 モーショントレイル（動いた跡に、残像が尾を引く）
+CELLS[13] = (k, w, h, u) => {
+  stage(k);
+  const X = w / 2, Y = h / 2 + 2, A = 196, B = 62, th = u / CYC * Math.PI * 2;
+  const pt = a => [X + A * Math.sin(a), Y + B * Math.sin(2 * a)];
+  const N = 15;
+  for (let i = N; i >= 1; i--) {
+    const [x, y] = pt(th - i * 0.105), f = i / N;
+    k.globalAlpha = 0.9 * (1 - f) + 0.05; k.fillStyle = f < 0.5 ? mix(C.coral, C.yel, f * 2) : mix(C.yel, C.blue, (f - 0.5) * 2);
+    k.beginPath(); k.arc(x, y, lerp(22, 6, f), 0, 7); k.fill();
+  }
+  k.globalAlpha = 1; const [x, y] = pt(th);
+  k.fillStyle = C.coral; k.beginPath(); k.arc(x, y, 25, 0, 7); k.fill();
+  k.fillStyle = '#fff'; k.beginPath(); k.arc(x, y, 11, 0, 7); k.fill();
+};

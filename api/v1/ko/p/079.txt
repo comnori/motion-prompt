@@ -1,0 +1,15 @@
+“스크롤 진행률 표시줄 (Scroll progress bar)”를 사용해 주세요. “랜딩 페이지와 웹 효과”에 있는 용어입니다.
+Motion Prompt #079
+
+뜻: 상단의 막대로 읽은 위치를 보여 줌
+예제에서 보이는 동작: 기사를 조금씩 읽을 때 상단 선이 왼쪽부터 자라며 페이지 끝에서 전체 너비를 채웁니다.
+동작 사양:
+- 기사는 110 px씩 네 단계로 0→430 px 스크롤됩니다. 각 단계는 0.45 s 이동 후 0.4 s 정지합니다(cubic ease-in-out).
+- 3.75–4.55 s에 430→0으로 돌아갑니다.
+- 뷰포트 상단의 막대는 높이 6 px, 옅은 회색 트랙과 주황색 채우기입니다.
+- 채우기 너비 = 511 px × scroll / 430. 스크롤 비율 자체를 사용합니다(CSS animation-timeline: scroll()과 동일).
+활용 상황: 긴 글에서 얼마나 읽었고 얼마나 남았는지 보여 줄 때 사용합니다.
+
+참고 코드 (Canvas 2D, 시간만으로 화면이 결정되는 함수): https://showheyohtaki.github.io/motion-prompt/api/v1/ko/e/079.txt
+공통 보조 코드: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+참고 코드의 형태·타이밍·이징 수치는 유지하고, 글자·색상·소재만 만들고 있는 작업에 맞게 바꿔 주세요.

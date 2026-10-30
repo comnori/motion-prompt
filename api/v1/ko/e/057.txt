@@ -1,0 +1,45 @@
+// Motion Prompt #057 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#057
+//
+// 탭 / Tabs
+// 팩: ui (UI 컴포넌트 이름) · element 09 · 분류: 선택과 전환
+// 동작 요약: “개요·요금·리뷰” 탭을 차례로 누르면 파란 밑줄이 이동하고 아래 내용이 바뀝니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 탭 세 개는 x 24, 114, 204, 너비 70, 70, 100입니다. y 50에 2 px 구분선과 4 px 파란 밑줄을 둡니다.
+//   - 커서는 1.0 s에 두 번째, 2.2 s에 세 번째, 3.4 s에 첫 번째 탭을 클릭합니다.
+//   - 밑줄: 클릭 후 0.25 s 동안 easeInOutCubic으로 새 탭 위치와 너비에 맞춥니다(세 번째에서 첫 번째로 돌아갈 때 가운데를 통과).
+//   - 라벨: 선택된 것은 파란 굵은 글자, 나머지는 회색입니다. 1.1, 2.3, 3.5 s에 전환합니다.
+//   - 내용: 이전 패널은 0.2 s 동안 선형으로 사라집니다. 0.1 s 뒤 새 패널이 0.2 s 동안 나타나며 8 px 올라옵니다.
+// 활용 상황: 같은 공간에서 관련된 여러 화면을 전환해 볼 수 있게 할 때 사용합니다.
+// 태그: tabs, tab-bar, tabbed, navigation, switch-view, underline
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#057
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 09
+// 09 タブ（Tabs）
+CELLS[8] = ui((w, h, t) => {
+  const labs = ['概要', '料金', 'レビュー'], xs = [24, 114, 204], ws = [70, 70, 100];
+  const c1 = eio(seg(t, 1.0, 1.25)), c2 = eio(seg(t, 2.2, 2.45)), c3 = eio(seg(t, 3.4, 3.65));
+  const pos = c1 + c2 - 2 * c3; // 0 -> 1 -> 2 -> 0
+  const fi = Math.floor(pos), fr = pos - fi, gi = Math.min(2, fi + 1);
+  const ux = lerp(xs[fi], xs[gi], fr), uw = lerp(ws[fi], ws[gi], fr);
+  const act = t < 1.1 ? 0 : t < 2.3 ? 1 : t < 3.5 ? 2 : 0;
+  labs.forEach((s, i) => text(s, xs[i] + ws[i] / 2, 28, 17, i === act ? C.blue : '#8a8886', i === act ? 700 : 500, 'center'));
+  X.fillStyle = C.line; X.fillRect(0, 50, w, 2); fillRR(ux, 48, uw, 4, 2, C.blue);
+  // 中身（切替時にクロスフェード）
+  const tabAlpha = [
+    1 - seg(t, 1.0, 1.2) + seg(t, 3.45, 3.65),
+    seg(t, 1.1, 1.3) - seg(t, 2.2, 2.4),
+    seg(t, 2.3, 2.5) - seg(t, 3.4, 3.6)];
+  tabAlpha.forEach((a, i) => {
+    a = clamp(a); if (a <= 0) return; X.save(); X.globalAlpha = a; X.translate(0, 8 * (1 - a));
+    if (i === 0) { bar(24, 70, 220, C.line2, 11); bar(24, 94, 494); bar(24, 112, 400); fillRR(24, 134, 494, 46, 8, C.block); }
+    if (i === 1) { for (let k = 0; k < 3; k++) { const x = 24 + k * 168; fillRR(x, 68, 158, 112, 10, k === 1 ? C.lb : '#f6f5f3'); strokeRR(x, 68, 158, 112, 10, k === 1 ? C.sb : C.line, 1.5); bar(x + 16, 84, 60, k === 1 ? C.blue : C.line2, 10); text(['¥0', '¥980', '¥1,980'][k], x + 16, 118, 22, k === 1 ? C.blue : '#555', 700, 'left', NUMF); bar(x + 16, 148, 110); } }
+    if (i === 2) { for (let k = 0; k < 3; k++) { const y = 70 + k * 38; circle(40, y + 14, 14, k === 0 ? C.mb : C.line); bar(64, y + 4, 120, C.line2, 10); bar(64, y + 20, 360); } }
+    X.restore();
+  });
+  pointer([[.3, w + 30, h + 30], [.95, 152, 34], [1.6, 152, 34], [2.15, 256, 34], [2.8, 256, 34], [3.35, 62, 34], [3.7, 62, 34], [4.25, w + 30, h + 30]], [1.0, 2.2, 3.4], t);
+});

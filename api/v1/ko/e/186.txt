@@ -1,0 +1,37 @@
+// Motion Prompt #186 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#186
+//
+// 모프 컷 / Morph cut
+// 팩: camera2 (카메라 움직임과 장면 전환 2) · element 18 · 분류: 전환과 편집
+// 동작 요약: 두 테이크 사이의 위치와 자세를 부드럽게 보간하여 점프 없이 연결합니다.
+// 동작 사양:
+//   - 테이크 1은 0–2.0 s이며 카메라 높이는 1.45 m로 고정합니다. 사람은 왼쪽 0.4 m, 거리 3.3 m, 팔다리 각도 -0.45 rad입니다. 테이크 2는 2.45 s부터 시작하며 오른쪽 0.35 m, 팔다리 각도 +0.55 rad입니다. 두 자세 모두 0.12·sin(t×3) rad로 흔들립니다.
+//   - 모프 구간은 2.0–2.45 s(0.45 s), quadratic ease-in-out, 약 cubic-bezier(0.45,0,0.55,1)입니다. 위치를 보간하고 동일한 위치에서 두 자세를 크로스페이드합니다.
+//   - 모프 구간에만 전체 프레임에 sin(q×π)×2.2 px 블러를 적용합니다. #041 Jump cut은 위치가 즉시 바뀝니다.
+//   - 하단에는 회색 테이크 1, 좁은 파란 모프 구간, 회색 테이크 2를 표시합니다.
+//   - 마지막 0.5 s 동안 테이크 1 시작 화면으로 페이드합니다. 상단 표시는 ‘TAKE 1 → MORPH → TAKE 2’입니다.
+// 활용 상황: 인터뷰에서 말실수나 불필요한 구간을 제거하고 자연스럽게 이어 붙일 때 사용합니다.
+// 태그: morph cut, morph, seamless, interview, talking head, edit, transition
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#186
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 18
+// 18 モーフカット: 同じ人物の2テイクを、位置と姿勢をなめらかに補間してつなぐ（#041 ジャンプカットは飛ぶ）
+CELLS[17] = shot((k, w, h, u) => {
+  const T0 = 2.0, T1 = 2.45, r = P(u, CYC - RESET, CYC);
+  const draw = (kk, t) => {
+    const q = eIOs(P(t, T0, T1));
+    // テイク1とテイク2は姿勢が違う。モーフ中は同じ（補間した）位置に2つの姿勢を重ねて溶かす
+    const pose = (k2, m) => world(k2, w, h, cam({ y: 1.45, z: 0 }), { person: { x: lerp(-0.4, 0.35, q), z: 3.3, walk: (m ? 0.55 : -0.45) + 0.12 * Math.sin(t * 3) }, trees: true, buildings: true });
+    const bl = Math.sin(q * Math.PI) * 2.2;
+    kk.save(); kk.filter = bl > 0.05 ? `blur(${bl.toFixed(2)}px)` : 'none';
+    blend(kk, k2 => pose(k2, false), k2 => pose(k2, true), q);
+    kk.restore();
+    strip(kk, w, h, [[0, T0, 'テイク1', C.g2], [T0, T1, '', C.blue], [T1, CYC, 'テイク2', C.g2]], t);
+  };
+  blend(k, kk => draw(kk, u), kk => draw(kk, 0), eIOs(r));
+  return r > .5 || u < T0 ? 'TAKE 1' : u < T1 ? 'MORPH' : 'TAKE 2';
+});

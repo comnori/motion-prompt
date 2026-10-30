@@ -1,0 +1,38 @@
+// Motion Prompt #126 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#126
+//
+// 모션 패스 / Motion path
+// 팩: motion2 (모션 그래픽 움직임 2) · element 06 · 분류: 움직임 기법
+// 동작 요약: 종이비행기가 점선 경로를 따라 방향을 바꾸며 날다가 중간에 한 바퀴 돕니다.
+// 동작 사양:
+//   - 4.7 s마다 왼쪽 화면 밖에서 오른쪽 화면 밖까지 한 번 진행합니다. θ = −π→π에 대해 x = 270 + 112θ − 150·sinθ, y = 106 − 74·cosθ이며 위 중앙에서 고리를 만듭니다.
+//   - θ는 시간에 비례해 증가합니다(경로상의 속도는 일정하지 않아 고리에서 느려 보임).
+//   - 비행기는 경로 방향으로 회전합니다: angle = atan2(74·sinθ, 112 − 150·cosθ).
+//   - 경로를 점선(두께 6, 점선 2/15)으로 미리 표시합니다. θ 간격 0.03의 민트색 꼬리 24개가 뒤로 갈수록 얇고 흐리게 따라갑니다.
+// 활용 상황: 비행체·자동차·지도 위 여정처럼 정해진 경로를 따라야 할 때 사용합니다.
+// 태그: motion-path, path, curve, trajectory, follow-path, orient-to-path, loop
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#126
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 06
+// 06 モーションパス（点線の道に沿って、紙飛行機が向きを変えながら進む）
+const MPX = th => 270 + 112 * th - 150 * Math.sin(th), MPY = th => 106 - 74 * Math.cos(th);
+const MP = (() => { const pts = []; for (let i = 0; i <= 400; i++) { const th = -Math.PI + 2 * Math.PI * i / 400; pts.push([MPX(th), MPY(th)]); } return pts; })();
+CELLS[5] = (k, w, h, u) => {
+  stage(k);
+  k.save(); k.setLineDash([2, 15]); k.lineCap = 'round'; k.strokeStyle = C.dim; k.lineWidth = 6; k.beginPath(); MP.forEach((p, i) => i ? k.lineTo(p[0], p[1]) : k.moveTo(p[0], p[1])); k.stroke(); k.restore();
+  const th = -Math.PI + 2 * Math.PI * (u / CYC);
+  // 通ったあとの線
+  k.lineCap = 'round';
+  for (let j = 0; j < 24; j++) { const a = th - j * 0.03, b = th - (j + 1) * 0.03; k.strokeStyle = C.mint; k.globalAlpha = 0.9 * (1 - j / 24); k.lineWidth = 7 * (1 - j / 30); k.beginPath(); k.moveTo(MPX(a), MPY(a)); k.lineTo(MPX(b), MPY(b)); k.stroke(); }
+  k.globalAlpha = 1;
+  const x = MPX(th), y = MPY(th), ang = Math.atan2(74 * Math.sin(th), 112 - 150 * Math.cos(th));
+  k.save(); k.translate(x, y); k.rotate(ang);
+  k.fillStyle = '#fff'; k.beginPath(); k.moveTo(32, 0); k.lineTo(-22, -22); k.lineTo(-12, 0); k.closePath(); k.fill();
+  k.fillStyle = '#C9D6FF'; k.beginPath(); k.moveTo(32, 0); k.lineTo(-22, 22); k.lineTo(-12, 0); k.closePath(); k.fill();
+  k.fillStyle = '#9FB3F0'; k.beginPath(); k.moveTo(32, 0); k.lineTo(-12, 0); k.lineTo(-6, 9); k.closePath(); k.fill();
+  k.restore();
+};

@@ -1,0 +1,44 @@
+// Motion Prompt #042 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#042
+//
+// 매치 컷 / Match cut
+// 팩: camera (카메라 움직임과 장면 전환) · element 18 · 분류: 장면 전환
+// 동작 요약: 던진 공이 다음 쇼트에서 같은 위치·크기의 해로 바뀝니다. 일치하는 모양으로 다른 장면을 연결합니다.
+// 동작 사양:
+//   - 연결: 2.3 s에 직접 컷(0프레임). 파란 원의 위치(중심에서 오른쪽 120 px, 위 46 px)와 반지름 17 px가 양쪽에서 같습니다.
+//   - 이전 쇼트(0–2.3 s): 고정 카메라(높이 1.4 m). 사람(왼쪽 1.2 m, 거리 7 m)이 0.5 s부터 cubic ease-out(약 cubic-bezier(0.33,1,0.68,1))으로 공을 던집니다.
+//   - 공: 사람 머리 위(높이 2.3 m)에서 일치 지점으로 이동합니다. 반지름 5 px → 17 px, 최대 30 px 위로 부푸는 호를 따릅니다.
+//   - 다음 쇼트(2.3–4.7 s): 다른 장소(건물 없음, 높이 1.2 m). 같은 위치의 파란 원은 이제 해이며 2.4 s 동안 14 px 내려갑니다.
+//   - 표시: 반지름 26 px의 파란 점선 원이 컷 전후 각각 0.7 s 안에서 나타나고 사라집니다.
+//   - 오른쪽 위에 "SHOT 1" → "SHOT 2"를 표시합니다. 4.7 s에 SHOT 1로 바로 돌아갑니다.
+// 활용 상황: 시간이나 장소가 멀리 떨어진 장면들을 공통 모양이나 움직임으로 연결할 때 사용합니다.
+// 태그: match cut, graphic match, shape match, cut, transition, edit
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#042
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 18
+// 18 マッチカット（投げたボール → 同じ位置・大きさの太陽）
+CELLS[17] = shot((k, w, h, u) => {
+  const cut = 2.3;
+  const BX = 120, BY = -46, BR = 17;
+  if (u < cut) {
+    const q = eOut(P(u, 0.5, cut));
+    world(k, w, h, cam({ y: 1.4 }), {
+      person: { x: -1.2, z: 7, armUp: q > 0.05 }, sun: null,
+      after: (kk, cc) => { const s = proj(cc, -1.2, 2.3, 7); const x = lerp(s.x, BX, q), y = lerp(s.y, BY, q) - Math.sin(q * Math.PI) * 30, r = lerp(5, BR, q); kk.fillStyle = C.blue; kk.beginPath(); kk.arc(x, y, r, 0, 7); kk.fill(); }
+    });
+  } else {
+    const q = P(u, cut, CYC);
+    world(k, w, h, cam({ y: 1.2 }), {
+      buildings: false, sun: null, trees: true,
+      after: (kk) => { kk.fillStyle = C.blue; kk.beginPath(); kk.arc(BX, BY + q * 14, BR, 0, 7); kk.fill(); }
+    });
+  }
+  // 形がそろっていることを示す点線の円
+  const g = Math.max(0, 1 - Math.abs(u - cut) / 0.7);
+  if (g > 0) { k.save(); k.translate(w / 2, h / 2); k.globalAlpha = g; k.strokeStyle = C.blue; k.lineWidth = 2; k.setLineDash([5, 4]); k.beginPath(); k.arc(BX, BY + (u > cut ? P(u, cut, CYC) * 14 : 0), BR + 9, 0, 7); k.stroke(); k.restore(); }
+  return u < cut ? 'SHOT 1' : 'SHOT 2';
+});

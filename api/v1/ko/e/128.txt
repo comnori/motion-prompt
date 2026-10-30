@@ -1,0 +1,43 @@
+// Motion Prompt #128 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#128
+//
+// 스톱 모션 스타일 / Stop-motion style
+// 팩: motion2 (모션 그래픽 움직임 2) · element 08 · 분류: 움직임 기법
+// 동작 요약: 별이 초당 약 8프레임의 끊기는 움직임으로 건너뛰며 프레임마다 조금씩 어긋납니다.
+// 동작 사양:
+//   - 4.7 s당 38프레임(초당 약 8, 프레임당 약 0.124 s 유지). 중간 프레임은 그리지 않습니다.
+//   - 노란 별(반지름 38)이 x = −44에서 583까지 높이 54·|sin(3πt)|의 호 세 개를 따라 뛰며 두 바퀴 회전합니다.
+//   - 프레임마다 고정 무작위 흔들림을 적용합니다: 가로 ±5 px, 세로 ±4.5 px, 회전 ±0.15 rad, 크기 ±5%.
+//   - 이전 두 프레임을 어니언 스킨처럼 희미하게 남깁니다(불투명도 0.28·0.12).
+//   - 위아래에 구멍이 있는 검은 필름 띠(각각 26 px)와 초당 프레임 수 라벨을 둡니다.
+// 활용 상황: 매끄러운 움직임보다 손으로 만든 클레이 애니메이션·콜라주 느낌이 필요할 때 사용합니다.
+// 태그: stop-motion, choppy, frame-rate, on-twos, jitter, handmade, claymation
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#128
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 08
+// 08 ストップモーション風（1秒8コマのカクカクした動き。コマごとに位置が少しずつぶれる）
+CELLS[7] = (k, w, h, u) => {
+  u = snapU(u);
+  stage(k);
+  k.fillStyle = '#0A1230'; k.fillRect(0, 0, w, 26); k.fillRect(0, h - 26, w, 26);
+  k.fillStyle = C.navy3; for (let x = 12; x < w; x += 34) { rr(k, x, 8, 18, 11, 3); k.fill(); rr(k, x, h - 19, 18, 11, 3); k.fill(); }
+  const NS = 38, st = CYC / NS, fi = Math.floor(u / st), floor = h - 44;
+  const pose = f => { const t = f / NS, j = i => H01(f * 7919 + i * 131 + 77) - 0.5; return { x: lerp(-44, w + 44, t) + j(1) * 10, y: floor - 36 - 54 * Math.abs(Math.sin(t * Math.PI * 3)) + j(2) * 9, r: t * Math.PI * 4 + j(3) * 0.3, s: 1 + j(4) * 0.1 }; };
+  const draw = (p, a) => {
+    k.globalAlpha = a;
+    k.save(); k.translate(p.x + 5, p.y + 6); k.rotate(p.r); k.scale(p.s, p.s); k.fillStyle = 'rgba(0,0,0,.35)'; star(k, 0, 0, 38, 0, 0.5); k.fill(); k.restore();
+    k.save(); k.translate(p.x, p.y); k.rotate(p.r); k.scale(p.s, p.s); k.fillStyle = C.yel; star(k, 0, 0, 38, 0, 0.5); k.fill();
+    k.fillStyle = C.coral; k.beginPath(); k.arc(0, 2, 9, 0, 7); k.fill(); k.restore();
+    k.globalAlpha = 1;
+  };
+  draw(pose(mod(fi - 2, NS)), 0.12); draw(pose(mod(fi - 1, NS)), 0.28);
+  const p = pose(fi);
+  k.fillStyle = 'rgba(0,0,0,.3)'; k.beginPath(); k.ellipse(p.x, floor + 6, 30, 5, 0, 0, 7); k.fill();
+  draw(p, 1);
+  // 1秒あたりのコマ数
+  txt(k, '8コマ/秒', w - 16, 50, `800 24px ${JP}`, C.dim, 'right', 'middle');
+};

@@ -1,0 +1,40 @@
+// Motion Prompt #061 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#061
+//
+// 필터 칩 / Filter chips
+// 팩: ui (UI 컴포넌트 이름) · element 13 · 분류: 선택과 전환
+// 동작 요약: “신규”·“무료” 칩을 누르면 체크가 붙고 파랗게 바뀌며 조건에 맞지 않는 카드가 흐려집니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 칩 네 개(전체·신규·인기·무료, 일본어 표기)는 높이 34, 모서리 반지름 17, 너비 = 글자 + 32이며 왼쪽부터 10 px 간격입니다.
+//   - 클릭: 0.95 s에 신규 켜기, 1.75 s에 무료 켜기, 3.0 s에 신규 끄기, 3.6 s에 무료 끄기.
+//   - 각 변화는 0.15 s의 easeOutCubic입니다. 체크 공간을 만들기 위해 칩이 18 px 넓어지고 바탕은 옅은 파랑, 테두리와 글자는 파랑이 됩니다.
+//   - 아래 목록: 카드 네 개(242×54, 두 열·두 행). 조건에 맞지 않으면 불투명도가 1에서 0.12로 줄어듭니다.
+// 활용 상황: 간단한 필터를 조합해 목록이나 검색 결과를 좁히게 할 때 사용합니다.
+// 태그: chips, filter-chips, tags, filter, facets, pills
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#061
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 13
+// 13 チップ（Filter chips）
+CELLS[12] = ui((w, h, t) => {
+  const chips = ['すべて', '新着', '人気', '無料']; let x = 24; const pos = [];
+  const on = [0, eo(seg(t, 0.95, 1.1)) * (1 - eo(seg(t, 3.0, 3.15))), 0, eo(seg(t, 1.75, 1.9)) * (1 - eo(seg(t, 3.6, 3.75)))];
+  chips.forEach((s, i) => {
+    const k = on[i], cw0 = tw(s, 15, 600) + 32 + (k > 0 ? 18 * k : 0);
+    fillRR(x, 12, cw0, 34, 17, k > .5 ? C.lb : '#fff'); strokeRR(x, 12, cw0, 34, 17, k > .5 ? C.blue : C.line2, 1.5);
+    if (k > 0) { X.globalAlpha = k; check(x + 18, 29, 5, C.blue, 2.4); X.globalAlpha = 1; }
+    text(s, x + 16 + 18 * k, 30, 15, k > .5 ? C.blue : '#555', 600);
+    pos.push(x + cw0 / 2); x += cw0 + 10;
+  });
+  // 一覧：条件に合わないカードが消える
+  const vis = [1, 1 - Math.max(on[1], on[3]), 1 - on[3], 1];
+  for (let i = 0; i < 4; i++) {
+    const cx = 24 + (i % 2) * 252, cy = 60 + Math.floor(i / 2) * 64, a = clamp(.12 + .88 * vis[i]);
+    X.save(); X.globalAlpha = a; strokeRR(cx, cy, 242, 54, 8, C.line2, 1.5); fillRR(cx + 10, cy + 10, 34, 34, 6, i === 0 ? C.mb : C.line); bar(cx + 54, cy + 14, 120, C.line2, 10); bar(cx + 54, cy + 32, 150, C.line, 7); X.restore();
+  }
+  const p1 = pos[1] || 120, p3 = pos[3] || 300;
+  pointer([[.3, w + 30, h + 30], [.9, 130, 32], [1.3, 130, 32], [1.7, 300, 32], [2.5, 300, 32], [2.95, 130, 32], [3.2, 130, 32], [3.55, 296, 32], [3.85, 296, 32], [4.3, w + 30, h + 30]], [0.95, 1.75, 3.0, 3.6], t);
+});

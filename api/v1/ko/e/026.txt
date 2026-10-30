@@ -1,0 +1,25 @@
+// Motion Prompt #026 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#026
+//
+// 틸트 / Tilt
+// 팩: camera (카메라 움직임과 장면 전환) · element 02 · 분류: 카메라 움직임
+// 동작 요약: 카메라가 제자리에서 위로 회전하여 지면의 사람에서 탑 꼭대기까지 보여 줍니다.
+// 동작 사양:
+//   - 카메라: 위치 고정(높이 1.4 m), 피치 회전만 적용. -0.06 rad → +0.36 rad(-3° → +21°, 총 약 24°).
+//   - 시간: 0.5 s부터 3.4 s까지(2.9 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 피사체: 사람이 7 m 앞에 서 있고, 그 뒤 26 m 거리에는 높이 9.5 m의 탑(안테나 끝 11.8 m)이 있습니다.
+//   - 화면에서는 모두 아래로 이동합니다. 사람이 아래로 사라지고 탑 꼭대기와 안테나가 들어옵니다.
+//   - 복귀: 3.4–4.2 s에 정지한 뒤 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s).
+//   - 오른쪽 위에는 각도를 정수 도 단위로 표시합니다(-3° → +21°).
+// 활용 상황: 건물이나 사람의 높이와 규모를 보여 줄 때 사용합니다.
+// 태그: tilt, tilt up, pitch, vertical, look up, camera move
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#026
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 02
+// 02 ティルト
+CELLS[1] = shot(camCell((k, w, h, p) => world(k, w, h, cam({ pitch: lerp(-0.06, 0.36, p), y: 1.4 }), { person: { z: 7 }, tower: [0, 26], buildings: false, sun: [7, 13, 40], sunScale: 0.4 }),
+  p => `${Math.round(lerp(-0.06, 0.36, p) * 57.3)}°`.replace(/^(\d)/, '+$1')));

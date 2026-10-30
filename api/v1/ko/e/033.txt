@@ -1,0 +1,36 @@
+// Motion Prompt #033 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#033
+//
+// 랙 포커스 / Rack focus
+// 팩: camera (카메라 움직임과 장면 전환) · element 09 · 분류: 촬영 방식과 시간 연출
+// 동작 요약: 카메라는 고정하고 앞의 꽃에서 뒤의 사람으로 초점을 옮겨 흐린 대상을 바꿉니다.
+// 동작 사양:
+//   - 카메라: 위치·방향·초점거리 모두 고정(높이 1.1 m). 블러 양만 바뀝니다.
+//   - 블러: 앞의 꽃(왼쪽 0.75 m, 거리 2 m)은 0 px → 7 px, 사람과 배경(사람은 오른쪽 0.9 m, 거리 9 m)은 6 px → 0 px. 지면 격자는 배경 블러의 0.6×를 사용합니다.
+//   - 시간: 1.0 s부터 2.6 s까지(1.6 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 초점 표시: 파란 모서리 괄호가 꽃에서 사람까지 직선으로 이동하며 반너비가 46 px → 30 px로 줄어듭니다.
+//   - 피사체: 꽃과 사람 모두 움직이지 않습니다.
+//   - 복귀: 2.6–4.2 s에 정지한 뒤 마지막 0.5 s 동안 크로스페이드합니다. 오른쪽 위에 초점 거리를 표시합니다(◎ 2m → ◎ 9m).
+// 활용 상황: 컷 전환 없이 전경에서 배경으로, 또는 그 반대로 시선을 옮길 때 사용합니다.
+// 태그: rack focus, focus pull, pull focus, depth of field, blur, bokeh, foreground
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#033
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 09
+// 09 ラックフォーカス
+CELLS[8] = shot(camCell((k, w, h, p) => {
+  world(k, w, h, cam({ y: 1.1 }), {
+    person: { x: 0.9, z: 9 }, blurFg: 7 * p, blurBg: 6 * (1 - p),
+    extra: [[-0.75, 0, 2.0, (kk, s) => { kk.fillStyle = C.g3; kk.fillRect(-0.025, 0, 0.05, 0.75); kk.fillStyle = C.blueM; for (let i = 0; i < 6; i++) { kk.beginPath(); kk.ellipse(Math.cos(i) * 0.09, 0.8 + Math.sin(i) * 0.09, 0.08, 0.05, i, 0, 7); kk.fill(); } kk.fillStyle = C.blue; kk.beginPath(); kk.arc(0, 0.8, 0.05, 0, 7); kk.fill(); }, true]],
+    after: (kk, cc) => {   // ピント位置の枠
+      const a = proj(cc, -0.75, 0.8, 2.0), b = proj(cc, 0.9, 0.9, 9);
+      const x = lerp(a.x, b.x, p), y = lerp(a.y, b.y, p), r = lerp(46, 30, p);
+      kk.strokeStyle = C.blue; kk.lineWidth = 2; kk.beginPath();
+      [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([sx, sy]) => { kk.moveTo(x + sx * r, y + sy * r - sy * 9); kk.lineTo(x + sx * r, y + sy * r); kk.lineTo(x + sx * r - sx * 9, y + sy * r); });
+      kk.stroke();
+    }
+  });
+}, p => `◎ ${lerp(2, 9, p).toFixed(0)}m`, 1.0, 2.6));

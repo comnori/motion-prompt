@@ -1,0 +1,30 @@
+// Motion Prompt #112 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#112
+//
+// 비네트 / Vignette
+// 팩: photo (사진 표현·조명·스타일) · element 16 · 분류: 렌즈와 카메라 효과
+// 동작 요약: 모서리부터 부드럽게 어두워지고 중앙의 사람과 도로는 밝게 남습니다.
+// 동작 사양:
+//   - 장면 2: 거리 모퉁이. y 132–162의 도로 뒤에 건물·나무·가로등(x 114, 292, 494)이 있습니다. 왼쪽 앞에 사람이 서 있습니다(발 x 176, y 200, 키 124 px).
+//   - 형태: 화면 중심의 타원(세로 반지름 = 가로 × 208/539 × 1.35).
+//   - 가로 반지름 334 px의 45%까지는 투명하며 가장자리로 갈수록 rgb(32,35,43)의 불투명도가 0%에서 70%로 올라갑니다.
+//   - 시간: 0.4 s부터 1.4 s까지 효과가 나타나고 4.0 s까지 유지한 뒤 4.8 s까지 사라집니다(한 번 = 5 s, cubic ease-in-out, 약 cubic-bezier(0.65,0,0.35,1)).
+// 활용 상황: 피사체에 시선을 모으거나 오래된 렌즈의 느낌을 줄 때 사용합니다.
+// 태그: vignette, vignetting, dark corners, edge darkening, lens falloff, focus
+// 크기: 539x208 px · 반복 주기: 5 s
+// 필요한 코드: kit photo -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/photo.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#112
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 16
+// 周辺減光（ビネット）: 四隅だけがなだらかに暗くなり、中央の人物に目が集まる
+CELLS[15] = cell((k, u) => {
+  const a = env(u);
+  stageStreet(k, BASE);
+  // 楕円の放射グラデーション: 半径の45%までは素通し、外へ向かって 0 → 70% の濃さ
+  k.save(); k.translate(CW / 2, CH / 2); k.scale(1, CH / CW * 1.35);
+  const g = k.createRadialGradient(0, 0, CW * 0.45 * 0.62, 0, 0, CW * 0.62);
+  g.addColorStop(0, 'rgba(32,35,43,0)'); g.addColorStop(1, `rgba(32,35,43,${(0.7 * a).toFixed(3)})`);
+  k.fillStyle = g; k.fillRect(-CW, -CW, CW * 2, CW * 2); k.restore();
+});

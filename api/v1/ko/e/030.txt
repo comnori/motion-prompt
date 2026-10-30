@@ -1,0 +1,31 @@
+// Motion Prompt #030 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#030
+//
+// 오빗 샷(아크 샷) / Orbit (Arc shot)
+// 팩: camera (카메라 움직임과 장면 전환) · element 06 · 분류: 카메라 움직임
+// 동작 요약: 카메라가 피사체 주위를 원형으로 돕니다. 사람은 중앙에 있고 뒤의 나무와 건물은 옆으로 지나갑니다.
+// 동작 사양:
+//   - 카메라: 9 m 앞의 사람을 중심으로 반지름 6 m의 원을 따라 -0.95 rad → +0.95 rad 이동합니다(-54° → +54°, 총 약 109°).
+//   - 방향: 항상 중심을 향합니다(요 = -각도). 높이 1.7 m, 피치는 -0.07 rad(약 4° 아래)로 고정합니다.
+//   - 시간: 0.5 s부터 3.6 s까지(3.1 s), cubic ease-in-out(약 cubic-bezier(0.65,0,0.35,1)).
+//   - 피사체: 사람은 움직이지 않습니다. 얼굴의 흰 점은 각도에 따라 옆으로 이동하며, 바닥에 반지름 1.3 m의 점선을 표시합니다.
+//   - 배경: 반지름 10 m에 등간격으로 놓인 나무 12개가 카메라가 돌 때 사람 뒤를 지나갑니다.
+//   - 복귀: 3.6–4.2 s에 정지한 뒤 마지막 0.5 s 동안 크로스페이드합니다. 오른쪽 위에 각도를 표시합니다(-54° → +54°).
+// 활용 상황: 사람이나 제품을 입체적으로 보여 주거나 등장·핵심 순간을 강조할 때 사용합니다.
+// 태그: orbit, arc shot, circle, 360, rotate around, revolve, camera move
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#030
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 06
+// 06 オービット: 被写体を中心に円を描いて回り込む
+CELLS[5] = shot(camCell((k, w, h, p) => {
+  const a = lerp(-0.95, 0.95, p), R = 6, P0 = [0, 0, 9];
+  const c = cam({ x: P0[0] + Math.sin(a) * R, z: P0[2] - Math.cos(a) * R, yaw: -a, y: 1.7, pitch: -0.07 });
+  world(k, w, h, c, {
+    person: { z: 9, face: a }, ring: [0, 9, 10], buildings: true, trees: false,
+    after: (kk, cc) => { kk.strokeStyle = C.blueM; kk.lineWidth = 2; kk.setLineDash([5, 5]); kk.beginPath(); for (let i = 0; i <= 48; i++) { const b = i / 48 * Math.PI * 2; const q = proj(cc, Math.sin(b) * 1.3, 0, 9 + Math.cos(b) * 1.3); i ? kk.lineTo(q.x, q.y) : kk.moveTo(q.x, q.y); } kk.stroke(); kk.setLineDash([]); }
+  });
+}, p => `${Math.round(lerp(-0.95, 0.95, p) * 57.3)}°`.replace(/^(\d)/, '+$1'), 0.5, 3.6));

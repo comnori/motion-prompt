@@ -1,0 +1,41 @@
+// Motion Prompt #053 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#053
+//
+// 드롭다운(선택 목록) / Dropdown (select)
+// 팩: ui (UI 컴포넌트 이름) · element 05 · 분류: 펼치기와 오버레이
+// 동작 요약: 입력란을 누르면 아래에 네 선택지가 열리고 “나고야”를 고르면 목록이 닫히며 값이 입력됩니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 260×38 입력란(모서리 반지름 8)에 안내 문구와 화살표를 표시하고 1.0 s에 클릭합니다.
+//   - 열림 정도: 1.0–1.25 s에 easeOutCubic으로 0→1. 목록(흰색 260×112, 그림자 블러 18)이 6 px 내려오며 나타납니다. 화살표는 180° 회전하고 입력란 테두리는 2 px 파랑이 됩니다.
+//   - 선택지 네 개를 26 px 간격으로 표시합니다(도쿄·오사카·나고야·후쿠오카를 일본어로 표기). 커서가 내려가며 1.55 s부터 오사카, 1.95 s부터 나고야를 옅은 파랑으로 강조합니다.
+//   - 2.3 s에 나고야 클릭: 목록은 2.3–2.45 s에 닫힙니다(1 − easeInOutCubic). 안내 문구는 2.2–2.3 s에 사라지고 “나고야”는 2.32–2.42 s에 나타납니다.
+//   - 초기화: 나고야는 3.9–4.08 s에 사라지고 안내 문구는 4.1–4.3 s에 돌아와 두 문구가 겹치지 않습니다.
+// 활용 상황: 양식에서 정해진 목록 중 하나를 선택하게 할 때 사용합니다.
+// 태그: dropdown, dropdown-menu, select, picker, combobox, options, form
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#053
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 05
+// 05 ドロップダウン（Dropdown menu）
+CELLS[4] = ui((w, h, t) => {
+  bar(24, 14, 90, C.line2, 10);
+  const open = eo(seg(t, 1.0, 1.25)) * (1 - eio(seg(t, 2.3, 2.45)));
+  const chosen = seg(t, 2.32, 2.42) * (1 - seg(t, 3.9, 4.08));
+  const ph = (1 - seg(t, 2.2, 2.3)) + seg(t, 4.1, 4.3); // プレースホルダーは先に消し、名前が消えてから戻す（重ねない）
+  strokeRR(24, 34, 260, 38, 8, open > .1 || (chosen > 0 && t < 2.9) ? C.blue : C.line2, open > .1 ? 2 : 1.5);
+  if (ph > 0) { X.globalAlpha = clamp(ph); text('選択してください', 40, 53, 15, '#9a9896', 500); X.globalAlpha = 1; }
+  if (chosen > 0) { X.globalAlpha = chosen; text('名古屋', 40, 53, 16, C.ink, 600); X.globalAlpha = 1; }
+  chevron(262, 52, 5, Math.PI * open, '#777');
+  fillRR(310, 34, 208, 70, 8, C.block); bar(310, 120, 208); bar(310, 138, 160); bar(24, 150, 200); bar(24, 168, 150);
+  if (open > 0) {
+    X.save(); X.globalAlpha = open; const oy = 78 - 6 * (1 - open);
+    shadowed(() => fillRR(24, oy, 260, 112, 8, '#fff'), 18, 6, .18); strokeRR(24, oy, 260, 112, 8, C.border, 1);
+    const hi = seg(t, 1.55, 1.75) > 0 ? (t < 1.95 ? 1 : 2) : -1;
+    ['東京', '大阪', '名古屋', '福岡'].forEach((s, i) => { const yy = oy + 4 + i * 26; if (i === hi + (hi === 1 ? 0 : 0) && hi >= 0) fillRR(28, yy, 252, 26, 5, C.lb); text(s, 40, yy + 13, 15, i === hi ? C.blue : '#444', i === hi ? 600 : 500); });
+    X.restore();
+  }
+  pointer([[.3, w + 30, h + 30], [.95, 200, 56], [1.25, 200, 56], [1.6, 170, 121], [2.0, 170, 147], [2.45, 170, 147], [3.2, 170, 147], [4.2, w + 30, h + 30]], [1.0, 2.3], t);
+});

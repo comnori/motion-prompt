@@ -1,0 +1,42 @@
+// Motion Prompt #086 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#086
+//
+// 밑줄 애니메이션 / Underline animation
+// 팩: lp (랜딩 페이지와 웹 효과) · element 14 · 분류: 호버와 클릭 상호작용
+// 동작 요약: 커서가 놓인 링크 아래에 주황색 선이 왼쪽부터 자라고, 커서를 치우면 오른쪽으로 줄어 사라집니다.
+// 동작 사양:
+//   - 링크 세 개는 굵은 20 px, 간격 56입니다. 커서는 왼쪽부터 각각 약 1 s 머뭅니다(입력 영역은 글자 양옆으로 6 px 더 넓음).
+//   - 밑줄: 주황색, 두께 3, 기준선 아래 8 px.
+//   - 호버 시 0.3 s 동안 왼쪽 끝에서 너비 0→100%로 자랍니다(cubic ease-out).
+//   - 벗어나면 0.3 s 동안 왼쪽 끝이 오른쪽으로 이동해 선이 오른쪽으로 사라집니다(transform-origin을 오른쪽에 둔 scaleX와 유사).
+// 활용 상황: 메뉴나 텍스트 링크에서 포인터 위치를 차분하게 알려 줄 때 사용합니다.
+// 태그: underline, hover, link, navigation, menu, text-link, scalex
+// 크기: 539x208 px · 반복 주기: 4.8 s
+// 필요한 코드: kit lp -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/lp.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#086
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 14
+// 14 下線アニメーション（リンクにカーソルを乗せると下線が左から伸び、離れると右へ抜ける）
+CELLS[13] = (k, w, h, u) => {
+  frame(k);
+  const LINKS = ['サービス', '実績', '会社概要'], F = `800 20px ${JP}`, GAP = 56, LY = 84, DUR = 0.3;
+  const cur = t => path([[0, 120, 150], [0.45, 170, 80], [1.3, 186, 84], [1.55, 268, 80], [2.4, 282, 84], [2.65, 372, 80], [3.5, 390, 84], [3.95, 430, 150], [4.8, 120, 150]], t);
+  view(k, () => {
+    logo(k, 22, 28); bars(k, 90, 132, 331, 2, C.faint, 6, 12, 0.6);
+    k.font = F; const ws = LINKS.map(s => k.measureText(s).width); let x = (VW - ws.reduce((a, b) => a + b, 0) - GAP * (LINKS.length - 1)) / 2;
+    LINKS.forEach((s, i) => {
+      const x0 = x, x1 = x + ws[i], inside = t => { const [a, b] = cur(t); return a > x0 - 6 && a < x1 + 6 && b > LY - 22 && b < LY + 14; };
+      txt(k, s, x0, LY, F, C.ink);
+      // 最後に乗った・離れた時刻から 0.3秒（乗る: 左端から伸びる / 離れる: 左端から縮んで右へ抜ける）
+      const on = inside(u); let tc = null; for (let j = 0, t = u; j < 600; j++, t -= 1 / 120) if (inside(t - 1 / 120) !== on) { tc = t; break; }
+      if (tc !== null) {
+        const q = eOut(P(u, tc, tc + DUR)), a = on ? 0 : q, b = on ? q : 1;
+        if (b > a) { k.fillStyle = C.acc; k.fillRect(x0 + ws[i] * a, LY + 8, ws[i] * (b - a), 3); }
+      }
+      x += ws[i] + GAP;
+    });
+    const [cx, cy] = cur(u); cursor(k, cx, cy);
+  });
+};

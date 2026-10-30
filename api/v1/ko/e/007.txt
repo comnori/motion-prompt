@@ -1,0 +1,49 @@
+// Motion Prompt #007 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#007
+//
+// 카운트 업 / Count-up
+// 팩: motion (모션 그래픽 움직임) · element 07 · 분류: 등장과 텍스트 연출
+// 동작 요약: 숫자가 빠르게 올라가다가 최종 값에 멈춥니다.
+// 동작 사양:
+//   - 4.7 s마다 한 번 진행합니다. 0.1–0.4 s에 나타나고 4.0–4.4 s에 사라집니다.
+//   - 숫자(굵은 104 px): 0.45–2.9 s에 0→2,480. 값 = round(target × (1 − (1 − p)^4))로, 처음에는 빠르고 끝에서는 느립니다.
+//   - 천 단위 구분자를 사용합니다. 모든 숫자의 너비가 같고 오른쪽 정렬이므로 좌우로 흔들리지 않습니다.
+//   - 2.9 s에 도착: 흰색→노랑으로 바뀌며 배율이 1 + 0.07·e^(−7t)·cos(15t)로 작게 튑니다.
+//   - 왼쪽 위 화살표 칩(민트 원, 반지름 34): 0.35 s부터 스프링 1 − e^(−7t)·cos(14t)로 나타납니다. 숫자가 올라가는 동안 6 px × (1 − p)^3 × sin(30u)만큼 위아래로 흔들립니다.
+//   - 아래 막대(330 × 12, 파랑→민트 그라데이션)는 값 ÷ 목표 값에 비례하여 채워집니다.
+// 활용 상황: 매출·사용자 수·완료율처럼 숫자의 크기나 성장을 체감하게 할 때 사용합니다.
+// 태그: count-up, counter, number, odometer, stats, kpi, progress
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#007
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 07
+// 07 カウントアップ（数字が勢いよく増えて、最後にピタッと決まる）
+CELLS[6] = (k, w, h, u) => {
+  stage(k);
+  const TARGET = 2480, a = P(u, 0.1, 0.4) * (1 - P(u, 4.0, 4.4));
+  const p = P(u, 0.45, 2.9), v = Math.round(TARGET * (1 - Math.pow(1 - p, 4)));
+  const s = v.toLocaleString('en-US'), f = `800 104px ${DISP}`;
+  k.font = f; const dw = k.measureText('0').width + 2, cw = k.measureText(',').width;
+  const full = TARGET.toLocaleString('en-US'); let tot = 0; for (const ch of full) tot += ch === ',' ? cw : dw;
+  const land = u - 2.9, pop = 1 + (land > 0 ? 0.07 * Math.exp(-7 * land) * Math.cos(15 * land) : 0);
+  const X = w / 2 + 42, Y = 96;
+  k.save(); k.globalAlpha = a; k.translate(X, Y); k.scale(pop, pop);
+  let x = tot / 2;   // 右そろえ
+  const speed = p < 1 ? Math.pow(1 - p, 3) : 0;
+  for (const ch of [...s].reverse()) {
+    const cwid = ch === ',' ? cw : dw; x -= cwid;
+    txt(k, ch, x + cwid / 2, 0, f, land > 0 ? C.yel : '#fff', 'center', 'middle');
+  }
+  k.restore();
+  // 上向きの矢印チップ
+  const ar = spring(u - 0.35, 14, 7) * (1 - P(u, 4.0, 4.3)), bob = speed * 6 * Math.sin(u * 30);
+  if (ar > 0.01) { k.save(); k.translate(X - tot / 2 - 58, Y - 2 + bob); k.scale(ar, ar); k.fillStyle = C.mint; k.beginPath(); k.arc(0, 0, 34, 0, 7); k.fill(); k.strokeStyle = C.navy; k.lineWidth = 8; k.lineCap = 'round'; k.lineJoin = 'round'; k.beginPath(); k.moveTo(0, 15); k.lineTo(0, -14); k.moveTo(-13, -1); k.lineTo(0, -15); k.lineTo(13, -1); k.stroke(); k.restore(); }
+  // 下のバー
+  const bw = 330, bx = w / 2 - bw / 2, by = 168;
+  k.globalAlpha = a; k.fillStyle = C.navy3; rr(k, bx, by, bw, 12, 6); k.fill();
+  const g = k.createLinearGradient(bx, 0, bx + bw, 0); g.addColorStop(0, C.blue); g.addColorStop(1, C.mint);
+  k.fillStyle = g; rr(k, bx, by, Math.max(12, bw * (v / TARGET)), 12, 6); k.fill(); k.globalAlpha = 1;
+};

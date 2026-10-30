@@ -1,0 +1,32 @@
+// Motion Prompt #059 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#059
+//
+// 토글 스위치 / Toggle switch
+// 팩: ui (UI 컴포넌트 이름) · element 11 · 분류: 선택과 전환
+// 동작 요약: 설정 세 줄 중 첫 두 줄의 스위치를 차례로 켰다가 다시 끕니다.
+// 동작 사양:
+//   - 542×191 카드에서 4.5 s 주기. 구분선이 있는 설정 세 줄을 60 px 간격으로 놓습니다. x 450에 64×34 트랙(모서리 반지름 17)과 흰 손잡이(반지름 13, 그림자)를 둡니다.
+//   - 클릭: 1.0 s에 1행 켜기, 1.8 s에 2행 켜기, 3.0 s에 1행 끄기, 3.6 s에 2행 끄기. 3행은 꺼진 상태입니다.
+//   - 전환마다 0.2 s 동안 easeOutCubic으로 손잡이가 30 px(17 → 47) 이동합니다.
+//   - 트랙 색은 진행도에 따라 회색 #d9d7d5에서 파랑 #1f5ae8로 섞입니다.
+// 활용 상황: 즉시 적용되고 두 상태만 있는 설정에 사용합니다.
+// 태그: toggle, switch, toggle-switch, on-off, boolean, settings
+// 크기: 542x191 px · 반복 주기: 4.5 s
+// 필요한 코드: kit ui -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#059
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 11
+// 11 トグルスイッチ（Toggle switch）
+CELLS[10] = ui((w, h, t) => {
+  const st = [eo(seg(t, 1.0, 1.2)) * (1 - eo(seg(t, 3.0, 3.2))), eo(seg(t, 1.8, 2.0)) * (1 - eo(seg(t, 3.6, 3.8))), 0];
+  for (let i = 0; i < 3; i++) {
+    const y = 14 + i * 60; bar(24, y + 10, [170, 140, 190][i], C.line2, 11); bar(24, y + 30, [260, 220, 240][i], C.line, 8);
+    if (i < 2) { X.fillStyle = C.line; X.fillRect(24, y + 52, 494, 1.5); }
+    const k = st[i], tx = 450, ty = y + 10;
+    fillRR(tx, ty, 64, 34, 17, k > .5 ? C.blue : '#d9d7d5'); if (k > 0 && k < 1) { X.globalAlpha = k; fillRR(tx, ty, 64, 34, 17, C.blue); X.globalAlpha = 1; }
+    shadowed(() => circle(tx + 17 + 30 * k, ty + 17, 13, '#fff'), 4, 1, .25);
+  }
+  pointer([[.3, w + 30, h + 30], [.95, 486, 30], [1.35, 486, 30], [1.75, 486, 90], [2.5, 486, 90], [2.95, 486, 30], [3.25, 486, 30], [3.55, 486, 90], [3.85, 486, 90], [4.3, w + 30, h + 30]], [1.0, 1.8, 3.0, 3.6], t);
+});

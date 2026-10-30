@@ -1,0 +1,37 @@
+// Motion Prompt #002 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#002
+//
+// 스태거 / Stagger
+// 팩: motion (모션 그래픽 움직임) · element 02 · 분류: 등장과 텍스트 연출
+// 동작 요약: 막대그래프가 왼쪽부터 조금씩 시차를 두고 올라옵니다.
+// 동작 사양:
+//   - 2.35 s마다 한 번 진행합니다. 막대 일곱 개(너비 44, 간격 20, 높이 52, 84, 68, 112, 92, 136, 158)에 파랑·코랄·노랑·민트색을 반복 적용합니다.
+//   - 막대 i(0부터 시작)는 0.15 + 0.12·i s에 시작하여 0.5 s 동안 backOut(s = 2.6)으로 높이 0에서 전체 높이로 자랍니다. 밑변을 고정하고 목표를 넘었다가 안정됩니다.
+//   - 흰 점(반지름 6.5, 막대 꼭대기보다 16 px 위): 해당 막대보다 0.34 s 늦게 스프링 1 − e^(−7t)·cos(16t)로 나타납니다.
+//   - 퇴장: 막대는 1.78 + 0.045·i s부터 0.26 s 동안 cubic ease-in으로 줄어듭니다. 점은 먼저 1.70 + 0.045·i s부터 0.2 s 동안 사라집니다.
+// 활용 상황: 목록·그래프·카드 등 여러 항목을 순서대로 등장시켜 시선을 유도할 때 사용합니다.
+// 태그: stagger, sequence, delay, cascade, bar-chart, list, entrance
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#002
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 02
+// 02 スタガー（グラフの棒が、少しずつ時間をずらして順に立ち上がる）
+CELLS[1] = (k, w, h, u) => {
+  stage(k);
+  const N = 7, BW = 44, G = 20, x0 = (w - (N * BW + (N - 1) * G)) / 2, base = h - 30;
+  const HS = [52, 84, 68, 112, 92, 136, 158];
+  k.fillStyle = C.navy3; rr(k, x0 - 18, base, N * BW + (N - 1) * G + 36, 5, 2.5); k.fill();
+  const lu = mod(u, CYC / 2);
+  for (let i = 0; i < N; i++) {
+    const t0 = 0.15 + i * 0.12, g = backOut(P(lu, t0, t0 + 0.5), 2.6) * (1 - eIn(P(lu, 1.78 + i * 0.045, 2.04 + i * 0.045)));
+    if (g <= 0.001) continue;
+    const hh = HS[i] * g, x = x0 + i * (BW + G);
+    k.fillStyle = PAL[i % 4]; rr(k, x, base - hh, BW, hh, [12, 12, 3, 3]); k.fill();
+    // 棒の上の点（さらに遅れて出る）
+    const d = spring(lu - t0 - 0.34, 16, 7) * (1 - eIn(P(lu, 1.7 + i * 0.045, 1.9 + i * 0.045)));
+    if (d > 0.01) { k.fillStyle = '#fff'; k.beginPath(); k.arc(x + BW / 2, base - hh - 16, 6.5 * d, 0, 7); k.fill(); }
+  }
+};

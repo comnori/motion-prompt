@@ -1,0 +1,47 @@
+// Motion Prompt #140 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#140
+//
+// 페이지 말림 / Page curl
+// 팩: motion2 (모션 그래픽 움직임 2) · element 20 · 분류: 전환과 강조
+// 동작 요약: 페이지 모서리가 들려 접혀 넘어가면서 아래의 다음 페이지가 드러납니다.
+// 동작 사양:
+//   - 페이지 1(흰색) → 페이지 2(크림색) → 페이지 1을 각각 2.35 s씩 표시합니다. 오른쪽 아래 모서리에서 0.35–1.75 s(1.4 s) 동안 말립니다(quadratic ease-in-out).
+//   - 접힘 선은 모서리에서 정규화한 방향 (−1, −0.42)으로 0→600 px 이동합니다.
+//   - 접힘 선 너머 영역을 선 기준으로 반전해 종이 뒷면(옅은 회색 또는 베이지)을 만듭니다. 그림자(블러 14, 오프셋 4, 4)와 흰 2 px 가장자리를 적용합니다.
+//   - 종이가 들린 자리에 다음 페이지가 보이고 접힘을 따라 50 px의 그림자 그라데이션을 둡니다.
+// 활용 상황: 책·카탈로그·앨범·챕터 전환처럼 종이 질감이나 이어 읽는 느낌이 어울릴 때 사용합니다.
+// 태그: page-curl, page-turn, page-peel, paper, book, transition
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion2 -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion2.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#140
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 20
+// 20 ページめくり（角から紙がめくれて裏返り、下から次のページが現れる）
+function paper(k, w, h, i) {
+  k.fillStyle = i ? C.cream : '#FFFFFF'; k.fillRect(0, 0, w, h);
+  txt(k, i ? 'PAGE 2' : 'PAGE 1', 30, 58, `800 46px ${DISP}`, C.navy, 'left', 'middle', '1px');
+  k.fillStyle = i ? '#EBD9B4' : '#D7DCEA';[[96, 230], [122, 250], [148, 200], [174, 236]].forEach(([y, ww]) => { rr(k, 30, y, ww, 12, 6); k.fill(); });
+  k.fillStyle = i ? C.mint : C.coral; rr(k, 310, 26, 200, 156, 14); k.fill();
+  k.fillStyle = '#fff'; k.beginPath(); k.arc(462, 66, 18, 0, 7); k.fill();
+  k.beginPath(); k.moveTo(326, 168); k.lineTo(390, 92); k.lineTo(440, 150); k.lineTo(462, 126); k.lineTo(496, 168); k.closePath(); k.fill();
+}
+function clipHalf(poly, d, s0, keepLess) { const out = [], f = p => (p[0] - CW) * d[0] + (p[1] - CH) * d[1] - s0; for (let i = 0; i < poly.length; i++) { const A = poly[i], B = poly[(i + 1) % poly.length], fa = f(A), fb = f(B), ia = keepLess ? fa <= 0 : fa >= 0, ib = keepLess ? fb <= 0 : fb >= 0; if (ia) out.push(A); if (ia !== ib) { const t = fa / (fa - fb); out.push([lerp(A[0], B[0], t), lerp(A[1], B[1], t)]); } } return out; }
+CELLS[19] = abCell((k, w, h, u, a, b) => {
+  const dl = Math.hypot(1, 0.42), d = [-1 / dl, -0.42 / dl], sM = 600 * eIOs(P(u, TA - 0.15, TB + 0.25));
+  paper(k, w, h, b);
+  if (sM >= 599) return;
+  const rect = [[0, 0], [w, 0], [w, h], [0, h]], rest = clipHalf(rect, d, sM, false), corner = clipHalf(rect, d, sM, true);
+  if (rest.length > 2) { k.save(); polyPath(k, rest); k.clip(); paper(k, w, h, a); k.restore(); }
+  if (corner.length > 2 && sM > 0.5) {
+    // 折り目の影（下のページ側）
+    k.save(); polyPath(k, corner); k.clip();
+    const mx = w + d[0] * sM, my = h + d[1] * sM, gr = k.createLinearGradient(mx, my, mx - d[0] * 50, my - d[1] * 50);
+    gr.addColorStop(0, 'rgba(15,26,61,.35)'); gr.addColorStop(1, 'rgba(15,26,61,0)'); k.fillStyle = gr; k.fillRect(0, 0, w, h); k.restore();
+    const flap = corner.map(p => { const s = (p[0] - w) * d[0] + (p[1] - h) * d[1], m = 2 * (sM - s); return [p[0] + m * d[0], p[1] + m * d[1]]; });
+    k.save(); k.shadowColor = 'rgba(0,0,0,.35)'; k.shadowBlur = 14; k.shadowOffsetX = 4; k.shadowOffsetY = 4;
+    polyPath(k, flap); k.fillStyle = a ? '#EADBB8' : '#E3E6EF'; k.fill(); k.restore();
+    k.strokeStyle = 'rgba(255,255,255,.8)'; k.lineWidth = 2; polyPath(k, flap); k.stroke();
+  }
+});

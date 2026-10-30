@@ -1,0 +1,47 @@
+// Motion Prompt #003 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#003
+//
+// 버스트 / Burst
+// 팩: motion (모션 그래픽 움직임) · element 03 · 분류: 등장과 텍스트 연출
+// 동작 요약: 좋아요 하트가 채워지는 순간 고리·선·점이 바깥으로 터져 나갑니다.
+// 동작 사양:
+//   - 2.35 s마다 한 번 터집니다. 중앙에 하트(크기 46, 윤곽선 7 px)를 놓습니다.
+//   - 준비 동작: 0.3–0.5 s에 배율 1→0.7(quadratic ease-in-out).
+//   - 0.5 s에 발동: 하트를 코랄색으로 채우고 스프링 1 − e^(−6.5t)·cos(16t)로 배율 0.7→1을 적용합니다.
+//   - 고리: 노랑, 0.6 s 동안 quintic ease-out으로 반지름 44→90, 선 두께 16→0.
+//   - 방사형 선 10개(노랑·민트 교대, 두께 9): 바깥 끝 반지름 64→130(y 배율 0.82). 발동 후 0.22–0.7 s에 길이 36에서 0으로 줄어듭니다.
+//   - 점 10개(코랄·파랑 교대, 반지름 8→4.8): 타원(x ×1.45, y ×0.78)을 따라 반지름 58→150으로 퍼지며 발동 후 0.3–0.72 s에 사라집니다. 하트 채우기는 1.92–2.2 s에 사라집니다.
+// 활용 상황: 좋아요·성공·정답처럼 어떤 동작이나 성취가 발생한 순간을 강조할 때 사용합니다.
+// 태그: burst, explosion, radial, like, heart, celebrate, accent, sparkle
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#003
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 03
+// 03 バースト（「いいね」のハートが点くと同時に、まわりに線と粒が弾ける）
+CELLS[2] = (k, w, h, u) => {
+  stage(k);
+  const T = CYC / 2, lu = mod(u, T), X = w / 2, Y = h / 2 + 2, t0 = 0.5, tt = lu - t0;
+  const ant = eIOs(P(lu, 0.3, t0)), off = P(lu, 1.92, 2.2);
+  const sc = tt < 0 ? 1 - 0.3 * ant : 0.7 + 0.3 * spring(tt, 16, 6.5) + 0.0;
+  if (tt > 0 && tt < 0.75) {
+    const q = eOut5(tt / 0.6 > 1 ? 1 : tt / 0.6), fade = 1 - P(tt, 0.3, 0.72);
+    // 輪
+    k.strokeStyle = C.yel; k.lineWidth = Math.max(0.1, 16 * (1 - q)); k.beginPath(); k.arc(X, Y, 44 + 46 * q, 0, 7); if (q < 0.98) k.stroke();
+    // 放射の線
+    k.lineCap = 'round';
+    for (let i = 0; i < 10; i++) {
+      const a = i / 10 * Math.PI * 2 - Math.PI / 2, r1 = 64 + 66 * q, len = 36 * (1 - P(tt, 0.22, 0.7));
+      if (len > 0.5) { k.strokeStyle = i % 2 ? C.mint : C.yel; k.lineWidth = 9; k.beginPath(); k.moveTo(X + Math.cos(a) * (r1 - len), Y + Math.sin(a) * (r1 - len) * 0.82); k.lineTo(X + Math.cos(a) * r1, Y + Math.sin(a) * r1 * 0.82); k.stroke(); }
+      const a2 = a + Math.PI / 10, r2 = 58 + 92 * q;
+      k.fillStyle = i % 2 ? C.coral : C.blue; k.globalAlpha = fade; k.beginPath(); k.arc(X + Math.cos(a2) * r2 * 1.45, Y + Math.sin(a2) * r2 * 0.78, 8 * (1 - q * 0.4), 0, 7); k.fill(); k.globalAlpha = 1;
+    }
+  }
+  k.save(); k.translate(X, Y - 2); k.scale(sc, sc);
+  heartPath(k, 46); k.lineJoin = 'round'; k.lineWidth = 7; k.strokeStyle = C.navy3; k.stroke();
+  const fa = tt < 0 ? 0 : 1 - off;
+  if (fa > 0) { k.globalAlpha = fa; k.fillStyle = C.coral; k.strokeStyle = C.coral; k.fill(); k.stroke(); k.globalAlpha = 1; }
+  k.restore();
+};

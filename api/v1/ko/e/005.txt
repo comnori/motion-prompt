@@ -1,0 +1,38 @@
+// Motion Prompt #005 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#005
+//
+// 마스크 리빌 / Mask reveal
+// 팩: motion (모션 그래픽 움직임) · element 05 · 분류: 등장과 텍스트 연출
+// 동작 요약: 한 줄로 표시된 보이지 않는 경계 뒤에서 제목이 미끄러져 나옵니다.
+// 동작 사양:
+//   - 2.35 s마다 한 번 진행합니다. 구분선(코랄, 380 × 6, y = 124)은 0.1–0.5 s에 중앙에서 자라고(cubic ease-in-out), 2.05–2.3 s에 줄어들어 사라집니다.
+//   - 위쪽 글자(굵은 98 px, 흰색): 선 위 영역(y 8–119)으로 클리핑합니다. 0.35–1.0 s에 120 px 아래에서 제자리로 올라옵니다(quintic ease-out).
+//   - 아래쪽 글자(32 px, 노랑): 선 아래 영역(y 129–181)으로 클리핑합니다. 0.55–1.15 s에 60 px 위에서 제자리로 내려옵니다(quintic ease-out).
+//   - 퇴장: 위쪽 글자는 1.7–2.05 s에 150 px 위로 이동(backIn, s = 1.2, 먼저 조금 내려감), 아래쪽 글자는 1.75–2.05 s에 70 px 아래로 이동(cubic ease-in)합니다.
+//   - 불투명도는 바뀌지 않습니다. 글자는 클리핑 영역을 벗어날 때만 가려집니다.
+// 활용 상황: 제목이나 헤드라인을 정돈된 느낌으로 등장시킬 때 사용합니다.
+// 태그: mask, reveal, clip, wipe, title, text, slide-up, headline
+// 크기: 539x208 px · 반복 주기: 4.7 s
+// 필요한 코드: kit motion -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#005
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 05
+// 05 マスクリビール（見えない枠＝線の向こうから、見出しがせり上がる）
+CELLS[4] = (k, w, h, u) => {
+  stage(k);
+  const T = CYC / 2, lu = mod(u, T), X = w / 2, LY = 124;
+  const lg = eIO(P(lu, 0.1, 0.5)) * (1 - eIO(P(lu, 2.05, 2.3)));
+  // 上の段：線の下から上へ
+  const up = (1 - eOut5(P(lu, 0.35, 1.0))) * 120 + backIn(P(lu, 1.7, 2.05), 1.2) * -150;
+  k.save(); k.beginPath(); k.rect(0, 8, w, LY - 8 - 5); k.clip();
+  txt(k, 'Hello!', X, LY - 14 + up, `800 98px ${DISP}`, '#fff', 'center', 'alphabetic', '1px');
+  k.restore();
+  // 下の段：線の上から下へ
+  const dn = (1 - eOut5(P(lu, 0.55, 1.15))) * -60 + eIn(P(lu, 1.75, 2.05)) * 70;
+  k.save(); k.beginPath(); k.rect(0, LY + 5, w, 52); k.clip();
+  txt(k, 'はじめまして', X, LY + 44 + dn, `700 32px ${JP}`, C.yel, 'center', 'alphabetic', '6px');
+  k.restore();
+  if (lg > 0.005) { k.fillStyle = C.coral; rr(k, X - 190 * lg, LY - 3, 380 * lg, 6, 3); k.fill(); }
+};

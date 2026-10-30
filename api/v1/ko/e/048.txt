@@ -1,0 +1,24 @@
+// Motion Prompt #048 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/?lang=ko#048
+//
+// L컷 / L-cut
+// 팩: camera (카메라 움직임과 장면 전환) · element 24 · 분류: 장면 전환
+// 동작 요약: 화면이 바뀐 뒤에도 이전 장면의 소리가 잠시 이어집니다. 위에는 화면, 아래에는 영상·음성 타임라인을 표시합니다.
+// 동작 사양:
+//   - 연결: 화면은 직접 컷입니다. 음성만 화면보다 늦게 다음 장면(B)으로 바뀝니다. 시차는 타임라인의 20%(0.72 s)입니다.
+//   - 재생 헤드: 3.6 s 동안(0.4 s부터 4.0 s) 일정한 속도로 좌우 이동합니다. 화면은 55%(약 2.38 s), 음성은 75%(약 3.10 s)에서 바뀝니다.
+//   - 시차 구간(55–75%)에는 화면은 B, 음성은 A입니다. 옅은 파란 띠와 파란 점선 두 개로 구간을 표시합니다.
+//   - 배치: 위 134 px는 화면(카메라와 피사체 고정), 아래 74 px는 영상·음성 두 줄의 타임라인입니다(A 회색, B 옅은 파랑, 음성 줄에는 파형).
+//   - 표시: 화면 왼쪽 아래에 "映像A / 映像B"(영상 A / B), 오른쪽 아래에 재생 중인 음성을 표시합니다(회색 "♪ Aの音" → 파란색 "♪ Bの音").
+//   - 복귀: 마지막 0.5 s 동안 시작 화면으로 크로스페이드합니다(한 번 = 4.7 s).
+// 활용 상황: 화자의 목소리를 이어 들려주면서 듣는 사람의 반응이나 관련 영상을 보여 줄 때 사용합니다.
+// 태그: l-cut, l cut, split edit, audio lag, sound carries over, audio transition, edit
+// 크기: 539x208 px · 반복 주기: 9.4 s
+// 필요한 코드: kit camera -> https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
+// 움직이는 예제: https://showheyohtaki.github.io/motion-prompt/?lang=ko#048
+//
+// cells[i](k, w, h, u): k = CanvasRenderingContext2D (호출하는 쪽에서 화면 지우기와 save/restore 처리), w·h = 크기, u = 초 (0 이상, 반복 주기 미만). u만으로 화면이 결정됩니다.
+// 아래부터 항목 코드입니다. CELLS, 상수와 보조 함수는 kit에 있습니다.
+
+// @element 24
+// 24 Lカット: 映像が先に次の場面（B）へ切り替わり、前の場面（A）の音が残る
+CELLS[23] = shot(splitCell(-0.2), 134);
