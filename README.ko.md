@@ -126,7 +126,7 @@ motion-prompt #032의 카메라 움직임을 Veo용 영어 프롬프트로 바�
 
 ## 자신의 분야 용어 추가하기
 
-잘 아는 분야가 있다면 그 분야의 공통 언어를 자신의 언어로 추가해 주세요. [CONTRIBUTING.ko.md](CONTRIBUTING.ko.md)에 팩이나 번역을 추가하는 방법과 용어의 수록 기준이 있습니다. 위 프롬프트로 코딩 AI가 제작의 상당 부분을 맡을 수 있습니다.
+잘 아는 분야가 있다면 그 분야의 공통 언어를 자신의 언어로 추가해 주세요. 기여 안내는 원본 [영문](CONTRIBUTING.md)과 [일문](CONTRIBUTING.ja.md)으로 제공되며, 팩이나 번역을 추가하는 방법과 용어의 수록 기준이 있습니다. 위 프롬프트로 코딩 AI가 제작의 상당 부분을 맡을 수 있습니다.
 
 ## 원본 게시물
 
@@ -256,10 +256,10 @@ npx skills add showheyohtaki/motion-prompt
 
 ### 갤러리를 직접 실행하기
 
-한국어 문서가 포함된 이 포크를 복제해 실행할 수 있습니다.
+원본 저장소를 복제해 로컬에서 실행할 수 있습니다.
 
 ```sh
-gh repo clone comnori/motion-prompt
+gh repo clone showheyohtaki/motion-prompt
 cd motion-prompt
 python -m http.server 8000
 ```
